@@ -14,7 +14,10 @@
 
 ```sh
 python scripts/validate.py
+python -m unittest discover -s tests -v
 ```
+
+动画与音频测试需要 `requirements-render.txt`。改动场景后重新渲染对应成片、GIF 和联系表，并运行 `python scripts/check_demo_media.py --report demos/media-check.json`；同步更新规则卡、分镜与 QA 记录。
 
 修改脚本时，请同时验证正常输入和一个相关失败输入。改动制作方法时，尽可能用真实分镜或样片说明改善，并标明未验证的范围。结构校验无法代替成片审看。
 

@@ -1,0 +1,17 @@
+{
+  "scene": "negative-ride",
+  "duration": 36.0,
+  "fps": 30,
+  "frames": 1080,
+  "size": [
+    1280,
+    720
+  ],
+  "bytes": 1251850,
+  "audio": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_dbfs": -14.39
+  },
+  "render_seconds": 58.9
+}

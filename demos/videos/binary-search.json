@@ -1,0 +1,17 @@
+{
+  "scene": "binary-search",
+  "duration": 36.0,
+  "fps": 30,
+  "frames": 1080,
+  "size": [
+    1280,
+    720
+  ],
+  "bytes": 1317296,
+  "audio": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_dbfs": -14.72
+  },
+  "render_seconds": 36.2
+}

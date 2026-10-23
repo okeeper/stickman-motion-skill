@@ -51,7 +51,7 @@ def validate(root: Path) -> list[str]:
             errors.append("SKILL.md: instructions are empty")
 
     markdown = sorted(root.glob("*.md"))
-    for directory in ("references", "docs", "examples"):
+    for directory in ("references", "docs", "examples", "demos"):
         markdown.extend(sorted((root / directory).rglob("*.md")))
     for path in markdown:
         for match in re.finditer(r"!?\[[^\]\n]*\]\(([^\s)]+)(?:\s+[^)]*)?\)", read(path)):

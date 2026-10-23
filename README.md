@@ -4,13 +4,49 @@
 
 面向 Codex 等支持 Agent Skills 的工具，用火柴人的操作、试错与发现，将数学、物理或算法概念组织成动作冒险动画。
 
-An instruction-first Agent Skill for turning concepts into stick-figure adventures through interaction, experimentation, and discovery.
+An Agent Skill for turning concepts into stick-figure adventures through interaction, experimentation, and discovery — with three runnable, original demo films.
 
-[技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [场景示例](examples/direction-reversal.yaml) · [参与贡献](CONTRIBUTING.md)
+[技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
-## 当前状态
+## 先看三个 Demo
 
-这是早期的制作方法与规格项目。已包含技能指令、概念规则卡、表演与制作指南，以及一个原创故事规格示例；尚未附带专用渲染引擎或经过成片验证的动画样片。仓库校验只能确认文件结构、引用与示例数据完整，不能证明动画质量或所有知识结论正确。
+每支 **36 秒，1280×720，30 fps，无台词，含原创合成音乐与音效**。下面是 12 秒无声 GIF 摘录，完整 MP4 包含开端、试探和结果。
+
+### 01 · 反向才到达
+
+角色要去左边，运载车却朝右。三次触碰 `×(-1)`，让“负数乘法”变成试错、观察和主动复用。
+
+![反向才到达：主动反向、跳上运载车并跨越缺口](demos/previews/negative-ride.gif)
+
+[完整 MP4](demos/videos/negative-ride.mp4) · [任务与规则卡](examples/negative-ride.yaml) · [关键帧](demos/posters/negative-ride-contact-sheet.jpg)
+
+### 02 · 只留下一半
+
+十六扇门的值按升序排列，需要查询后才揭晓。角色寻找 63，候选区间随着比较从 16 缩至 8、4、1，展示算法如何改变下一步行动。
+
+![二分查找：揭晓中点值，排除不可能的一侧](demos/previews/binary-search.gif)
+
+[完整 MP4](demos/videos/binary-search.mp4) · [任务与规则卡](examples/binary-search.yaml) · [关键帧](demos/posters/binary-search-contact-sheet.jpg)
+
+### 03 · 四分之一圈
+
+角色乘坐 `×i` 载台，沿单位圆取物并回家。四次逆时针转动留下完整轨迹，最后得到 `i⁴ = 1`。
+
+![复数旋转：第二次乘以 i，到达对侧取物，再继续返回](demos/previews/complex-rotation.gif)
+
+[完整 MP4](demos/videos/complex-rotation.mp4) · [任务与规则卡](examples/complex-rotation.yaml) · [关键帧](demos/posters/complex-rotation-contact-sheet.jpg)
+
+## 这些示例验证什么
+
+| 示例 | 核心能力 | 必须保持的边界 |
+|---|---|---|
+| 反向才到达 | 符号操作、预备动作、接触、试错和复用 | 面板是下一次运行的速度设置，停车时不代表实际速度 |
+| 只留下一半 | 算法状态、候选范围、比较后的方向决策 | 门退场表示排除候选，不删除或重排原数组 |
+| 四分之一圈 | 参数化几何、空间路径、携带与闭环 | 中间旋转是展示插值，完成后才显示乘法结果 |
+
+三支样片共用骨架绘制、手部接触、绝对时间求帧和音效模块。它们是专门编写的参考实现；新增题材仍需要规则卡、分镜与场景代码，当前不支持把任意提示词或 YAML 直接变成视频。
+
+自动检查、关键帧及连续抽帧的检查范围见 [QA 记录](demos/QA.md)。这些早期样片尚未经过观众理解度测试，不能据此声称达到参考作品的表演或叙事水平。
 
 ## 核心方法
 
@@ -25,8 +61,6 @@ An instruction-first Agent Skill for turning concepts into stick-figure adventur
 
 ## 在 Codex 中安装
 
-将仓库克隆到用户技能目录：
-
 ```sh
 mkdir -p "$HOME/.agents/skills"
 git clone https://github.com/okeeper/stickman-motion-skill.git \
@@ -35,19 +69,39 @@ git clone https://github.com/okeeper/stickman-motion-skill.git \
 
 项目内使用时，也可以克隆到该项目的 `.agents/skills/stickman-motion-skill`。目录已存在时请更新已有安装，避免重复克隆。Codex 会发现技能变化；未显示时重启 Codex。路径及发现规则见 [OpenAI 官方技能文档](https://learn.chatgpt.com/docs/build-skills)。
 
-更新已有安装：
-
 ```sh
 git -C "$HOME/.agents/skills/stickman-motion-skill" pull --ff-only
 ```
 
-本项目安装步骤仅下载技能文件。具体制作时，代理按现有环境与任务需要选择动画、排版和音频工具。
+安装技能不需要渲染依赖。需要重新渲染示例时，按下面的命令配置环境。
 
-## 使用示例
+## 复现视频
+
+需要 Python 3.10+，以及 PATH 中的 `ffmpeg` 和 `ffprobe`。渲染不调用外部模型或网络，不需要 API key。
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements-render.txt
+python scripts/render_demo.py --scene all
+python scripts/render_demo.py --gifs-only
+python scripts/check_demo_media.py --report demos/media-check.json
+```
+
+只渲染一支：`python scripts/render_demo.py --scene complex-rotation`。文件输出到 `demos/videos/`，海报与关键帧输出到 `demos/posters/`。更多预览命令、场景结构与改编步骤见 [制作与复现](demos/README.md)。
+
+## 使用 Skill
 
 ```text
-使用 $stickman-motion-skill，把“负数乘法与方向反转”设计成一个 45 秒的
-无台词火柴人故事。面向初中生，先交付规则卡、故事节拍和动作分镜。
+使用 $stickman-motion-skill，把“负数乘法与方向反转”做成 36 秒的无台词
+火柴人故事。让角色先误判、再验证规则，最后通过同一规则完成目标。
+交付可播放视频、可编辑工程、规则卡和实际检查记录。
+```
+
+```text
+使用 $stickman-motion-skill，参考仓库的二分查找 demo，设计一个关于
+“栈的后进先出”的新故事。先确定角色目标、错误尝试和可见反馈，
+再实现一个完整的短片；不要只替换标题或把现成视频当作新产物。
 ```
 
 ```text
@@ -55,47 +109,38 @@ git -C "$HOME/.agents/skills/stickman-motion-skill" pull --ff-only
 镜头和节奏规则，区分实际观察与实现建议，并标出无法验证的部分。
 ```
 
-```text
-使用 $stickman-motion-skill，根据已经确定的分镜制作 15 秒交互原型。
-验证抓取、规则反馈和反应姿态，交付视频、可编辑工程及检查记录。
-```
-
-制作请求需要实际可用的渲染和音频能力。技能要求按任务完成制作，并如实报告实际产物与验证范围。
-
-## 文件结构
-
-```text
-SKILL.md                         技能指令入口
-references/concept-scene-spec.md  规则卡和场景规格
-references/production-guidance.md 表演、工程与验证方法
-examples/direction-reversal.yaml  原创方向反转故事规格
-docs/design-analysis.md           参考作品的设计分析
-scripts/validate.py               仓库结构、链接和示例校验
-.github/workflows/validate.yml    推送与 PR 自动校验
-```
-
-## 本地校验
-
-需要 Python 3.10 或更高版本：
+## 开发与检查
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements-dev.txt
 python scripts/validate.py
+python -m unittest discover -s tests -v
 ```
 
-校验不调用外部模型，不下载参考视频，也不执行渲染。
+文档与规则卡检查仅需要 `requirements-dev.txt`；动画、音频测试需要 `requirements-render.txt`。CI 自动执行结构检查与行为测试，不重复渲染所有成片。
 
-## 下一步
+```text
+SKILL.md                         技能入口
+references/                      规则卡、表演与制作指南
+examples/                        四份故事规格，含三支 demo 的输入任务
+demos/                           MP4、GIF、分镜与验证记录
+scripts/demo_engine/             人物、几何、场景状态与原创声音
+scripts/render_demo.py           确定性渲染与预览导出
+scripts/check_demo_media.py      实际成片解码与音轨检查
+tests/                           概念、接触、确定性和失败输入检查
+assets/fonts/                    字体与原始许可证
+```
 
-- [ ] 完成一个 10–20 秒的接触与规则反馈原型。
-- [ ] 用 30–60 秒原创故事验证完整因果回路。
-- [ ] 用第二个题材验证方法迁移，并记录问题时间戳。
-- [ ] 根据实测结果沉淀角色、符号和时间线的复用模块。
+## 后续方向
+
+- [x] 用三支原创短片验证符号操作、算法决策和空间变换。
+- [x] 提供可复现工程、原始任务、规则卡、关键帧和成片检查。
+- [x] 提炼可复用的人物、接触、时间线与声音模块。
+- [ ] 增加更丰富的身体表演、动作过渡与镜头尺度变化。
+- [ ] 增加非数学题材，并进行静音理解度测试。
+- [ ] 根据更多实测场景决定哪些参数值得形成稳定配置接口。
 
 ## 参考与许可
 
-设计研究参考 [Alan Becker 的《Animation vs. Math》](https://www.youtube.com/watch?v=B1J6Ou4q8vE)。本项目与原作者无隶属关系；研究重点是叙事与交互机制，新作品应重新设计主题、角色和场景。
+设计研究参考 [Alan Becker 的《Animation vs. Math》](https://www.youtube.com/watch?v=B1J6Ou4q8vE)。本项目与原作者无隶属关系；新示例为独立设计，没有分发原片画面、角色素材、截图或音轨。
 
-本仓库原创文档、规格与代码采用 [MIT License](LICENSE)。参考视频、角色素材、截图、音轨及第三方工具各自遵循其权利和许可证，未随仓库分发，也不在本项目许可范围内。
+原创文档、规格、代码和 demo 媒体采用 [MIT License](LICENSE)。字体保留独立许可证，见 [第三方说明](THIRD_PARTY_NOTICES.md)。

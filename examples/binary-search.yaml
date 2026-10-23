@@ -1,0 +1,42 @@
+# Story specification, not a generic renderer input.
+scene_id: binary-search
+intent: 从十六扇升序排列、值暂时隐藏的门中找到值为 63 的门
+concept: 有序且唯一的候选值可以通过中点比较不断缩小查找区间
+prompt: 使用 $stickman-motion-skill，做一个 36 秒无台词查找冒险。角色先随意尝试失败，再通过二分查找找到钥匙匹配的门；让比较和排除候选成为可见动作。
+duration_seconds: 36
+renderer_scene: binary-search
+values: [2, 5, 8, 12, 19, 24, 28, 31, 37, 42, 48, 55, 63, 70, 81, 96]
+target: 63
+assumptions:
+  - 门的值升序、唯一，目标保证存在；底部数字是固定索引，门面值需要查询后才揭晓
+  - 使用一基索引与向下取整中点；查询索引依次为 8、12、14、13
+  - 门退场表示候选排除，原数组没有被删除或重排
+  - 最初随意查询索引 3 不计入随后启动的二分查找
+objects:
+  - id: key
+    visual: 标明目标值 63 的钥匙
+  - id: doors
+    visual: 16 扇固定位置的门、隐藏值、底部索引
+  - id: candidate_range
+    visual: 随排除动作收缩的区间括号
+beats:
+  - intent: 随意尝试
+    action: 尝试第 3 扇门，揭晓值 8，与钥匙不匹配
+    operation: evaluate
+    result: 8 != 63
+  - intent: 查询当前中点
+    action: 第 8 扇门揭晓 31，排除索引 1 至 8
+    operation: evaluate
+    result: 31 < 63，候选索引为 9 至 16
+  - intent: 缩小区间
+    action: 第 12 扇门揭晓 55，排除索引 9 至 12
+    operation: evaluate
+    result: 55 < 63，候选索引为 13 至 16
+  - intent: 改变搜索方向
+    action: 第 14 扇门揭晓 70，排除索引 14 至 16
+    operation: evaluate
+    result: 70 > 63，仅剩索引 13
+  - intent: 取出目标
+    action: 第 13 扇门揭晓 63，打开门并取出星形物
+    operation: evaluate
+    result: 63 = 63，查找完成

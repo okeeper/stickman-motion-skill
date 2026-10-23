@@ -1,0 +1,17 @@
+{
+  "scene": "complex-rotation",
+  "duration": 36.0,
+  "fps": 30,
+  "frames": 1080,
+  "size": [
+    1280,
+    720
+  ],
+  "bytes": 1479180,
+  "audio": {
+    "sample_rate": 48000,
+    "channels": 2,
+    "peak_dbfs": -14.04
+  },
+  "render_seconds": 39.7
+}

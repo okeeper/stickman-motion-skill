@@ -1,0 +1,44 @@
+[
+  {
+    "file": "negative-ride.mp4",
+    "duration": 36.0,
+    "fps": 30.0,
+    "frames": 1080,
+    "video": "h264",
+    "pixel_format": "yuv420p",
+    "audio": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "decoded_peak_dbfs": -14.39,
+    "bytes": 1251850,
+    "decode": "pass"
+  },
+  {
+    "file": "binary-search.mp4",
+    "duration": 36.0,
+    "fps": 30.0,
+    "frames": 1080,
+    "video": "h264",
+    "pixel_format": "yuv420p",
+    "audio": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "decoded_peak_dbfs": -14.73,
+    "bytes": 1317296,
+    "decode": "pass"
+  },
+  {
+    "file": "complex-rotation.mp4",
+    "duration": 36.0,
+    "fps": 30.0,
+    "frames": 1080,
+    "video": "h264",
+    "pixel_format": "yuv420p",
+    "audio": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "decoded_peak_dbfs": -14.04,
+    "bytes": 1479180,
+    "decode": "pass"
+  }
+]

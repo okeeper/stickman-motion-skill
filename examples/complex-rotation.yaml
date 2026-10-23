@@ -1,0 +1,37 @@
+# Story specification, not a generic renderer input.
+scene_id: complex-rotation
+intent: 从 1 出发，取回复平面对侧的目标并送回起点
+concept: 复数乘以 i 使其辐角逆时针增加 90 度，模长不变
+prompt: 使用 $stickman-motion-skill，制作 36 秒无台词火柴人短片。角色通过操作 ×i 载台，沿单位圆探索、取物并回家；四次操作自然揭示 i 的四次方等于 1。
+duration_seconds: 36
+renderer_scene: complex-rotation
+assumptions:
+  - 采用通常的复平面，实轴向右、虚轴向上；i 的平方等于 -1
+  - 载台中心的复数初值为 1，四次离散乘法依次得到 i、-1、-i、1
+  - 旋转中的角度是展示插值；结果等式只在到达后显示
+  - 角色身体保持直立，其身体姿态不是被乘的复数
+objects:
+  - id: point
+    visual: 位于单位圆上的可乘坐载台及 ×i 按钮
+  - id: unit_circle
+    visual: 复平面、单位圆、逐步留下的轨迹
+  - id: star
+    visual: 对侧目标与起点收纳台
+beats:
+  - intent: 接近对侧目标
+    action: 观察按钮并触碰，载台从 1 转到 i
+    operation: evaluate
+    equation: 1 × i = i
+  - intent: 到达并取物
+    action: 再次操作，转到 -1，伸手拿取星形物
+    operation: evaluate
+    equation: i × i = -1
+  - intent: 带物返回
+    action: 复用规则继续转到 -i
+    operation: evaluate
+    equation: (-1) × i = -i
+  - intent: 完成闭环
+    action: 第四次操作回到 1，跳下并放好目标
+    operation: evaluate
+    equation: (-i) × i = 1
+    result: 四次操作留下完整圆轨迹，与 i⁴ = 1 对应
