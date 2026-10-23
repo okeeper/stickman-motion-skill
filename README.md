@@ -2,11 +2,19 @@
 
 **让知识成为角色可以操作的世界规则。**
 
-面向 Codex 等支持 Agent Skills 的工具，用火柴人的操作、试错与发现，将数学、物理或算法概念组织成动作冒险动画。
+面向 Codex 等支持 Agent Skills 的工具，以有动机、有判断力的火柴人为主角，通过选择、动作与世界反馈，将数学、物理或算法概念组织成动作冒险动画。
 
-An Agent Skill for turning concepts into stick-figure adventures, with three concept films and an interactive TypeScript lab for weight, anticipation, gravity and landing.
+An Agent Skill for cinematic, wordless stick-figure adventures, with three concept films and an interactive TypeScript lab for weight, anticipation, gravity and landing.
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
+
+## 新增：像电影主角一样行动
+
+0.4.0 更新剧本与表演方法：主角有具体动机、判断力和身体边界；情节由选择、条件变化及后果推进。通过头部定向、肩髋关系、重心、接触和停顿表达心理，重点动作有清楚的目的、路线与代价。
+
+[电影式主角与因果剧本](references/cinematic-storytelling.md) · [《折返》90 秒完整例稿](examples/return-crossing.md) · [表演与制作](references/production-guidance.md)
+
+《折返》讲两名检修员借单人吊架撤离：主角先送腿伤同伴过岸，平台继续断裂后，必须按受伤后的身体条件改变登架方式。它包含完整场景稿、空间和设备规则、关键选择依据及待验证项；**目前是文字例稿，尚无对应分镜或成片**。现有三支概念片保留原有规格，主要验证机制和工具链，尚未按这套剧本方法重拍。
 
 ## 新增：重量与弹性动作研究
 
@@ -67,10 +75,11 @@ npm --prefix web run dev
 
 ## 核心方法
 
-角色目标 → 操作对象 → 规则反馈 → 意外或误判 → 理解 → 主动复用。
+角色处境与动机 → 观察和选择 → 行动与世界反馈 → 条件变化或新的发现 → 调整 → 回收与余波。具体结构按题材选择，不强制角色先误操作再学习。
 
 - **概念机制**：把知识写成可操作的规则，并说明前提和隐喻边界。
-- **动作表演**：通过姿态、接触、发力和反应表达角色心理。
+- **人物与剧本**：关键选择符合已知信息、性格和能力，失败有原因，高潮有铺垫。
+- **动作表演**：通过注意、重心、接触、发力和反应表达心理；帅感来自动作目的、时机与控制。
 - **符号与空间**：区分表达式编辑、求值、等价变形和空间隐喻。
 - **制作与验收**：用统一时间线组织画面与声音，同时核验因果、数学与可读性。
 
@@ -132,6 +141,13 @@ python scripts/motion.py verify output/delivery
 ## 使用 Skill
 
 ```text
+使用 $stickman-motion-skill，先写一个 90 秒无台词动作剧本：两个人要穿过
+一处正在失稳的空间，主角有身手，也会谨慎判断、保护同伴和承担代价。
+让重点动作服务于脱困，用身体行为表达心理。交付完整场景、关键选择
+依据和动作路线；此轮只写剧本，不把文字例稿当成已经制作的视频。
+```
+
+```text
 使用 $stickman-motion-skill，把“负数乘法与方向反转”做成 36 秒的无台词
 火柴人故事。让角色先误判、再验证规则，最后通过同一规则完成目标。
 交付可播放视频、可编辑工程、规则卡和实际检查记录。
@@ -184,6 +200,8 @@ assets/fonts/                    字体与原始许可证
 - [x] 提供可复现工程、原始任务、规则卡、关键帧和成片检查。
 - [x] 提炼可复用的人物、接触、时间线与声音模块。
 - [x] 增加重量、蓄力、重力轨迹与弹性落地的 TS 动作研究及浏览器调参。
+- [x] 更新电影式主角、合理决策与无表情表演方法，完成《折返》文字例稿。
+- [ ] 用动态分镜和实际影片验证新剧本的判断、肢体可读性和动作节奏。
 - [ ] 把新的重量模型扩展到概念故事中的搬运、失衡、翻滚与多处支撑。
 - [ ] 增加更丰富的身体表演、动作过渡与镜头尺度变化。
 - [ ] 增加非数学题材，并进行静音理解度测试。

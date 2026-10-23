@@ -1,5 +1,7 @@
 # 《Animation vs. Math》设计分析与 Skill 方案
 
+本文保留首轮原片观察与技能方案。现行剧本方法见 [电影式主角与因果剧本](../references/cinematic-storytelling.md)：角色依据信息作选择，不把“误判—学习”规定为每个故事的必经结构。原片观察、初期实现建议和目前已验证的工程分别看待。
+
 我的核心判断：这类视频可以抽象为“规则驱动的火柴人知识冒险”。知识决定世界如何响应，角色通过操作和试错认识规则，后来又用规则改变自己的处境。要稳定制作这种作品，需要把概念设计、角色表演和视觉因果做成工作方法。
 
 参考：[Alan Becker — Animation vs. Math](https://www.youtube.com/watch?v=B1J6Ou4q8vE)。原视频元数据显示发布时间为 2023-06-24、时长约 14:02；说明署名编剧 Terkoiz、多位动画师、声音设计 Egor、音乐 Scott Buckley。这也提示了作品的投入重点：极简造型背后是多种专门工作。
@@ -130,4 +132,4 @@
 
 ## 项目状态
 
-技能入口见 [SKILL.md](../SKILL.md)，规则规格见 [概念与场景规格](../references/concept-scene-spec.md)，制作方法见 [表演与制作](../references/production-guidance.md)。本分析是设计依据；专用引擎、样片和成片质量验证仍待实现。
+技能入口见 [SKILL.md](../SKILL.md)，规则规格见 [概念与场景规格](../references/concept-scene-spec.md)，制作方法见 [表演与制作](../references/production-guidance.md)。目前已有三支 Python 概念片及独立的 TS 重量动作研究，实际检查范围见 [概念片 QA](../demos/QA.md) 和 [动作研究 QA](../demos/weight/QA.md)。0.4.0 的 [《折返》](../examples/return-crossing.md) 仅完成剧本文字与自审，不能将既有片段的技术检查当作新故事的动作或叙事验证。
