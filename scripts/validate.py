@@ -53,6 +53,10 @@ def validate(root: Path) -> list[str]:
     markdown = sorted(root.glob("*.md"))
     for directory in ("references", "docs", "examples", "demos"):
         markdown.extend(sorted((root / directory).rglob("*.md")))
+    # Check authored Web docs without traversing dependencies or generated output.
+    for relative in ("web/README.md", "web/assets/fonts/README.md"):
+        if (root / relative).is_file():
+            markdown.append(root / relative)
     for path in markdown:
         for match in re.finditer(r"!?\[[^\]\n]*\]\(([^\s)]+)(?:\s+[^)]*)?\)", read(path)):
             target = match.group(1).strip("<>")

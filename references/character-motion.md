@@ -1,5 +1,7 @@
 # 柔和关节与连续表演
 
+本文描述 0.2.1 的 Python 概念片引擎。它处理轮廓、姿态过渡和接触，但没有建立完整的跳跃动力学。需要真实重量、蓄力和着地冲击时使用新增的 [重量与弹性模型](weighted-motion.md)，不要把“曲线更柔和”等同于“动作更真实”。
+
 当前骨架的实现入口是 [drawing.py](../scripts/demo_engine/drawing.py)，动作编排在 [performance.py](../scripts/demo_engine/performance.py)。`motion.py init` 会把这两个模块连同其余引擎复制到独立工程。三支样片共享这套实现；不需要按题材重写人物。
 
 ## 轮廓与骨架

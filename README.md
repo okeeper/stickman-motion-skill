@@ -4,11 +4,28 @@
 
 面向 Codex 等支持 Agent Skills 的工具，用火柴人的操作、试错与发现，将数学、物理或算法概念组织成动作冒险动画。
 
-An Agent Skill for turning concepts into stick-figure adventures through interaction, experimentation, and discovery — with three runnable, original demo films.
+An Agent Skill for turning concepts into stick-figure adventures, with three concept films and an interactive TypeScript lab for weight, anticipation, gravity and landing.
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
-## 先看三个 Demo
+## 新增：重量与弹性动作研究
+
+0.3.0 增加 **TypeScript + Canvas 网页动作引擎**。角色先下蹲蓄力，蹬地做功决定起跳速度；腾空使用重力轨迹，落地保留下落动量，通过压缩、回弹和阻尼恢复。固定骨长与脚尖支撑配合躯干、头和摆臂的跟随。
+
+![蓄力大跳：预备、蹬地、腾空、吸震与回弹](demos/weight/heroic-preview.gif)
+
+[15.583 秒 / 60 fps 完整对照视频](demos/weight/weight-study.mp4) · [网页工程与启动命令](web/README.md) · [原片动作研究](docs/weight-motion-study.md) · [模型与复用接口](references/weighted-motion.md) · [实际检查记录](demos/weight/QA.md)
+
+三个预设比较自然跳跃、蓄力大跳和同样发力下更重的身体。网页可实时调参、慢放、拖帧与显示受力；同一套绘制函数导出视频，附参数和文件指纹。只启动预览需要 Node.js 22.12+：
+
+```sh
+npm --prefix web ci
+npm --prefix web run dev
+```
+
+这是有效质量驱动、结合关节表演的动画模型，尚非完整人体物理模拟。下面三支概念故事仍使用 Python 引擎，本轮未迁移其全部镜头，也不把新模型的验证结论套到旧片上。
+
+## 三支概念故事 Demo
 
 每支 **36 秒，1280×720，30 fps，无台词，含原创合成音乐与音效**。下面是 12 秒无声 GIF 摘录，完整 MP4 包含开端、试探和结果。
 
@@ -136,12 +153,18 @@ python scripts/motion.py verify output/delivery
 ```sh
 python scripts/validate.py
 python -m unittest discover -s tests -v
+npm --prefix web ci
+npm --prefix web run build
+npm --prefix web test
+# 浏览器检查另需安装 Chromium：cd web && npx playwright install chromium
+npm --prefix web run test:browser
 ```
 
-文档与规则卡检查仅需要 `requirements-dev.txt`；动画、音频测试需要 `requirements-render.txt`。CI 自动执行结构检查、行为测试与真实 FFmpeg 剪辑/独立工程回归，不重复渲染三支完整样片。
+文档与规则卡检查仅需要 `requirements-dev.txt`；Python 动画、音频测试需要 `requirements-render.txt`。CI 执行结构检查、Python 行为和真实 FFmpeg 回归，以及 TS 构建、物理和浏览器交互检查，不重复渲染三支完整概念片。
 
 ```text
 SKILL.md                         技能入口
+web/                             TS 重量模型、交互预览与视频导出
 references/                      规则卡、表演与制作指南
 examples/                        四份故事规格，含三支 demo 的输入任务
 demos/                           MP4、GIF、分镜与验证记录
@@ -160,6 +183,8 @@ assets/fonts/                    字体与原始许可证
 - [x] 用三支原创短片验证符号操作、算法决策和空间变换。
 - [x] 提供可复现工程、原始任务、规则卡、关键帧和成片检查。
 - [x] 提炼可复用的人物、接触、时间线与声音模块。
+- [x] 增加重量、蓄力、重力轨迹与弹性落地的 TS 动作研究及浏览器调参。
+- [ ] 把新的重量模型扩展到概念故事中的搬运、失衡、翻滚与多处支撑。
 - [ ] 增加更丰富的身体表演、动作过渡与镜头尺度变化。
 - [ ] 增加非数学题材，并进行静音理解度测试。
 - [ ] 根据更多实测场景决定哪些参数值得形成稳定配置接口。

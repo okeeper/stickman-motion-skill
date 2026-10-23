@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "noEmit": false, "outDir": ".test-build" },
+  "include": ["src/math.ts", "src/physics.ts", "src/rig.ts"]
+}

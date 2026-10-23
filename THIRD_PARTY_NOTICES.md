@@ -13,3 +13,12 @@
 ## huashu-art-motion
 
 通用工具中的流式文件指纹函数改编自 huashu-art-motion 的 deliver.py，采用 MIT 许可；原始版权及许可保存在 [许可证](licenses/huashu-art-motion-MIT.txt)，固定版本、直接复用范围和结构借鉴见 [复用记录](docs/upstream-reuse.md)。未引入其风格、角色或示范媒体。
+
+## Noto Sans SC
+
+- 文件：[motion-sans.ttf](web/assets/fonts/motion-sans.ttf)，网页与 Canvas 使用的字符子集。
+- 来源：Google Fonts CSS API 返回的 Noto Sans SC 字符子集；见 [字体来源说明](web/assets/fonts/README.md)。
+- 许可：[SIL Open Font License 1.1](web/assets/fonts/OFL.txt)，字体不重新授予 MIT 许可。Motion Sans 是 CSS 中的本地引用别名。
+- 未从 anything2explainer 复制字体；其仓库的工程研究范围及非商业许可边界见 [复用记录](docs/upstream-reuse.md)。
+
+`web/package-lock.json` 固定开发依赖版本，各 npm 包保留其自身许可证；本项目不把依赖重新授予 MIT 许可。新动作视频的图形、代码与合成音效由本项目制作。

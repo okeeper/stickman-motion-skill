@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "file": "weight-study.mp4",
+  "sha256": "1b5e8c2dec786e7a6a277ec19244c212ace4f3272fb7e38d40775dd1eb8ecbdd",
+  "bytes": 614749,
+  "duration": 15.583333,
+  "width": 1280,
+  "height": 720,
+  "fps": 60.0,
+  "frames": 935,
+  "video_codec": "h264",
+  "pixel_format": "yuv420p",
+  "audio": {
+    "analysis_sample_rate": 48000,
+    "analysis_channels": 2,
+    "source_sample_rate": 48000,
+    "source_channels": 2,
+    "decoded_duration": 15.594667,
+    "decoded_samples_per_channel": 748544,
+    "peak_dbfs": -16.69,
+    "rms_dbfs": -45.826
+  },
+  "decode": "pass",
+  "sample_times": [
+    0.6493,
+    1.9479,
+    3.2465,
+    4.5451,
+    5.8437,
+    7.1424,
+    8.441,
+    9.7396,
+    11.0382,
+    12.3368,
+    13.6354,
+    14.934
+  ],
+  "sampled_changed_fraction_mean": 0.019301,
+  "warnings": [],
+  "human_review": "not_recorded"
+}

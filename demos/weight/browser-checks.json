@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "self-hosted Chinese font loaded; no external runtime requests",
+    "preset, pause, scrub, debug, speed and restart controls operate",
+    "parameter edits rebuild; impossible launch reports an error and preserves last valid motion",
+    "pixel-identical random seeking; bad API inputs rejected; all presets fit the frame",
+    "mobile layout has no horizontal overflow; interactive playback resumes after frame export",
+    "invalid render CLI arguments fail without overwriting output"
+  ]
+}
