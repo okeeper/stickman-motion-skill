@@ -1,0 +1,14 @@
+# Local research material and the superseded design snapshot
+/analysis/
+/skill-design/
+
+# Generated video projects and local environments
+/output/
+/renders/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example

@@ -1,0 +1,35 @@
+# Story specification example; not a renderer input.
+scene_id: reverse_vector
+intent: 调整运输滑块方向，使其送到左侧平台
+concept: 有向量乘以负一会反向；连续两次反向恢复原向
+assumptions:
+  - 一维数轴，右为正，左为负
+  - 箭头代表本次位移，不代表物体此刻的位置
+  - 装置仅在启动时执行已经设置好的位移
+objects:
+  - id: displacement
+    value: 3
+    visual: 具有尾端锚点、箭头、数值和单位的有向线段
+  - id: inverter
+    visual: 标有乘以负一的可操作开关
+beats:
+  - intent: 尝试送往左侧
+    action: 未反向就启动装置
+    result: 滑块向右移动，角色发现目的地不对
+  - intent: 改变方向
+    action: 抓住开关并触发一次
+    operation: evaluate
+    before: 3
+    after: -3
+    equation: 3 × (-1) = -3
+    feedback: 保持原点和长度，箭头反向；角色跟随箭头转头
+  - intent: 再验证一次
+    action: 第二次触发
+    operation: evaluate
+    before: -3
+    after: 3
+    equation: (-3) × (-1) = 3
+    feedback: 方向恢复；角色停顿、回看两次操作的结果
+  - intent: 完成运输
+    action: 主动设置向左，再启动装置
+    result: 同一规则解决最初目标
