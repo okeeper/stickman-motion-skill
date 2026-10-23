@@ -50,7 +50,8 @@ python scripts/check_demo_media.py --report demos/media-check.json
 
 ## 工程分工
 
-- [drawing.py](../scripts/demo_engine/drawing.py)：几何绘制、字体、人物骨架、步态和伸手动作。超出手臂长度的目标会被截在可达范围内，接触测试用于发现这种失配。
+- [drawing.py](../scripts/demo_engine/drawing.py)：几何绘制、字体、曲线骨架、姿态混合和手部约束。超出手臂长度的目标会被截在可达范围内，接触测试用于发现这种失配。
+- [performance.py](../scripts/demo_engine/performance.py)：世界坐标的脚步落点、动作权重、预备与缓冲、取物交接，以及三条人物表演时间线；接口说明见 [连续表演](../references/character-motion.md)。
 - [scenes.py](../scripts/demo_engine/scenes.py)：三份独立故事状态、关键时刻、道具及公式。使用绝对时间求状态，允许任意时刻直接取帧。
 - [audio.py](../scripts/demo_engine/audio.py)：程序合成乐句、点击、反向、移动与完成音效，事件时间来自场景。
 - [render_demo.py](../scripts/render_demo.py)：逐帧绘制、FFmpeg 编码、原子替换输出和静态/GIF 预览。

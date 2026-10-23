@@ -10,7 +10,7 @@
     "sample_rate": 48000,
     "channels": 2,
     "decoded_peak_dbfs": -14.39,
-    "bytes": 1251850,
+    "bytes": 1307715,
     "decode": "pass"
   },
   {
@@ -24,7 +24,7 @@
     "sample_rate": 48000,
     "channels": 2,
     "decoded_peak_dbfs": -14.73,
-    "bytes": 1317296,
+    "bytes": 1355557,
     "decode": "pass"
   },
   {
@@ -38,7 +38,7 @@
     "sample_rate": 48000,
     "channels": 2,
     "decoded_peak_dbfs": -14.04,
-    "bytes": 1479180,
+    "bytes": 1555864,
     "decode": "pass"
   }
 ]

@@ -13,23 +13,23 @@
       "source": "negative-ride.mp4",
       "frames": 360,
       "cache_hit": true,
-      "cache_key": "0ec3539b0265317a4215ca55135226e09dcf790a247a40d5dc6e43a5d60a9c34"
+      "cache_key": "4878e9388273004beb8cda41bd5559a3d334217e7865ebc1cc2b2f7f1cda88d4"
     },
     {
       "source": "binary-search.mp4",
       "frames": 300,
       "cache_hit": true,
-      "cache_key": "49cdd173d88b77381321649d187e71d4a50524990d4f7012df07a0524f57edf4"
+      "cache_key": "22ece410ede216c0078c61710fa61eaf8d86d38925cd211be8ad6ca01909e4c5"
     },
     {
       "source": "complex-rotation.mp4",
       "frames": 440,
       "cache_hit": true,
-      "cache_key": "450b28c0d7a3fefb3aae417ecbf2effc93ad8dd3f300048d1a553254ad1a678c"
+      "cache_key": "54c083b0ff2a3fc1cdca3c40e248bd7428bae7effefa41cc675d23371cd57a58"
     }
   ],
   "transition_frames": 12,
   "audio_tracks": 1,
   "subtitles": "edit-showcase.srt",
-  "output_sha256": "5c1d1089d0c9245dce1289b02340c2132ea966b771c4b80bc9b8c298718d1b73"
+  "output_sha256": "acf7a1cd7d1574c7344c4cb0def90827600c72d0780722b7bdaee893d0a751f2"
 }

@@ -9,15 +9,15 @@ from .drawing import (
     RED,
     WHITE,
     Canvas,
-    actor,
     clamp,
     lerp,
     mix,
     polar,
-    press_target,
     progress,
     title,
 )
+
+from .performance import negative_actor, binary_actor, complex_actor
 
 DURATION = 36.0
 SCENES = ("negative-ride", "binary-search", "complex-rotation")
@@ -173,7 +173,7 @@ def negative(c, t):
     c.line([(155, 585), (155, 620)], MUTED, 2)
     c.circle(155, 581, 7, outline=MINT)
     if t < 30.1:
-        c.star(155, 550 + 2 * math.sin(t * 2), 18)
+        c.star(155, 550, 18)
     cart(c, cx, t, s)
     eq = ""
     if 4.8 < t < 9.0:
@@ -188,101 +188,7 @@ def negative(c, t):
         eq = "←  −3"
     if eq:
         c.text((640, 220), eq, 46, MINT if t > 20 else WHITE)
-    x = 480.0
-    y = 620.0
-    f = -1
-    moving = False
-    walk = 0.0
-    pose = "idle"
-    lean = 0.0
-    cr = 0.0
-    if t < 2:
-        x = 466
-        lean = -0.5 * math.sin(math.pi * clamp(t / 2))
-    elif t < 4:
-        p = progress(t, 2, 4)
-        x = lerp(466, 510, p)
-        f = 1
-        moving = True
-        walk = x - 466
-    elif t < 5.6:
-        x = 510
-        f = 1
-    elif t < 8.7:
-        x = lerp(510, 870, progress(t, 5.6, 8.7))
-        f = 1
-        moving = True
-        walk = x - 510
-        lean = 0.7
-    elif t < 10:
-        x = 870
-        f = 1
-        pose = "recoil"
-        lean = -0.35
-    elif t < 21.3:
-        x = 870
-        f = 1
-        pose = "think" if (12 < t < 14.4 or 17 < t < 19.3) else "idle"
-        lean = 0.15
-    elif t < 22.3:
-        p = progress(t, 21.3, 22.3)
-        x = lerp(870, 965, p)
-        y = lerp(620, 561, p) - 75 * math.sin(math.pi * p)
-        pose = "jump"
-        f = 1
-    elif t < 29.1:
-        x = cx + 5
-        y = 561
-        f = -1
-        pose = "ride"
-        cr = 0.9 if t < 23.2 else 0.25
-        lean = 0.2 if s["running"] else 0
-    elif t < 30.1:
-        p = progress(t, 29.1, 30.1)
-        x = lerp(233, 166, p)
-        y = lerp(561, 620, p) - 55 * math.sin(math.pi * p)
-        f = -1
-        pose = "jump"
-    else:
-        x = 166
-        f = -1
-        pose = "celebrate" if t > 31.2 else "idle"
-        y = 620 - 9 * abs(math.sin((t - 31.2) * 4)) if 31.2 < t < 33 else 620
-    right = None
-    left = None
-    for at, target in [
-        (4.4, (cx - 30, 551)),
-        *[(at, (cx - 30, 510)) for at in FLIPS],
-        (22.55, (cx - 30, 551)),
-    ]:
-        target_hand = press_target(t, at, (x + f * 25, y - 58 + cr * 20), target)
-        if target_hand is not None:
-            right = target_hand
-    if 29.75 <= t < 30.1:
-        left = tuple(
-            lerp(a, b, progress(t, 29.75, 30.1))
-            for a, b in zip((x - 18, y - 62), (155, 550))
-        )
-    if 30.1 <= t < 31.1:
-        left = tuple(
-            lerp(a, b, progress(t, 30.1, 31.1))
-            for a, b in zip((155, 550), (x - 31, y - 94))
-        )
-    rig = actor(
-        c,
-        x,
-        y,
-        t,
-        facing=f,
-        moving=moving,
-        walk=walk,
-        pose=pose,
-        lean=lean,
-        crouch=cr,
-        right=right,
-        left=left,
-        carry=t >= 30.1,
-    )
+    rig = negative_actor(c, t, cx, FLIPS)
     c.sparks(155, 550, t, 30.1)
     if 1 < t < 1.8:
         c.text((455, 443), "?", 31, AMBER)
@@ -293,7 +199,7 @@ def negative(c, t):
         if abs(t - at) < 0.045:
             goal = (cx - 30, 510 if kind == "flip" else 551)
             contacts.append(math.dist(rig["right"], goal))
-    return {"state": s, "contacts": contacts, "actor_head": rig["head"]}
+    return {"state": s, "contacts": contacts, "actor_head": rig["head"], "rig": rig}
 
 
 def door_x(n):
@@ -396,75 +302,9 @@ def binary(c, t):
             comparison = f"{step['value']} {step['relation']} {TARGET}"
     if comparison:
         c.text((685, 213), comparison, 56, MINT if t >= 28.5 else WHITE)
-    if t < 7.5:
-        x = lerp(125, door_x(3) - 48, progress(t, 0.3, 2.6))
-        f = 1
-        moving = t < 2.6
-        walk = x - 125
-        pose = "think" if 5.4 < t < 7.5 else "idle"
-        lean = 0.2 if 3.5 < t < 4.2 else 0
-        if 4.2 < t < 5.4:
-            pose = "recoil"
-            lean = -0.4
-    else:
-        x = door_x(3) - 48
-        f = 1
-        moving = False
-        walk = 0
-        pose = "idle"
-        lean = 0
-        moves = [
-            (7.5, 10.5, 3, 8),
-            (15, 17, 8, 12),
-            (21, 22.5, 12, 14),
-            (26.5, 27.5, 14, 13),
-        ]
-        for a, b, old, new in moves:
-            if t >= a:
-                p = progress(t, a, b)
-                x = lerp(door_x(old) - 48, door_x(new) - 48, p)
-                moving = t < b
-                f = 1 if new > old else -1
-                walk = abs(x - (door_x(old) - 48))
-        if not moving:
-            f = 1
-    y = 620
-    if t > 31:
-        x = lerp(door_x(13) - 48, door_x(13), progress(t, 31, 32.0))
-        f = 1
-        pose = "celebrate" if t > 32 else "idle"
-        y = 620 - 12 * abs(math.sin((t - 32) * 4)) if 32 < t < 33.5 else 620
-    right = None
+    rig = binary_actor(c, t, door_x)
     for at, n in [(4.1, 3), (11.5, 8), (18, 12), (23.5, 14), (28.5, 13)]:
-        target = press_target(t, at, (x + 25, y - 58), (door_x(n) + 12, 533))
-        if target is not None:
-            right = target
         c.ring(door_x(n), 467, t, at, RED if n == 3 else MINT)
-    left = None
-    if 30.1 <= t < 31:
-        left = tuple(
-            lerp(a, b, progress(t, 30.1, 30.8))
-            for a, b in zip((x - 18, y - 62), (door_x(13), 533))
-        )
-    elif 31 <= t < 32:
-        left = tuple(
-            lerp(a, b, progress(t, 31, 32))
-            for a, b in zip((door_x(13), 533), (x - 31, y - 94))
-        )
-    rig = actor(
-        c,
-        x,
-        y,
-        t,
-        facing=f,
-        moving=moving,
-        walk=walk,
-        pose=pose,
-        lean=lean,
-        right=right,
-        left=left,
-        carry=t >= 31,
-    )
     if t < 29:
         key(c, rig["right"][0] - 24, rig["right"][1], TARGET, s=0.36)
     c.sparks(door_x(13), 533, t, 31)
@@ -472,7 +312,12 @@ def binary(c, t):
     for at, n in [(4.1, 3), (11.5, 8), (18, 12), (23.5, 14), (28.5, 13)]:
         if abs(t - at) < 0.045:
             contacts.append(math.dist(rig["right"], (door_x(n) + 12, 533)))
-    return {"active": active, "contacts": contacts, "actor_head": rig["head"]}
+    return {
+        "active": active,
+        "contacts": contacts,
+        "actor_head": rig["head"],
+        "rig": rig,
+    }
 
 
 def complex_rotation(c, t):
@@ -533,66 +378,14 @@ def complex_rotation(c, t):
         tail = polar(640, 450, 232, a - 0.08)
         tip = polar(640, 450, 232, a)
         c.arrow(tail, tip, MINT, 2, 8)
-    x, y = px, py
-    pose = "ride" if s["moving"] else "idle"
-    f = 1
-    lean = 0.12 if s["moving"] else 0
-    if t < 2.5:
-        pose = "idle"
-        lean = -0.55 * math.sin(math.pi * t / 2.5)
-    elif t < 4.3:
-        pose = "think"
-    if 14.2 < t < 16.2:
-        f = -1
-    if 28.8 < t < 30.1:
-        p = progress(t, 28.8, 30.1)
-        x = lerp(850, 950, p)
-        y = 450 - 65 * math.sin(math.pi * p)
-        pose = "jump"
-    elif t >= 30.1:
-        x = 950
-        y = 450
-        pose = "celebrate" if t > 32 else "idle"
-    right = None
-    left = None
-    for at in at_press:
-        p = press_target(t, at, (x + 25, y - 58), (px + 48, py - 70))
-        if p is not None:
-            right = p
-    if 14.4 <= t < 15.2:
-        left = tuple(
-            lerp(a, b, progress(t, 14.4, 15.0))
-            for a, b in zip((x + 18, y - 62), (385, 350))
-        )
-    if 15.2 <= t < 16.2:
-        left = tuple(
-            lerp(a, b, progress(t, 15.2, 16.2))
-            for a, b in zip((385, 350), (x - 31, y - 94))
-        )
-    if 30.2 <= t < 31.1:
-        left = tuple(
-            lerp(a, b, progress(t, 30.2, 31.1))
-            for a, b in zip((x - 31, y - 94), (1000, 395))
-        )
-    rig = actor(
-        c,
-        x,
-        y,
-        t,
-        facing=f,
-        pose=pose,
-        lean=lean,
-        right=right,
-        left=left,
-        carry=15.2 <= t < 31.1,
-    )
+    rig = complex_actor(c, t, (px, py), TURNS)
     c.sparks(385, 350, t, 15.2)
     c.sparks(1000, 395, t, 31.1)
     contacts = []
     for at in at_press:
         if abs(t - at) < 0.045:
             contacts.append(math.dist(rig["right"], (px + 48, py - 70)))
-    return {"state": s, "contacts": contacts, "actor_head": rig["head"]}
+    return {"state": s, "contacts": contacts, "actor_head": rig["head"], "rig": rig}
 
 
 def render_frame(scene, t, scale=1.5):

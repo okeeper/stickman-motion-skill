@@ -1,8 +1,8 @@
 {
   "version": 1,
   "file": "edited-showcase.mp4",
-  "sha256": "5c1d1089d0c9245dce1289b02340c2132ea966b771c4b80bc9b8c298718d1b73",
-  "bytes": 1680324,
+  "sha256": "acf7a1cd7d1574c7344c4cb0def90827600c72d0780722b7bdaee893d0a751f2",
+  "bytes": 1711855,
   "duration": 35.866667,
   "width": 1280,
   "height": 720,
@@ -35,7 +35,7 @@
     31.3833,
     34.3722
   ],
-  "sampled_changed_fraction_mean": 0.046547,
+  "sampled_changed_fraction_mean": 0.045896,
   "warnings": [],
   "human_review": "not_recorded"
 }

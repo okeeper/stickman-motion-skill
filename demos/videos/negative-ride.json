@@ -7,11 +7,11 @@
     1280,
     720
   ],
-  "bytes": 1251850,
+  "bytes": 1307715,
   "audio": {
     "sample_rate": 48000,
     "channels": 2,
     "peak_dbfs": -14.39
   },
-  "render_seconds": 58.9
+  "render_seconds": 34.7
 }
