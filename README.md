@@ -90,6 +90,28 @@ python scripts/check_demo_media.py --report demos/media-check.json
 
 只渲染一支：`python scripts/render_demo.py --scene complex-rotation`。文件输出到 `demos/videos/`，海报与关键帧输出到 `demos/posters/`。更多预览命令、场景结构与改编步骤见 [制作与复现](demos/README.md)。
 
+## 可复用制作与剪辑工具
+
+新增统一 CLI，将工程初始化、局部渲染、剪辑、检查与交付串起来：
+
+```sh
+python scripts/motion.py doctor
+python scripts/motion.py init output/my-film --demo complex-rotation
+python output/my-film/scripts/motion.py render output/my-film/project.json \
+  --profile preview --start 10 --end 14 --out output/my-film/renders/preview.mp4
+python scripts/motion.py edit examples/edit-showcase.json --plan
+python scripts/motion.py edit examples/edit-showcase.json
+python scripts/motion.py inspect demos/tooling/edited-showcase.mp4 --out output/review
+python scripts/motion.py deliver demos/tooling/edited-showcase.mp4 --out output/delivery
+python scripts/motion.py verify output/delivery
+```
+
+支持裁切、变速且保持音高、统一画幅和帧率、硬切/淡化、原声增益、多音轨混音与 SRT 软字幕。按内容指纹复用未改片段，编码成功后原子替换成片；新工程复制所需工具与字体，可以独立运行。
+
+[完整工具说明](references/tooling.md) · [剪辑示例](examples/edit-showcase.json) · [剪辑成片与实测记录](demos/tooling/README.md) · [更新记录](CHANGELOG.md)
+
+工程分层、联系表与交付记录参考了 huashu-art-motion；直接复用范围与许可见 [复用记录](docs/upstream-reuse.md)。视觉设计继续使用本项目自己的火柴人和概念交互方式。
+
 ## 使用 Skill
 
 ```text
@@ -116,7 +138,7 @@ python scripts/validate.py
 python -m unittest discover -s tests -v
 ```
 
-文档与规则卡检查仅需要 `requirements-dev.txt`；动画、音频测试需要 `requirements-render.txt`。CI 自动执行结构检查与行为测试，不重复渲染所有成片。
+文档与规则卡检查仅需要 `requirements-dev.txt`；动画、音频测试需要 `requirements-render.txt`。CI 自动执行结构检查、行为测试与真实 FFmpeg 剪辑/独立工程回归，不重复渲染三支完整样片。
 
 ```text
 SKILL.md                         技能入口
@@ -125,7 +147,10 @@ examples/                        四份故事规格，含三支 demo 的输入�
 demos/                           MP4、GIF、分镜与验证记录
 scripts/demo_engine/             人物、几何、场景状态与原创声音
 scripts/render_demo.py           确定性渲染与预览导出
-scripts/check_demo_media.py      实际成片解码与音轨检查
+scripts/check_demo_media.py      三支原始 demo 的规格检查
+scripts/motion.py                可复用工具入口
+scripts/motion_tools/            工程、剪辑、媒体与交付模块
+assets/project/                  独立工程的场景入口模板
 tests/                           概念、接触、确定性和失败输入检查
 assets/fonts/                    字体与原始许可证
 ```

@@ -21,5 +21,12 @@ jobs:
             requirements-dev.txt
             requirements-render.txt
       - run: python -m pip install -r requirements-render.txt
+      - name: Install media tools
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+      - run: python scripts/motion.py doctor
       - run: python scripts/validate.py
       - run: python -m unittest discover -s tests -v

@@ -13,6 +13,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 from demo_engine.drawing import W, H, font
 from demo_engine.scenes import SCENES, DURATION, render_frame
+from motion_tools.common import encoding
 from demo_engine.audio import write_audio
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -85,20 +86,7 @@ def render(scene, out, fps, scale):
             "0:v:0",
             "-map",
             "1:a:0",
-            "-c:v",
-            "libx264",
-            "-preset",
-            "medium",
-            "-crf",
-            "20",
-            "-pix_fmt",
-            "yuv420p",
-            "-c:a",
-            "aac",
-            "-b:a",
-            "160k",
-            "-movflags",
-            "+faststart",
+            *encoding(),
             "-t",
             str(DURATION),
             str(part),

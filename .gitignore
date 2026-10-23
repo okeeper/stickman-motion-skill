@@ -12,3 +12,7 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Reusable production caches (safe to rebuild)
+.motion-cache/
+*.cache.json
