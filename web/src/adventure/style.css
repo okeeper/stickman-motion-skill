@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Motion Sans';
+  src: url('../../assets/fonts/motion-sans.ttf');
+  font-display: block;
+}
+@font-face {
+  font-family: 'Math Sans';
+  src: url('../../../assets/fonts/DejaVuSans.ttf');
+  font-display: block;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #0c0c0c;
+  color: #eee;
+  font:
+    15px 'Motion Sans',
+    system-ui,
+    sans-serif;
+}
+a {
+  color: #ffac57;
+  text-decoration: none;
+}
+header {
+  padding: 24px 5vw;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #272727;
+  gap: 20px;
+}
+header span {
+  color: #999;
+}
+main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
+.intro {
+  margin: 0 0 24px;
+}
+h1 {
+  font-size: 36px;
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+p {
+  color: #aaa;
+  line-height: 1.8;
+}
+section {
+  background: #000;
+  border: 1px solid #292929;
+}
+canvas {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16/9;
+}
+.transport {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #242424;
+}
+button,
+select {
+  background: #1d1d1d;
+  color: #ddd;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font: inherit;
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid #ff931e;
+}
+#timeline {
+  flex: 1;
+  min-width: 20px;
+  accent-color: #ff931e;
+}
+output {
+  white-space: nowrap;
+  font: 12px monospace;
+}
+.caption {
+  color: #999;
+  padding: 0 16px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.note {
+  max-width: 850px;
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  header {
+    padding: 18px;
+    font-size: 11px;
+  }
+  main {
+    padding: 24px 12px;
+  }
+  .transport {
+    gap: 6px;
+    padding: 10px;
+  }
+  button,
+  select {
+    padding: 7px;
+    font-size: 12px;
+  }
+  output {
+    font-size: 10px;
+  }
+}

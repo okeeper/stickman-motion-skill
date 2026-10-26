@@ -23,7 +23,7 @@ python -m unittest discover -s tests -v
 
 修改脚本时，请同时验证正常输入和一个相关失败输入。改动制作方法时，尽可能用真实分镜或样片说明改善，并标明未验证的范围。结构校验无法代替成片审看。
 
-改动 TS 动作工程时，运行 `npm --prefix web ci`、`npm --prefix web run build`、`npm --prefix web test`、`npm --prefix web run test:browser` 和 `npm --prefix web run format:check`。浏览器配置见 [Web 工程说明](web/README.md)。改动运动模型需覆盖离地/触地边界、骨长、接触、极端参数和任意拖帧；更新实际 MP4、GIF、联系表及 QA，不只提交能编译的动画代码。
+改动 TS 动作工程时，运行 `npm --prefix web ci`、`npm --prefix web run build`、`npm --prefix web test`、`npm --prefix web run test:browser`、`npm --prefix web run test:adventure` 和 `npm --prefix web run format:check`。浏览器配置见 [Web 工程说明](web/README.md)。改动运动模型需覆盖离地/触地边界、骨长、接触、极端参数和任意拖帧；更新对应的实际 MP4、GIF、联系表及 QA，不只提交能编译的动画代码。检查局部导出与声音时，验证原场景时间、裁切处尾音和失败时保留输出。
 
 `SKILL.md` 保留任务入口、关键流程与验收；细节放到 `references/`，可复用的具体示例放到 `examples/`。修改文件位置后同步更新链接。
 

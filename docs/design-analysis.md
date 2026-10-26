@@ -132,4 +132,6 @@
 
 ## 项目状态
 
+0.5.0 新增 [参考语法](../references/reference-style.md)、[TS 原创短片《借势》](../demos/adventure/README.md) 与 [实际 QA](../demos/adventure/QA.md)，将部分分析落实为人物操作、移动支撑、相机和事件声音。下面对旧版本的说明保留为历史范围，不把新片结论套用到旧样片。
+
 技能入口见 [SKILL.md](../SKILL.md)，规则规格见 [概念与场景规格](../references/concept-scene-spec.md)，制作方法见 [表演与制作](../references/production-guidance.md)。目前已有三支 Python 概念片及独立的 TS 重量动作研究，实际检查范围见 [概念片 QA](../demos/QA.md) 和 [动作研究 QA](../demos/weight/QA.md)。0.4.0 的 [《折返》](../examples/return-crossing.md) 仅完成剧本文字与自审，不能将既有片段的技术检查当作新故事的动作或叙事验证。

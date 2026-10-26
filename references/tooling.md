@@ -8,6 +8,7 @@
 |---|---|---|
 | 检查本机依赖 | `motion.py doctor` | Python 包、FFmpeg/ffprobe、编码器的可用性；不会自动安装 |
 | 新建制作工程 | `motion.py init 项目目录 --demo complex-rotation` | 可独立运行的项目、角色库、字体、默认清单 |
+| 新建 TS 动作冒险工程 | `python scripts/init_web.py 项目目录 --scene adventure` | 独立 Web 源码、重量/接触/相机、声音、锁文件与字体许可 |
 | 渲染 / 局部试做 | `motion.py render project.json` | 视频；也支持静帧、预览规格与缓存 |
 | 裁切、变速、拼接、混音、软字幕 | `motion.py edit edit.json` | MP4 与实际剪辑计划记录 |
 | 检查成片 | `motion.py inspect video.mp4 --out review` | 完整解码结果、音轨峰值、联系表与机器报告 |
@@ -15,6 +16,8 @@
 | 检查交付文件是否变化 | `motion.py verify delivery` | 文件一致性结果 |
 
 依赖：Python 3.10+、`requirements-render.txt`、带 libx264/AAC 的 FFmpeg 与 ffprobe。已在 macOS/FFmpeg 7.1.1 实测，CI 在 Ubuntu 执行真实 FFmpeg 用例；不承诺未经测试的平台兼容性。命令不联网、不读取供应商密钥、不自动调用配音或生图服务。
+
+以上 Python 依赖用于原工具；TS 初始化本身仅用 Python 标准库，构建与导出依赖及接口见 [TS 制作与复用](ts-production.md)。`motion.py init` 不改变为 TS 入口，避免破坏旧工程。
 
 ## 新工程与局部渲染
 

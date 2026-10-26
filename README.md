@@ -4,9 +4,30 @@
 
 面向 Codex 等支持 Agent Skills 的工具，以有动机、有判断力的火柴人为主角，通过选择、动作与世界反馈，将数学、物理或算法概念组织成动作冒险动画。
 
-An Agent Skill for cinematic, wordless stick-figure adventures, with three concept films and an interactive TypeScript lab for weight, anticipation, gravity and landing.
+An Agent Skill for wordless stick-figure adventures where knowledge becomes an interactive world, with a TypeScript action film, weighted motion tools and reusable video export.
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
+
+## 0.5.0：让符号进入动作
+
+新默认方向是极简黑色空间、白色知识对象、橙色主角与无台词行动叙事。人物直接拿取、组合和使用知识对象；规则反馈改变处境，镜头与声音跟随操作、受力和判断。详细制作判断见 [参考风格语法](references/reference-style.md)。
+
+新增 **28 秒 / 60 fps 的 TS 原创短片《借势》**：拿取方向因子，登上移动支撑，装入乘法槽后承受反向加速，最后继承载体速度跳离。画内没有讲解面板，保留探索、执行、吸震与余波。
+
+![《借势》：登台、反向与借已有速度跳离](demos/adventure/preview.gif)
+
+[有声 MP4](demos/adventure/reversal.mp4) · [规则与剧本](examples/reversal-adventure.md) · [关键帧与实际 QA](demos/adventure/QA.md) · [TS 接口与复用](references/ts-production.md)
+
+新增可复用的承重步态、移动支撑转移、腕部抓取、上身姿态继承、相机轨道和三层事件声音。预览与导出共用画面函数，局部试做保留原场景时间与声音尾部。创建独立工程：
+
+```sh
+python scripts/init_web.py output/my-film --scene adventure
+npm --prefix output/my-film/web ci
+npm --prefix output/my-film/web run dev
+# 在终端显示的地址后打开 /film.html
+```
+
+这是单人、同高支撑、单机制短片的实际实现；尚未覆盖原片的大型对抗、复杂空间演化、翻滚和双人动作，也没有把旧三支影片迁移到 TS。检查记录分别说明数值约束、浏览器、编码和审看的范围，不宣称仅凭这些检查达到参考作品的表演水平。
 
 ## 新增：像电影主角一样行动
 
@@ -174,20 +195,22 @@ npm --prefix web run build
 npm --prefix web test
 # 浏览器检查另需安装 Chromium：cd web && npx playwright install chromium
 npm --prefix web run test:browser
+npm --prefix web run test:adventure
 ```
 
 文档与规则卡检查仅需要 `requirements-dev.txt`；Python 动画、音频测试需要 `requirements-render.txt`。CI 执行结构检查、Python 行为和真实 FFmpeg 回归，以及 TS 构建、物理和浏览器交互检查，不重复渲染三支完整概念片。
 
 ```text
 SKILL.md                         技能入口
-web/                             TS 重量模型、交互预览与视频导出
+web/                             TS 重量、连续表演、概念冒险与视频导出
 references/                      规则卡、表演与制作指南
-examples/                        四份故事规格，含三支 demo 的输入任务
+examples/                        规则卡与剧本，含各 demo 的输入任务
 demos/                           MP4、GIF、分镜与验证记录
 scripts/demo_engine/             人物、几何、场景状态与原创声音
 scripts/render_demo.py           确定性渲染与预览导出
 scripts/check_demo_media.py      三支原始 demo 的规格检查
 scripts/motion.py                可复用工具入口
+scripts/init_web.py              独立 TS 工程初始化
 scripts/motion_tools/            工程、剪辑、媒体与交付模块
 assets/project/                  独立工程的场景入口模板
 tests/                           概念、接触、确定性和失败输入检查
@@ -201,7 +224,8 @@ assets/fonts/                    字体与原始许可证
 - [x] 提炼可复用的人物、接触、时间线与声音模块。
 - [x] 增加重量、蓄力、重力轨迹与弹性落地的 TS 动作研究及浏览器调参。
 - [x] 更新电影式主角、合理决策与无表情表演方法，完成《折返》文字例稿。
-- [ ] 用动态分镜和实际影片验证新剧本的判断、肢体可读性和动作节奏。
+- [x] 把参考片语法落实到 TS《借势》：直接符号操作、移动支撑、连续动作、相机与事件声音。
+- [ ] 用动态分镜和实际影片验证《折返》的双人判断、肢体可读性和动作节奏。
 - [ ] 把新的重量模型扩展到概念故事中的搬运、失衡、翻滚与多处支撑。
 - [ ] 增加更丰富的身体表演、动作过渡与镜头尺度变化。
 - [ ] 增加非数学题材，并进行静音理解度测试。

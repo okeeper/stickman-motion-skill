@@ -1,5 +1,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": { "noEmit": false, "outDir": ".test-build" },
-  "include": ["src/math.ts", "src/physics.ts", "src/rig.ts"]
+  "include": [
+    "src/math.ts",
+    "src/physics.ts",
+    "src/rig.ts",
+    "src/performance.ts",
+    "src/adventure/model.ts"
+  ]
 }

@@ -1,0 +1,38 @@
+{
+  "duration": 28,
+  "width": 1280,
+  "height": 720,
+  "totalFrames": 1680,
+  "droppedFrames": 0,
+  "error": null,
+  "captures": [
+    {
+      "time": 3.2,
+      "file": "decoded-1.png"
+    },
+    {
+      "time": 8.2,
+      "file": "decoded-2.png"
+    },
+    {
+      "time": 12.7,
+      "file": "decoded-3.png"
+    },
+    {
+      "time": 17.7,
+      "file": "decoded-4.png"
+    },
+    {
+      "time": 18.6,
+      "file": "decoded-5.png"
+    },
+    {
+      "time": 21.7,
+      "file": "decoded-6.png"
+    }
+  ],
+  "errors": [],
+  "mutedAutomaticPlayback": true,
+  "humanReview": "not_recorded",
+  "sha256": "68f917755dc3827c8fdf1e441b53a6aca38b2555d6099912784dc2ef4babad38"
+}
