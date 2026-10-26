@@ -8,6 +8,8 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
+**新一轮剧本设计（待制作）**：[《别追，等它回来》《谁在敲门》《世界的侧面》](examples/demo-redesign.md)。三支保留原概念主题，改从陌生对象、试探与规则发现推进故事，附逐段分镜、动作、声音和数学边界。以下视频仍为 0.8.0 成片，尚未按这份新稿重新生成。
+
 ## 0.8.0：重拍三支概念动作短片
 
 三个原主题已重新编写并用 **TypeScript / Motion Canvas** 生成完整新片：人物主动判断、正常速度行动，规则改变路线，身体承担制动、惯性和落地。三支共 **53 秒 / 3180 帧 / 100 个声音事件**，均为 720p / 60 fps，有声网页与视频共用模型和混音。
