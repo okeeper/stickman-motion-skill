@@ -1,0 +1,42 @@
+{
+  "method": "Chromium native video, full normal-speed automated playback; not human listening",
+  "movies": [
+    {
+      "id": "negative-ride",
+      "duration": 14,
+      "playbackRate": 1,
+      "totalVideoFrames": 840,
+      "droppedVideoFrames": 0,
+      "decodedAudioBytes": 282113,
+      "muted": false,
+      "ended": true,
+      "error": null,
+      "wallSeconds": 14.159
+    },
+    {
+      "id": "binary-search",
+      "duration": 18,
+      "playbackRate": 1,
+      "totalVideoFrames": 1080,
+      "droppedVideoFrames": 0,
+      "decodedAudioBytes": 361717,
+      "muted": false,
+      "ended": true,
+      "error": null,
+      "wallSeconds": 18.158
+    },
+    {
+      "id": "complex-rotation",
+      "duration": 21,
+      "playbackRate": 1,
+      "totalVideoFrames": 1260,
+      "droppedVideoFrames": 0,
+      "decodedAudioBytes": 426951,
+      "muted": false,
+      "ended": true,
+      "error": null,
+      "wallSeconds": 21.154
+    }
+  ],
+  "errors": []
+}

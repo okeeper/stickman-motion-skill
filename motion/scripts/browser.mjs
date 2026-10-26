@@ -2,7 +2,15 @@ import { createServer } from "vite";
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";
 export async function openLab(scene = "trace") {
-  if (!["trace", "action"].includes(scene))
+  if (
+    ![
+      "trace",
+      "action",
+      "negative-ride",
+      "binary-search",
+      "complex-rotation",
+    ].includes(scene)
+  )
     throw new Error("Unknown local scene");
   const server = await createServer({
     root: fileURLToPath(new URL("../", import.meta.url)),
@@ -31,7 +39,7 @@ export async function openLab(scene = "trace") {
     );
     await page.goto(
       new URL(
-        scene === "action" ? "action.html" : "preview.html",
+        scene === "trace" ? "preview.html" : `${scene}.html`,
         server.resolvedUrls.local[0],
       ).href,
     );

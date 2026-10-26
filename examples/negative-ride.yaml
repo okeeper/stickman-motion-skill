@@ -1,35 +1,41 @@
-# Story specification, not a generic renderer input.
+# Hand-authored TS story specification; not a prompt-to-video input.
 scene_id: negative-ride
-intent: 乘上方向可控的运载车，越过缺口取回左侧目标
-concept: 一维速度设置值乘以 -1 会反号；连续两次恢复原值
-prompt: 使用 $stickman-motion-skill，做一个 36 秒无台词故事，让角色通过试车、误判和重复操作理解负数乘法与方向反转，最终跨越缺口取回目标。
-duration_seconds: 36
+intent: 追上载台，利用反向越过断面，抵达左侧出口
+concept: 有符号的电机目标速度乘以 -1 会反号；设备以有限加速度执行
+prompt: 使用 $stickman-motion-skill，做一支 14 秒无台词动作短片。主角观察左侧出口，追上向右移动的载台，登台操作 ×(-1)，承受制动与反向惯性，伏身过低梁，再借速度跳离并走出出口。
+duration_seconds: 14
 renderer_scene: negative-ride
+engine: motion-canvas
 assumptions:
-  - 右为正、左为负；面板显示下一次运行的速度设置，而非停车时的瞬时速度
-  - 一个速度单位对应每秒 40 像素；行驶时速度为正负 120 像素每秒
-  - 设备需要独立启动，轨道限位使车辆停车；乘法本身不施加物理力
+  - 右为正、左为负；u 是电机目标速度，v 是实际速度，单位为世界距离每秒
+  - 操作计算的是 (+2) × (-1) = -2；它立即改变 u，实际 v 在 3.0 至 3.8 秒连续变化
+  - 电机是执行力的来源；乘法本身不产生物理力，反向途中 v 会经过零
+  - 左端限位在 8.0 秒将 u 设为 0，并用 0.8 秒制动，不属于乘以 -1 的结果
+  - 角色保持固定骨长，腾空根部受 9.81 单位每平方秒的重力；非完整人体动力学仿真
 objects:
-  - id: cart
-    visual: 带轮子的运载车及方向箭头
+  - id: carrier
+    visual: 带轮子的薄白载台、速度向量与 u 标记
   - id: inverter
-    visual: 可触碰的 ×(-1) 按钮
-  - id: destination
-    visual: 缺口另一侧的星形目标
+    visual: 随载台移动、可用手接触的 ×(-1) 操作槽
+  - id: crossing
+    visual: 断面、低梁和左侧限位
+  - id: exit
+    visual: 左侧感应出口
 beats:
-  - intent: 前往左侧
-    action: 触碰启动按钮，车辆却向右行驶
+  - intent: 赶上可用的支撑
+    action: 开场看清出口在左，主角向左跑、短蓄力跳上正在向右移动的载台
     operation: spatial_metaphor
-    result: 发现正方向不符合目标，追赶并观察
-  - intent: 改变设置
-    action: 按下反向按钮并观察箭头
+    time: 0.0–2.3
+  - intent: 利用已知规则改变路线
+    action: 接触 ×(-1)，u 从 +2 改为 -2；角色屈膝承受制动，v 经过零后向左
     operation: evaluate
-    equation: +3 × (-1) = -3
-  - intent: 验证按钮的作用
-    action: 再按一次，方向回到右侧
-    operation: evaluate
-    equation: -3 × (-1) = +3
-  - intent: 使用发现完成目标
-    action: 再次反向，跳上车并启动，抵达左侧取回目标
+    equation: (+2) × (-1) = -2
+    time: 2.3–4.0
+  - intent: 保持通行并保护头部
+    action: 乘车跨越断面，提前伏身护头，穿过低梁后起身
     operation: spatial_metaphor
-    result: 同一规则解决开头的困境
+    time: 4.0–8.1
+  - intent: 抵达出口
+    action: 载台开始限位制动，角色蹬离，落地缓冲后向左跑过感应门，回看已经停下的载台
+    operation: spatial_metaphor
+    time: 8.1–14.0

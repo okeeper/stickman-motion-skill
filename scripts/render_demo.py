@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render the three hand-authored example scenes, without network or API keys."""
+"""Render historical 36-second Python examples; current TS films use motion/scripts/render.mjs."""
 
 from __future__ import annotations
 import argparse
@@ -165,7 +165,7 @@ def preview(scene, out):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--scene", choices=(*SCENES, "all"), default="all")
-    p.add_argument("--out-dir", type=Path, default=ROOT / "demos" / "videos")
+    p.add_argument("--out-dir", type=Path, default=ROOT / "output" / "legacy-demos" / "videos")
     p.add_argument("--fps", type=int, choices=(15, 24, 30, 60), default=30)
     p.add_argument(
         "--scale",

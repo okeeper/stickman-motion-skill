@@ -2,7 +2,7 @@
 name: stickman-motion-skill
 description: 把数学、物理或算法概念制作成无台词火柴人动作冒险；用于极简符号世界、电影式因果剧本、肢体表演与有重量的 TS 动画、分层声音及视频导出。让角色直接操作知识对象，通过反馈与判断推进故事。普通口播配图或纯公式讲解不使用此流程。
 metadata:
-  version: "0.7.0"
+  version: "0.8.0"
 ---
 
 # 火柴人概念冒险动画
@@ -22,7 +22,7 @@ metadata:
 - **走跑跳、摔滚与动作拟音**：读 [正常速度动作与拟音](references/action-and-foley.md)。用实际步态、动量、支撑转移和声音事件组织动作片节奏，以《断点》为连续动作起点。
 - **剪辑、声音合成与交付**：读 [制作工具](references/tooling.md)，复用已有脚本。
 
-当前有《借势》TS 短片、《断点》连续动作与拟音试片、《留下弧线》Motion Canvas 技术试片、独立重量研究和三支早期 Python 概念片；《折返》仍是未渲染的文字例稿。引擎不是任意提示词或 YAML 的一键视频生成器。新增主题需要新的规则、行为、场景代码和实际产物。
+当前有《借势》TS 短片、《断点》连续动作与拟音试片、《留下弧线》Motion Canvas 技术试片、独立重量研究和三支已重拍的 TS 概念片；《折返》仍是未渲染的文字例稿。引擎不是任意提示词或 YAML 的一键视频生成器。新增主题需要新的规则、行为、场景代码和实际产物。
 
 ## 先写人物行动与知识反馈
 
@@ -81,7 +81,7 @@ metadata:
 - [《借势》28 秒 TS 样片](demos/adventure/README.md)：拿取方向因子、登上移动支撑、反向后重新平衡、继承载体速度跳离与余波；[规则与剧本](examples/reversal-adventure.md)、[实际 QA](demos/adventure/QA.md)。
 - [《留下弧线》18 秒 Motion Canvas 试片](demos/geometry/README.md)：曲线轮廓、精确抛物线和 LaTeX 子式变形；复用重量与接触模型，定位为技术验收，未迁移《借势》整片。
 - [重量与弹性研究](demos/weight/README.md)：自然跳、大跳和同样发力下更重的身体；适合检查参数与受力，不是完整故事引擎。
-- [三支早期 Python 概念片](demos/README.md)：反向、二分查找、复数旋转；保留旧规格，尚未迁移到新的 TS 表演。
+- [三支 TS 概念短片](demos/README.md)：反向载台、四次二分查询、四分之一圈取回电芯；共 53 秒，含有声预览、动作和数学假设、完整成片及实际检查。改编用 `init_web.py --scene negative-ride|binary-search|complex-rotation`；[分镜与公共模块](demos/PRODUCTION.md)。
 - [《折返》文字例稿](examples/return-crossing.md)：双人撤离、伤情延续与多支撑的剧本参考；其复杂动作仍需实现和试做。
 
 ## 分开验收

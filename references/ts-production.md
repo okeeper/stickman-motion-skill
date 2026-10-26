@@ -107,3 +107,12 @@ python scripts/motion.py verify output/my-film/delivery
 ```
 
 详细剪辑能力见 [可复用工具](tooling.md)。保存剧本、规则边界、检查记录和可编辑工程；正常速度观片、静音理解检查和完整听审的完成状态分别报告。无记录时不声称完成这些审看。
+
+
+## 三种概念故事的完整 TS 起点
+
+`init_web.py --scene negative-ride|binary-search|complex-rotation` 可复制三支重拍工程。分别打开同名 `.html`；`npm --prefix motion run render:series` 顺序导出三支，单支与局部仍用已有 `render`。规则、故事和假设见 [制作规格](../demos/PRODUCTION.md)，不要只换文字保留原剧情。
+
+[series/motion.ts](../web/src/series/motion.ts) 提供双向跑步、短预备跳跃、移动支撑、保持骨长的平衡和腕部操作。动作连接可短暂释放并重置脚步，不属于全程脚底锁定的人体模拟；站稳后使用支撑局部锚点。新片启用连续步态高度，脚落地时不重置上身高度；旧动作试片保留原配置以避免无关画面变动。
+
+[series/model.ts](../web/src/series/model.ts) 将负数控制值与实际速度分开、保留二分查找的原数组、用精确复数状态驱动圆周与四次求值。声音事件由这些状态与动作接触编排，沿用公共混音器、素材缓存、预览桥和视频编码，不另建导出流程。改变目标或时间后需要重新编排查询、镜头与接触事件。

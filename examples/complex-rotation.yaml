@@ -1,37 +1,46 @@
-# Story specification, not a generic renderer input.
+# Hand-authored TS story specification; not a prompt-to-video input.
 scene_id: complex-rotation
-intent: 从 1 出发，取回复平面对侧的目标并送回起点
-concept: 复数乘以 i 使其辐角逆时针增加 90 度，模长不变
-prompt: 使用 $stickman-motion-skill，制作 36 秒无台词火柴人短片。角色通过操作 ×i 载台，沿单位圆探索、取物并回家；四次操作自然揭示 i 的四次方等于 1。
-duration_seconds: 36
+intent: 取回对侧电芯，返回起点并恢复出口供电
+concept: 复数乘以 i 使辐角逆时针增加 90 度，模长不变；四次回到原值
+prompt: 使用 $stickman-motion-skill，做一支 21 秒无台词短片。主角为恢复出口供电，跳上 ×i 载台，沿四分之一圈转移到对侧取回电芯，再经过下半圈返回。角色保持直立，对启动与制动倾身平衡，回到起点后跳离、插入电芯并离开。
+duration_seconds: 21
 renderer_scene: complex-rotation
+engine: motion-canvas
 assumptions:
-  - 采用通常的复平面，实轴向右、虚轴向上；i 的平方等于 -1
-  - 载台中心的复数初值为 1，四次离散乘法依次得到 i、-1、-i、1
-  - 旋转中的角度是展示插值；结果等式只在到达后显示
-  - 角色身体保持直立，其身体姿态不是被乘的复数
+  - 实轴向右、虚轴向上，i 的平方等于 -1；复数初值为 1
+  - 单位复数 z 映射为世界坐标 (1.6 Re(z), 1.6 Im(z))，图中是数学单位圆
+  - 四次离散求值依次得到 i、-1、-i、1；完成后才显示对应等式
+  - 中间角度为连续旋转展示，不声称中间每帧都是已完成的一次乘以 i
+  - 被乘对象是载台中心的位置复数，角色身体的朝向不参与计算；重力始终朝画面下方
+  - 每次旋转 2 秒，以有限角速度和角加速度启动及停止；平台竖直支持反力保持为正
+  - 本片演示单位圆，不展示任意模长复数、除以 i 或负向旋转
 objects:
-  - id: point
-    visual: 位于单位圆上的可乘坐载台及 ×i 按钮
-  - id: unit_circle
-    visual: 复平面、单位圆、逐步留下的轨迹
-  - id: star
-    visual: 对侧目标与起点收纳台
+  - id: carrier
+    visual: 直立载台、×i 操作槽与从原点指向中心的半径
+  - id: plane
+    visual: 复平面、四个精确停靠点和逐步留下的圆弧
+  - id: cell
+    visual: 对侧薄荷色电芯及右侧匹配的空插槽
+  - id: exit
+    visual: 需要恢复供电的出口
 beats:
-  - intent: 接近对侧目标
-    action: 观察按钮并触碰，载台从 1 转到 i
+  - intent: 接近取电芯的路线
+    action: 从未供电的出口旁跑向载台，蓄力登台后接触 ×i，转到上方 i
     operation: evaluate
     equation: 1 × i = i
-  - intent: 到达并取物
-    action: 再次操作，转到 -1，伸手拿取星形物
+    time: 0.0–4.9
+  - intent: 到达对侧并拿取电芯
+    action: 第二次操作转到 -1，站稳后伸手取下电芯，随后贴身携带
     operation: evaluate
     equation: i × i = -1
-  - intent: 带物返回
-    action: 复用规则继续转到 -i
+    time: 4.9–9.1
+  - intent: 携带电芯返回
+    action: 经过下半圈转到 -i，再次操作回到 1；四段圆弧形成闭环
     operation: evaluate
-    equation: (-1) × i = -i
-  - intent: 完成闭环
-    action: 第四次操作回到 1，跳下并放好目标
-    operation: evaluate
-    equation: (-i) × i = 1
-    result: 四次操作留下完整圆轨迹，与 i⁴ = 1 对应
+    equation: (-1) × i = -i; (-i) × i = 1
+    result: i⁴ = 1
+    time: 9.1–14.8
+  - intent: 用取回的资源完成目标
+    action: 短蓄力跳离载台，跑到插槽前制动、装入电芯，等门升起后离开
+    operation: spatial_metaphor
+    time: 14.8–21.0

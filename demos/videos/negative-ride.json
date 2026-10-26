@@ -1,17 +1,275 @@
 {
+  "file": "negative-ride.mp4",
   "scene": "negative-ride",
-  "duration": 36.0,
-  "fps": 30,
-  "frames": 1080,
-  "size": [
-    1280,
-    720
-  ],
-  "bytes": 1307715,
+  "fps": 60,
+  "frames": 840,
+  "duration": 14,
+  "width": 1280,
+  "height": 720,
+  "resolutionScale": 2,
   "audio": {
-    "sample_rate": 48000,
+    "sampleRate": 48000,
     "channels": 2,
-    "peak_dbfs": -14.39
+    "peakDbfs": -7.558600223357156,
+    "rmsDbfs": -37.15971267867036,
+    "clippedSamples": 0,
+    "sourceFrom": 0,
+    "layers": [
+      "licensed-foley",
+      "cloth-air-breath",
+      "world"
+    ],
+    "cues": 24,
+    "assetLicense": "CC0-1.0",
+    "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
+    "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
   },
-  "render_seconds": 34.7
+  "clips": [
+    {
+      "title": "逆向通行",
+      "duration": 14,
+      "width": 1280,
+      "height": 720,
+      "fps": 60,
+      "id": "negative-ride",
+      "cues": [
+        {
+          "id": "n-entry-0",
+          "t": 0.25,
+          "kind": "footstep",
+          "x": 10.217820512820513,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.559392045913048
+        },
+        {
+          "id": "n-entry-1",
+          "t": 0.5,
+          "kind": "footstep",
+          "x": 9.416538461538462,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.38169720778860716
+        },
+        {
+          "id": "n-entry-2",
+          "t": 0.75,
+          "kind": "footstep",
+          "x": 8.552681071794872,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.06297982103894563
+        },
+        {
+          "id": "n-entry-settle",
+          "t": 1.22,
+          "kind": "footstep",
+          "x": 8.5,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.016255260186800655
+        },
+        {
+          "id": "n-board-grip",
+          "t": 1.3499999999999999,
+          "kind": "shoe-grip",
+          "x": 8.5,
+          "strength": 0.65,
+          "pan": -0.044582258424936225
+        },
+        {
+          "id": "n-board-air",
+          "t": 1.44,
+          "kind": "whoosh",
+          "x": 8.5,
+          "strength": 0.65,
+          "duration": 0.2,
+          "pan": -0.0723166409980922
+        },
+        {
+          "id": "n-board-land",
+          "t": 2.08,
+          "kind": "landing",
+          "x": 8.56,
+          "strength": 0.8,
+          "pan": -0.26905405029347523
+        },
+        {
+          "id": "n-rail",
+          "t": 2.1,
+          "kind": "whoosh",
+          "x": 8.6,
+          "strength": 0.16,
+          "duration": 6.2,
+          "pan": -0.2630503946838144
+        },
+        {
+          "id": "n-switch",
+          "t": 3,
+          "kind": "hand",
+          "x": 10.4,
+          "strength": 0.48,
+          "pan": 0.1828456611829711
+        },
+        {
+          "id": "n-latch",
+          "t": 3.05,
+          "kind": "gate",
+          "x": 10.4,
+          "strength": 0.25,
+          "pan": 0.19614831085029083
+        },
+        {
+          "id": "n-brake",
+          "t": 3.1,
+          "kind": "skid",
+          "x": 10.4,
+          "strength": 0.35,
+          "duration": 0.65,
+          "pan": 0.21014565410530237
+        },
+        {
+          "id": "n-duck",
+          "t": 6.1,
+          "kind": "cloth",
+          "x": 5.8,
+          "strength": 0.5,
+          "pan": 0.24144821506865063
+        },
+        {
+          "id": "n-breath",
+          "t": 7.7,
+          "kind": "breath",
+          "x": 2.6,
+          "strength": 0.4,
+          "pan": 0.04314250879996327
+        },
+        {
+          "id": "n-limit",
+          "t": 8,
+          "kind": "skid",
+          "x": 2,
+          "strength": 0.28,
+          "duration": 0.75,
+          "pan": -0.03546591731755992
+        },
+        {
+          "id": "n-exit-grip",
+          "t": 8.27,
+          "kind": "shoe-grip",
+          "x": 1.3929950000000006,
+          "strength": 0.65,
+          "pan": -0.0851373116335688
+        },
+        {
+          "id": "n-exit-air",
+          "t": 8.36,
+          "kind": "whoosh",
+          "x": 1.3929950000000006,
+          "strength": 0.65,
+          "duration": 0.2,
+          "pan": -0.056133610959661455
+        },
+        {
+          "id": "n-exit-land",
+          "t": 9.02,
+          "kind": "landing",
+          "x": -1.1,
+          "strength": 0.8,
+          "pan": -0.2407929846104456
+        },
+        {
+          "id": "n-escape-0",
+          "t": 9.75,
+          "kind": "footstep",
+          "x": -1.7245652173913042,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.023850234736472884
+        },
+        {
+          "id": "n-escape-1",
+          "t": 10,
+          "kind": "footstep",
+          "x": -2.398478260869565,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.08527047417301384
+        },
+        {
+          "id": "n-endgate",
+          "t": 10.2,
+          "kind": "gate",
+          "x": -3.4,
+          "strength": 0.55,
+          "pan": -0.25260256666605785
+        },
+        {
+          "id": "n-escape-2",
+          "t": 10.25,
+          "kind": "footstep",
+          "x": -3.0723913043478257,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.1786997146086348
+        },
+        {
+          "id": "n-escape-3",
+          "t": 10.5,
+          "kind": "footstep",
+          "x": -3.7463043478260865,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.3001102251086559
+        },
+        {
+          "id": "n-escape-4",
+          "t": 10.75,
+          "kind": "footstep",
+          "x": -4.245,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.4010309278350516
+        },
+        {
+          "id": "n-escape-settle",
+          "t": 11.120000000000001,
+          "kind": "footstep",
+          "x": -4.2,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.39175257731958774
+        }
+      ],
+      "engine": "Motion Canvas 3.17.2",
+      "transfers": [
+        {
+          "takeoff": 1.44,
+          "land": 2.08,
+          "vx": 0.09375000000000078,
+          "vy": 3.123575
+        },
+        {
+          "takeoff": 8.36,
+          "land": 9.02,
+          "vx": -3.7772651515151523,
+          "vy": 2.9191181818181824
+        }
+      ],
+      "resolutionScale": 2,
+      "sourceDuration": 14,
+      "from": 0,
+      "to": 14,
+      "frames": 840
+    }
+  ],
+  "sha256": "6b8218fde667bfed687acd7857362320823a939dc89e5a4cd5cdb5ee128de64f"
 }

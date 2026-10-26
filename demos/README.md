@@ -1,66 +1,68 @@
 # Demo 制作与复现
 
-三支样片用于检验同一套 skill 能否处理不同的概念机制。它们采用相同角色和视觉语言，但任务、规则反馈和动作路径不同。
+原三个主题已在 0.8.0 重新设计并用 TypeScript / Motion Canvas 重拍。三支无台词成片共 53 秒，1280×720 / 60 fps，含接触拟音；任务、机制和动作路线各自独立。
 
-| 选择值 | 主题 | 输入任务 | 完整成片 |
+| 场景名 | 新故事 | 片长 | 成片 / 规则 |
 |---|---|---|---|
-| `negative-ride` | 负数乘法与方向反转 | [规则卡](../examples/negative-ride.yaml) | [MP4](videos/negative-ride.mp4) |
-| `binary-search` | 查询隐藏值、排除候选 | [规则卡](../examples/binary-search.yaml) | [MP4](videos/binary-search.mp4) |
-| `complex-rotation` | 乘以 i、取物、返回起点 | [规则卡](../examples/complex-rotation.yaml) | [MP4](videos/complex-rotation.mp4) |
+| `negative-ride` | 《逆向通行》：登台反向、伏身过梁、借速跳离 | 14 秒 | [MP4](videos/negative-ride.mp4) · [规则卡](../examples/negative-ride.yaml) |
+| `binary-search` | 《最后一扇》：四次有依据的查询解锁升降台 | 18 秒 | [MP4](videos/binary-search.mp4) · [规则卡](../examples/binary-search.yaml) |
+| `complex-rotation` | 《转过死角》：四次旋转取回电芯并恢复出口 | 21 秒 | [MP4](videos/complex-rotation.mp4) · [规则卡](../examples/complex-rotation.yaml) |
 
-每份规则卡的 `prompt` 是代表性制作任务；`renderer_scene` 对应命令行中的场景名。YAML 记录故事规格，渲染器不读取它来生成任意场景。逐段分镜见 [PRODUCTION](PRODUCTION.md)，实际检查见 [QA](QA.md)。
+逐段剧本、数学假设和模块位置见 [PRODUCTION](PRODUCTION.md)，实际产物与检查范围见 [QA](QA.md)。规则卡记录手工编排的规格，渲染器不会把任意 YAML 或提示词自动变成动画。
 
-## 环境与命令
+## 复现三支视频
 
-在仓库根目录操作，需要 Python 3.10+ 和带有 libx264、AAC 编码支持的 FFmpeg；实际媒体检查还需要 ffprobe。安装 FFmpeg 后确认两个命令可运行：
+需要 Node.js 22.12+、Python 3.10+、FFmpeg / ffprobe 和 Chromium。先在仓库根目录操作：
 
 ```sh
-ffmpeg -version
-ffprobe -version
+npm --prefix motion ci
+npm --prefix motion run prepare:audio
+cd motion
+npx playwright install chromium
+npm run dev
+```
+
+在终端显示的地址打开 `/negative-ride.html`、`/binary-search.html`、`/complex-rotation.html`，点击播放启用声音。默认 1×，慢放和拖帧用于检查；根地址是 Motion Canvas 项目选择页。
+
+```sh
+# 在 motion/ 中，一条命令顺序重建全部三支 MP4
+npm run render:series
+# 单支、局部或低成本试做
+npm run render -- --scene negative-ride --fps 30 --from 2.7 --to 4 --out ../renders/reversal.mp4
+npm run render -- --scene binary-search
+npm run render -- --scene complex-rotation
+```
+
+正式默认 60 fps、两倍画布缩至 720p，H.264 / yuv420p + 48 kHz 双声道 AAC / faststart。每支同名 JSON 记录声音、区间、编码规格和 SHA-256；单支编码和核验成功后才替换已有 MP4。可通过 `MOTION_BROWSER_EXECUTABLE` 指定已有 Chrome。
+
+首次音效准备需要网络和 FFmpeg，后续复用经校验的本地缓存。仓库发布来源清单、CC0 许可和准备脚本，不发布下载的源素材；已发布 MP4 包含混音，不需要在线加载。
+
+## 检查与生成预览
+
+在仓库根目录建立 Python 环境并安装 `requirements-render.txt`，用于媒体核验与 Pillow 联系表：
+
+```sh
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -r requirements-render.txt
-```
-
-先导出静态布局，再渲染完整场景：
-
-```sh
-python scripts/render_demo.py --scene all --stills-only
-python scripts/render_demo.py --scene complex-rotation
-python scripts/render_demo.py --scene all
-python scripts/render_demo.py --gifs-only
-```
-
-`--stills-only` 生成每支的封面与六帧联系表；`--gifs-only` 从已有 MP4 生成 12 秒、640×360、10 fps 的无声摘录。摘录范围：反向车 20–32 秒，另外两支 10–22 秒。
-
-低成本动作预览可用 15 fps 与较低超采样；输出到独立目录保留正式成片：
-
-```sh
-python scripts/render_demo.py --scene negative-ride --fps 15 --scale 1 \
-  --out-dir output/preview/videos
-```
-
-正式默认值为 30 fps、1.5 倍超采样再缩至 1280×720。三个场景均为 36 秒，固定种子合成双声道声音；视频输出为 H.264 / yuv420p + AAC，支持 faststart。不同 FFmpeg 版本可能产生不同编码字节，确定性测试针对相同依赖环境下的画面像素和合成音频。
-
-```sh
 python scripts/validate.py
-python -m unittest discover -s tests -v
 python scripts/check_demo_media.py --report demos/media-check.json
+python scripts/series_previews.py
+npm --prefix web test
+npm --prefix motion run test:series
 ```
 
-## 工程分工
+`series_previews.py` 从**已编码的视频**生成全长 640 px / 16 fps 无声 GIF、720p 封面和带时刻标记的关键帧图。片长或剧情变动后同步更新该脚本的取帧时刻。
 
-- [drawing.py](../scripts/demo_engine/drawing.py)：几何绘制、字体、曲线骨架、姿态混合和手部约束。超出手臂长度的目标会被截在可达范围内，接触测试用于发现这种失配。
-- [performance.py](../scripts/demo_engine/performance.py)：世界坐标的脚步落点、动作权重、预备与缓冲、取物交接，以及三条人物表演时间线；接口说明见 [连续表演](../references/character-motion.md)。
-- [scenes.py](../scripts/demo_engine/scenes.py)：三份独立故事状态、关键时刻、道具及公式。使用绝对时间求状态，允许任意时刻直接取帧。
-- [audio.py](../scripts/demo_engine/audio.py)：程序合成乐句、点击、反向、移动与完成音效，事件时间来自场景。
-- [render_demo.py](../scripts/render_demo.py)：逐帧绘制、FFmpeg 编码、原子替换输出和静态/GIF 预览。
-- [check_demo_media.py](../scripts/check_demo_media.py)：解码实际成片并核查时长、帧数、音轨和峰值。
+## 改编与复用
 
-新增题材时先写规则卡与角色目标，确定动作如何改变状态，再实现新的场景函数和音效 cue。复用骨架不代表复用整段故事；先让“为什么这么做、发生什么、如何改进”在静音画面中成立。
+```sh
+python scripts/init_web.py output/my-concept --scene binary-search
+npm --prefix output/my-concept/motion ci
+npm --prefix output/my-concept/motion run prepare:audio
+npm --prefix output/my-concept/motion run dev
+```
 
-更改现有题材时，规则卡、分镜、代码、测试和视频需要一起更新。例如改变二分查找目标可能改变查询次数和节拍，当前时间线不能只改一个数字就自动适配。
+复制工程保留三种主题、公共动作、声音、字体、锁文件和许可；它不含原参考视频、研究截图或已渲染成片。新任务改 [模型](../web/src/series/model.ts) 和 [场景](../motion/src/scenes/series.tsx)，更新目标、规则、时刻、镜头、音效及检查点。
 
-## 已知制作边界
-
-当前是三支手工编排的代码动画：固定广角构图、简化的身体表演、无配音，不具备通用物理模拟、自动分镜或任意提示词转视频能力。角色与道具接触采用解析几何；数学语义单独测试，不能用视觉效果替代正确性检查。
+历史 Python 引擎和测试继续保留。`python scripts/render_demo.py --scene all` 生成旧版 36 秒案例，默认写入 `output/legacy-demos/videos/`，避免覆盖新版。它不读取当前规则卡，不能用于复现 0.8.0。旧动作比较保留历史版本；剪辑示例已按新片段同步重建。

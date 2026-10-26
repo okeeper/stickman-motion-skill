@@ -1,35 +1,35 @@
 {
-  "duration": 35.86666666666667,
-  "frames": 1076,
+  "duration": 52.4,
+  "frames": 3144,
   "canvas": {
     "width": 1280,
     "height": 720,
-    "fps": 30,
+    "fps": 60,
     "fit": "contain",
-    "background": "#10171c"
+    "background": "#080a0d"
   },
   "clips": [
     {
       "source": "negative-ride.mp4",
-      "frames": 360,
+      "frames": 840,
       "cache_hit": true,
-      "cache_key": "4878e9388273004beb8cda41bd5559a3d334217e7865ebc1cc2b2f7f1cda88d4"
+      "cache_key": "fca60e701da133fd48163990c45f8d50369b0127fb581e2767ddc35037d731a1"
     },
     {
       "source": "binary-search.mp4",
-      "frames": 300,
+      "frames": 1080,
       "cache_hit": true,
-      "cache_key": "22ece410ede216c0078c61710fa61eaf8d86d38925cd211be8ad6ca01909e4c5"
+      "cache_key": "386a56f4ed202dc715b86b3df8ddc5af655ebfd46647ad25f3c2dca9c199fe62"
     },
     {
       "source": "complex-rotation.mp4",
-      "frames": 440,
+      "frames": 1260,
       "cache_hit": true,
-      "cache_key": "54c083b0ff2a3fc1cdca3c40e248bd7428bae7effefa41cc675d23371cd57a58"
+      "cache_key": "e43333d87e9b73a484afff480ab1304c16904c3e1ebabda9c95da4ba6f79c3ff"
     }
   ],
-  "transition_frames": 12,
-  "audio_tracks": 1,
+  "transition_frames": 18,
+  "audio_tracks": 0,
   "subtitles": "edit-showcase.srt",
-  "output_sha256": "acf7a1cd7d1574c7344c4cb0def90827600c72d0780722b7bdaee893d0a751f2"
+  "output_sha256": "2225dca7b051d29e57640000b633323b35fbfae8d7f282bd9a982e61f6e83aec"
 }

@@ -20,12 +20,18 @@ try {
       !args[i + 1]
     )
       throw new Error(
-        "Use --scene trace|action --fps 30|60 --from seconds --to seconds --out file.mp4",
+        "Use --scene trace|action|negative-ride|binary-search|complex-rotation --fps 30|60 --from seconds --to seconds --out file.mp4",
       );
     options[key] = args[i + 1];
   }
   if (
-    !["trace", "action"].includes(options.scene) ||
+    ![
+      "trace",
+      "action",
+      "negative-ride",
+      "binary-search",
+      "complex-rotation",
+    ].includes(options.scene) ||
     !["30", "60"].includes(options.fps) ||
     !options.out.endsWith(".mp4") ||
     !Number.isFinite(Number(options.from)) ||
@@ -37,6 +43,8 @@ try {
     throw new Error("Invalid fps, output or interval");
   if (options.scene === "action" && !args.includes("--out"))
     options.out = "../demos/action/breakpoint.mp4";
+  if (!["trace", "action"].includes(options.scene) && !args.includes("--out"))
+    options.out = `../demos/videos/${options.scene}.mp4`;
   const lab = await openLab(options.scene);
   try {
     const info = await lab.page.evaluate(() => window.__MOTION__.info()),
@@ -62,7 +70,7 @@ try {
       errors: lab.errors,
       frame: (_, t) => lab.page.evaluate((t) => window.__MOTION__.png(t), t),
       audio: (file) =>
-        options.scene === "action"
+        options.scene !== "trace"
           ? writeActionAudio(file, clip.duration, info.cues, { from })
           : writeScore(file, clip.duration, info.cues, {
               from,

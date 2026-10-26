@@ -1,6 +1,8 @@
 # 动作修正：关节、承重与过渡
 
-[新旧放大对比 MP4](before-after.mp4) · [完整新版二分查找](../videos/binary-search.mp4) · [媒体检查](media-check.json) · [骨架与编排接口](../../references/character-motion.md)
+[新旧放大对比 MP4](before-after.mp4) · [当前 TS 重拍版二分查找](../videos/binary-search.mp4) · [媒体检查](media-check.json) · [骨架与编排接口](../../references/character-motion.md)
+
+本页保留 0.2.1 的 Python 历史动作对比；当前同名概念片已在 0.8.0 重拍为 18 秒。下述时间戳只针对本页对比文件。
 
 对比取自二分查找的 **28–36 秒**，左右均为原速、30 fps、相同裁切与放大比例。左侧是修改前的 0.2.0，右侧是本次 0.2.1。内容包括伸手、取物、向前走和庆祝；与反馈截图中的结尾动作对应。旧版本视频来自本仓库提交 `55bce823c79c9123e180f367d2af7be31848952f`，未使用参考作品画面。
 

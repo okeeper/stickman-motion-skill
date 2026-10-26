@@ -1,7 +1,8 @@
 {
-  "toolkit_version": "0.2.1",
-  "frames": 1076,
-  "duration": 35.866667,
+  "project_version": "0.8.0",
+  "frames": 3144,
+  "duration": 52.4,
+  "fps": 60,
   "decode": "pass",
   "delivery_verified": true,
   "delivery_files": 5,

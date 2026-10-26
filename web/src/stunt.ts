@@ -101,6 +101,7 @@ export function locomotion(
   from: number,
   to: number,
   interval: (t: number) => number,
+  continuous = false,
 ): Gait {
   if (!Number.isFinite(from) || !Number.isFinite(to) || to <= from)
     throw new Error('Invalid locomotion interval');
@@ -163,6 +164,17 @@ export function locomotion(
         contact = latest.end - latest.t;
       if (dt < contact) y -= 0.035 * Math.sin((Math.PI * dt) / contact);
       else if (next) {
+        const d = next.t - latest.end,
+          s = t - latest.end;
+        y += 4.905 * s * (d - s);
+      }
+    }
+    if (continuous) {
+      const a = latest?.t ?? from,
+        b = next?.t ?? a + interval(a),
+        phase = (Math.PI * (t - a)) / (b - a);
+      y = 0.84 - 0.018 * Math.min(root.v, 6) - 0.025 * Math.sin(phase) ** 2;
+      if (latest && next && t > latest.end) {
         const d = next.t - latest.end,
           s = t - latest.end;
         y += 4.905 * s * (d - s);

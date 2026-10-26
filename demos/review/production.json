@@ -1,0 +1,26 @@
+{
+  "pages": [
+    {
+      "id": "negative-ride",
+      "productionBuild": true,
+      "frameAt5": true,
+      "navigationLinks": 3,
+      "localOnly": true
+    },
+    {
+      "id": "binary-search",
+      "productionBuild": true,
+      "frameAt5": true,
+      "navigationLinks": 3,
+      "localOnly": true
+    },
+    {
+      "id": "complex-rotation",
+      "productionBuild": true,
+      "frameAt5": true,
+      "navigationLinks": 3,
+      "localOnly": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,14 @@
+{
+  "engine": "Motion Canvas",
+  "scene": "binary-search",
+  "independentFolder": true,
+  "npmCi": true,
+  "audioCacheVerified": true,
+  "build": true,
+  "sourceFrom": 10.5,
+  "sourceTo": 11.2,
+  "frames": 42,
+  "fps": 60,
+  "audio": "aac",
+  "temporaryProjectRemovedAfterCheck": true
+}

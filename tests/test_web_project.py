@@ -38,6 +38,17 @@ class WebProjectTest(unittest.TestCase):
             self.assertFalse(any(project.rglob("*.mp4")))
             self.assertIn("/film.html", (project / "README.md").read_text())
 
+    def test_concept_starters_keep_shared_actions_scenes_and_entrypoints(self):
+        with tempfile.TemporaryDirectory() as folder:
+            for scene in ("negative-ride", "binary-search", "complex-rotation"):
+                project = MODULE.initialize(Path(folder) / scene, scene, "motion-canvas")
+                for relative in (f"motion/{scene}.html", f"motion/src/{scene}-project.ts",
+                                 "motion/src/scenes/series.tsx", "web/src/series/model.ts",
+                                 "web/src/series/motion.ts", "motion/scripts/render-series.mjs"):
+                    self.assertTrue((project / relative).is_file(), relative)
+                self.assertIn(f"/{scene}.html", (project / "README.md").read_text())
+                self.assertFalse(any(project.rglob("*.mp4")))
+
     def test_existing_project_and_invalid_mode_leave_files_untouched(self):
         with tempfile.TemporaryDirectory() as folder:
             project = Path(folder) / "existing"

@@ -1,15 +1,36 @@
 {
   "version": 1,
-  "canvas": {"width": 1280, "height": 720, "fps": 30, "fit": "contain", "background": "#10171c"},
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "fps": 60,
+    "fit": "contain",
+    "background": "#080a0d"
+  },
   "clips": [
-    {"source": "../demos/videos/negative-ride.mp4", "in": 20, "out": 32, "gain_db": -2},
-    {"source": "../demos/videos/binary-search.mp4", "in": 10.5, "out": 30.5, "speed": 2, "gain_db": -2},
-    {"source": "../demos/videos/complex-rotation.mp4", "in": 10, "out": 32, "speed": 1.5, "gain_db": -2}
+    {
+      "source": "../demos/videos/negative-ride.mp4",
+      "in": 0,
+      "out": 14,
+      "gain_db": -1
+    },
+    {
+      "source": "../demos/videos/binary-search.mp4",
+      "in": 0,
+      "out": 18,
+      "gain_db": -1
+    },
+    {
+      "source": "../demos/videos/complex-rotation.mp4",
+      "in": 0,
+      "out": 21,
+      "gain_db": -1
+    }
   ],
-  "transition": {"type": "fade", "duration": 0.4},
-  "audio": [
-    {"source": "../demos/videos/negative-ride.mp4", "in": 30.1, "out": 32.1, "at": 33, "gain_db": -9, "fade_in": 0.05, "fade_out": 0.4}
-  ],
+  "transition": {
+    "type": "fade",
+    "duration": 0.3
+  },
   "subtitles": "edit-showcase.srt",
   "output": "../demos/tooling/edited-showcase.mp4"
 }

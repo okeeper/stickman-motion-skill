@@ -12,8 +12,8 @@ import tempfile
 def initialize(destination: Path, scene: str = "adventure", engine: str = "canvas") -> Path:
     if engine not in {"canvas", "motion-canvas"}:
         raise ValueError("engine must be canvas or motion-canvas")
-    if (engine == "canvas" and scene not in {"adventure", "weight"}) or (engine == "motion-canvas" and scene not in {"trace", "action"}):
-        raise ValueError("canvas supports adventure/weight; motion-canvas supports trace/action")
+    if (engine == "canvas" and scene not in {"adventure", "weight"}) or (engine == "motion-canvas" and scene not in {"trace", "action", "negative-ride", "binary-search", "complex-rotation"}):
+        raise ValueError("canvas supports adventure/weight; motion-canvas supports trace/action/negative-ride/binary-search/complex-rotation")
     destination = destination.expanduser().resolve()
     if destination.exists():
         raise ValueError(f"Destination already exists: {destination}")
@@ -37,11 +37,12 @@ def initialize(destination: Path, scene: str = "adventure", engine: str = "canva
                 for name in names:
                     shutil.copy2(source / "web" / folder / name, web / folder / name)
             shutil.copytree(source / "web" / "src" / "action", web / "src" / "action")
+            shutil.copytree(source / "web" / "src" / "series", web / "src" / "series")
             motion = staging / "motion"
             motion.mkdir()
             for folder in ("src", "scripts", "tests", "public"):
                 shutil.copytree(source / "motion" / folder, motion / folder)
-            for name in ("package.json", "package-lock.json", "tsconfig.json", "tsconfig.test.json", "vite.config.ts", "preview.html", "action.html"):
+            for name in ("package.json", "package-lock.json", "tsconfig.json", "tsconfig.test.json", "vite.config.ts", "preview.html", "action.html", "negative-ride.html", "binary-search.html", "complex-rotation.html"):
                 shutil.copy2(source / "motion" / name, motion / name)
             (staging / "scripts").mkdir()
             shutil.copy2(source / "scripts/prepare_audio.py", staging / "scripts/prepare_audio.py")
@@ -89,7 +90,7 @@ npm run render -- --scene {scene}
         if engine == "motion-canvas":
             (staging / "README.md").write_text("""# Motion Canvas 火柴人动画
 
-包含《断点》的正常速度连续动作与拟音，以及《留下弧线》的曲线/公式技术试片；新故事需要重新编写规则和行动。
+包含三支概念动作短片《逆向通行》《最后一扇》《转过死角》，以及《断点》的连续动作与《留下弧线》的曲线/公式试片；新故事需要重新编写规则和行动。
 
 ```sh
 npm --prefix motion ci
@@ -99,7 +100,7 @@ npm --prefix motion run build
 npm --prefix motion test
 ```
 
-`/action.html` 是走跑跳摔滚与有声预览，`/preview.html` 是曲线/公式试片；根地址是 Motion Canvas 编辑器项目选择。
+`/negative-ride.html`、`/binary-search.html`、`/complex-rotation.html` 是三个概念故事；`/action.html` 是走跑跳摔滚与有声预览，`/preview.html` 是曲线/公式试片；根地址是 Motion Canvas 编辑器项目选择。
 `motion/src/scenes/trace.tsx` 编排场景，`geometry.ts` 和 `components/actor.tsx` 处理曲线与轮廓。
 `web/` 仅提供共享物理、骨架、表演、声音和编码模块，不需要在其中安装 npm 依赖。
 请保留 `motion/`、`web/`、`assets/fonts/` 的相对位置。
@@ -111,6 +112,8 @@ cd motion
 npx playwright install chromium
 npm run test:browser
 npm run test:action
+npm run test:series
+npm run render:series
 npm run render -- --scene action --fps 30 --from 5.3 --to 6.8 --out ../renders/preview.mp4
 npm run render -- --scene action --fps 60 --out ../renders/final.mp4
 ```
@@ -120,7 +123,7 @@ npm run render -- --scene action --fps 60 --out ../renders/final.mp4
 npm 依赖保留各自许可。音效缓存可重建，git 忽略本地 WAV 和缓存指纹；本工程不含参考原片、研究截图或已安装依赖。
 """, encoding="utf-8")
             with (staging / "README.md").open("a", encoding="utf-8") as handle:
-                handle.write(f"\n初始任务入口：`{'/action.html' if scene == 'action' else '/preview.html'}`。\n")
+                handle.write(f"\n初始任务入口：`{'/preview.html' if scene == 'trace' else '/' + scene + '.html'}`。\n")
         if destination.exists():
             raise ValueError(f"Destination already exists: {destination}")
         staging.rename(destination)
@@ -134,7 +137,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path)
     parser.add_argument("--engine", choices=("canvas", "motion-canvas"))
-    parser.add_argument("--scene", choices=("adventure", "weight", "trace", "action"))
+    parser.add_argument("--scene", choices=("adventure", "weight", "trace", "action", "negative-ride", "binary-search", "complex-rotation"))
     args = parser.parse_args()
     try:
         # Existing explicit --scene adventure/weight invocations remain compatible.

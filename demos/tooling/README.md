@@ -1,43 +1,27 @@
-# 通用脚手架实测
+# 通用剪辑工具实测：新版三片合集
 
-[剪辑成片](edited-showcase.mp4) · [剪辑清单](../../examples/edit-showcase.json) · [中文字幕](../../examples/edit-showcase.srt) · [检查记录](review/QA.md)
+[52.4 秒 / 60 fps 合集](edited-showcase.mp4) · [剪辑清单](../../examples/edit-showcase.json) · [中文字幕](../../examples/edit-showcase.srt) · [实际检查](review/QA.md)
 
-这条合辑已随 0.2.1 动作修正重新生成，由三支原创 demo 剪辑而成，用于验证通用制作工具。画面沿用原作，剪辑参数集中在 JSON 清单中。
+0.8.0 已将旧剪辑示例同步改为三支 TS 重拍成片，全部按正常速度连续播放。源片分别为 14、18、21 秒；两次 0.3 秒淡化各占 18 帧，最终为 **3144 帧 / 52.4 秒，1280×720 / 60 fps**。
 
-| 片段 | 原片区间 | 倍速 | 标准化后的时长 |
+| 片段 | 源区间 | 倍速 | 合集起点 |
 |---|---|---|---|
-| 反向才到达 | 20–32 秒 | 1× | 12 秒 / 360 帧 |
-| 只留下一半 | 10.5–30.5 秒 | 2× | 10 秒 / 300 帧 |
-| 四分之一圈 | 10–32 秒 | 1.5× | 14.6667 秒 / 440 帧 |
+| 《逆向通行》 | 0–14 秒 | 1× | 0 秒 |
+| 《最后一扇》 | 0–18 秒 | 1× | 13.7 秒 |
+| 《转过死角》 | 0–21 秒 | 1× | 31.4 秒 |
 
-两次 0.4 秒淡化，共扣除 24 帧，最终 **1076 帧 / 35.8667 秒，1280×720、30 fps**。原声音量降低 2 dB，末尾叠加来自本项目原声的完成提示。中文 SRT 封装为可选择的软字幕，需要在支持字幕的播放器中开启。
+原声降低 1 dB，不另叠与动作不对应的音效。中文 SRT 封装为可选择的软字幕，可在支持字幕的播放器中开启。
 
-![实际成片的时间码联系表](review/contact-sheet.jpg)
-
-## 可复现命令
-
-从仓库根目录执行：
+![从合集抽取的时间码联系表](review/contact-sheet.jpg)
 
 ```sh
 python scripts/motion.py edit examples/edit-showcase.json --plan
 python scripts/motion.py edit examples/edit-showcase.json
-python scripts/motion.py inspect demos/tooling/edited-showcase.mp4 --out output/review
-python scripts/motion.py deliver demos/tooling/edited-showcase.mp4 --out output/delivery-v1
-python scripts/motion.py verify output/delivery-v1
+python scripts/motion.py inspect demos/tooling/edited-showcase.mp4 --out output/showcase-review
+python scripts/motion.py deliver demos/tooling/edited-showcase.mp4 --out output/showcase-delivery
+python scripts/motion.py verify output/showcase-delivery
 ```
 
-交付目录需要不存在；再次运行时换一个目录名。完整字段与独立工程用法见 [工具说明](../../references/tooling.md)。
+交付目录需尚未存在。具体剪辑、变速、混音和独立工程字段见 [工具说明](../../references/tooling.md)；这些通用能力继续由集成测试覆盖，此合集优先保留正常动作节奏。
 
-## 实际检查
-
-- 实际 MP4 完整解码通过，帧数和时长符合计划；音轨峰值为 -16.175 dBFS，软字幕可以导出回 UTF-8 SRT。
-- 复跑时三个标准化片段全部命中缓存；重新合成的 MP4 与先前文件 SHA-256 相同，见 [缓存结果](cache-check.json)。这证明本次运行的内容一致性，不保证不同 FFmpeg 版本编码字节相同。
-- `deliver` 对复制后的成片重新检查，并生成包含 5 个文件的交付清单；`verify` 通过。汇总见 [validation.json](validation.json)。
-- 查看了实际成片的 12 帧联系表；没有将正常速度人工观片或听审标记为完成。
-- 本轮使用原有 render_demo.py 入口重渲染三支 30 fps、scale=1.5 的完整样片，每支 36 秒 / 1080 帧；独立工程局部渲染由集成测试验证。
-
-## 回归覆盖
-
-仓库共 26 个测试方法：12 项概念/成片/声音测试、8 项关节连续性与承重测试，以及 6 项真实 FFmpeg 集成测试。新用例覆盖混合分辨率和帧率、竖屏留边、变速音高、静音补齐、三段淡化、额外音轨入点、中文与引号路径、软字幕、缓存失效、非法清单、编码失败保留旧成片、交付文件变化检测，以及独立工程在其他工作目录中的局部渲染和静帧输出。
-
-本轮修复了 setpts 处理后帧率信息丢失导致的连续淡化失败，以及未明确编码帧率导致的末帧时长缺失；输入滤镜在时间调整后明确 fps，输出明确 CFR。模板导出的 DURATION 使用显式重导出，避免自动整理导入时误删场景契约。
+实际 MP4 完整解码通过，音轨峰值 −8.343 dBFS；[媒体报告](review/qa.json) 记录 SHA-256 和 16 个采样点。复跑三个标准化片段全部命中缓存，输出指纹保持一致，见 [缓存结果](cache-check.json)；这不保证不同 FFmpeg 版本编码字节相同。交付复制后的 5 个文件通过 verify，见 [汇总](validation.json)。未把完整人工观片或听审标记为完成。

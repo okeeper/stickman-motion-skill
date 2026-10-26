@@ -1,17 +1,401 @@
 {
+  "file": "complex-rotation.mp4",
   "scene": "complex-rotation",
-  "duration": 36.0,
-  "fps": 30,
-  "frames": 1080,
-  "size": [
-    1280,
-    720
-  ],
-  "bytes": 1555864,
+  "fps": 60,
+  "frames": 1260,
+  "duration": 21,
+  "width": 1280,
+  "height": 720,
+  "resolutionScale": 2,
   "audio": {
-    "sample_rate": 48000,
+    "sampleRate": 48000,
     "channels": 2,
-    "peak_dbfs": -14.04
+    "peakDbfs": -7.540652037644831,
+    "rmsDbfs": -38.43455160639064,
+    "clippedSamples": 0,
+    "sourceFrom": 0,
+    "layers": [
+      "licensed-foley",
+      "cloth-air-breath",
+      "world"
+    ],
+    "cues": 39,
+    "assetLicense": "CC0-1.0",
+    "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
+    "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
   },
-  "render_seconds": 33.3
+  "clips": [
+    {
+      "title": "转过死角",
+      "duration": 21,
+      "width": 1280,
+      "height": 720,
+      "fps": 60,
+      "id": "complex-rotation",
+      "cues": [
+        {
+          "id": "c-entry-0",
+          "t": 0.25,
+          "kind": "footstep",
+          "x": 3.79474358974359,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.5337670374513672
+        },
+        {
+          "id": "c-entry-1",
+          "t": 0.5,
+          "kind": "footstep",
+          "x": 3.185769230769231,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.42586765122344006
+        },
+        {
+          "id": "c-entry-2",
+          "t": 0.75,
+          "kind": "footstep",
+          "x": 2.5292376145641025,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.3176135384651499
+        },
+        {
+          "id": "c-entry-settle",
+          "t": 1.22,
+          "kind": "footstep",
+          "x": 2.5,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": 0.3634359005937466
+        },
+        {
+          "id": "c-board-grip",
+          "t": 1.3499999999999999,
+          "kind": "shoe-grip",
+          "x": 2.5,
+          "strength": 0.65,
+          "pan": 0.3795161093629543
+        },
+        {
+          "id": "c-board-air",
+          "t": 1.44,
+          "kind": "whoosh",
+          "x": 2.5,
+          "strength": 0.65,
+          "duration": 0.2,
+          "pan": 0.390429768463635
+        },
+        {
+          "id": "c-board-land",
+          "t": 2.05,
+          "kind": "landing",
+          "x": 1.6,
+          "strength": 0.8,
+          "pan": 0.26731012062329307
+        },
+        {
+          "id": "c-touch-0",
+          "t": 2.65,
+          "kind": "hand",
+          "x": 1.6,
+          "strength": 0.4,
+          "pan": 0.2746643345568628
+        },
+        {
+          "id": "c-start-0",
+          "t": 2.69,
+          "kind": "gate",
+          "x": 1.6,
+          "strength": 0.18,
+          "pan": 0.27481604239311813
+        },
+        {
+          "id": "c-move-0",
+          "t": 2.75,
+          "kind": "whoosh",
+          "x": 1.5788950429026969,
+          "strength": 0.35,
+          "duration": 1.65,
+          "pan": 0.27104294958876407
+        },
+        {
+          "id": "c-lock-0",
+          "t": 4.65,
+          "kind": "gate",
+          "x": 9.797174393178826e-17,
+          "strength": 0.2,
+          "pan": 0.03749017298823532
+        },
+        {
+          "id": "c-touch-1",
+          "t": 5.65,
+          "kind": "hand",
+          "x": 9.797174393178826e-17,
+          "strength": 0.4,
+          "pan": 0.03921568627450983
+        },
+        {
+          "id": "c-start-1",
+          "t": 5.69,
+          "kind": "gate",
+          "x": 9.797174393178826e-17,
+          "strength": 0.18,
+          "pan": 0.03921568627450983
+        },
+        {
+          "id": "c-move-1",
+          "t": 5.75,
+          "kind": "whoosh",
+          "x": -0.25901823004817887,
+          "strength": 0.35,
+          "duration": 1.65,
+          "pan": -0.01157220197023115
+        },
+        {
+          "id": "c-lock-1",
+          "t": 7.65,
+          "kind": "gate",
+          "x": -1.6,
+          "strength": 0.2,
+          "pan": -0.27450980392156865
+        },
+        {
+          "id": "c-pickup",
+          "t": 8.25,
+          "kind": "hand",
+          "x": -1.97,
+          "strength": 0.3,
+          "pan": -0.3470588235294118
+        },
+        {
+          "id": "c-touch-2",
+          "t": 9.15,
+          "kind": "hand",
+          "x": -1.6,
+          "strength": 0.4,
+          "pan": -0.27460063725490197
+        },
+        {
+          "id": "c-start-2",
+          "t": 9.19,
+          "kind": "gate",
+          "x": -1.6,
+          "strength": 0.18,
+          "pan": -0.2746905999223433
+        },
+        {
+          "id": "c-move-2",
+          "t": 9.25,
+          "kind": "whoosh",
+          "x": -1.5788950429026967,
+          "strength": 0.35,
+          "duration": 1.65,
+          "pan": -0.27077061782889966
+        },
+        {
+          "id": "c-cloth",
+          "t": 9.4,
+          "kind": "cloth",
+          "x": -1.6,
+          "strength": 0.35,
+          "pan": -0.27601692568385383
+        },
+        {
+          "id": "c-lock-2",
+          "t": 11.15,
+          "kind": "gate",
+          "x": -2.9391523179536476e-16,
+          "strength": 0.2,
+          "pan": -0.028098700677802055
+        },
+        {
+          "id": "c-touch-3",
+          "t": 12,
+          "kind": "hand",
+          "x": -2.9391523179536476e-16,
+          "strength": 0.4,
+          "pan": -0.039215686274509866
+        },
+        {
+          "id": "c-start-3",
+          "t": 12.04,
+          "kind": "gate",
+          "x": -2.9391523179536476e-16,
+          "strength": 0.18,
+          "pan": -0.03922099763979672
+        },
+        {
+          "id": "c-move-3",
+          "t": 12.1,
+          "kind": "whoosh",
+          "x": 0.25901823004817903,
+          "strength": 0.35,
+          "duration": 1.65,
+          "pan": 0.011492328802792913
+        },
+        {
+          "id": "c-lock-3",
+          "t": 14,
+          "kind": "gate",
+          "x": 1.6,
+          "strength": 0.2,
+          "pan": 0.16103848946986196
+        },
+        {
+          "id": "c-exit-grip",
+          "t": 15,
+          "kind": "shoe-grip",
+          "x": 1.6,
+          "strength": 0.65,
+          "pan": 0.13515648738985117
+        },
+        {
+          "id": "c-exit-air",
+          "t": 15.09,
+          "kind": "whoosh",
+          "x": 1.6,
+          "strength": 0.65,
+          "duration": 0.2,
+          "pan": 0.1251727885712255
+        },
+        {
+          "id": "c-exit-land",
+          "t": 15.66,
+          "kind": "landing",
+          "x": 2.7,
+          "strength": 0.8,
+          "pan": 0.2313937316773507
+        },
+        {
+          "id": "c-escape-0",
+          "t": 16.15,
+          "kind": "footstep",
+          "x": 3.2299650349650353,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.18964454981549464
+        },
+        {
+          "id": "c-escape-1",
+          "t": 16.4,
+          "kind": "footstep",
+          "x": 3.7835780885780887,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.22224046028592168
+        },
+        {
+          "id": "c-escape-2",
+          "t": 16.65,
+          "kind": "footstep",
+          "x": 4.408829845603683,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.2764114665888314
+        },
+        {
+          "id": "c-escape-settle",
+          "t": 17.22,
+          "kind": "footstep",
+          "x": 4.6,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": 0.1824529290567261
+        },
+        {
+          "id": "c-power",
+          "t": 17.35,
+          "kind": "gate",
+          "x": 5,
+          "strength": 0.45,
+          "pan": 0.2520805522155015
+        },
+        {
+          "id": "c-leave-0",
+          "t": 18.19,
+          "kind": "footstep",
+          "x": 5.2735,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.2830000000000001
+        },
+        {
+          "id": "c-leave-1",
+          "t": 18.53,
+          "kind": "footstep",
+          "x": 5.783500000000001,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.39633333333333354
+        },
+        {
+          "id": "c-leave-2",
+          "t": 18.87,
+          "kind": "footstep",
+          "x": 6.293184149248002,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.5095964776106671
+        },
+        {
+          "id": "c-leave-3",
+          "t": 19.21,
+          "kind": "footstep",
+          "x": 6.445,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.5433333333333334
+        },
+        {
+          "id": "c-leave-settle",
+          "t": 19.52,
+          "kind": "footstep",
+          "x": 6.4,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": 0.5333333333333334
+        },
+        {
+          "id": "c-breath",
+          "t": 19.6,
+          "kind": "breath",
+          "x": 5.8,
+          "strength": 0.3,
+          "pan": 0.39999999999999997
+        }
+      ],
+      "engine": "Motion Canvas 3.17.2",
+      "transfers": [
+        {
+          "takeoff": 1.44,
+          "land": 2.05,
+          "vx": -1.4754098360655736,
+          "vy": 2.811722131147541
+        },
+        {
+          "takeoff": 15.09,
+          "land": 15.66,
+          "vx": 1.929824561403509,
+          "vy": 2.6028675438596496
+        }
+      ],
+      "resolutionScale": 2,
+      "sourceDuration": 21,
+      "from": 0,
+      "to": 21,
+      "frames": 1260
+    }
+  ],
+  "sha256": "84beff54608a2b92808ba8f24e94d31cfc23d0fb499c301d38c6cbebd9c8b0b7"
 }

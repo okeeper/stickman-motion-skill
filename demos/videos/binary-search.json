@@ -1,17 +1,388 @@
 {
+  "file": "binary-search.mp4",
   "scene": "binary-search",
-  "duration": 36.0,
-  "fps": 30,
+  "fps": 60,
   "frames": 1080,
-  "size": [
-    1280,
-    720
-  ],
-  "bytes": 1355557,
+  "duration": 18,
+  "width": 1280,
+  "height": 720,
+  "resolutionScale": 2,
   "audio": {
-    "sample_rate": 48000,
+    "sampleRate": 48000,
     "channels": 2,
-    "peak_dbfs": -14.72
+    "peakDbfs": -10.00434702007864,
+    "rmsDbfs": -42.38250966828968,
+    "clippedSamples": 0,
+    "sourceFrom": 0,
+    "layers": [
+      "licensed-foley",
+      "cloth-air-breath",
+      "world"
+    ],
+    "cues": 37,
+    "assetLicense": "CC0-1.0",
+    "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
+    "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
   },
-  "render_seconds": 39.5
+  "clips": [
+    {
+      "title": "最后一扇",
+      "duration": 18,
+      "width": 1280,
+      "height": 720,
+      "fps": 60,
+      "id": "binary-search",
+      "cues": [
+        {
+          "id": "b-entry-0",
+          "t": 0.25,
+          "kind": "footstep",
+          "x": -3.453,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.467190977886498
+        },
+        {
+          "id": "b-entry-1",
+          "t": 0.5,
+          "kind": "footstep",
+          "x": -2.753,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.3759446234319933
+        },
+        {
+          "id": "b-entry-2",
+          "t": 0.75,
+          "kind": "footstep",
+          "x": -2.053,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.28873122902545745
+        },
+        {
+          "id": "b-entry-3",
+          "t": 1,
+          "kind": "footstep",
+          "x": -1.3529999999999993,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.20556242204995437
+        },
+        {
+          "id": "b-entry-4",
+          "t": 1.25,
+          "kind": "footstep",
+          "x": -0.5627609682216543,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.1132253549926013
+        },
+        {
+          "id": "b-entry-settle",
+          "t": 1.82,
+          "kind": "footstep",
+          "x": -0.32,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.1235021256720345
+        },
+        {
+          "id": "b-query-0",
+          "t": 2.65,
+          "kind": "hand",
+          "x": 0,
+          "strength": 0.38,
+          "pan": -0.13158577199470703
+        },
+        {
+          "id": "b-latch-0",
+          "t": 2.78,
+          "kind": "gate",
+          "x": 0,
+          "strength": 0.2,
+          "pan": -0.13603946161806632
+        },
+        {
+          "id": "b-12-0",
+          "t": 3.9,
+          "kind": "footstep",
+          "x": 0.18762068965517248,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.12682219228379693
+        },
+        {
+          "id": "b-12-1",
+          "t": 4.15,
+          "kind": "footstep",
+          "x": 0.725551724137931,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.06941699610369707
+        },
+        {
+          "id": "b-12-2",
+          "t": 4.4,
+          "kind": "footstep",
+          "x": 1.2634827586206898,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.02167422449899273
+        },
+        {
+          "id": "b-12-3",
+          "t": 4.65,
+          "kind": "footstep",
+          "x": 1.8014137931034486,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.01912332286082971
+        },
+        {
+          "id": "b-12-4",
+          "t": 4.9,
+          "kind": "footstep",
+          "x": 2.339344827586207,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.057108339298923394
+        },
+        {
+          "id": "b-12-5",
+          "t": 5.15,
+          "kind": "footstep",
+          "x": 2.8449999999999998,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.09192122843402033
+        },
+        {
+          "id": "b-12-settle",
+          "t": 5.569999999999999,
+          "kind": "footstep",
+          "x": 2.8000000000000003,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": 0.0076720881455508705
+        },
+        {
+          "id": "b-query-1",
+          "t": 6,
+          "kind": "hand",
+          "x": 3.12,
+          "strength": 0.38,
+          "pan": 0.016614754654971847
+        },
+        {
+          "id": "b-latch-1",
+          "t": 6.13,
+          "kind": "gate",
+          "x": 3.12,
+          "strength": 0.2,
+          "pan": 0.009406925543344548
+        },
+        {
+          "id": "b-14-0",
+          "t": 7.24,
+          "kind": "footstep",
+          "x": 3.6611904761904763,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.08978498837007612
+        },
+        {
+          "id": "b-14-1",
+          "t": 7.58,
+          "kind": "footstep",
+          "x": 4.300385776358879,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.19055456250626335
+        },
+        {
+          "id": "b-query-2",
+          "t": 8.6,
+          "kind": "hand",
+          "x": 4.68,
+          "strength": 0.38,
+          "pan": 0.1771388277444542
+        },
+        {
+          "id": "b-latch-2",
+          "t": 8.73,
+          "kind": "gate",
+          "x": 4.68,
+          "strength": 0.2,
+          "pan": 0.16907510457902522
+        },
+        {
+          "id": "b-13-0",
+          "t": 9.84,
+          "kind": "footstep",
+          "x": 3.5482350131248204,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.10267386065344991
+        },
+        {
+          "id": "b-13-settle",
+          "t": 10.32,
+          "kind": "footstep",
+          "x": 3.5800000000000005,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.09545454545454533
+        },
+        {
+          "id": "b-query-3",
+          "t": 10.8,
+          "kind": "hand",
+          "x": 3.9000000000000004,
+          "strength": 0.38,
+          "pan": -0.022727272727272645
+        },
+        {
+          "id": "b-latch-3",
+          "t": 10.930000000000001,
+          "kind": "gate",
+          "x": 3.9000000000000004,
+          "strength": 0.2,
+          "pan": -0.022727272727272645
+        },
+        {
+          "id": "b-key",
+          "t": 11.7,
+          "kind": "hand",
+          "x": 3.9000000000000004,
+          "strength": 0.45,
+          "pan": -0.022727272727272645
+        },
+        {
+          "id": "b-open",
+          "t": 12.2,
+          "kind": "gate",
+          "x": 3.9000000000000004,
+          "strength": 0.4,
+          "pan": -0.022727272727272645
+        },
+        {
+          "id": "b-lift",
+          "t": 12.5,
+          "kind": "whoosh",
+          "x": 3.9000000000000004,
+          "strength": 0.3,
+          "duration": 1.6,
+          "pan": -0.030509078759328224
+        },
+        {
+          "id": "b-lock",
+          "t": 14.25,
+          "kind": "gate",
+          "x": 3.9000000000000004,
+          "strength": 0.35,
+          "pan": -0.34209098591953185
+        },
+        {
+          "id": "b-exit-0",
+          "t": 14.7,
+          "kind": "footstep",
+          "x": 4.2458124999999995,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.2776664645796592
+        },
+        {
+          "id": "b-exit-1",
+          "t": 14.95,
+          "kind": "footstep",
+          "x": 4.9676874999999985,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.14321973150032583
+        },
+        {
+          "id": "b-exit-2",
+          "t": 15.2,
+          "kind": "footstep",
+          "x": 5.689562499999998,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.012176244063647278
+        },
+        {
+          "id": "b-exit-3",
+          "t": 15.45,
+          "kind": "footstep",
+          "x": 6.411437499999998,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.115214374701462
+        },
+        {
+          "id": "b-exit-4",
+          "t": 15.7,
+          "kind": "footstep",
+          "x": 7.133312499999997,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.23932268320438427
+        },
+        {
+          "id": "b-exit-5",
+          "t": 15.95,
+          "kind": "footstep",
+          "x": 7.948246501521414,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.37870990003254235
+        },
+        {
+          "id": "b-release",
+          "t": 16.5,
+          "kind": "breath",
+          "x": 8.2,
+          "strength": 0.3,
+          "pan": 0.38907306363903565
+        },
+        {
+          "id": "b-exit-settle",
+          "t": 16.52,
+          "kind": "footstep",
+          "x": 8.2,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": 0.38776536917765625
+        }
+      ],
+      "engine": "Motion Canvas 3.17.2",
+      "transfers": [],
+      "resolutionScale": 2,
+      "sourceDuration": 18,
+      "from": 0,
+      "to": 18,
+      "frames": 1080
+    }
+  ],
+  "sha256": "6ec841716084269986b5de88c0c83be641a130d8a6dd2ba9d1c86077d8439099"
 }

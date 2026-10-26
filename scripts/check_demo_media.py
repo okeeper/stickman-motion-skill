@@ -3,16 +3,21 @@
 
 from __future__ import annotations
 import argparse
+import hashlib
 import json
 import math
 import shutil
 import subprocess
 from pathlib import Path
 import numpy as np
-from demo_engine.scenes import SCENES, DURATION
+EXPECTED = {"negative-ride": 14, "binary-search": 18, "complex-rotation": 21}
+SCENES = tuple(EXPECTED)
 
 
-def check(path):
+def check(path, legacy=False):
+    duration = 36 if legacy else EXPECTED.get(path.stem)
+    if duration is None:
+        raise ValueError("unknown demo name")
     if not path.is_file():
         raise ValueError(f"missing video: {path}")
     probe = subprocess.run(
@@ -43,9 +48,11 @@ def check(path):
     num, den = map(int, video["avg_frame_rate"].split("/"))
     fps = num / den
     frames = int(video["nb_read_frames"])
-    if fps <= 0 or abs(frames / fps - DURATION) > 1 / fps:
+    if fps != (30 if legacy else 60):
+        raise ValueError("unexpected final demo frame rate")
+    if fps <= 0 or abs(frames / fps - duration) > 1 / fps:
         raise ValueError("unexpected frame count / duration")
-    if abs(float(audio["duration"]) - DURATION) > 0.05:
+    if abs(float(audio["duration"]) - duration) > 0.05:
         raise ValueError("audio duration does not match timeline")
     if audio["codec_name"] != "aac" or audio["channels"] != 2:
         raise ValueError("expected stereo AAC")
@@ -80,6 +87,7 @@ def check(path):
         raise ValueError(f"decoded audio silent or clipping: {peak}")
     return {
         "file": path.name,
+        "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
         "duration": float(data["format"]["duration"]),
         "fps": fps,
         "frames": frames,
@@ -102,11 +110,12 @@ def main():
         default=Path(__file__).resolve().parents[1] / "demos/videos",
     )
     p.add_argument("--report", type=Path)
+    p.add_argument("--legacy", action="store_true", help="expect historical 36-second / 30 fps Python output")
     args = p.parse_args()
     if not all(shutil.which(tool) for tool in ("ffmpeg", "ffprobe")):
         p.exit(1, "FFmpeg and ffprobe must be on PATH.\n")
     try:
-        results = [check(args.video_dir / f"{scene}.mp4") for scene in SCENES]
+        results = [check(args.video_dir / f"{scene}.mp4", args.legacy) for scene in SCENES]
     except (OSError, ValueError, subprocess.CalledProcessError) as e:
         p.exit(1, f"Media check failed: {e}\n")
     content = json.dumps(results, indent=2) + "\n"

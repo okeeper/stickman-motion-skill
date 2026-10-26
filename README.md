@@ -8,6 +8,36 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
+## 0.8.0：重拍三支概念动作短片
+
+三个原主题已重新编写并用 **TypeScript / Motion Canvas** 生成完整新片：人物主动判断、正常速度行动，规则改变路线，身体承担制动、惯性和落地。三支共 **53 秒 / 3180 帧 / 100 个声音事件**，均为 720p / 60 fps，有声网页与视频共用模型和混音。
+
+### 01 · 《逆向通行》· 14 秒
+
+追上载台，操作 `×(−1)`，承受制动和反向惯性，伏身过梁，再借速度跳离到出口。目标速度 `u` 与实际速度 `v` 分别显示，有限加速度执行反转。
+
+![逆向通行：登台、反向、伏身、跳离](demos/previews/negative-ride.gif)
+
+[完整有声 MP4](demos/videos/negative-ride.mp4) · [规则卡](examples/negative-ride.yaml) · [实际关键帧](demos/posters/negative-ride-contact-sheet.jpg)
+
+### 02 · 《最后一扇》· 18 秒
+
+带着 63 钥匙查找有序升降台，按中点依次查询 8、12、14、13，比较后移动和折返，匹配后插入钥匙并乘台抵达上层。排除候选只降低亮度，原数组不删除、不重排。
+
+![最后一扇：比较、排除、折返与升降](demos/previews/binary-search.gif)
+
+[完整有声 MP4](demos/videos/binary-search.mp4) · [规则卡](examples/binary-search.yaml) · [实际关键帧](demos/posters/binary-search-contact-sheet.jpg)
+
+### 03 · 《转过死角》· 21 秒
+
+跳上 `×i` 载台，经四个四分之一圈取回电芯并恢复出口。角色保持直立，随平台受力倾身；完成后才出现乘法结果，圆弧最后闭合为 `i⁴ = 1`。
+
+![转过死角：四次旋转、取回电芯、恢复出口](demos/previews/complex-rotation.gif)
+
+[完整有声 MP4](demos/videos/complex-rotation.mp4) · [规则卡](examples/complex-rotation.yaml) · [实际关键帧](demos/posters/complex-rotation-contact-sheet.jpg)
+
+[三支连续观看](demos/tooling/edited-showcase.mp4) · [逐段剧本与公共模块](demos/PRODUCTION.md) · [复现与改编命令](demos/README.md) · [实际 QA](demos/QA.md)。可用 `npm --prefix motion run render:series` 重建三支，用 `init_web.py --scene binary-search` 等创建独立工程。它们是手工编排的故事实现，不是任意提示词自动成片工具；正常速度主观观片、完整听审和观众理解测试的完成范围单独记录。
+
 ## 0.7.0：正常速度动作与接触拟音
 
 新增 **11 秒 / 60 fps 有声试片《断点》**：走、跑、冲刺、助跑跳、绊倒、手掌保护、收身滚翻、起身接跑、穿门制动和回看。动作衔接保留动量，执行段按正常速度编排。
@@ -36,7 +66,7 @@ npm --prefix output/my-action/motion run dev
 
 [18 秒 / 60 fps 有声试片](demos/geometry/trace.mp4) · [实际检查](demos/geometry/QA.md) · [数学图形方法](references/math-graphics.md) · [工程说明](motion/README.md)
 
-这是曲线、公式与既有动作模型的**技术试片**，不是新的完整冒险剧本。尚未把《借势》或旧片全部迁移到 Motion Canvas，也未完成主观完整听审和观众理解测试。
+这是曲线、公式与既有动作模型的**技术试片**，不是新的完整冒险剧本。《借势》保留原 Canvas 实现；三个概念主题已在 0.8.0 用 Motion Canvas 重拍。检查范围分别记录，不以库名代替实际评估。
 
 ```sh
 python scripts/init_web.py output/my-film
@@ -91,47 +121,7 @@ npm --prefix web ci
 npm --prefix web run dev
 ```
 
-这是有效质量驱动、结合关节表演的动画模型，尚非完整人体物理模拟。下面三支概念故事仍使用 Python 引擎，本轮未迁移其全部镜头，也不把新模型的验证结论套到旧片上。
-
-## 三支概念故事 Demo
-
-每支 **36 秒，1280×720，30 fps，无台词，含原创合成音乐与音效**。下面是 12 秒无声 GIF 摘录，完整 MP4 包含开端、试探和结果。
-
-### 01 · 反向才到达
-
-角色要去左边，运载车却朝右。三次触碰 `×(-1)`，让“负数乘法”变成试错、观察和主动复用。
-
-![反向才到达：主动反向、跳上运载车并跨越缺口](demos/previews/negative-ride.gif)
-
-[完整 MP4](demos/videos/negative-ride.mp4) · [任务与规则卡](examples/negative-ride.yaml) · [关键帧](demos/posters/negative-ride-contact-sheet.jpg)
-
-### 02 · 只留下一半
-
-十六扇门的值按升序排列，需要查询后才揭晓。角色寻找 63，候选区间随着比较从 16 缩至 8、4、1，展示算法如何改变下一步行动。
-
-![二分查找：揭晓中点值，排除不可能的一侧](demos/previews/binary-search.gif)
-
-[完整 MP4](demos/videos/binary-search.mp4) · [任务与规则卡](examples/binary-search.yaml) · [关键帧](demos/posters/binary-search-contact-sheet.jpg)
-
-### 03 · 四分之一圈
-
-角色乘坐 `×i` 载台，沿单位圆取物并回家。四次逆时针转动留下完整轨迹，最后得到 `i⁴ = 1`。
-
-![复数旋转：第二次乘以 i，到达对侧取物，再继续返回](demos/previews/complex-rotation.gif)
-
-[完整 MP4](demos/videos/complex-rotation.mp4) · [任务与规则卡](examples/complex-rotation.yaml) · [关键帧](demos/posters/complex-rotation-contact-sheet.jpg)
-
-## 这些示例验证什么
-
-| 示例 | 核心能力 | 必须保持的边界 |
-|---|---|---|
-| 反向才到达 | 符号操作、预备动作、接触、试错和复用 | 面板是下一次运行的速度设置，停车时不代表实际速度 |
-| 只留下一半 | 算法状态、候选范围、比较后的方向决策 | 门退场表示排除候选，不删除或重排原数组 |
-| 四分之一圈 | 参数化几何、空间路径、携带与闭环 | 中间旋转是展示插值，完成后才显示乘法结果 |
-
-三支样片共用曲线骨架、连续姿态、脚部承重、手部接触、绝对时间求帧和音效模块。0.2.1 修正了交叉腿、折角关节和突然换姿势；[查看新旧动作对比](demos/motion/README.md)与[可复用动作接口](references/character-motion.md)。它们是专门编写的参考实现；新增题材仍需要规则卡、分镜与场景代码，当前不支持把任意提示词或 YAML 直接变成视频。
-
-自动检查、关键帧及连续抽帧的检查范围见 [QA 记录](demos/QA.md)。这些早期样片尚未经过观众理解度测试，不能据此声称达到参考作品的表演或叙事水平。
+这是有效质量驱动、结合关节表演的动画模型，尚非完整人体物理模拟。当时的三个概念案例使用 Python 引擎；0.8.0 已重新编写并以 TS 重拍，旧引擎作为历史参考保留。
 
 ## 核心方法
 
@@ -163,18 +153,19 @@ git -C "$HOME/.agents/skills/stickman-motion-skill" pull --ff-only
 
 ## 复现视频
 
-需要 Python 3.10+，以及 PATH 中的 `ffmpeg` 和 `ffprobe`。渲染不调用外部模型或网络，不需要 API key。
+需要 Node.js 22.12+、Python 3.10+、FFmpeg / ffprobe 和 Chromium。首次准备 CC0 音效需要联网，后续导出使用本地素材，不需要 API key。
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements-render.txt
-python scripts/render_demo.py --scene all
-python scripts/render_demo.py --gifs-only
-python scripts/check_demo_media.py --report demos/media-check.json
+npm --prefix motion ci
+npm --prefix motion run prepare:audio
+cd motion
+npx playwright install chromium
+npm run render:series
+npm run dev
+# 打开 /negative-ride.html、/binary-search.html、/complex-rotation.html
 ```
 
-只渲染一支：`python scripts/render_demo.py --scene complex-rotation`。文件输出到 `demos/videos/`，海报与关键帧输出到 `demos/posters/`。更多预览命令、场景结构与改编步骤见 [制作与复现](demos/README.md)。
+MP4 输出到 `demos/videos/`。关键帧、GIF、局部试做、独立工程和历史 Python 的区别见 [制作与复现](demos/README.md)。
 
 ## 可复用制作与剪辑工具
 
@@ -208,14 +199,14 @@ python scripts/motion.py verify output/delivery
 ```
 
 ```text
-使用 $stickman-motion-skill，把“负数乘法与方向反转”做成 36 秒的无台词
-火柴人故事。让角色先误判、再验证规则，最后通过同一规则完成目标。
+使用 $stickman-motion-skill，把“负数乘法与方向反转”做成 14 秒的无台词
+火柴人故事。让角色主动追上载台、反向后承受惯性、伏身过梁并跳离到出口。
 交付可播放视频、可编辑工程、规则卡和实际检查记录。
 ```
 
 ```text
 使用 $stickman-motion-skill，参考仓库的二分查找 demo，设计一个关于
-“栈的后进先出”的新故事。先确定角色目标、错误尝试和可见反馈，
+“栈的后进先出”的新故事。先确定角色处境、合理选择和可见反馈，
 再实现一个完整的短片；不要只替换标题或把现成视频当作新产物。
 ```
 
@@ -242,6 +233,7 @@ npm --prefix motion test
 # 同样需要 Chromium；浏览器二进制可在两工程间共用
 npm --prefix motion run test:browser
 npm --prefix motion run test:action
+npm --prefix motion run test:series
 ```
 
 文档与规则卡检查仅需要 `requirements-dev.txt`；Python 动画、音频测试需要 `requirements-render.txt`。CI 执行结构检查、Python 行为和真实 FFmpeg 回归，以及两种 TS 工程的构建、几何、物理和浏览器交互检查，不重复渲染三支完整概念片。
@@ -254,8 +246,9 @@ references/                      规则卡、表演与制作指南
 examples/                        规则卡与剧本，含各 demo 的输入任务
 demos/                           MP4、GIF、分镜与验证记录
 scripts/demo_engine/             人物、几何、场景状态与原创声音
-scripts/render_demo.py           确定性渲染与预览导出
-scripts/check_demo_media.py      三支原始 demo 的规格检查
+scripts/render_demo.py           历史 Python 案例渲染（默认 output/legacy-demos/）
+scripts/check_demo_media.py      当前三支成片的解码、时长与音轨检查
+scripts/series_previews.py       从实际 MP4 重建 GIF、海报和关键帧图
 scripts/motion.py                可复用工具入口
 scripts/init_web.py              独立 TS 工程初始化
 scripts/prepare_audio.py         校验来源并准备本地 CC0 拟音缓存
@@ -275,7 +268,8 @@ assets/fonts/                    字体与原始许可证
 - [x] 把参考片语法落实到 TS《借势》：直接符号操作、移动支撑、连续动作、相机与事件声音。
 - [x] 接入 Motion Canvas、曲线与 LaTeX 子式动画，完成技术试片和独立工程模板。
 - [ ] 用动态分镜和实际影片验证《折返》的双人判断、肢体可读性和动作节奏。
-- [ ] 把新的重量模型扩展到概念故事中的搬运、失衡、翻滚与多处支撑。
+- [x] 将三支概念故事重拍为 TS 动作短片，复用跑步、支撑转移、平衡与接触拟音。
+- [ ] 继续扩展双人交互、复杂搬运和多处支撑的动作模型。
 - [ ] 增加更丰富的身体表演、动作过渡与镜头尺度变化。
 - [ ] 增加非数学题材，并进行静音理解度测试。
 - [ ] 根据更多实测场景决定哪些参数值得形成稳定配置接口。
