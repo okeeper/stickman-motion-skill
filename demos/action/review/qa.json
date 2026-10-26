@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "file": "breakpoint.mp4",
+  "sha256": "18f3ba66bdc9399b2ff50eb8b9cb40df9196413e88213f604ea326e1ea3af608",
+  "bytes": 929028,
+  "duration": 11.0,
+  "width": 1280,
+  "height": 720,
+  "fps": 60.0,
+  "frames": 660,
+  "video_codec": "h264",
+  "pixel_format": "yuv420p",
+  "audio": {
+    "analysis_sample_rate": 48000,
+    "analysis_channels": 2,
+    "source_sample_rate": 48000,
+    "source_channels": 2,
+    "decoded_duration": 11.008,
+    "decoded_samples_per_channel": 528384,
+    "peak_dbfs": -5.309,
+    "rms_dbfs": -33.511
+  },
+  "decode": "pass",
+  "sample_times": [
+    0.4583,
+    1.375,
+    2.2917,
+    3.2083,
+    4.125,
+    5.0417,
+    5.9583,
+    6.875,
+    7.7917,
+    8.7083,
+    9.625,
+    10.5417
+  ],
+  "sampled_changed_fraction_mean": 0.038674,
+  "warnings": [],
+  "human_review": "not_recorded"
+}

@@ -12,8 +12,8 @@ import tempfile
 def initialize(destination: Path, scene: str = "adventure", engine: str = "canvas") -> Path:
     if engine not in {"canvas", "motion-canvas"}:
         raise ValueError("engine must be canvas or motion-canvas")
-    if (engine == "canvas" and scene not in {"adventure", "weight"}) or (engine == "motion-canvas" and scene != "trace"):
-        raise ValueError("canvas supports adventure/weight; motion-canvas supports trace")
+    if (engine == "canvas" and scene not in {"adventure", "weight"}) or (engine == "motion-canvas" and scene not in {"trace", "action"}):
+        raise ValueError("canvas supports adventure/weight; motion-canvas supports trace/action")
     destination = destination.expanduser().resolve()
     if destination.exists():
         raise ValueError(f"Destination already exists: {destination}")
@@ -31,17 +31,21 @@ def initialize(destination: Path, scene: str = "adventure", engine: str = "canva
                 shutil.copy2(source / "web" / name, web / name)
         else:
             # Copy only shared capabilities; the new project needs npm ci in motion/ alone.
-            for folder, names in (("src", ("math.ts", "physics.ts", "rig.ts", "performance.ts")),
+            for folder, names in (("src", ("math.ts", "physics.ts", "rig.ts", "performance.ts", "stunt.ts", "foley.mjs", "foley.d.mts")),
                                   ("scripts", ("video.mjs", "score.mjs"))):
                 (web / folder).mkdir()
                 for name in names:
                     shutil.copy2(source / "web" / folder / name, web / folder / name)
+            shutil.copytree(source / "web" / "src" / "action", web / "src" / "action")
             motion = staging / "motion"
             motion.mkdir()
-            for folder in ("src", "scripts", "tests"):
+            for folder in ("src", "scripts", "tests", "public"):
                 shutil.copytree(source / "motion" / folder, motion / folder)
-            for name in ("package.json", "package-lock.json", "tsconfig.json", "tsconfig.test.json", "vite.config.ts", "preview.html"):
+            for name in ("package.json", "package-lock.json", "tsconfig.json", "tsconfig.test.json", "vite.config.ts", "preview.html", "action.html"):
                 shutil.copy2(source / "motion" / name, motion / name)
+            (staging / "scripts").mkdir()
+            shutil.copy2(source / "scripts/prepare_audio.py", staging / "scripts/prepare_audio.py")
+            (staging / ".gitignore").write_text(".motion-cache/\nmotion/node_modules/\nmotion/dist/\nmotion/.test-build/\nmotion/test-results/\nmotion/public/audio/*.wav\nmotion/public/audio/bank-local.json\nrenders/\n")
         fonts = staging / "assets" / "fonts"
         fonts.mkdir(parents=True)
         for name in ("DejaVuSans.ttf", "LICENSE_DEJAVU"):
@@ -50,6 +54,7 @@ def initialize(destination: Path, scene: str = "adventure", engine: str = "canva
         (staging / "demos" / "adventure").mkdir(parents=True)
         (staging / "demos" / "weight").mkdir(parents=True)
         (staging / "demos" / "geometry").mkdir(parents=True)
+        (staging / "demos" / "action").mkdir(parents=True)
         url = "/film.html" if scene == "adventure" else "/"
         (staging / "README.md").write_text(f"""# 火柴人 TS 动画工程
 
@@ -82,18 +87,19 @@ npm run render -- --scene {scene}
 本工程不包含参考视频、研究截图、依赖目录或已有成片。
 """, encoding="utf-8")
         if engine == "motion-canvas":
-            (staging / "README.md").write_text("""# Motion Canvas 火柴人数学动画
+            (staging / "README.md").write_text("""# Motion Canvas 火柴人动画
 
-这是《留下弧线》的可编辑技术试片，展示曲线、公式变形和重量模型复用；新故事需要重新编写规则和行动。
+包含《断点》的正常速度连续动作与拟音，以及《留下弧线》的曲线/公式技术试片；新故事需要重新编写规则和行动。
 
 ```sh
 npm --prefix motion ci
+npm --prefix motion run prepare:audio
 npm --prefix motion run dev
 npm --prefix motion run build
 npm --prefix motion test
 ```
 
-在终端显示的地址后打开 `/preview.html`；根地址是 Motion Canvas 编辑器。
+`/action.html` 是走跑跳摔滚与有声预览，`/preview.html` 是曲线/公式试片；根地址是 Motion Canvas 编辑器项目选择。
 `motion/src/scenes/trace.tsx` 编排场景，`geometry.ts` 和 `components/actor.tsx` 处理曲线与轮廓。
 `web/` 仅提供共享物理、骨架、表演、声音和编码模块，不需要在其中安装 npm 依赖。
 请保留 `motion/`、`web/`、`assets/fonts/` 的相对位置。
@@ -104,13 +110,17 @@ npm --prefix motion test
 cd motion
 npx playwright install chromium
 npm run test:browser
-npm run render -- --fps 30 --from 8 --to 10 --out ../renders/preview.mp4
-npm run render -- --fps 60 --out ../renders/final.mp4
+npm run test:action
+npm run render -- --scene action --fps 30 --from 5.3 --to 6.8 --out ../renders/preview.mp4
+npm run render -- --scene action --fps 60 --out ../renders/final.mp4
 ```
 
 也可通过 `MOTION_BROWSER_EXECUTABLE` 指定已有 Chrome。源码许可见 [LICENSE](LICENSE)，
-字体保留 `assets/fonts/LICENSE_DEJAVU`；npm 依赖保留各自许可。本工程不含参考原片、研究截图或已安装依赖。
+字体保留 `assets/fonts/LICENSE_DEJAVU`，拟音素材保留 `motion/public/audio/LICENSE-*.txt`（Kenney CC0）；
+npm 依赖保留各自许可。音效缓存可重建，git 忽略本地 WAV 和缓存指纹；本工程不含参考原片、研究截图或已安装依赖。
 """, encoding="utf-8")
+            with (staging / "README.md").open("a", encoding="utf-8") as handle:
+                handle.write(f"\n初始任务入口：`{'/action.html' if scene == 'action' else '/preview.html'}`。\n")
         if destination.exists():
             raise ValueError(f"Destination already exists: {destination}")
         staging.rename(destination)
@@ -124,7 +134,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path)
     parser.add_argument("--engine", choices=("canvas", "motion-canvas"))
-    parser.add_argument("--scene", choices=("adventure", "weight", "trace"))
+    parser.add_argument("--scene", choices=("adventure", "weight", "trace", "action"))
     args = parser.parse_args()
     try:
         # Existing explicit --scene adventure/weight invocations remain compatible.

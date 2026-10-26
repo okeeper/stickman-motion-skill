@@ -8,6 +8,26 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
+## 0.7.0：正常速度动作与接触拟音
+
+新增 **11 秒 / 60 fps 有声试片《断点》**：走、跑、冲刺、助跑跳、绊倒、手掌保护、收身滚翻、起身接跑、穿门制动和回看。动作衔接保留动量，执行段按正常速度编排。
+
+![《断点》：连续动作与拟音](demos/action/preview.gif)
+
+[有声 MP4](demos/action/breakpoint.mp4) · [关键帧与实际 QA](demos/action/QA.md) · [动作与拟音方法](references/action-and-foley.md)
+
+46 个声音事件与实际接触同步。不同步态有各自的步频与力度；脚步、碰撞和布料使用 Kenney CC0 素材，气流、呼吸和报警由程序合成。有声网页与 MP4 共用混音器，默认 1×。
+
+```sh
+python scripts/init_web.py output/my-action --scene action
+npm --prefix output/my-action/motion ci
+npm --prefix output/my-action/motion run prepare:audio
+npm --prefix output/my-action/motion run dev
+# 打开终端地址后的 /action.html，点击播放启用声音
+```
+
+首次素材准备需要联网和 FFmpeg，后续复用校验缓存。Git 保留许可、来源指纹和准备脚本，音效源文件留在本地；成片已包含声音。当前覆盖单人侧视路线与编排跌滚，未实现任意人体碰撞或双人武打。
+
 ## 0.6.0：接入曲线与数学排版库
 
 新增 **Motion Canvas + TypeScript** 工程，使用 Spline / Bézier 构建柔和轮廓和示意曲线，使用 LaTeX 节点制作子式变形。继续复用重量、固定骨长、承重、重力轨迹与弹性落地，图形库负责呈现。
@@ -217,9 +237,11 @@ npm --prefix web run test:browser
 npm --prefix web run test:adventure
 npm --prefix motion ci
 npm --prefix motion run build
+npm --prefix motion run prepare:audio
 npm --prefix motion test
 # 同样需要 Chromium；浏览器二进制可在两工程间共用
 npm --prefix motion run test:browser
+npm --prefix motion run test:action
 ```
 
 文档与规则卡检查仅需要 `requirements-dev.txt`；Python 动画、音频测试需要 `requirements-render.txt`。CI 执行结构检查、Python 行为和真实 FFmpeg 回归，以及两种 TS 工程的构建、几何、物理和浏览器交互检查，不重复渲染三支完整概念片。
@@ -236,6 +258,7 @@ scripts/render_demo.py           确定性渲染与预览导出
 scripts/check_demo_media.py      三支原始 demo 的规格检查
 scripts/motion.py                可复用工具入口
 scripts/init_web.py              独立 TS 工程初始化
+scripts/prepare_audio.py         校验来源并准备本地 CC0 拟音缓存
 scripts/motion_tools/            工程、剪辑、媒体与交付模块
 assets/project/                  独立工程的场景入口模板
 tests/                           概念、接触、确定性和失败输入检查

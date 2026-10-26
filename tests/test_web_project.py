@@ -51,6 +51,17 @@ class WebProjectTest(unittest.TestCase):
                 MODULE.initialize(Path(folder) / "bad", "unknown")
             self.assertFalse((Path(folder) / "bad").exists())
 
+    def test_action_starter_preserves_the_sound_bank_and_its_license(self):
+        with tempfile.TemporaryDirectory() as folder:
+            project = MODULE.initialize(Path(folder) / "action", "action", "motion-canvas")
+            for relative in ("web/src/stunt.ts", "web/src/action/model.ts", "web/src/foley.mjs",
+                             "motion/action.html", "motion/src/preview.ts", "motion/scripts/action-audio.mjs",
+                             "motion/public/audio/bank.json", "motion/public/audio/LICENSE-impact.txt",
+                             "scripts/prepare_audio.py", ".gitignore"):
+                self.assertTrue((project / relative).is_file(), relative)
+            self.assertIn("/action.html", (project / "README.md").read_text())
+            self.assertFalse(any(project.rglob("*.mp4")))
+
 
 if __name__ == "__main__":
     unittest.main()

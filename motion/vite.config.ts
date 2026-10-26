@@ -5,9 +5,9 @@ export default defineConfig({
   base: "./",
   // The pinned plugin publishes CommonJS; native ESM exposes its default wrapper.
   plugins: [
-    (typeof motionCanvas === "function"
-      ? motionCanvas
-      : motionCanvas.default)(),
+    (typeof motionCanvas === "function" ? motionCanvas : motionCanvas.default)({
+      project: ["./src/project.ts", "./src/action-project.ts"],
+    }),
     { name: "preview-target", config: () => ({ build: { target: "esnext" } }) },
   ],
   server: {
@@ -24,6 +24,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         preview: fileURLToPath(new URL("./preview.html", import.meta.url)),
+        action: fileURLToPath(new URL("./action.html", import.meta.url)),
       },
     },
   },

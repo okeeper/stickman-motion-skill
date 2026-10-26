@@ -1,13 +1,14 @@
 # Motion Canvas 数学动画工程
 
-本工程是 0.6.0 的图形与公式制作入口；内置 18 秒技术试片《留下弧线》。复用 `../web/src/` 的重量、骨架和接触模型，使用 Motion Canvas 的 Spline / Bézier / LaTeX 绘制。它不是任意数学题的一键成片工具。
+本工程包含《断点》11 秒正常速度动作与拟音，以及《留下弧线》18 秒图形/公式试片。复用 `../web/src/` 的重量、骨架和接触模型，使用 Motion Canvas 的 Spline / Bézier / LaTeX 绘制。它不是任意数学题的一键成片工具。
 
 ```sh
 npm --prefix motion ci
+npm --prefix motion run prepare:audio
 npm --prefix motion run dev
 ```
 
-在终端显示的地址后打开 `/preview.html`；根地址为官方编辑器。预览支持播放、0.5× / 0.25×、拖帧和窄屏，网页静音。需要 Node.js 22.12+。Vite 5 仅用于本工程，现有 `web/` 的 Vite 8 独立保留。
+打开 `/action.html` 看有声动作，默认 1×，点击播放启用声音；`/preview.html` 是静音图形试片。根地址为编辑器项目选择。慢放和拖帧用于检查，支持窄屏。声音准备另需 Python 3.10+ 与 FFmpeg。需要 Node.js 22.12+。Vite 5 仅用于本工程，现有 `web/` 的 Vite 8 独立保留。
 
 ```sh
 cd motion
@@ -15,6 +16,9 @@ npx playwright install chromium
 npm run build
 npm test
 npm run test:browser
+npm run test:action
+npm run render -- --scene action --fps 30 --from 5.3 --to 6.8 --out ../renders/fall-roll.mp4
+npm run render -- --scene action --fps 60 --out ../renders/action.mp4
 npm run render -- --fps 30 --from 8 --to 10 --out ../renders/formula.mp4
 npm run render -- --fps 60 --out ../renders/trace.mp4
 ```
@@ -27,9 +31,11 @@ npm run render -- --fps 60 --out ../renders/trace.mp4
 | [geometry.ts](src/geometry.ts) | 共同投影、精确抛物线、有限控制柄 |
 | [actor.tsx](src/components/actor.tsx) | Rig 到曲线轮廓的适配，不改变接触端点 |
 | [trace.tsx](src/scenes/trace.tsx) | 场景、曲线、LaTeX 子式变形与时间线 |
-| [main.ts](src/main.ts) | 预览与异步 frame/png 接口，隔离版本相关的 seek 适配 |
+| [preview.ts](src/preview.ts) | 共享预览、声音时钟与异步 frame/png 接口，隔离 seek 适配 |
 | [render.mjs](scripts/render.mjs) | 调用共享声音与编码，支持局部导出 |
 
 `Player.playback` 和 `Stage` 的适配与 Motion Canvas 3.17.2 绑定；升级要重新验证，不能假定其内部接口永久兼容。官方编辑器调整项目参数时，也应同步检查自定义预览的输出尺寸与时钟。
 
 创建可独立改编的工程：`python scripts/init_web.py output/my-film`。复制后的工程只需在 `motion/` 安装依赖；保留共享 `web/` 与 `assets/fonts/` 的相对位置。详细方法见 [数学图形指南](../references/math-graphics.md)、[TS 制作](../references/ts-production.md) 与 [实际 QA](../demos/geometry/QA.md)。
+
+动作与声音方法见 [正常速度动作与拟音](../references/action-and-foley.md)。求帧与声音时钟集中在 [preview.ts](src/preview.ts)。首次 `prepare:audio` 从固定且校验的 Kenney CC0 源准备本地素材，之后复用；WAV 和本地指纹被 git 忽略。仓库保留许可、来源与准备脚本，运行时不从外网播放音效。

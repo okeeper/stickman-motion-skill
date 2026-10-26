@@ -1,12 +1,24 @@
 import { Circle, Knot, Line, Node, Spline } from "@motion-canvas/2d";
 import type { Rig, Limb } from "../../../web/src/rig";
-import { jointKnots, project } from "../geometry";
+import {
+  jointKnots,
+  project as defaultProject,
+  type Project,
+} from "../geometry";
 const ORANGE = "#ffb347";
 /** This is a skin adapter. It never moves IK joints, hands, or planted feet. */
-export function actor(rig: () => Rig) {
+export function actor(
+  rig: () => Rig,
+  options: { project?: Project; scale?: () => number; stroke?: number } = {},
+) {
+  const project = options.project ?? defaultProject;
+  const factor = () =>
+    ((options.scale?.() ?? 150) / 150) * (options.stroke ?? 1);
+  const knots = (get: () => Limb) =>
+    jointKnots(get().a, get().hinge, get().b, project);
   const limb = (get: () => Limb, opacity: number) => (
     <Spline
-      lineWidth={10}
+      lineWidth={() => 10 * factor()}
       stroke={ORANGE}
       opacity={opacity}
       lineCap="round"
@@ -14,13 +26,9 @@ export function actor(rig: () => Rig) {
     >
       {[0, 1, 2].map((i) => (
         <Knot
-          position={() => jointKnots(get().a, get().hinge, get().b)[i].position}
-          startHandle={() =>
-            jointKnots(get().a, get().hinge, get().b)[i].startHandle ?? [0, 0]
-          }
-          endHandle={() =>
-            jointKnots(get().a, get().hinge, get().b)[i].endHandle ?? [0, 0]
-          }
+          position={() => knots(get)[i].position}
+          startHandle={() => knots(get)[i].startHandle ?? [0, 0]}
+          endHandle={() => knots(get)[i].endHandle ?? [0, 0]}
         />
       ))}
     </Spline>
@@ -35,14 +43,14 @@ export function actor(rig: () => Rig) {
         }
         smoothness={0.35}
         stroke={ORANGE}
-        lineWidth={11}
+        lineWidth={() => 11 * factor()}
         lineCap="round"
       />
       {limb(() => rig().legs[1], 1)}
       {[0, 1].map((i) => (
         <Line
           points={() => [rig().feet[i].ankle, rig().feet[i].toe].map(project)}
-          lineWidth={8}
+          lineWidth={() => 8 * factor()}
           lineCap="round"
           stroke={ORANGE}
           opacity={i ? 1 : 0.45}
@@ -51,8 +59,8 @@ export function actor(rig: () => Rig) {
       {limb(() => rig().arms[1], 1)}
       <Circle
         position={() => project(rig().head)}
-        size={46}
-        lineWidth={9}
+        size={() => (46 * (options.scale?.() ?? 150)) / 150}
+        lineWidth={() => 9 * factor()}
         stroke={ORANGE}
         fill="#080a0d"
       />

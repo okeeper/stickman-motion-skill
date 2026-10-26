@@ -6,6 +6,8 @@
     "src/physics.ts",
     "src/rig.ts",
     "src/performance.ts",
+    "src/stunt.ts",
+    "src/action/model.ts",
     "src/adventure/model.ts"
   ]
 }

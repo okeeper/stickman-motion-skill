@@ -2,7 +2,9 @@ import path from "node:path";
 import { openLab } from "./browser.mjs";
 import { encodeVideo } from "../../web/scripts/video.mjs";
 import { writeScore } from "../../web/scripts/score.mjs";
+import { writeActionAudio } from "./action-audio.mjs";
 const options = {
+  scene: "trace",
   fps: "60",
   from: "0",
   to: "",
@@ -18,11 +20,12 @@ try {
       !args[i + 1]
     )
       throw new Error(
-        "Use --fps 30|60 --from seconds --to seconds --out file.mp4",
+        "Use --scene trace|action --fps 30|60 --from seconds --to seconds --out file.mp4",
       );
     options[key] = args[i + 1];
   }
   if (
+    !["trace", "action"].includes(options.scene) ||
     !["30", "60"].includes(options.fps) ||
     !options.out.endsWith(".mp4") ||
     !Number.isFinite(Number(options.from)) ||
@@ -32,7 +35,9 @@ try {
         Number(options.to) <= Number(options.from)))
   )
     throw new Error("Invalid fps, output or interval");
-  const lab = await openLab();
+  if (options.scene === "action" && !args.includes("--out"))
+    options.out = "../demos/action/breakpoint.mp4";
+  const lab = await openLab(options.scene);
   try {
     const info = await lab.page.evaluate(() => window.__MOTION__.info()),
       fps = Number(options.fps);
@@ -53,23 +58,31 @@ try {
       fps,
       clips: [clip],
       scale: 2,
-      scene: "trace",
+      scene: options.scene,
       errors: lab.errors,
       frame: (_, t) => lab.page.evaluate((t) => window.__MOTION__.png(t), t),
       audio: (file) =>
-        writeScore(file, clip.duration, info.cues, {
-          from,
-          music: [
-            { a: 0.5, b: 5.8, beat: 1.3, gain: 0.014, notes: [146.832, 220] },
-            {
-              a: 7,
-              b: 17.6,
-              beat: 1.5,
-              gain: 0.012,
-              notes: [174.614, 220, 293.665],
-            },
-          ],
-        }),
+        options.scene === "action"
+          ? writeActionAudio(file, clip.duration, info.cues, { from })
+          : writeScore(file, clip.duration, info.cues, {
+              from,
+              music: [
+                {
+                  a: 0.5,
+                  b: 5.8,
+                  beat: 1.3,
+                  gain: 0.014,
+                  notes: [146.832, 220],
+                },
+                {
+                  a: 7,
+                  b: 17.6,
+                  beat: 1.5,
+                  gain: 0.012,
+                  notes: [174.614, 220, 293.665],
+                },
+              ],
+            }),
     });
   } finally {
     await lab.close();

@@ -20,7 +20,7 @@
 
 优先用内置 Spline、Knot、CubicBezier、Line、Circle、Latex 完成新场景。只有发现具体缺口再加库：复杂路径布尔运算可评估 Paper.js；React 交互数学页面可评估 Mafs；Python 科学动画可评估 Manim。本项目没有接入这三者，也不要求它们成为每个工程的依赖。
 
-官方接口：[Spline](https://motioncanvas.io/docs/spline/)、[LaTeX](https://motion-canvas.io/docs/latex/)、[Motion Canvas 项目](https://github.com/motion-canvas/motion-canvas)。升级依赖后重跑构建、拖帧和实际导出，尤其检查版本适配的 `main.ts`。
+官方接口：[Spline](https://motioncanvas.io/docs/spline/)、[LaTeX](https://motion-canvas.io/docs/latex/)、[Motion Canvas 项目](https://github.com/motion-canvas/motion-canvas)。升级依赖后重跑构建、拖帧和实际导出，尤其检查版本适配的 `preview.ts`。
 
 ## 轮廓服从骨架
 

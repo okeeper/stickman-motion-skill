@@ -1,0 +1,19 @@
+{
+  "mp4": {
+    "duration": 11,
+    "ended": true,
+    "totalVideoFrames": 660,
+    "droppedVideoFrames": 0
+  },
+  "productionPreview": "pass",
+  "web": {
+    "wallSeconds": 11.186,
+    "time": 10.983333333333333,
+    "playing": false,
+    "speed": 1,
+    "sound": true,
+    "audioReady": true,
+    "errors": []
+  },
+  "review": "Automated playback and audio scheduling; not subjective viewing or listening"
+}

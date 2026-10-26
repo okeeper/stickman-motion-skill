@@ -1,0 +1,485 @@
+{
+  "file": "breakpoint.mp4",
+  "scene": "action",
+  "fps": 60,
+  "frames": 660,
+  "duration": 11,
+  "width": 1280,
+  "height": 720,
+  "resolutionScale": 2,
+  "audio": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "peakDbfs": -5.387286358527294,
+    "rmsDbfs": -33.467827686450086,
+    "clippedSamples": 0,
+    "sourceFrom": 0,
+    "layers": [
+      "licensed-foley",
+      "cloth-air-breath",
+      "world"
+    ],
+    "cues": 46,
+    "assetLicense": "CC0-1.0",
+    "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
+    "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
+  },
+  "clips": [
+    {
+      "title": "断点",
+      "duration": 11,
+      "width": 1280,
+      "height": 720,
+      "fps": 60,
+      "cues": [
+        {
+          "id": "foot-0",
+          "t": 0.44,
+          "kind": "footstep",
+          "x": 1.2793999999999999,
+          "strength": 0.5445,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.2865735294117648
+        },
+        {
+          "id": "foot-1",
+          "t": 0.88,
+          "kind": "footstep",
+          "x": 1.8734,
+          "strength": 0.5445,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.2865735294117646
+        },
+        {
+          "id": "alarm",
+          "t": 1.15,
+          "kind": "alarm",
+          "x": -0.6635000000000002,
+          "strength": 0.6,
+          "pan": -0.85
+        },
+        {
+          "id": "foot-2",
+          "t": 1.32,
+          "kind": "footstep",
+          "x": 2.4738651041,
+          "strength": 0.5445,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.2846720282058823
+        },
+        {
+          "id": "foot-3",
+          "t": 1.76,
+          "kind": "footstep",
+          "x": 3.16704540634601,
+          "strength": 0.642541125,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.27846940893603106
+        },
+        {
+          "id": "foot-4",
+          "t": 2.05,
+          "kind": "footstep",
+          "x": 4.123519999999999,
+          "strength": 0.681,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.2585235294117648
+        },
+        {
+          "id": "foot-5",
+          "t": 2.34,
+          "kind": "footstep",
+          "x": 5.08052,
+          "strength": 0.681,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.25852352941176454
+        },
+        {
+          "id": "foot-6",
+          "t": 2.63,
+          "kind": "footstep",
+          "x": 6.1684080776246395,
+          "strength": 0.7209632187499999,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.22164348029996792
+        },
+        {
+          "id": "foot-7",
+          "t": 2.92,
+          "kind": "footstep",
+          "x": 7.57488,
+          "strength": 0.8420000000000001,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.19962040110868517
+        },
+        {
+          "id": "foot-8",
+          "t": 3.14,
+          "kind": "footstep",
+          "x": 8.806880000000001,
+          "strength": 0.8420000000000001,
+          "gait": "sprint",
+          "foot": 1,
+          "pan": -0.19944705882352884
+        },
+        {
+          "id": "foot-9",
+          "t": 3.3600000000000003,
+          "kind": "footstep",
+          "x": 10.038880000000002,
+          "strength": 0.8420000000000001,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.19944705882352884
+        },
+        {
+          "id": "foot-10",
+          "t": 3.5800000000000005,
+          "kind": "footstep",
+          "x": 11.270880000000004,
+          "strength": 0.8420000000000001,
+          "gait": "sprint",
+          "foot": 1,
+          "pan": -0.19944705882352884
+        },
+        {
+          "id": "foot-11",
+          "t": 3.8000000000000007,
+          "kind": "footstep",
+          "x": 12.502880000000005,
+          "strength": 0.8420000000000001,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.1994470588235283
+        },
+        {
+          "id": "push",
+          "t": 4.08,
+          "kind": "shoe-grip",
+          "x": 14.066999999999998,
+          "strength": 0.8,
+          "pan": -0.2005882352941183
+        },
+        {
+          "id": "takeoff",
+          "t": 4.18,
+          "kind": "whoosh",
+          "x": 14.166999999999998,
+          "strength": 0.55,
+          "duration": 0.24,
+          "pan": -0.33588235294117685
+        },
+        {
+          "id": "land",
+          "t": 4.8651282140907774,
+          "kind": "landing",
+          "x": 18.003717998908353,
+          "strength": 1,
+          "foot": 0,
+          "pan": -0.3358823529411763
+        },
+        {
+          "id": "foot-12",
+          "t": 5.085128214090777,
+          "kind": "footstep",
+          "x": 19.699597998908352,
+          "strength": 0.8420000000000001,
+          "gait": "sprint",
+          "foot": 1,
+          "pan": -0.19944705882352937
+        },
+        {
+          "id": "tile",
+          "t": 5.26,
+          "kind": "tile",
+          "x": 21.086890895250832,
+          "strength": 0.65,
+          "pan": -0.07944385433799038
+        },
+        {
+          "id": "foot-13",
+          "t": 5.305128214090777,
+          "kind": "footstep",
+          "x": 20.93132740338979,
+          "strength": 0.8420000000000001,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.19952664574075324
+        },
+        {
+          "id": "catch",
+          "t": 5.35,
+          "kind": "shoe-grip",
+          "x": 21.086890895250832,
+          "strength": 0.8,
+          "pan": -0.22767914845563678
+        },
+        {
+          "id": "hand",
+          "t": 5.64,
+          "kind": "hand",
+          "x": 22.624201093931948,
+          "strength": 0.7,
+          "pan": -0.22296253213384512
+        },
+        {
+          "id": "exhale",
+          "t": 5.7,
+          "kind": "breath",
+          "x": 22.392010204081632,
+          "strength": 0.4,
+          "duration": 0.25,
+          "pan": -0.36533709545355025
+        },
+        {
+          "id": "roll-cloth",
+          "t": 5.72,
+          "kind": "cloth",
+          "x": 22.4627106605241,
+          "strength": 0.65,
+          "duration": 0.6,
+          "pan": -0.3674854975049168
+        },
+        {
+          "id": "body-43",
+          "t": 5.72,
+          "kind": "body",
+          "x": 22.839872002940883,
+          "strength": 0.5,
+          "pan": -0.25655569091174507
+        },
+        {
+          "id": "body-44",
+          "t": 5.982499999999985,
+          "kind": "body",
+          "x": 22.957134967954705,
+          "strength": 0.8,
+          "pan": -0.4737986335539431
+        },
+        {
+          "id": "body-45",
+          "t": 6.253333333333303,
+          "kind": "body",
+          "x": 24.272654642837473,
+          "strength": 0.5,
+          "pan": -0.28336922623154553
+        },
+        {
+          "id": "recover-shoe",
+          "t": 6.5,
+          "kind": "shoe-grip",
+          "x": 25.19834186871854,
+          "strength": 0.6,
+          "foot": 0,
+          "pan": -0.1398164541873282
+        },
+        {
+          "id": "recover-other-foot",
+          "t": 6.53,
+          "kind": "footstep",
+          "x": 24.640499999999996,
+          "strength": 0.4,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.32096574352236434
+        },
+        {
+          "id": "foot-14",
+          "t": 6.97,
+          "kind": "footstep",
+          "x": 26.015631609578435,
+          "strength": 0.700237059542181,
+          "gait": "run",
+          "foot": 1,
+          "pan": -0.23764707848938263
+        },
+        {
+          "id": "foot-15",
+          "t": 7.26,
+          "kind": "footstep",
+          "x": 27.33154449127396,
+          "strength": 0.8261950874485595,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.20713672213028372
+        },
+        {
+          "id": "dash-air",
+          "t": 7.4,
+          "kind": "whoosh",
+          "x": 27.6565,
+          "strength": 0.5,
+          "duration": 0.24,
+          "pan": -0.3345643083456499
+        },
+        {
+          "id": "foot-16",
+          "t": 7.4799999999999995,
+          "kind": "footstep",
+          "x": 28.583859999999998,
+          "strength": 0.8490000000000001,
+          "gait": "sprint",
+          "foot": 1,
+          "pan": -0.19562941176470616
+        },
+        {
+          "id": "foot-17",
+          "t": 7.699999999999999,
+          "kind": "footstep",
+          "x": 29.837859999999996,
+          "strength": 0.8490000000000001,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.19562941176470616
+        },
+        {
+          "id": "foot-18",
+          "t": 7.919999999999999,
+          "kind": "footstep",
+          "x": 31.091859999999993,
+          "strength": 0.8490000000000001,
+          "gait": "sprint",
+          "foot": 1,
+          "pan": -0.19562941176470616
+        },
+        {
+          "id": "foot-19",
+          "t": 8.139999999999999,
+          "kind": "footstep",
+          "x": 32.345859999999995,
+          "strength": 0.8490000000000001,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.19562941176470616
+        },
+        {
+          "id": "foot-20",
+          "t": 8.36,
+          "kind": "footstep",
+          "x": 33.59985999999999,
+          "strength": 0.8490000000000001,
+          "gait": "sprint",
+          "foot": 1,
+          "pan": -0.19562941176470824
+        },
+        {
+          "id": "foot-21",
+          "t": 8.58,
+          "kind": "footstep",
+          "x": 34.85386,
+          "strength": 0.8490000000000001,
+          "gait": "sprint",
+          "foot": 0,
+          "pan": -0.19562941176470824
+        },
+        {
+          "id": "foot-22",
+          "t": 8.8,
+          "kind": "footstep",
+          "x": 36.071369384970794,
+          "strength": 0.8342035555555553,
+          "gait": "sprint",
+          "foot": 1,
+          "pan": -0.20616089883212188
+        },
+        {
+          "id": "brake",
+          "t": 8.83,
+          "kind": "skid",
+          "x": 35.79198234488889,
+          "strength": 0.6,
+          "duration": 0.3,
+          "pan": -0.3379171412091525
+        },
+        {
+          "id": "foot-23",
+          "t": 9.020000000000001,
+          "kind": "footstep",
+          "x": 37.106690762173514,
+          "strength": 0.7300048284444434,
+          "gait": "run",
+          "foot": 0,
+          "pan": -0.23580626424011003
+        },
+        {
+          "id": "gate",
+          "t": 9.08,
+          "kind": "gate",
+          "x": 34.838499999999996,
+          "strength": 0.85,
+          "pan": -0.85
+        },
+        {
+          "id": "foot-24",
+          "t": 9.31,
+          "kind": "footstep",
+          "x": 37.92265,
+          "strength": 0.5723692835555552,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.20994834854879982
+        },
+        {
+          "id": "foot-25",
+          "t": 9.75,
+          "kind": "footstep",
+          "x": 38.44162093021684,
+          "strength": 0.5429085116067365,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.16886527523320224
+        },
+        {
+          "id": "foot-26",
+          "t": 10.19,
+          "kind": "footstep",
+          "x": 38.531499999999994,
+          "strength": 0.4643588384160219,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.45281385248736306
+        },
+        {
+          "id": "relief",
+          "t": 10.25,
+          "kind": "breath",
+          "x": 38.483550523441046,
+          "strength": 0.25,
+          "duration": 0.45,
+          "pan": 0.4538647332143346
+        },
+        {
+          "id": "last-step",
+          "t": 10.62,
+          "kind": "footstep",
+          "x": 38.38649999999999,
+          "strength": 0.28,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.4411764705882332
+        }
+      ],
+      "engine": "Motion Canvas 3.17.2",
+      "transfers": [
+        {
+          "takeoff": 4.18,
+          "land": 4.8651282140907774
+        }
+      ],
+      "resolutionScale": 2,
+      "sourceDuration": 11,
+      "from": 0,
+      "to": 11,
+      "frames": 660
+    }
+  ],
+  "sha256": "18f3ba66bdc9399b2ff50eb8b9cb40df9196413e88213f604ea326e1ea3af608"
+}

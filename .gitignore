@@ -28,3 +28,5 @@ motion/node_modules/
 motion/dist/
 motion/test-results/
 motion/.test-build/
+motion/public/audio/*.wav
+motion/public/audio/bank-local.json

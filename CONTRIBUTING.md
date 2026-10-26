@@ -40,3 +40,5 @@ python -m unittest discover -s tests -v
 改动 Motion Canvas 工程时，运行 `npm --prefix motion ci`、`npm --prefix motion run build`、`npm --prefix motion test`、`npm --prefix motion run test:browser` 和 `npm --prefix motion run format:check`。修改曲线、公式或求帧适配时核对中间帧、最终 MP4、任意拖帧与局部导出；新增主题说明数学假设。改动共享 `web/scripts/video.mjs` 或 `score.mjs` 时，同时检查原 Canvas 与 Motion Canvas 的实际导出和失败输出保护。
 
 JSON 清单保留 version；改变字段含义时提供版本迁移，更新 references/tooling.md、样例及 CHANGELOG.md。迁移已有独立工程时比较工具目录，保留用户的场景、清单和素材。上游借鉴或复制代码时记录固定版本与许可；风格偏好不能随脚手架一起带入。
+
+改动动作或拟音时，先 `npm --prefix motion run prepare:audio`，再运行 `npm --prefix motion run test:action`；原步态/物理与声音测试也要通过。保持正常速度检查，核对真实落脚、支撑、声音入点、局部尾音与网页播放。下载包和派生 WAV 保持在本地忽略目录，提交准备脚本、来源和许可，不提交参考片媒体。

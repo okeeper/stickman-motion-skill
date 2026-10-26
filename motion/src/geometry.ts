@@ -38,8 +38,13 @@ export function ballisticBezier(
   };
 }
 /** C1 at the hinge; bounded handles preserve fixed contact endpoints and avoid spline overshoot. */
-export function jointKnots(a: Point, hinge: Point, b: Point) {
-  const p = [a, hinge, b].map(project);
+export function jointKnots(
+  a: Point,
+  hinge: Point,
+  b: Point,
+  map: Project = project,
+) {
+  const p = [a, hinge, b].map(map);
   const delta = (i: number, j: number) => [
     p[j][0] - p[i][0],
     p[j][1] - p[i][1],

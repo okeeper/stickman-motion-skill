@@ -82,6 +82,7 @@ a {
   }
   .transport {
     gap: 6px;
+    flex-wrap: wrap;
   }
   button {
     padding: 8px;

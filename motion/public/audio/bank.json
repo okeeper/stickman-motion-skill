@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "sampleRate": 48000,
+  "license": "CC0-1.0",
+  "sourceURLs": {
+    "impact": "https://kenney.nl/assets/impact-sounds",
+    "rpg": "https://kenney.nl/assets/rpg-audio"
+  },
+  "processing": "Mono 48 kHz PCM16; leading/trailing silence trimmed; limiter at 0.92; no normalization boost",
+  "samples": {
+    "footstep_concrete_000": {
+      "file": "footstep_concrete_000.wav",
+      "pack": "impact",
+      "sourceFile": "footstep_concrete_000.ogg",
+      "sourceSHA256": "d7267e183067757c92c169de2a379abea592cfca6b39bb2e8feea15221ad79fe",
+      "sha256": "78cdc1ce2aa0895f86b8bff50679a30fcff88e35695293e960552ddf761160fd"
+    },
+    "footstep_concrete_001": {
+      "file": "footstep_concrete_001.wav",
+      "pack": "impact",
+      "sourceFile": "footstep_concrete_001.ogg",
+      "sourceSHA256": "507a75eb19b897087855a3be3cf11a12d7fa37d143ad535eeebe0b8031c7325d",
+      "sha256": "6ed3c1eb0a93818db6f371d20e597020cff18d660f97b9f61ede04d968bacf83"
+    },
+    "footstep_concrete_002": {
+      "file": "footstep_concrete_002.wav",
+      "pack": "impact",
+      "sourceFile": "footstep_concrete_002.ogg",
+      "sourceSHA256": "b21fa546d74941196b25da8a20b7010abd8c05c4fcf93545d1f344e66a664e13",
+      "sha256": "a07f1ff70fcbc58b0dcaf6d290a219de9aa4c02cfa22274341880a93f1f789ce"
+    },
+    "footstep_concrete_003": {
+      "file": "footstep_concrete_003.wav",
+      "pack": "impact",
+      "sourceFile": "footstep_concrete_003.ogg",
+      "sourceSHA256": "8b513c2f0316324060b9174b8f28df6c2147418c506e6a53b77f18e149a5547b",
+      "sha256": "eb0b3a4f7cb88dc9c06ce8b12e5166b0def19611ab7567902f106bcee9cbcd60"
+    },
+    "footstep_concrete_004": {
+      "file": "footstep_concrete_004.wav",
+      "pack": "impact",
+      "sourceFile": "footstep_concrete_004.ogg",
+      "sourceSHA256": "24dd8db2413e5b81ad181e1205c12a1c7801da5f85715d471b92a4b2f632e45e",
+      "sha256": "a80fbc3d658e0d383e2cdff9d01d38bc82c669f78836c71a228a777daa3d6f68"
+    },
+    "impactSoft_heavy_000": {
+      "file": "impactSoft_heavy_000.wav",
+      "pack": "impact",
+      "sourceFile": "impactSoft_heavy_000.ogg",
+      "sourceSHA256": "49e7ca88743fca974bb8676ea138b751cfd8f9033b5e7af8736c2a215d6edbc1",
+      "sha256": "e63ec3f21495c0bd71e4acbdbbbf29ac18d15009adb4d0caaf8bd24c6a053982"
+    },
+    "impactSoft_medium_001": {
+      "file": "impactSoft_medium_001.wav",
+      "pack": "impact",
+      "sourceFile": "impactSoft_medium_001.ogg",
+      "sourceSHA256": "7642a4fd43e547afe4f7adfadb3dabb681c0ff512f52c1674bae30a726841faf",
+      "sha256": "a1725bca9d5fb2b23b23e721ff6d53ba6ad3044927d1b87366598f84b38a4474"
+    },
+    "impactPunch_medium_000": {
+      "file": "impactPunch_medium_000.wav",
+      "pack": "impact",
+      "sourceFile": "impactPunch_medium_000.ogg",
+      "sourceSHA256": "486988aa2d6440ffc4c62a0e8ccf3c23673ba84424bd4723378d451b7255eb5c",
+      "sha256": "edc88a5aef23671b423ddd2464099679c8ca76bdeeb851a3126e3cb9e36d15f5"
+    },
+    "impactPlate_heavy_000": {
+      "file": "impactPlate_heavy_000.wav",
+      "pack": "impact",
+      "sourceFile": "impactPlate_heavy_000.ogg",
+      "sourceSHA256": "112d4f93ddcc370b410630f971c0f5d991856102da9c76bc5c5540d388e75aaa",
+      "sha256": "0b7fe56245d2322298a002dcd471de7aee822b2f73c0b2f4e600de16390df89b"
+    },
+    "impactPlate_light_001": {
+      "file": "impactPlate_light_001.wav",
+      "pack": "impact",
+      "sourceFile": "impactPlate_light_001.ogg",
+      "sourceSHA256": "947915c2eb6ac57ee08fd3a48b297fd108d69abc72076e79882c21cad0eef56e",
+      "sha256": "db69d452279237612750e79ede50dfcf9141a01fb3b239279fbfd4881514286d"
+    },
+    "cloth1": {
+      "file": "cloth1.wav",
+      "pack": "rpg",
+      "sourceFile": "cloth1.ogg",
+      "sourceSHA256": "ddb93a3671233f95da0e0b10367f082f7eb42fa6caaddcf776410aa8833c747d",
+      "sha256": "d40b2a53199be21ca55538d247ef72265880343a4cdf185c897dffd69f9e5373"
+    },
+    "cloth2": {
+      "file": "cloth2.wav",
+      "pack": "rpg",
+      "sourceFile": "cloth2.ogg",
+      "sourceSHA256": "8a7451193c38bc05483aec25dd193e163a15d44cf7fff04ac7912573231b0201",
+      "sha256": "fb59f4083260f5aa3475ee25e42c88b8c806cf537917703f1571d6493ef064ef"
+    },
+    "cloth3": {
+      "file": "cloth3.wav",
+      "pack": "rpg",
+      "sourceFile": "cloth3.ogg",
+      "sourceSHA256": "a48632d17a4f1416541d261a32a31612e01267144c407fa3ecab3ff410f0085b",
+      "sha256": "b7bf9716c0a0c8d4257446d0090f8f421249b9e148259cff37e83ac442f822a6"
+    },
+    "cloth4": {
+      "file": "cloth4.wav",
+      "pack": "rpg",
+      "sourceFile": "cloth4.ogg",
+      "sourceSHA256": "e7ab9a6c4466dea874196c61f59bf1da05cfe58748f42fadd695d441a154a99b",
+      "sha256": "7d191815cd9a756e8293542fe7c25de68d067d4a030865eeb87fa56de3c71c29"
+    },
+    "knifeSlice": {
+      "file": "knifeSlice.wav",
+      "pack": "rpg",
+      "sourceFile": "knifeSlice.ogg",
+      "sourceSHA256": "4cd96dc630bed9840c15f1dd2306da2cc56a4da26a5d3f1a03c5a7265ac5e54f",
+      "sha256": "b47e2192555bb82af9b041527d172d8c1f2efa1a9349debe2ef54b9635710db1"
+    },
+    "dropLeather": {
+      "file": "dropLeather.wav",
+      "pack": "rpg",
+      "sourceFile": "dropLeather.ogg",
+      "sourceSHA256": "097e1d3b74949b0145fda0519d40b7e0773ab82ec4858727f95be830927e1a45",
+      "sha256": "9553eefe2018331e85a0003b3adf34b16c7435eb512b3c3c328916d01577b638"
+    },
+    "metalLatch": {
+      "file": "metalLatch.wav",
+      "pack": "rpg",
+      "sourceFile": "metalLatch.ogg",
+      "sourceSHA256": "ba9ba60b172b3ebc131a940f25793cd2e207aca7af73dc80d637277f060f1708",
+      "sha256": "0593a3d3563e531b5c941396af14684ebf565c2c98368780cc1ab9f919a74e0f"
+    }
+  }
+}

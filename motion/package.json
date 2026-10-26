@@ -1,16 +1,18 @@
 {
   "name": "stickman-motion-canvas",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "type": "module",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
+    "prepare:audio": "python3 ../scripts/prepare_audio.py",
     "dev": "vite --host 127.0.0.1",
     "build": "tsc --noEmit && vite build",
     "test": "tsc -p tsconfig.test.json && node --test tests/*.test.mjs",
     "test:browser": "node scripts/test-browser.mjs",
+    "test:action": "node scripts/test-action.mjs",
     "render": "node scripts/render.mjs",
     "format": "prettier --write src scripts tests *.json *.html *.ts",
     "format:check": "prettier --check src scripts tests *.json *.html *.ts"

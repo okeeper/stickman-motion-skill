@@ -4,6 +4,8 @@
 
 ## 选择工程入口
 
+连续动作与有声预览使用 `python scripts/init_web.py output/my-action --scene action`，在新工程执行 `npm --prefix motion ci`、`npm --prefix motion run prepare:audio`，打开 `/action.html`。导出加 `--scene action`。步态、跌滚与拟音细节见 [正常速度动作与拟音](action-and-foley.md)。
+
 新数学图形与公式动画默认使用 Motion Canvas；已有《借势》故事和重量研究使用原 Canvas 工程。两者复用同一重量、骨架、接触、声音和编码能力；本次没有迁移《借势》整片。曲线和公式的具体做法先读 [数学图形与连续动画](math-graphics.md)。
 
 在 skill 仓库根目录创建 Motion Canvas 工程：
@@ -11,6 +13,7 @@
 ```sh
 python scripts/init_web.py output/my-film
 npm --prefix output/my-film/motion ci
+npm --prefix output/my-film/motion run prepare:audio
 npm --prefix output/my-film/motion run dev
 ```
 
@@ -27,7 +30,7 @@ npm run render -- --fps 30 --from 8 --to 10 --out ../renders/formula.mp4
 npm run render -- --fps 60 --out ../renders/final.mp4
 ```
 
-支持 30/60 fps，两倍内部尺寸经 Lanczos 缩为 720p。生成器时间线与图形用 Motion Canvas，人体状态仍由已有物理与关节模型求值。`window.__MOTION__.frame(t)` 和 `png(t)` 是异步接口，调用方必须等待完成再读取画面。版本相关适配集中在 [main.ts](../motion/src/main.ts)，升级后需重跑真实导出。
+支持 30/60 fps，两倍内部尺寸经 Lanczos 缩为 720p。生成器时间线与图形用 Motion Canvas，人体状态仍由已有物理与关节模型求值。`window.__MOTION__.frame(t)` 和 `png(t)` 是异步接口，调用方必须等待完成再读取画面。版本相关适配集中在 [preview.ts](../motion/src/preview.ts)，升级后需重跑真实导出。
 
 ## 从已有 Canvas 故事开始
 
