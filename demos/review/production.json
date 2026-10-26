@@ -1,25 +1,26 @@
 {
+  "project_version": "0.9.0",
   "pages": [
     {
       "id": "negative-ride",
+      "duration": 75,
       "productionBuild": true,
-      "frameAt5": true,
-      "navigationLinks": 3,
-      "localOnly": true
+      "lateFrame": true,
+      "navigationLinks": 3
     },
     {
       "id": "binary-search",
+      "duration": 85,
       "productionBuild": true,
-      "frameAt5": true,
-      "navigationLinks": 3,
-      "localOnly": true
+      "lateFrame": true,
+      "navigationLinks": 3
     },
     {
       "id": "complex-rotation",
+      "duration": 90,
       "productionBuild": true,
-      "frameAt5": true,
-      "navigationLinks": 3,
-      "localOnly": true
+      "lateFrame": true,
+      "navigationLinks": 3
     }
   ],
   "errors": []

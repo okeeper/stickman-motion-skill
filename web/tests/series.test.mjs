@@ -11,6 +11,13 @@ import {
   TARGET,
   QUERIES,
   orbitAt,
+  SWITCHES,
+  JUMP,
+  DECK,
+  TURNS,
+  RADIUS,
+  searchAt,
+  climbGrips,
   NEGATIVE_TRANSFERS,
   COMPLEX_TRANSFERS,
 } from '../.test-build/series/model.js';
@@ -22,7 +29,16 @@ test('three redesigned stories preserve bones, finite framing, deterministic see
     for (let i = 0; i <= duration * 240; i++) {
       const t = i / 240,
         s = sample(id, t);
-      assert.ok(s.boneError < 1e-8, `${id} bones ${t}`);
+      // twoBone reserves 1e-6 at fully extended limbs to avoid a singularity.
+      assert.ok(s.boneError < 2e-6, `${id} IK residual ${t}`);
+      for (const [chains, lengths] of [
+        [s.rig.arms, [0.285, 0.275]],
+        [s.rig.legs, [0.45, 0.45]],
+      ])
+        for (const l of chains) {
+          near(Math.hypot(l.hinge.x - l.a.x, l.hinge.y - l.a.y), lengths[0], 1e-8);
+          near(Math.hypot(l.b.x - l.hinge.x, l.b.y - l.hinge.y), lengths[1], 1e-8);
+        }
       assert.ok(s.points.every((p) => Number.isFinite(p.x) && Number.isFinite(p.y)));
       assert.ok(
         s.points.every(
@@ -46,27 +62,24 @@ test('three redesigned stories preserve bones, finite framing, deterministic see
       assert.throws(() => sample(id, t), /time must/);
   }
 });
-test('negative multiplication changes the command while the motor reverses continuously and brakes at its limit', () => {
-  assert.equal(cartAt(3 - 1e-8).u, 2);
-  assert.equal(cartAt(3).u, -2);
-  assert.ok(cartAt(3.15).v > 0);
-  near(cartAt(3.4).v, 0);
-  near(cartAt(3.8).v, -2);
-  near(cartAt(9).v, 0);
-  near(cartAt(9).x, 1.2);
-  for (const t of [3, 3.8, 8, 8.8]) {
-    near(cartAt(t - 1e-7).x, cartAt(t + 1e-7).x, 1e-6);
-    near(cartAt(t - 1e-7).v, cartAt(t + 1e-7).v, 1e-5);
+test('reversal is a command, grip is real, and the returning arrow meets ballistic descent', () => {
+  for (const [i, t] of SWITCHES.entries()) {
+    const sign = i % 2 === 0 ? 1 : -1;
+    assert.equal(cartAt(t - 1e-8).u, sign * 2);
+    assert.equal(cartAt(t).u, -sign * 2);
+    near(cartAt(t + 0.3).v, 0);
+    near(cartAt(t + 0.6).v, -sign * 0.9);
+    const hand = sample('negative-ride', t).rig.arms[1].b;
+    near(hand.x, cartAt(t).x - 0.35, 1e-5);
+    near(hand.y, 0.78, 1e-5);
+    for (const at of [t, t + 0.6]) {
+      near(cartAt(at - 1e-7).x, cartAt(at + 1e-7).x, 1e-6);
+      near(cartAt(at - 1e-7).v, cartAt(at + 1e-7).v, 1e-5);
+    }
   }
-  for (let t = 3.1; t < 7.5; t += 0.02) {
-    const s = sample('negative-ride', t);
-    for (const f of s.rig.feet) near(f.toe.y, 0.1);
-  }
-  // A human head has radius .153 world units; it must clear the physical underside of the beam.
-  for (let t = 6.3; t < 7.25; t += 0.01) {
-    const s = sample('negative-ride', t);
-    if (s.rig.head.x > 3.65 && s.rig.head.x < 5.25) assert.ok(s.rig.head.y + 0.153 < 1.43);
-  }
+  const landing = sample('negative-ride', JUMP.land - 1e-7).rig;
+  near(landing.hip.x, cartAt(JUMP.land).x, 1e-5);
+  for (const foot of landing.feet) near(foot.toe.y, DECK, 1e-5);
 });
 test('binary search preserves the source array, chooses floor midpoints and never discards a present target', () => {
   assert.deepEqual(
@@ -95,35 +108,41 @@ test('binary search preserves the source array, chooses floor midpoints and neve
     assert.throws(() => searchSteps(a, TARGET), /sorted unique/);
   for (const t of [0, 3, 6.5, 9, 11, 15])
     assert.deepEqual(sample('binary-search', t).query.original, VALUES);
-  for (let t = 12.5; t < 14.2; t += 0.01) {
-    const s = sample('binary-search', t),
-      s2 = sample('binary-search', t + 0.001);
-    near(s.rig.feet[0].toe.x, s2.rig.feet[0].toe.x);
-    near(s.rig.feet[0].toe.y - s.rig.feet[1].toe.y, 0);
-  }
+  assert.equal(searchAt(0).unfold, 0);
+  assert.equal(searchAt(21).target, 0);
+  assert.equal(searchAt(24).target, 1);
+  assert.equal(searchAt(51).found, true);
+  assert.equal(searchAt(59).inner, 0);
+  assert.equal(searchAt(69).insert, 1);
+  const end = sample('binary-search', 72);
+  near(end.frame.x, end.rig.arms[0].b.x - 0.11);
+  near(end.frame.y, end.rig.arms[0].b.y + 0.14);
+  near(end.rig.arms[1].b.y, 1.04);
 });
-test('four completed complex products have unit modulus and CCW orientation with positive support force', () => {
-  for (const [t, x, y, z] of [
-    [0, 1.6, 0, '1'],
-    [4.65, 0, 1.6, 'i'],
-    [7.65, -1.6, 0, '−1'],
-    [11.15, 0, -1.6, '−i'],
-    [14, 1.6, 0, '1'],
-  ]) {
+test('the fixed-origin complex vector completes four CCW products while the climber changes grip radius', () => {
+  for (const [n, t] of [0, ...TURNS.map((q) => q.b)].entries()) {
     const p = orbitAt(t);
-    near(p.x, x);
-    near(p.y, y);
-    assert.equal(p.z, z);
+    near(p.x, RADIUS * Math.cos((n * Math.PI) / 2));
+    near(p.y, RADIUS * Math.sin((n * Math.PI) / 2));
+    assert.equal(p.z, ['1', 'i', '−1', '−i', '1'][n]);
+    assert.equal(p.completed, n);
     assert.equal(p.turning, false);
   }
-  for (let t = 0; t <= 14; t += 0.01) {
+  for (let t = 0; t <= 90; t += 0.01) {
     const p = orbitAt(t);
-    near(p.x * p.x + p.y * p.y, 1.6 ** 2);
-    assert.ok(9.81 + p.ay > 6);
+    near(p.x * p.x + p.y * p.y, RADIUS ** 2);
+    assert.ok(p.theta >= 0 && p.theta <= 2 * Math.PI);
   }
-  assert.ok(orbitAt(3).x > 0 && orbitAt(3).y > 0);
-  assert.equal(orbitAt(3).completed, 0);
-  assert.equal(orbitAt(4.65).completed, 1);
+  assert.ok(orbitAt(13).x > 0 && orbitAt(13).y > 0);
+  assert.ok(Math.abs(climbGrips(48.99)[0].x) < Math.abs(climbGrips(39)[0].x));
+  for (let t = 39.2; t < 49; t += 0.01) {
+    const s = sample('complex-rotation', t),
+      g = climbGrips(t);
+    for (const i of [0, 1]) {
+      near(s.rig.arms[i].b.x, g[i].x);
+      near(s.rig.arms[i].b.y, 0);
+    }
+  }
 });
 test('airborne roots obey gravity, moving launch velocity enters the work budget and footsteps stay out of flight', () => {
   for (const [id, transfers] of [
@@ -148,4 +167,17 @@ test('airborne roots obey gravity, moving launch velocity enters the work budget
   }
   assert.throws(() => hop('bad', 0, still(0), still(100)), /work budget/);
   assert.throws(() => runClip('bad', 0, 0.1, 0, 1), /Invalid run/);
+});
+
+test('both sides of authored centisecond boundaries remain continuous, including zero-weight gestures', () => {
+  for (const id of IDS)
+    for (let i = 1; i < FILMS[id].duration * 100; i++) {
+      const t = i / 100,
+        a = sample(id, t - 1e-6),
+        b = sample(id, t + 1e-6);
+      assert.ok(
+        a.points.every((p, j) => Math.hypot(p.x - b.points[j].x, p.y - b.points[j].y) < 0.0002),
+        `${id} boundary ${t}`,
+      );
+    }
 });

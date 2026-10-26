@@ -8,37 +8,37 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
-**新一轮剧本设计（待制作）**：[《别追，等它回来》《谁在敲门》《世界的侧面》](examples/demo-redesign.md)。三支保留原概念主题，改从陌生对象、试探与规则发现推进故事，附逐段分镜、动作、声音和数学边界。以下视频仍为 0.8.0 成片，尚未按这份新稿重新生成。
+## 0.9.0：先有疑问，再发现规则
 
-## 0.8.0：重拍三支概念动作短片
+三支 demo 已按 [探索剧本](examples/demo-redesign.md) 重新制作。**TypeScript / Motion Canvas · 250 秒 / 15000 帧 · 720p / 60 fps · 无台词、有声**。从一个陌生对象开始，角色靠观察、触碰、判断和身体行动逐步理解世界；原有的出口、电芯和预铺关卡已移除。
 
-三个原主题已重新编写并用 **TypeScript / Motion Canvas** 生成完整新片：人物主动判断、正常速度行动，规则改变路线，身体承担制动、惯性和落地。三支共 **53 秒 / 3180 帧 / 100 个声音事件**，均为 720p / 60 fps，有声网页与视频共用模型和混音。
+### 01 · 《别追，等它回来》· 75 秒
 
-### 01 · 《逆向通行》· 14 秒
+追着箭头伸手，却被第一次反向带倒。揉过手腕后，他再次确认规则，登上箭身感受速度，再跑到前侧蓄力、起跳拨片，等返向的箭头接住自己。负号改变方向设置，实际运动经过减速和反转。
 
-追上载台，操作 `×(−1)`，承受制动和反向惯性，伏身过梁，再借速度跳离到出口。目标速度 `u` 与实际速度 `v` 分别显示，有限加速度执行反转。
+![别追，等它回来](demos/previews/negative-ride.gif)
 
-![逆向通行：登台、反向、伏身、跳离](demos/previews/negative-ride.gif)
+[完整有声 MP4](demos/videos/negative-ride.mp4) · [规则卡](examples/negative-ride.yaml) · [编码后关键帧](demos/posters/negative-ride-contact-sheet.jpg)
 
-[完整有声 MP4](demos/videos/negative-ride.mp4) · [规则卡](examples/negative-ride.yaml) · [实际关键帧](demos/posters/negative-ride-contact-sheet.jpg)
+### 02 · 《谁在敲门》· 85 秒
 
-### 02 · 《最后一扇》· 18 秒
+小白框被敲两下后，暗处传来回应。沿接缝展开有序通口，提起薄框后才发现地址 63；四次查询找到匹配位置，伸进去的手竟从手里的框出现。结尾的敲击解释开场的声音来源。
 
-带着 63 钥匙查找有序升降台，按中点依次查询 8、12、14、13，比较后移动和折返，匹配后插入钥匙并乘台抵达上层。排除候选只降低亮度，原数组不删除、不重排。
+![谁在敲门](demos/previews/binary-search.gif)
 
-![最后一扇：比较、排除、折返与升降](demos/previews/binary-search.gif)
+[完整有声 MP4](demos/videos/binary-search.mp4) · [规则卡](examples/binary-search.yaml) · [编码后关键帧](demos/posters/binary-search-contact-sheet.jpg)
 
-[完整有声 MP4](demos/videos/binary-search.mp4) · [规则卡](examples/binary-search.yaml) · [实际关键帧](demos/posters/binary-search-contact-sheet.jpg)
+### 03 · 《世界的侧面》· 90 秒
 
-### 03 · 《转过死角》· 21 秒
+白杆上的 `i` 夹片让他意外离地。他抓紧、试着找支撑、看回原处，再主动验证；横向换手攀近支点，完成后两次旋转，翻身上杆、接跑跳回。四段轨迹走完，才出现完整的圆。
 
-跳上 `×i` 载台，经四个四分之一圈取回电芯并恢复出口。角色保持直立，随平台受力倾身；完成后才出现乘法结果，圆弧最后闭合为 `i⁴ = 1`。
+![世界的侧面](demos/previews/complex-rotation.gif)
 
-![转过死角：四次旋转、取回电芯、恢复出口](demos/previews/complex-rotation.gif)
+[完整有声 MP4](demos/videos/complex-rotation.mp4) · [规则卡](examples/complex-rotation.yaml) · [编码后关键帧](demos/posters/complex-rotation-contact-sheet.jpg)
 
-[完整有声 MP4](demos/videos/complex-rotation.mp4) · [规则卡](examples/complex-rotation.yaml) · [实际关键帧](demos/posters/complex-rotation-contact-sheet.jpg)
+[三支连续观看](demos/tooling/edited-showcase.mp4) · [实际分镜与公共模块](demos/PRODUCTION.md) · [复现命令](demos/README.md) · [实际 QA](demos/QA.md)。共 555 个声音事件，包含接触拟音、回应、机关和原创程序音乐；浏览器与导出使用同一时间线和混音器。复用 `acting.ts` 的观察、抓握、悬挂、攀移和恢复姿态，配合既有步态、重力跳跃与固定骨长。
 
-[三支连续观看](demos/tooling/edited-showcase.mp4) · [逐段剧本与公共模块](demos/PRODUCTION.md) · [复现与改编命令](demos/README.md) · [实际 QA](demos/QA.md)。可用 `npm --prefix motion run render:series` 重建三支，用 `init_web.py --scene binary-search` 等创建独立工程。它们是手工编排的故事实现，不是任意提示词自动成片工具；正常速度主观观片、完整听审和观众理解测试的完成范围单独记录。
+这是手工编排的侧视故事实现；没有通用人体动力学或任意提示词自动成片。参考作品的视觉与叙事语法已转化为自己的剧情、画面和声音，不宣称逐帧复制或达到原片的表演水平。主观完整观片、听审与观众理解测试分别记录，详见 QA。
 
 ## 0.7.0：正常速度动作与接触拟音
 
@@ -68,7 +68,7 @@ npm --prefix output/my-action/motion run dev
 
 [18 秒 / 60 fps 有声试片](demos/geometry/trace.mp4) · [实际检查](demos/geometry/QA.md) · [数学图形方法](references/math-graphics.md) · [工程说明](motion/README.md)
 
-这是曲线、公式与既有动作模型的**技术试片**，不是新的完整冒险剧本。《借势》保留原 Canvas 实现；三个概念主题已在 0.8.0 用 Motion Canvas 重拍。检查范围分别记录，不以库名代替实际评估。
+这是曲线、公式与既有动作模型的**技术试片**，不是新的完整冒险剧本。《借势》保留原 Canvas 实现；三个概念主题已在 0.9.0 用 Motion Canvas 重拍。检查范围分别记录，不以库名代替实际评估。
 
 ```sh
 python scripts/init_web.py output/my-film
@@ -201,8 +201,8 @@ python scripts/motion.py verify output/delivery
 ```
 
 ```text
-使用 $stickman-motion-skill，把“负数乘法与方向反转”做成 14 秒的无台词
-火柴人故事。让角色主动追上载台、反向后承受惯性、伏身过梁并跳离到出口。
+使用 $stickman-motion-skill，把“负数乘法与方向反转”做成一支无台词
+火柴人故事。从陌生箭头的试探开始，让角色通过反馈发现规则并改变行动。
 交付可播放视频、可编辑工程、规则卡和实际检查记录。
 ```
 

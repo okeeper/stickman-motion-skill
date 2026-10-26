@@ -2,387 +2,1434 @@
   "file": "binary-search.mp4",
   "scene": "binary-search",
   "fps": 60,
-  "frames": 1080,
-  "duration": 18,
+  "frames": 5100,
+  "duration": 85,
   "width": 1280,
   "height": 720,
   "resolutionScale": 2,
   "audio": {
     "sampleRate": 48000,
     "channels": 2,
-    "peakDbfs": -10.00434702007864,
-    "rmsDbfs": -42.38250966828968,
+    "peakDbfs": -11.866412481842325,
+    "rmsDbfs": -46.51745973410805,
     "clippedSamples": 0,
     "sourceFrom": 0,
     "layers": [
       "licensed-foley",
       "cloth-air-breath",
-      "world"
+      "world",
+      "original-score"
     ],
-    "cues": 37,
+    "cues": 149,
     "assetLicense": "CC0-1.0",
     "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
     "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
   },
   "clips": [
     {
-      "title": "最后一扇",
-      "duration": 18,
+      "title": "谁在敲门",
+      "duration": 85,
       "width": 1280,
       "height": 720,
       "fps": 60,
       "id": "binary-search",
       "cues": [
         {
-          "id": "b-entry-0",
-          "t": 0.25,
-          "kind": "footstep",
-          "x": -3.453,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": -0.467190977886498
-        },
-        {
-          "id": "b-entry-1",
-          "t": 0.5,
-          "kind": "footstep",
-          "x": -2.753,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 0,
-          "pan": -0.3759446234319933
-        },
-        {
-          "id": "b-entry-2",
-          "t": 0.75,
-          "kind": "footstep",
-          "x": -2.053,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": -0.28873122902545745
-        },
-        {
-          "id": "b-entry-3",
+          "id": "binary-search-music-0-0",
           "t": 1,
-          "kind": "footstep",
-          "x": -1.3529999999999993,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 0,
-          "pan": -0.20556242204995437
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
         },
         {
-          "id": "b-entry-4",
-          "t": 1.25,
+          "id": "b-approach-0",
+          "t": 1.04,
           "kind": "footstep",
-          "x": -0.5627609682216543,
+          "x": -1.472941463414634,
           "strength": 0.7,
-          "gait": "run",
+          "gait": "walk",
           "foot": 1,
-          "pan": -0.1132253549926013
+          "pan": -0.24379892854583823
         },
         {
-          "id": "b-entry-settle",
-          "t": 1.82,
+          "id": "b-approach-1",
+          "t": 1.38,
           "kind": "footstep",
-          "x": -0.32,
+          "x": -1.2440634146341463,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.18762290307626178
+        },
+        {
+          "id": "b-approach-2",
+          "t": 1.72,
+          "kind": "footstep",
+          "x": -1.0151853658536583,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.1316169090518835
+        },
+        {
+          "id": "b-approach-3",
+          "t": 2.06,
+          "kind": "footstep",
+          "x": -0.7863073170731705,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.07595625977902162
+        },
+        {
+          "id": "b-approach-4",
+          "t": 2.4000000000000004,
+          "kind": "footstep",
+          "x": -0.5574292682926825,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.020596450000807186
+        },
+        {
+          "id": "b-approach-5",
+          "t": 2.74,
+          "kind": "footstep",
+          "x": -0.3766796633837266,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.022411861650653436
+        },
+        {
+          "id": "binary-search-music-0-1",
+          "t": 2.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "b-approach-settle",
+          "t": 3.22,
+          "kind": "footstep",
+          "x": -0.42,
           "strength": 0.35,
           "gait": "walk",
-          "pan": -0.1235021256720345
+          "pan": 0.008858267549473987
         },
         {
-          "id": "b-query-0",
-          "t": 2.65,
+          "id": "b-knock-0",
+          "t": 5,
+          "kind": "knock",
+          "x": 0,
+          "strength": 0.65,
+          "soundId": "knock-0",
+          "pan": 0.09502093955394254
+        },
+        {
+          "id": "b-knock-1",
+          "t": 5.28,
+          "kind": "knock",
+          "x": 0,
+          "strength": 0.65,
+          "soundId": "knock-1",
+          "pan": 0.09185307617085926
+        },
+        {
+          "id": "b-echo-0",
+          "t": 5.58,
+          "kind": "knock",
+          "x": 0.2,
+          "strength": 0.27,
+          "soundId": "knock-0",
+          "echo": true,
+          "pan": 0.14012544978428879
+        },
+        {
+          "id": "b-echo-1",
+          "t": 5.86,
+          "kind": "knock",
+          "x": 0.2,
+          "strength": 0.27,
+          "soundId": "knock-1",
+          "echo": true,
+          "pan": 0.13721957394271642
+        },
+        {
+          "id": "b-pull",
+          "t": 10.7,
           "kind": "hand",
           "x": 0,
-          "strength": 0.38,
-          "pan": -0.13158577199470703
-        },
-        {
-          "id": "b-latch-0",
-          "t": 2.78,
-          "kind": "gate",
-          "x": 0,
-          "strength": 0.2,
-          "pan": -0.13603946161806632
-        },
-        {
-          "id": "b-12-0",
-          "t": 3.9,
-          "kind": "footstep",
-          "x": 0.18762068965517248,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": -0.12682219228379693
-        },
-        {
-          "id": "b-12-1",
-          "t": 4.15,
-          "kind": "footstep",
-          "x": 0.725551724137931,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 0,
-          "pan": -0.06941699610369707
-        },
-        {
-          "id": "b-12-2",
-          "t": 4.4,
-          "kind": "footstep",
-          "x": 1.2634827586206898,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": -0.02167422449899273
-        },
-        {
-          "id": "b-12-3",
-          "t": 4.65,
-          "kind": "footstep",
-          "x": 1.8014137931034486,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 0,
-          "pan": 0.01912332286082971
-        },
-        {
-          "id": "b-12-4",
-          "t": 4.9,
-          "kind": "footstep",
-          "x": 2.339344827586207,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": 0.057108339298923394
-        },
-        {
-          "id": "b-12-5",
-          "t": 5.15,
-          "kind": "footstep",
-          "x": 2.8449999999999998,
-          "strength": 0.7,
-          "gait": "walk",
-          "foot": 0,
-          "pan": 0.09192122843402033
-        },
-        {
-          "id": "b-12-settle",
-          "t": 5.569999999999999,
-          "kind": "footstep",
-          "x": 2.8000000000000003,
-          "strength": 0.35,
-          "gait": "walk",
-          "pan": 0.0076720881455508705
-        },
-        {
-          "id": "b-query-1",
-          "t": 6,
-          "kind": "hand",
-          "x": 3.12,
-          "strength": 0.38,
-          "pan": 0.016614754654971847
-        },
-        {
-          "id": "b-latch-1",
-          "t": 6.13,
-          "kind": "gate",
-          "x": 3.12,
-          "strength": 0.2,
-          "pan": 0.009406925543344548
-        },
-        {
-          "id": "b-14-0",
-          "t": 7.24,
-          "kind": "footstep",
-          "x": 3.6611904761904763,
-          "strength": 0.7,
-          "gait": "walk",
-          "foot": 1,
-          "pan": 0.08978498837007612
-        },
-        {
-          "id": "b-14-1",
-          "t": 7.58,
-          "kind": "footstep",
-          "x": 4.300385776358879,
-          "strength": 0.7,
-          "gait": "walk",
-          "foot": 0,
-          "pan": 0.19055456250626335
-        },
-        {
-          "id": "b-query-2",
-          "t": 8.6,
-          "kind": "hand",
-          "x": 4.68,
-          "strength": 0.38,
-          "pan": 0.1771388277444542
-        },
-        {
-          "id": "b-latch-2",
-          "t": 8.73,
-          "kind": "gate",
-          "x": 4.68,
-          "strength": 0.2,
-          "pan": 0.16907510457902522
-        },
-        {
-          "id": "b-13-0",
-          "t": 9.84,
-          "kind": "footstep",
-          "x": 3.5482350131248204,
-          "strength": 0.7,
-          "gait": "walk",
-          "foot": 1,
-          "pan": -0.10267386065344991
-        },
-        {
-          "id": "b-13-settle",
-          "t": 10.32,
-          "kind": "footstep",
-          "x": 3.5800000000000005,
-          "strength": 0.35,
-          "gait": "walk",
-          "pan": -0.09545454545454533
-        },
-        {
-          "id": "b-query-3",
-          "t": 10.8,
-          "kind": "hand",
-          "x": 3.9000000000000004,
-          "strength": 0.38,
-          "pan": -0.022727272727272645
-        },
-        {
-          "id": "b-latch-3",
-          "t": 10.930000000000001,
-          "kind": "gate",
-          "x": 3.9000000000000004,
-          "strength": 0.2,
-          "pan": -0.022727272727272645
-        },
-        {
-          "id": "b-key",
-          "t": 11.7,
-          "kind": "hand",
-          "x": 3.9000000000000004,
-          "strength": 0.45,
-          "pan": -0.022727272727272645
-        },
-        {
-          "id": "b-open",
-          "t": 12.2,
-          "kind": "gate",
-          "x": 3.9000000000000004,
           "strength": 0.4,
-          "pan": -0.022727272727272645
+          "pan": -0.11173483025928847
+        },
+        {
+          "id": "b-unfold-0",
+          "t": 10.8,
+          "kind": "latch",
+          "x": 0,
+          "strength": 0.2,
+          "pan": -0.1500503045626993
+        },
+        {
+          "id": "binary-search-music-1-0",
+          "t": 10.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 174.614,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-hinge",
+          "t": 11,
+          "kind": "slide",
+          "x": 2,
+          "strength": 0.15,
+          "duration": 3.5,
+          "pan": 0.15000532083696785
+        },
+        {
+          "id": "b-unfold-1",
+          "t": 11.16,
+          "kind": "latch",
+          "x": 0.72,
+          "strength": 0.2,
+          "pan": -0.12992659347126706
+        },
+        {
+          "id": "b-retreat-0",
+          "t": 11.44,
+          "kind": "footstep",
+          "x": -0.8560666666666664,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.4580266991113959
+        },
+        {
+          "id": "binary-search-music-1-1",
+          "t": 11.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 293.665,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-unfold-2",
+          "t": 11.520000000000001,
+          "kind": "latch",
+          "x": 1.44,
+          "strength": 0.2,
+          "pan": -0.13191741378477087
+        },
+        {
+          "id": "b-retreat-1",
+          "t": 11.78,
+          "kind": "footstep",
+          "x": -1.1733999999999996,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.5714524381692837
+        },
+        {
+          "id": "b-unfold-3",
+          "t": 11.88,
+          "kind": "latch",
+          "x": 2.16,
+          "strength": 0.2,
+          "pan": -0.12694646095321674
+        },
+        {
+          "id": "b-retreat-2",
+          "t": 12.12,
+          "kind": "footstep",
+          "x": -1.4394410420565331,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.6249833654949728
+        },
+        {
+          "id": "binary-search-music-1-2",
+          "t": 12.200000000000001,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 261.626,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-unfold-4",
+          "t": 12.24,
+          "kind": "latch",
+          "x": 2.88,
+          "strength": 0.2,
+          "pan": -0.06413728607918558
+        },
+        {
+          "id": "b-unfold-5",
+          "t": 12.600000000000001,
+          "kind": "latch",
+          "x": 3.5999999999999996,
+          "strength": 0.2,
+          "pan": 0.026156692852082324
+        },
+        {
+          "id": "b-retreat-settle",
+          "t": 12.620000000000001,
+          "kind": "footstep",
+          "x": -1.4,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.6233252620055457
+        },
+        {
+          "id": "binary-search-music-1-3",
+          "t": 12.9,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-unfold-6",
+          "t": 12.96,
+          "kind": "latch",
+          "x": 4.32,
+          "strength": 0.2,
+          "pan": 0.11854897938146695
+        },
+        {
+          "id": "b-unfold-7",
+          "t": 13.32,
+          "kind": "latch",
+          "x": 5.04,
+          "strength": 0.2,
+          "pan": 0.20822869775711753
+        },
+        {
+          "id": "binary-search-music-1-4",
+          "t": 13.600000000000001,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 164.814,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-unfold-8",
+          "t": 13.68,
+          "kind": "latch",
+          "x": 5.76,
+          "strength": 0.2,
+          "pan": 0.29382058587388843
+        },
+        {
+          "id": "b-unfold-9",
+          "t": 14.040000000000001,
+          "kind": "latch",
+          "x": 6.4799999999999995,
+          "strength": 0.2,
+          "pan": 0.374973123490909
+        },
+        {
+          "id": "binary-search-music-1-5",
+          "t": 14.3,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 196,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-unfold-10",
+          "t": 14.4,
+          "kind": "latch",
+          "x": 7.199999999999999,
+          "strength": 0.2,
+          "pan": 0.45202388457572557
+        },
+        {
+          "id": "b-unfold-11",
+          "t": 14.760000000000002,
+          "kind": "latch",
+          "x": 7.92,
+          "strength": 0.2,
+          "pan": 0.5258390730069559
+        },
+        {
+          "id": "binary-search-music-1-6",
+          "t": 15,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 146.832,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-unfold-12",
+          "t": 15.120000000000001,
+          "kind": "latch",
+          "x": 8.64,
+          "strength": 0.2,
+          "pan": 0.59765624425364
+        },
+        {
+          "id": "b-unfold-13",
+          "t": 15.48,
+          "kind": "latch",
+          "x": 9.36,
+          "strength": 0.2,
+          "pan": 0.6689270270545904
+        },
+        {
+          "id": "binary-search-music-1-7",
+          "t": 15.7,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-unfold-14",
+          "t": 15.84,
+          "kind": "latch",
+          "x": 10.08,
+          "strength": 0.2,
+          "pan": 0.743424581627603
+        },
+        {
+          "id": "b-return-0",
+          "t": 16.14,
+          "kind": "footstep",
+          "x": -1.1203599999999998,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.722535659887417
+        },
+        {
+          "id": "b-unfold-15",
+          "t": 16.2,
+          "kind": "latch",
+          "x": 10.799999999999999,
+          "strength": 0.2,
+          "pan": 0.8202066716351953
+        },
+        {
+          "id": "binary-search-music-1-8",
+          "t": 16.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 174.614,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-return-1",
+          "t": 16.48,
+          "kind": "footstep",
+          "x": -0.9299599999999999,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.7199234902648325
+        },
+        {
+          "id": "b-return-2",
+          "t": 16.82,
+          "kind": "footstep",
+          "x": -0.73956,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.7067504560037584
+        },
+        {
+          "id": "binary-search-music-1-9",
+          "t": 17.1,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 293.665,
+          "duration": 0.9099999999999999,
+          "pan": 0
+        },
+        {
+          "id": "b-return-3",
+          "t": 17.16,
+          "kind": "footstep",
+          "x": -0.5491600000000001,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.6896121231327649
+        },
+        {
+          "id": "b-close-0",
+          "t": 17.4,
+          "kind": "tile",
+          "x": 0,
+          "strength": 0.14,
+          "pan": -0.6213855365102947
+        },
+        {
+          "id": "b-close-1",
+          "t": 17.45,
+          "kind": "tile",
+          "x": 0.72,
+          "strength": 0.14,
+          "pan": -0.5283137662337661
+        },
+        {
+          "id": "b-return-4",
+          "t": 17.5,
+          "kind": "footstep",
+          "x": -0.3814052055244801,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.671723242750258
+        },
+        {
+          "id": "b-close-2",
+          "t": 17.5,
+          "kind": "tile",
+          "x": 1.44,
+          "strength": 0.14,
+          "pan": -0.4351771121626632
+        },
+        {
+          "id": "b-close-3",
+          "t": 17.549999999999997,
+          "kind": "tile",
+          "x": 2.16,
+          "strength": 0.14,
+          "pan": -0.3419795253887067
+        },
+        {
+          "id": "b-close-4",
+          "t": 17.599999999999998,
+          "kind": "tile",
+          "x": 2.88,
+          "strength": 0.14,
+          "pan": -0.24872532278272422
+        },
+        {
+          "id": "b-close-5",
+          "t": 17.65,
+          "kind": "tile",
+          "x": 3.5999999999999996,
+          "strength": 0.14,
+          "pan": -0.1554191951230745
+        },
+        {
+          "id": "b-close-6",
+          "t": 17.7,
+          "kind": "tile",
+          "x": 4.32,
+          "strength": 0.14,
+          "pan": -0.06206621522407162
+        },
+        {
+          "id": "b-close-7",
+          "t": 17.75,
+          "kind": "tile",
+          "x": 5.04,
+          "strength": 0.14,
+          "pan": 0.031328153935589
+        },
+        {
+          "id": "b-close-8",
+          "t": 17.799999999999997,
+          "kind": "tile",
+          "x": 5.76,
+          "strength": 0.14,
+          "pan": 0.12475805108440688
+        },
+        {
+          "id": "b-close-9",
+          "t": 17.849999999999998,
+          "kind": "tile",
+          "x": 6.4799999999999995,
+          "strength": 0.14,
+          "pan": 0.21826430387706003
+        },
+        {
+          "id": "b-close-10",
+          "t": 17.9,
+          "kind": "tile",
+          "x": 7.199999999999999,
+          "strength": 0.14,
+          "pan": 0.3117684793204411
+        },
+        {
+          "id": "b-close-11",
+          "t": 17.95,
+          "kind": "tile",
+          "x": 7.92,
+          "strength": 0.14,
+          "pan": 0.40526910772100566
+        },
+        {
+          "id": "b-close-12",
+          "t": 18,
+          "kind": "tile",
+          "x": 8.64,
+          "strength": 0.14,
+          "pan": 0.4987666628738275
+        },
+        {
+          "id": "b-return-settle",
+          "t": 18.02,
+          "kind": "footstep",
+          "x": -0.42,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.6778607677040829
+        },
+        {
+          "id": "b-close-13",
+          "t": 18.049999999999997,
+          "kind": "tile",
+          "x": 9.36,
+          "strength": 0.14,
+          "pan": 0.5922764967341119
+        },
+        {
+          "id": "b-close-14",
+          "t": 18.099999999999998,
+          "kind": "tile",
+          "x": 10.08,
+          "strength": 0.14,
+          "pan": 0.6859288432184294
+        },
+        {
+          "id": "b-close-15",
+          "t": 18.15,
+          "kind": "tile",
+          "x": 10.799999999999999,
+          "strength": 0.14,
+          "pan": 0.7800299436054533
         },
         {
           "id": "b-lift",
-          "t": 12.5,
-          "kind": "whoosh",
-          "x": 3.9000000000000004,
+          "t": 18.5,
+          "kind": "hand",
+          "x": 0,
           "strength": 0.3,
-          "duration": 1.6,
-          "pan": -0.030509078759328224
+          "pan": -0.611787995673381
         },
         {
-          "id": "b-lock",
-          "t": 14.25,
-          "kind": "gate",
-          "x": 3.9000000000000004,
-          "strength": 0.35,
-          "pan": -0.34209098591953185
+          "id": "b-address",
+          "t": 22.7,
+          "kind": "reveal",
+          "x": 0,
+          "strength": 0.2,
+          "duration": 0.4,
+          "pan": -0.2615905696373108
         },
         {
-          "id": "b-exit-0",
-          "t": 14.7,
+          "id": "binary-search-music-2-0",
+          "t": 24,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "b-mid8-0",
+          "t": 24.54,
           "kind": "footstep",
-          "x": 4.2458124999999995,
+          "x": 0.39138909090909096,
           "strength": 0.7,
-          "gait": "run",
+          "gait": "walk",
           "foot": 1,
-          "pan": -0.2776664645796592
+          "pan": -0.33894802038511473
         },
         {
-          "id": "b-exit-1",
-          "t": 14.95,
+          "id": "b-mid8-1",
+          "t": 24.88,
           "kind": "footstep",
-          "x": 4.9676874999999985,
+          "x": 1.01328,
           "strength": 0.7,
-          "gait": "run",
+          "gait": "walk",
           "foot": 0,
-          "pan": -0.14321973150032583
+          "pan": -0.25513424033489907
         },
         {
-          "id": "b-exit-2",
-          "t": 15.2,
+          "id": "binary-search-music-2-1",
+          "t": 25,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "b-mid8-2",
+          "t": 25.22,
           "kind": "footstep",
-          "x": 5.689562499999998,
+          "x": 1.6351709090909088,
           "strength": 0.7,
-          "gait": "run",
+          "gait": "walk",
           "foot": 1,
-          "pan": -0.012176244063647278
+          "pan": -0.18787360192785552
         },
         {
-          "id": "b-exit-3",
-          "t": 15.45,
+          "id": "b-mid8-3",
+          "t": 25.56,
           "kind": "footstep",
-          "x": 6.411437499999998,
+          "x": 2.257061818181818,
           "strength": 0.7,
-          "gait": "run",
+          "gait": "walk",
           "foot": 0,
-          "pan": 0.115214374701462
+          "pan": -0.1376716156240358
         },
         {
-          "id": "b-exit-4",
-          "t": 15.7,
+          "id": "b-mid8-4",
+          "t": 25.9,
           "kind": "footstep",
-          "x": 7.133312499999997,
+          "x": 2.8789527272727273,
           "strength": 0.7,
-          "gait": "run",
+          "gait": "walk",
           "foot": 1,
-          "pan": 0.23932268320438427
+          "pan": -0.1000480344640007
         },
         {
-          "id": "b-exit-5",
-          "t": 15.95,
+          "id": "binary-search-music-2-2",
+          "t": 26,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "b-mid8-5",
+          "t": 26.24,
           "kind": "footstep",
-          "x": 7.948246501521414,
+          "x": 3.500843636363636,
           "strength": 0.7,
-          "gait": "run",
+          "gait": "walk",
           "foot": 0,
-          "pan": 0.37870990003254235
+          "pan": -0.06790512160939566
         },
         {
-          "id": "b-release",
-          "t": 16.5,
-          "kind": "breath",
-          "x": 8.2,
-          "strength": 0.3,
-          "pan": 0.38907306363903565
-        },
-        {
-          "id": "b-exit-settle",
-          "t": 16.52,
+          "id": "b-mid8-6",
+          "t": 26.58,
           "kind": "footstep",
-          "x": 8.2,
+          "x": 4.122734545454545,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.03290538135384201
+        },
+        {
+          "id": "b-mid8-7",
+          "t": 26.919999999999998,
+          "kind": "footstep",
+          "x": 4.644105886315985,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.0038640657737304056
+        },
+        {
+          "id": "binary-search-music-2-3",
+          "t": 27,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "b-mid8-settle",
+          "t": 27.419999999999998,
+          "kind": "footstep",
+          "x": 4.61,
           "strength": 0.35,
           "gait": "walk",
-          "pan": 0.38776536917765625
+          "pan": -0.06521985476976001
+        },
+        {
+          "id": "b-cover-0",
+          "t": 28.1,
+          "kind": "latch",
+          "x": 5.04,
+          "strength": 0.4,
+          "pan": -0.010169491525423662
+        },
+        {
+          "id": "b-read-0",
+          "t": 28.37,
+          "kind": "reveal",
+          "x": 5.04,
+          "strength": 0.16,
+          "duration": 0.24,
+          "pan": -0.010501127268132638
+        },
+        {
+          "id": "binary-search-music-3-0",
+          "t": 35,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 164.814,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid12-0",
+          "t": 35.540000000000006,
+          "kind": "footstep",
+          "x": 5.4335290322580665,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.2629236519923903
+        },
+        {
+          "id": "binary-search-music-3-1",
+          "t": 35.55,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 196,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid12-1",
+          "t": 35.88,
+          "kind": "footstep",
+          "x": 6.065270967741938,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.19679263557420187
+        },
+        {
+          "id": "binary-search-music-3-2",
+          "t": 36.1,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 146.832,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid12-2",
+          "t": 36.220000000000006,
+          "kind": "footstep",
+          "x": 6.6970129032258106,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.11371963145197625
+        },
+        {
+          "id": "b-mid12-3",
+          "t": 36.56,
+          "kind": "footstep",
+          "x": 7.328675546386173,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.021368723141913695
+        },
+        {
+          "id": "binary-search-music-3-3",
+          "t": 36.65,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid12-4",
+          "t": 36.900000000000006,
+          "kind": "footstep",
+          "x": 7.535,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.002438354509390736
+        },
+        {
+          "id": "binary-search-music-3-4",
+          "t": 37.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 174.614,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid12-settle",
+          "t": 37.22,
+          "kind": "footstep",
+          "x": 7.49,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.014753975797418044
+        },
+        {
+          "id": "binary-search-music-3-5",
+          "t": 37.75,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 293.665,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-cover-1",
+          "t": 38,
+          "kind": "latch",
+          "x": 7.92,
+          "strength": 0.4,
+          "pan": 0.06095238095238101
+        },
+        {
+          "id": "b-read-1",
+          "t": 38.27,
+          "kind": "reveal",
+          "x": 7.92,
+          "strength": 0.16,
+          "duration": 0.24,
+          "pan": 0.060843430626274744
+        },
+        {
+          "id": "binary-search-music-3-6",
+          "t": 38.3,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 261.626,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-7",
+          "t": 38.85,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-8",
+          "t": 39.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 164.814,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-9",
+          "t": 39.95,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 196,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-10",
+          "t": 40.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 146.832,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-11",
+          "t": 41.05,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-12",
+          "t": 41.6,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 174.614,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-13",
+          "t": 42.15,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 293.665,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-14",
+          "t": 42.7,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 261.626,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-15",
+          "t": 43.25,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid14-0",
+          "t": 43.540000000000006,
+          "kind": "footstep",
+          "x": 8.170115789473687,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.11275293824283211
+        },
+        {
+          "id": "binary-search-music-3-16",
+          "t": 43.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 164.814,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid14-1",
+          "t": 43.88,
+          "kind": "footstep",
+          "x": 8.68548421052632,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.013384648577745897
+        },
+        {
+          "id": "b-mid14-2",
+          "t": 44.220000000000006,
+          "kind": "footstep",
+          "x": 8.975,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.0451447873504995
+        },
+        {
+          "id": "binary-search-music-3-17",
+          "t": 44.35,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 196,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid14-settle",
+          "t": 44.62,
+          "kind": "footstep",
+          "x": 8.93,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": 0.03077695016861008
+        },
+        {
+          "id": "binary-search-music-3-18",
+          "t": 44.9,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 146.832,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-cover-2",
+          "t": 45.2,
+          "kind": "latch",
+          "x": 9.36,
+          "strength": 0.4,
+          "pan": 0.12727272727272698
+        },
+        {
+          "id": "binary-search-music-3-19",
+          "t": 45.45,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-read-2",
+          "t": 45.470000000000006,
+          "kind": "reveal",
+          "x": 9.36,
+          "strength": 0.16,
+          "duration": 0.24,
+          "pan": 0.12731084888677346
+        },
+        {
+          "id": "binary-search-music-3-20",
+          "t": 46,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 174.614,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-21",
+          "t": 46.55,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 293.665,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-22",
+          "t": 47.1,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 261.626,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-23",
+          "t": 47.65,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-brake",
+          "t": 48.2,
+          "kind": "skid",
+          "x": 9.36,
+          "strength": 0.35,
+          "duration": 0.22,
+          "pan": 0.15734342520876626
+        },
+        {
+          "id": "binary-search-music-3-24",
+          "t": 48.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 164.814,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-3-25",
+          "t": 48.75,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 196,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "b-mid13-0",
+          "t": 49.34,
+          "kind": "footstep",
+          "x": 8.358846153846152,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.05959496257069109
+        },
+        {
+          "id": "b-mid13-1",
+          "t": 49.68,
+          "kind": "footstep",
+          "x": 8.165000000000001,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.09787436126924647
+        },
+        {
+          "id": "b-mid13-settle",
+          "t": 50.019999999999996,
+          "kind": "footstep",
+          "x": 8.21,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.08018890437951391
+        },
+        {
+          "id": "b-cover-3",
+          "t": 50.8,
+          "kind": "latch",
+          "x": 8.64,
+          "strength": 0.4,
+          "pan": 0.04356668797380099
+        },
+        {
+          "id": "binary-search-music-4-0",
+          "t": 51,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.15,
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "b-read-3",
+          "t": 51.07,
+          "kind": "reveal",
+          "x": 8.64,
+          "strength": 0.16,
+          "duration": 0.24,
+          "pan": 0.04825886124047542
+        },
+        {
+          "id": "binary-search-music-4-1",
+          "t": 52.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.15,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-4-2",
+          "t": 53.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.15,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "b-knock-2",
+          "t": 57.2,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.65,
+          "soundId": "knock-0",
+          "pan": 0.08285273211214675
+        },
+        {
+          "id": "b-knock-3",
+          "t": 57.48,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.65,
+          "soundId": "knock-1",
+          "pan": 0.08611689311390246
+        },
+        {
+          "id": "b-echo-2",
+          "t": 57.78,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.27,
+          "soundId": "knock-0",
+          "echo": true,
+          "pan": 0.0897758050568329
+        },
+        {
+          "id": "b-echo-3",
+          "t": 58.059999999999995,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.27,
+          "soundId": "knock-1",
+          "echo": true,
+          "pan": 0.09329786902969606
+        },
+        {
+          "id": "b-inner",
+          "t": 60.1,
+          "kind": "slide",
+          "x": 8.64,
+          "strength": 0.24,
+          "duration": 0.8,
+          "pan": 0.11766032193067834
+        },
+        {
+          "id": "b-touch-dark",
+          "t": 64.3,
+          "kind": "hand",
+          "x": 8.64,
+          "strength": 0.22,
+          "pan": 0.13136080599233826
+        },
+        {
+          "id": "b-space",
+          "t": 67,
+          "kind": "reveal",
+          "x": 8.64,
+          "strength": 0.25,
+          "duration": 0.7,
+          "pan": 0.156745977322515
+        },
+        {
+          "id": "b-startle",
+          "t": 68.2,
+          "kind": "breath",
+          "x": 8.64,
+          "strength": 0.45,
+          "duration": 0.25,
+          "pan": 0.16879043134289629
+        },
+        {
+          "id": "b-knock-4",
+          "t": 77.2,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.65,
+          "soundId": "knock-0",
+          "pan": 0.17419354838709708
+        },
+        {
+          "id": "b-knock-5",
+          "t": 77.48,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.65,
+          "soundId": "knock-1",
+          "pan": 0.17419354838709708
+        },
+        {
+          "id": "b-echo-4",
+          "t": 77.78,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.27,
+          "soundId": "knock-0",
+          "echo": true,
+          "pan": 0.17419354838709708
+        },
+        {
+          "id": "b-echo-5",
+          "t": 78.06,
+          "kind": "knock",
+          "x": 8.64,
+          "strength": 0.27,
+          "soundId": "knock-1",
+          "echo": true,
+          "pan": 0.17419354838709708
+        },
+        {
+          "id": "b-out",
+          "t": 80,
+          "kind": "cloth",
+          "x": 8.64,
+          "strength": 0.3,
+          "pan": 0.19028550949707373
+        },
+        {
+          "id": "binary-search-music-5-0",
+          "t": 80.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-5-1",
+          "t": 82.1,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 293.665,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "binary-search-music-5-2",
+          "t": 83.7,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
         }
       ],
       "engine": "Motion Canvas 3.17.2",
       "transfers": [],
       "resolutionScale": 2,
-      "sourceDuration": 18,
+      "sourceDuration": 85,
       "from": 0,
-      "to": 18,
-      "frames": 1080
+      "to": 85,
+      "frames": 5100
     }
   ],
-  "sha256": "6ec841716084269986b5de88c0c83be641a130d8a6dd2ba9d1c86077d8439099"
+  "sha256": "258b9d6803f9ff5e44ed6a4df94c38c6b5c62d6bbebbde3e1d0af197bd1e379b"
 }

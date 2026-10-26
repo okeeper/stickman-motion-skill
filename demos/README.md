@@ -1,14 +1,12 @@
 # Demo 制作与复现
 
-**新剧本待制作**：[新一轮三支 Demo 设计](../examples/demo-redesign.md) 包含《别追，等它回来》《谁在敲门》《世界的侧面》的完整场景、探索过程与动作声音设计。该稿尚无对应新视频；下表与复现命令继续对应 0.8.0 成片。
+三支探索故事已按 [新剧本](../examples/demo-redesign.md) 用 TypeScript / Motion Canvas 生成，版本 **0.9.0**。无台词成片共 250 秒，1280×720 / 60 fps，含动作拟音、世界反馈与原创程序音乐。
 
-原三个主题已在 0.8.0 重新设计并用 TypeScript / Motion Canvas 重拍。三支无台词成片共 53 秒，1280×720 / 60 fps，含接触拟音；任务、机制和动作路线各自独立。
-
-| 场景名 | 新故事 | 片长 | 成片 / 规则 |
+| 场景名 | 故事 | 片长 | 成片 / 规则 |
 |---|---|---|---|
-| `negative-ride` | 《逆向通行》：登台反向、伏身过梁、借速跳离 | 14 秒 | [MP4](videos/negative-ride.mp4) · [规则卡](../examples/negative-ride.yaml) |
-| `binary-search` | 《最后一扇》：四次有依据的查询解锁升降台 | 18 秒 | [MP4](videos/binary-search.mp4) · [规则卡](../examples/binary-search.yaml) |
-| `complex-rotation` | 《转过死角》：四次旋转取回电芯并恢复出口 | 21 秒 | [MP4](videos/complex-rotation.mp4) · [规则卡](../examples/complex-rotation.yaml) |
+| `negative-ride` | 《别追，等它回来》：从追赶失衡到预判会合 | 75 秒 | [MP4](videos/negative-ride.mp4) · [规则卡](../examples/negative-ride.yaml) |
+| `binary-search` | 《谁在敲门》：追查回应，二分定位同一空间通路 | 85 秒 | [MP4](videos/binary-search.mp4) · [规则卡](../examples/binary-search.yaml) |
+| `complex-rotation` | 《世界的侧面》：意外离地，换手内移，四次旋转归来 | 90 秒 | [MP4](videos/complex-rotation.mp4) · [规则卡](../examples/complex-rotation.yaml) |
 
 逐段剧本、数学假设和模块位置见 [PRODUCTION](PRODUCTION.md)，实际产物与检查范围见 [QA](QA.md)。规则卡记录手工编排的规格，渲染器不会把任意 YAML 或提示词自动变成动画。
 
@@ -30,7 +28,7 @@ npm run dev
 # 在 motion/ 中，一条命令顺序重建全部三支 MP4
 npm run render:series
 # 单支、局部或低成本试做
-npm run render -- --scene negative-ride --fps 30 --from 2.7 --to 4 --out ../renders/reversal.mp4
+npm run render -- --scene negative-ride --fps 30 --from 60.5 --to 63.4 --out ../renders/reversal.mp4
 npm run render -- --scene binary-search
 npm run render -- --scene complex-rotation
 ```
@@ -54,7 +52,7 @@ npm --prefix web test
 npm --prefix motion run test:series
 ```
 
-`series_previews.py` 从**已编码的视频**生成全长 640 px / 16 fps 无声 GIF、720p 封面和带时刻标记的关键帧图。片长或剧情变动后同步更新该脚本的取帧时刻。
+`series_previews.py` 从**已编码的视频**生成全长 480 px / 12 fps 无声 GIF、720p 封面和带时刻标记的关键帧图。片长或剧情变动后同步更新该脚本的取帧时刻。
 
 ## 改编与复用
 
@@ -67,4 +65,4 @@ npm --prefix output/my-concept/motion run dev
 
 复制工程保留三种主题、公共动作、声音、字体、锁文件和许可；它不含原参考视频、研究截图或已渲染成片。新任务改 [模型](../web/src/series/model.ts) 和 [场景](../motion/src/scenes/series.tsx)，更新目标、规则、时刻、镜头、音效及检查点。
 
-历史 Python 引擎和测试继续保留。`python scripts/render_demo.py --scene all` 生成旧版 36 秒案例，默认写入 `output/legacy-demos/videos/`，避免覆盖新版。它不读取当前规则卡，不能用于复现 0.8.0。旧动作比较保留历史版本；剪辑示例已按新片段同步重建。
+历史 Python 引擎和测试继续保留。`python scripts/render_demo.py --scene all` 生成旧版 36 秒案例，默认写入 `output/legacy-demos/videos/`，避免覆盖新版。它不读取当前规则卡，不能用于复现 0.9.0。旧动作比较保留历史版本；剪辑示例已按新片段同步重建。

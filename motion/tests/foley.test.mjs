@@ -95,3 +95,50 @@ test("bad PCM, cue kinds and missing assets fail without replacing existing soun
     await rm(dir, { recursive: true, force: true });
   }
 });
+
+test("discovery sounds keep exact crop tails and preserve a recognisable delayed knock", () => {
+  const kinds = ["knock", "slide", "turn", "reveal", "music"];
+  const cues = kinds.map((kind, i) => ({
+    id: kind,
+    t: 0.1 + i * 0.16,
+    kind,
+    x: 0,
+    strength: 0.4,
+    duration: 0.5,
+    note: 220,
+  }));
+  const full = renderActionAudio(1.6, cues, {}, { ambience: false });
+  const part = renderActionAudio(0.5, cues, {}, { from: 0.4, ambience: false });
+  for (const ch of ["left", "right"])
+    assert.deepEqual(part[ch], full[ch].slice(19200, 43200));
+  assert.equal(full.stats.clippedSamples, 0);
+  assert.ok(full.stats.layers.includes("original-score"));
+  const knock = {
+    id: "first",
+    soundId: "same-hand",
+    t: 0,
+    kind: "knock",
+    x: 0,
+    strength: 0.5,
+  };
+  const a = renderActionAudio(0.3, [knock], {}, { ambience: false });
+  const b = renderActionAudio(
+    0.3,
+    [{ ...knock, id: "echo", echo: true }],
+    {},
+    { ambience: false },
+  );
+  for (let i = 0; i < a.left.length; i++)
+    assert.ok(Math.abs(b.left[i] - 0.65 * a.left[i]) < 1e-7);
+  for (const patch of [
+    { note: NaN },
+    { note: 0 },
+    { note: Infinity },
+    { soundId: 42 },
+    { echo: "yes" },
+  ])
+    assert.throws(
+      () => renderActionAudio(0.3, [{ ...knock, ...patch }], {}),
+      /Invalid action/,
+    );
+});

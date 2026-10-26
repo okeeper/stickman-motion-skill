@@ -1,47 +1,38 @@
 # Hand-authored TS story specification; not a prompt-to-video input.
 scene_id: binary-search
-intent: 用目标钥匙 63 找到正确升降台，抵达上层出口
-concept: 对升序且唯一的隐藏值查询当前中点，比较后排除不可能的一侧
-prompt: 使用 $stickman-motion-skill，做一支 18 秒无台词短片。主角带着 63 钥匙进入有序升降台阵列，不随机试门；按中点比较、移动和折返，四次查询后解锁正确载台并抵达上层出口。
-duration_seconds: 18
+intent: 追查小白框的敲击回应，找到同一空间通路的另一端
+concept: 在严格升序且唯一的有序数组中，通过比较中点缩小闭区间
+prompt: 使用 $stickman-motion-skill 制作《谁在敲门》。敲框得到回应，展开陌生结构，随后才发现目标地址；用四次二分查询定位，最后以手穿框和敲击回响解开疑问。
+duration_seconds: 85
 renderer_scene: binary-search
 engine: motion-canvas
-values: [2, 5, 8, 12, 19, 24, 28, 31, 37, 42, 48, 55, 63, 70, 81, 96]
-target: 63
 assumptions:
-  - 值升序、唯一，目标保证存在；固定索引一基编号，面值只在查询后揭晓
-  - 中点取当前闭区间端点均值的下取整；索引依次为 8、12、14、13
-  - 31 < 63 保留 9 至 16；55 < 63 保留 13 至 16；70 > 63 保留 13；最后查询匹配
-  - 降低亮度只表示排除候选，原数组及其空间位置均不删除、不重排
-  - 门框是查询终端的视觉约定，未命中不会伤害角色；只有匹配并插入钥匙才启动升降
-  - 本片展示四次查询，不声称角色在空间移动的总耗时也是对数复杂度
+  - 值严格升序且唯一，目标 63 存在；原数组不被删除、重排或改变
+  - 原值为 2,5,8,12,19,24,28,31,37,42,48,55,63,70,81,96
+  - 闭区间的中点向下取整；一基索引 8、12、14、13 对应 31、55、70、63
+  - 查询复杂度不等于人物在空间中的移动时间
+  - 空间通口及其声音传播是故事约定，不是二分查找的数学结论，不涉及时间穿越
 objects:
-  - id: target_key
-    visual: 主角手中清楚标为 63 的钥匙
-  - id: terminals
-    visual: 16 个固定编号、升序存储的查询终端
-  - id: range
-    visual: 收缩的候选括号、数量与保留亮度
-  - id: lift
-    visual: 索引 13 对应的升降台与上层出口
+  - id: case
+    visual: 开场只有一个带接缝的小白框
+  - id: ports
+    visual: 拉开后依次出现的十六个有序通口，排除候选只变暗
+  - id: handheld
+    visual: 提起后才显出 63 的薄框，末段抬高以看清另一端的手
 beats:
-  - intent: 有依据地开始查找
-    action: 带钥匙跑到索引 8，触碰查询得到 31；比较后排除 1 至 8
+  - intent: 追查回应来源
+    action: 5.00 与 5.28 秒敲两下，听到延迟回应，贴近听并拉开接缝
+    operation: spatial_metaphor
+    time: 0–10.8
+  - intent: 理解结构和薄框的用途
+    action: 十六通口依次展开，数值短暂可见后合盖；提起薄框，22.4 秒后才见地址 63
+    operation: spatial_metaphor
+    time: 10.8–24.2
+  - intent: 用比较缩小范围
+    action: 28.1、38、45.2、50.8 秒查中点；31 和 55 太小，70 太大，最后 63 匹配
     operation: evaluate
-    result: 31 < 63，候选从 16 个变为 8 个
-    time: 0.0–3.6
-  - intent: 继续缩小范围
-    action: 跑到新的中点 12，查询得到 55，排除 9 至 12
-    operation: evaluate
-    result: 55 < 63，候选从 8 个变为 4 个
-    time: 3.6–6.9
-  - intent: 根据较大值改向
-    action: 到索引 14 查得 70，保留左侧唯一候选，短步折返索引 13
-    operation: evaluate
-    result: 70 > 63，只剩索引 13
-    time: 6.9–10.7
-  - intent: 验证并使用结果
-    action: 查询 13 得到 63，与钥匙相等；插入钥匙，升降台带角色升至上层，角色离台穿门
-    operation: evaluate
-    result: 63 = 63，四次查询后完成逃生路线
-    time: 10.7–18.0
+    time: 24.2–54
+  - intent: 确认声音和框之间的关系
+    action: 再敲、拉开内盖、伸手，另一端在手持框内出现；动指、敲框、听同节奏回应，再抽手
+    operation: spatial_metaphor
+    time: 54–85

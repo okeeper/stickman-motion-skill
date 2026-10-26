@@ -1,46 +1,43 @@
 # Hand-authored TS story specification; not a prompt-to-video input.
 scene_id: complex-rotation
-intent: 取回对侧电芯，返回起点并恢复出口供电
-concept: 复数乘以 i 使辐角逆时针增加 90 度，模长不变；四次回到原值
-prompt: 使用 $stickman-motion-skill，做一支 21 秒无台词短片。主角为恢复出口供电，跳上 ×i 载台，沿四分之一圈转移到对侧取回电芯，再经过下半圈返回。角色保持直立，对启动与制动倾身平衡，回到起点后跳离、插入电芯并离开。
-duration_seconds: 21
+intent: 从意外离地到主动改变抓握半径，借四次转动回到原台
+concept: 固定原点的单位复数乘以 i，模长不变并逆时针转九十度
+prompt: 使用 $stickman-motion-skill 制作《世界的侧面》。近处只有白杆一端；检查夹片后意外升起，抓紧、找支撑、验证规则，换手攀近支点，转回后翻身上杆再回台。
+duration_seconds: 90
 renderer_scene: complex-rotation
 engine: motion-canvas
 assumptions:
-  - 实轴向右、虚轴向上，i 的平方等于 -1；复数初值为 1
-  - 单位复数 z 映射为世界坐标 (1.6 Re(z), 1.6 Im(z))，图中是数学单位圆
-  - 四次离散求值依次得到 i、-1、-i、1；完成后才显示对应等式
-  - 中间角度为连续旋转展示，不声称中间每帧都是已完成的一次乘以 i
-  - 被乘对象是载台中心的位置复数，角色身体的朝向不参与计算；重力始终朝画面下方
-  - 每次旋转 2 秒，以有限角速度和角加速度启动及停止；平台竖直支持反力保持为正
-  - 本片演示单位圆，不展示任意模长复数、除以 i 或负向旋转
+  - 原点固定，右为实轴正向，上为虚轴正向；被乘对象是向量端点，不是人体
+  - 归一化模长为一，世界半径为 3.984 米；四次结果为 i、-1、-i、1
+  - 连续旋转的中间角度是展示过程，只有到达九十度才显示该次离散乘法完成
+  - 角色向支点攀移改变自己的抓握半径，不缩短白杆或改变复数模长
+  - 夹片触发主动驱动为故事约定；悬挂、攀爬和翻身为编排的约束姿态，不是完整人体动力学
 objects:
-  - id: carrier
-    visual: 直立载台、×i 操作槽与从原点指向中心的半径
-  - id: plane
-    visual: 复平面、四个精确停靠点和逐步留下的圆弧
-  - id: cell
-    visual: 对侧薄荷色电芯及右侧匹配的空插槽
-  - id: exit
-    visual: 需要恢复供电的出口
+  - id: ledge
+    visual: 圆外右侧的原落脚台，开场唯一支撑
+  - id: vector
+    visual: 白杆一端最先可见，第一次操作后才显示整体与固定支点
+  - id: clip
+    visual: 可掀开、携带与扣回的 i 夹片
+  - id: trace
+    visual: 实际旋转经过后逐段留下的四段弧线
 beats:
-  - intent: 接近取电芯的路线
-    action: 从未供电的出口旁跑向载台，蓄力登台后接触 ×i，转到上方 i
+  - intent: 弄清白杆端部的夹片
+    action: 靠近触摸、掀开查看，第一次扣回后意外离地并本能抓紧
     operation: evaluate
     equation: 1 × i = i
-    time: 0.0–4.9
-  - intent: 到达对侧并拿取电芯
-    action: 第二次操作转到 -1，站稳后伸手取下电芯，随后贴身携带
+    time: 0–13.9
+  - intent: 找支撑并验证是否还能回去
+    action: 脚试着找支撑、换握、看原台，31.2–32.5 秒第二次旋转到左侧
     operation: evaluate
     equation: i × i = -1
-    time: 4.9–9.1
-  - intent: 携带电芯返回
-    action: 经过下半圈转到 -i，再次操作回到 1；四段圆弧形成闭环
-    operation: evaluate
-    equation: (-1) × i = -i; (-i) × i = 1
-    result: i⁴ = 1
-    time: 9.1–14.8
-  - intent: 用取回的资源完成目标
-    action: 短蓄力跳离载台，跑到插槽前制动、装入电芯，等门升起后离开
+    time: 13.9–39
+  - intent: 降低下一次旋转的身体位移
+    action: 39–49.5 秒交替换手攀近支点，带着夹片；54.7–56 秒第三次转到下侧
     operation: spatial_metaphor
-    time: 14.8–21.0
+    time: 39–73
+  - intent: 回到原落脚处
+    action: 73–74.3 秒第四次旋转到右侧；翻身上杆、接跑、跳回原台，坐低喘息活动手指
+    operation: evaluate
+    equation: (-i) × i = 1; i^4 = 1
+    time: 73–90

@@ -251,7 +251,10 @@ export function connect(current: Rig, previous: Rig, w: number): Rig {
   const shifted = offsetRig(r, delta);
   inheritUpperBody(shifted, previous, w);
   inheritFreeLegs(shifted, previous, w);
-  const floor = Math.min(...previous.feet.map((f) => f.toe.y), ...current.feet.map((f) => f.toe.y));
+  const floor = Math.min(
+    ...previous.feet.flatMap((f) => [f.toe.y, f.ankle.y]),
+    ...current.feet.flatMap((f) => [f.toe.y, f.ankle.y]),
+  );
   const lowest = Math.min(...shifted.feet.flatMap((f) => [f.toe.y, f.ankle.y]));
   return lowest < floor ? offsetRig(shifted, { x: 0, y: floor - lowest }) : shifted;
 }

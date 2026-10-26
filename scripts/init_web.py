@@ -90,7 +90,7 @@ npm run render -- --scene {scene}
         if engine == "motion-canvas":
             (staging / "README.md").write_text("""# Motion Canvas 火柴人动画
 
-包含三支概念动作短片《逆向通行》《最后一扇》《转过死角》，以及《断点》的连续动作与《留下弧线》的曲线/公式试片；新故事需要重新编写规则和行动。
+包含三支概念动作短片《别追，等它回来》《谁在敲门》《世界的侧面》，以及《断点》的连续动作与《留下弧线》的曲线/公式试片；新故事需要重新编写规则和行动。
 
 ```sh
 npm --prefix motion ci

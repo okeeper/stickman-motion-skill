@@ -1,0 +1,32 @@
+{
+  "project_version": "0.9.0",
+  "films": [
+    {
+      "id": "negative-ride",
+      "samplingHz": 240,
+      "samples": 18001,
+      "maxBoneLengthError": 3.4416913763379853e-15,
+      "maxIKResidual": 0,
+      "maxPointDistancePerSample": 0.05480344578423517,
+      "maxDistanceAt": 23.591666666666665
+    },
+    {
+      "id": "binary-search",
+      "samplingHz": 240,
+      "samples": 20401,
+      "maxBoneLengthError": 1.7763568394002505e-15,
+      "maxIKResidual": 0,
+      "maxPointDistancePerSample": 0.0561954027947334,
+      "maxDistanceAt": 12.475
+    },
+    {
+      "id": "complex-rotation",
+      "samplingHz": 240,
+      "samples": 21601,
+      "maxBoneLengthError": 8.881784197001252e-16,
+      "maxIKResidual": 9.997049142951298e-7,
+      "maxPointDistancePerSample": 0.04541703793437024,
+      "maxDistanceAt": 76.30416666666666
+    }
+  ]
+}

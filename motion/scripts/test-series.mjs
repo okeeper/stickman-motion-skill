@@ -5,13 +5,14 @@ import { openLab } from "./browser.mjs";
 const ids = ["negative-ride", "binary-search", "complex-rotation"];
 const keytimes = {
   "negative-ride": [
-    0, 0.65, 1.7, 2.6, 3.25, 3.65, 5.1, 6.7, 8.6, 9.2, 10.2, 12.5,
+    0, 4.8, 12.9, 13.35, 14, 17, 34.7, 37, 44.2, 60.7, 61.14, 61.5, 62.1, 70,
   ],
   "binary-search": [
-    0.6, 2.65, 3.1, 4.7, 6.2, 7.4, 8.8, 10.8, 11.7, 13.5, 14.7, 16.8,
+    0, 5, 12, 16, 22.9, 28.6, 33.1, 38.5, 45.6, 51.3, 63.8, 68, 72, 77.2,
   ],
   "complex-rotation": [
-    0.6, 1.7, 3.65, 4.9, 6.6, 7.9, 8.4, 10.4, 12.95, 14.2, 15.3, 17.35, 19.8,
+    0, 6, 10, 12.8, 13.7, 20, 32.5, 41.5, 47.3, 55.4, 56, 73.8, 74.8, 75.4, 77,
+    79, 88,
   ],
 };
 const reports = [];
@@ -24,8 +25,8 @@ for (const id of ids) {
     const states = await lab.page.evaluate(async () => {
       const duration = window.__MOTION__.info().duration,
         out = [];
-      for (let i = 0; i < duration * 60; i++) {
-        const s = await window.__MOTION__.frame(i / 60),
+      for (let i = 0; i < duration * 2; i++) {
+        const s = await window.__MOTION__.frame(i / 2),
           scale = 1280 / s.camera.width;
         out.push({
           t: s.t,
@@ -88,7 +89,8 @@ for (const id of ids) {
       id,
       title: info.title,
       duration: info.duration,
-      frames: states.length,
+      sampledFrames: states.length,
+      samplingHz: 2,
       cues: info.cues.length,
       maxBoneError: Math.max(...states.map((s) => s.error)),
       outside: states.filter((s) => s.outside),
@@ -105,7 +107,7 @@ for (const id of ids) {
       JSON.stringify(report, null, 2) + "\n",
     );
     console.log(id, {
-      frames: report.frames,
+      sampledFrames: report.sampledFrames,
       cues: report.cues,
       maxBoneError: report.maxBoneError,
       errors: report.errors,

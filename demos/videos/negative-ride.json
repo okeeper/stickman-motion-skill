@@ -2,274 +2,2765 @@
   "file": "negative-ride.mp4",
   "scene": "negative-ride",
   "fps": 60,
-  "frames": 840,
-  "duration": 14,
+  "frames": 4500,
+  "duration": 75,
   "width": 1280,
   "height": 720,
   "resolutionScale": 2,
   "audio": {
     "sampleRate": 48000,
     "channels": 2,
-    "peakDbfs": -7.558600223357156,
-    "rmsDbfs": -37.15971267867036,
+    "peakDbfs": -7.467012044139797,
+    "rmsDbfs": -40.547231901649496,
     "clippedSamples": 0,
     "sourceFrom": 0,
     "layers": [
       "licensed-foley",
       "cloth-air-breath",
-      "world"
+      "world",
+      "original-score"
     ],
-    "cues": 24,
+    "cues": 287,
     "assetLicense": "CC0-1.0",
     "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
     "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
   },
   "clips": [
     {
-      "title": "逆向通行",
-      "duration": 14,
+      "title": "别追，等它回来",
+      "duration": 75,
       "width": 1280,
       "height": 720,
       "fps": 60,
       "id": "negative-ride",
       "cues": [
         {
-          "id": "n-entry-0",
-          "t": 0.25,
+          "id": "n-glide-0.0",
+          "t": 0,
+          "kind": "slide",
+          "x": 1.2,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.19354838709677416
+        },
+        {
+          "id": "n-glide-0.6",
+          "t": 0.6,
+          "kind": "slide",
+          "x": 1.74,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.25161290322580643
+        },
+        {
+          "id": "n-approach-0",
+          "t": 1.1400000000000001,
           "kind": "footstep",
-          "x": 10.217820512820513,
+          "x": 0.205046511627907,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.1445033689257755
+        },
+        {
+          "id": "n-glide-1.2",
+          "t": 1.2,
+          "kind": "slide",
+          "x": 2.2800000000000002,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.2754207090596724
+        },
+        {
+          "id": "n-approach-1",
+          "t": 1.48,
+          "kind": "footstep",
+          "x": 0.8217906976744186,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.13926481620405098
+        },
+        {
+          "id": "n-glide-1.8",
+          "t": 1.7999999999999998,
+          "kind": "slide",
+          "x": 2.82,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.19707426856714183
+        },
+        {
+          "id": "n-approach-2",
+          "t": 1.82,
+          "kind": "footstep",
+          "x": 1.43853488372093,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.10585146286571646
+        },
+        {
+          "id": "negative-ride-music-0-0",
+          "t": 2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.24,
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-approach-3",
+          "t": 2.16,
+          "kind": "footstep",
+          "x": 2.0552790697674412,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.07243810952738197
+        },
+        {
+          "id": "n-glide-2.4",
+          "t": 2.4,
+          "kind": "slide",
+          "x": 3.3600000000000003,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.1381095273818455
+        },
+        {
+          "id": "n-approach-4",
+          "t": 2.5,
+          "kind": "footstep",
+          "x": 2.672023255813953,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.039024756189047244
+        },
+        {
+          "id": "n-approach-5",
+          "t": 2.84,
+          "kind": "footstep",
+          "x": 3.2691931653119997,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.009820924689092275
+        },
+        {
+          "id": "n-glide-3.0",
+          "t": 3,
+          "kind": "slide",
+          "x": 3.9000000000000004,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.07949587396849223
+        },
+        {
+          "id": "n-follow-0",
+          "t": 3.2,
+          "x": 3.5664,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.026580635483871056
+        },
+        {
+          "id": "negative-ride-music-0-1",
+          "t": 3.35,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.24,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-3.6",
+          "t": 3.6,
+          "kind": "slide",
+          "x": 4.44,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.10011947634408618
+        },
+        {
+          "id": "n-follow-1",
+          "t": 3.6100000000000003,
+          "x": 3.9353999999999996,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.011835125008815166
+        },
+        {
+          "id": "n-follow-2",
+          "t": 4.0200000000000005,
+          "x": 4.304399999999999,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129064
+        },
+        {
+          "id": "n-glide-4.2",
+          "t": 4.2,
+          "kind": "slide",
+          "x": 4.98,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-3",
+          "t": 4.43,
+          "x": 4.6734,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.026580645161290068
+        },
+        {
+          "id": "negative-ride-music-0-2",
+          "t": 4.7,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.24,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-4.8",
+          "t": 4.8,
+          "kind": "slide",
+          "x": 5.5200000000000005,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-4",
+          "t": 4.84,
+          "x": 5.0424,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129045
+        },
+        {
+          "id": "n-follow-5",
+          "t": 5.25,
+          "x": 5.4113999999999995,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129045
+        },
+        {
+          "id": "n-glide-5.4",
+          "t": 5.3999999999999995,
+          "kind": "slide",
+          "x": 6.06,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419354
+        },
+        {
+          "id": "n-follow-6",
+          "t": 5.66,
+          "x": 5.7804,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-glide-6.0",
+          "t": 5.999999999999999,
+          "kind": "slide",
+          "x": 6.6,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "negative-ride-music-0-3",
+          "t": 6.050000000000001,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.24,
+          "note": 293.665,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-follow-7",
+          "t": 6.07,
+          "x": 6.1494,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-follow-8",
+          "t": 6.48,
+          "x": 6.5184,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129064
+        },
+        {
+          "id": "n-glide-6.6",
+          "t": 6.599999999999999,
+          "kind": "slide",
+          "x": 7.139999999999999,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-9",
+          "t": 6.890000000000001,
+          "x": 6.8874,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129045
+        },
+        {
+          "id": "n-glide-7.2",
+          "t": 7.199999999999998,
+          "kind": "slide",
+          "x": 7.679999999999999,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419354
+        },
+        {
+          "id": "n-follow-10",
+          "t": 7.300000000000001,
+          "x": 7.2564,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129045
+        },
+        {
+          "id": "negative-ride-music-0-4",
+          "t": 7.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.24,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-follow-11",
+          "t": 7.710000000000001,
+          "x": 7.6254,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129045
+        },
+        {
+          "id": "n-glide-7.8",
+          "t": 7.799999999999998,
+          "kind": "slide",
+          "x": 8.219999999999999,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-12",
+          "t": 8.120000000000001,
+          "x": 7.994400000000001,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-glide-8.4",
+          "t": 8.399999999999999,
+          "kind": "slide",
+          "x": 8.759999999999998,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-13",
+          "t": 8.530000000000001,
+          "x": 8.3634,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129064
+        },
+        {
+          "id": "negative-ride-music-0-5",
+          "t": 8.75,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.24,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-follow-14",
+          "t": 8.940000000000001,
+          "x": 8.7324,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129064
+        },
+        {
+          "id": "n-glide-9.0",
+          "t": 8.999999999999998,
+          "kind": "slide",
+          "x": 9.299999999999997,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.08387096774193521
+        },
+        {
+          "id": "n-follow-15",
+          "t": 9.350000000000001,
+          "x": 9.101400000000002,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-glide-9.6",
+          "t": 9.599999999999998,
+          "kind": "slide",
+          "x": 9.839999999999998,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.08387096774193521
+        },
+        {
+          "id": "n-follow-16",
+          "t": 9.760000000000002,
+          "x": 9.470400000000001,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "negative-ride-music-0-6",
+          "t": 10.100000000000001,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.24,
+          "note": 164.814,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-follow-17",
+          "t": 10.170000000000002,
+          "x": 9.839400000000001,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-glide-10.2",
+          "t": 10.199999999999998,
+          "kind": "slide",
+          "x": 10.379999999999997,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.08387096774193521
+        },
+        {
+          "id": "n-follow-18",
+          "t": 10.580000000000002,
+          "x": 10.208400000000001,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-glide-10.8",
+          "t": 10.799999999999997,
+          "kind": "slide",
+          "x": 10.919999999999996,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.08387096774193521
+        },
+        {
+          "id": "n-follow-19",
+          "t": 10.990000000000002,
+          "x": 10.5774,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-glide-11.4",
+          "t": 11.399999999999997,
+          "kind": "slide",
+          "x": 11.459999999999997,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-20",
+          "t": 11.400000000000002,
+          "x": 10.9464,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129064
+        },
+        {
+          "id": "n-follow-21",
+          "t": 11.810000000000002,
+          "x": 11.3154,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.026580645161291022
+        },
+        {
+          "id": "n-glide-12.0",
+          "t": 11.999999999999996,
+          "kind": "slide",
+          "x": 11.999999999999996,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-22",
+          "t": 12.220000000000002,
+          "x": 11.6844,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.026580645161291022
+        },
+        {
+          "id": "n-glide-12.6",
+          "t": 12.599999999999996,
+          "kind": "slide",
+          "x": 12.539999999999996,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0838709677419356
+        },
+        {
+          "id": "n-follow-23",
+          "t": 12.630000000000003,
+          "x": 12.0534,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.026580645161291022
+        },
+        {
+          "id": "n-follow-24",
+          "t": 13.040000000000003,
+          "x": 12.422400000000003,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02658064516129026
+        },
+        {
+          "id": "n-glide-13.2",
+          "t": 13.199999999999996,
+          "kind": "slide",
+          "x": 13.079999999999997,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.08387096774193521
+        },
+        {
+          "id": "n-hand-0",
+          "t": 13.2,
+          "kind": "hand",
+          "x": 13.079999999999998,
+          "strength": 0.35,
+          "pan": 0.08387098709677362
+        },
+        {
+          "id": "n-tab-0",
+          "t": 13.209999999999999,
+          "kind": "latch",
+          "x": 13.079999999999998,
+          "strength": 0.4,
+          "pan": 0.08387002593418744
+        },
+        {
+          "id": "n-reverse-0",
+          "t": 13.27,
+          "kind": "turn",
+          "x": 13.079999999999998,
+          "strength": 0.35,
+          "duration": 0.53,
+          "pan": 0.08343796219714245
+        },
+        {
+          "id": "n-palm",
+          "t": 13.7,
+          "kind": "hand",
+          "x": 12.979999999999999,
+          "strength": 0.8,
+          "pan": -0.001613164579440766
+        },
+        {
+          "id": "n-glide-13.8",
+          "t": 13.799999999999995,
+          "kind": "slide",
+          "x": 13.080000000000002,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0370289876204141
+        },
+        {
+          "id": "n-shoulder",
+          "t": 13.94,
+          "kind": "body",
+          "x": 13.479999999999999,
+          "strength": 0.65,
+          "pan": 0.13584352324315285
+        },
+        {
+          "id": "n-roll",
+          "t": 14.12,
+          "kind": "cloth",
+          "x": 13.78,
+          "strength": 0.75,
+          "duration": 0.65,
+          "pan": 0.1438354775311267
+        },
+        {
+          "id": "n-glide-14.4",
+          "t": 14.399999999999995,
+          "kind": "slide",
+          "x": 12.540000000000003,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.27803505882770313
+        },
+        {
+          "id": "n-exhale",
+          "t": 14.6,
+          "kind": "breath",
+          "x": 14.28,
+          "strength": 0.65,
+          "duration": 0.4,
+          "pan": 0.0647961316153018
+        },
+        {
+          "id": "n-glide-15.0",
+          "t": 14.999999999999995,
+          "kind": "slide",
+          "x": 12.000000000000002,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.48372093023255736
+        },
+        {
+          "id": "n-glide-15.6",
+          "t": 15.599999999999994,
+          "kind": "slide",
+          "x": 11.460000000000003,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.6093023255813947
+        },
+        {
+          "id": "n-glide-16.2",
+          "t": 16.199999999999996,
+          "kind": "slide",
+          "x": 10.920000000000002,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.7348837209302322
+        },
+        {
+          "id": "n-glide-16.8",
+          "t": 16.799999999999997,
+          "kind": "slide",
+          "x": 10.379999999999999,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-17.4",
+          "t": 17.4,
+          "kind": "slide",
+          "x": 9.839999999999998,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-18.0",
+          "t": 18,
+          "kind": "slide",
+          "x": 9.299999999999997,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-18.6",
+          "t": 18.6,
+          "kind": "slide",
+          "x": 8.759999999999996,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-19.2",
+          "t": 19.200000000000003,
+          "kind": "slide",
+          "x": 8.219999999999995,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-19.8",
+          "t": 19.800000000000004,
+          "kind": "slide",
+          "x": 7.6799999999999935,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-kneel",
+          "t": 20.4,
+          "kind": "cloth",
+          "x": 14.28,
+          "strength": 0.35,
+          "pan": 0.046511627906976584
+        },
+        {
+          "id": "n-glide-20.4",
+          "t": 20.400000000000006,
+          "kind": "slide",
+          "x": 7.139999999999992,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-21.0",
+          "t": 21.000000000000007,
+          "kind": "slide",
+          "x": 6.599999999999991,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-21.6",
+          "t": 21.60000000000001,
+          "kind": "slide",
+          "x": 6.05999999999999,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-rise",
+          "t": 21.7,
+          "kind": "shoe-grip",
+          "x": 14.28,
+          "strength": 0.4,
+          "pan": 0.046511627906976584
+        },
+        {
+          "id": "n-glide-22.2",
+          "t": 22.20000000000001,
+          "kind": "slide",
+          "x": 5.519999999999988,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-22.8",
+          "t": 22.80000000000001,
+          "kind": "slide",
+          "x": 4.979999999999986,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-glide-23.4",
+          "t": 23.400000000000013,
+          "kind": "slide",
+          "x": 4.439999999999985,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-catch-0",
+          "t": 23.45,
+          "kind": "footstep",
+          "x": 13.362311475409836,
           "strength": 0.7,
           "gait": "run",
           "foot": 1,
-          "pan": 0.559392045913048
+          "pan": -0.056091910454035956
         },
         {
-          "id": "n-entry-1",
-          "t": 0.5,
+          "id": "n-catch-1",
+          "t": 23.7,
           "kind": "footstep",
-          "x": 9.416538461538462,
+          "x": 12.34755737704918,
           "strength": 0.7,
           "gait": "run",
           "foot": 0,
-          "pan": 0.38169720778860716
+          "pan": 0.0929502170402052
         },
         {
-          "id": "n-entry-2",
-          "t": 0.75,
+          "id": "n-catch-2",
+          "t": 23.95,
           "kind": "footstep",
-          "x": 8.552681071794872,
+          "x": 11.332803278688523,
           "strength": 0.7,
           "gait": "run",
           "foot": 1,
-          "pan": 0.06297982103894563
+          "pan": 0.10721609538002949
         },
         {
-          "id": "n-entry-settle",
-          "t": 1.22,
+          "id": "n-glide-24.0",
+          "t": 24.000000000000014,
+          "kind": "slide",
+          "x": 3.8999999999999844,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-catch-3",
+          "t": 24.2,
           "kind": "footstep",
-          "x": 8.5,
+          "x": 10.318049180327868,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.10721609538002981
+        },
+        {
+          "id": "n-catch-4",
+          "t": 24.45,
+          "kind": "footstep",
+          "x": 9.30329508196721,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.10721609538002949
+        },
+        {
+          "id": "n-glide-24.6",
+          "t": 24.600000000000016,
+          "kind": "slide",
+          "x": 3.3599999999999834,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "n-catch-5",
+          "t": 24.7,
+          "kind": "footstep",
+          "x": 8.288540983606556,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.10721609538002981
+        },
+        {
+          "id": "n-catch-6",
+          "t": 24.95,
+          "kind": "footstep",
+          "x": 7.2737868852459,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.10721609538002981
+        },
+        {
+          "id": "n-catch-7",
+          "t": 25.2,
+          "kind": "footstep",
+          "x": 6.2590327868852444,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.10721609538002998
+        },
+        {
+          "id": "n-glide-25.2",
+          "t": 25.200000000000017,
+          "kind": "slide",
+          "x": 2.8199999999999825,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.51806259314455
+        },
+        {
+          "id": "n-catch-8",
+          "t": 25.45,
+          "kind": "footstep",
+          "x": 5.24427868852459,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.10721609538002981
+        },
+        {
+          "id": "n-catch-9",
+          "t": 25.7,
+          "kind": "footstep",
+          "x": 4.229524590163935,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.10721609538003013
+        },
+        {
+          "id": "n-glide-25.8",
+          "t": 25.80000000000002,
+          "kind": "slide",
+          "x": 2.27999999999998,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.1734426229508088
+        },
+        {
+          "id": "n-catch-10",
+          "t": 25.95,
+          "kind": "footstep",
+          "x": 3.2147704918032787,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.10721609538003013
+        },
+        {
+          "id": "n-catch-11",
+          "t": 26.2,
+          "kind": "footstep",
+          "x": 2.089582008882232,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.08713711636904975
+        },
+        {
+          "id": "n-glide-26.4",
+          "t": 26.40000000000002,
+          "kind": "slide",
+          "x": 1.739999999999979,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.1432808345752628
+        },
+        {
+          "id": "n-left-0",
+          "t": 26.5,
+          "x": 1.6335999999999968,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": 0.13338181818181818
+        },
+        {
+          "id": "n-catch-settle",
+          "t": 26.72,
+          "kind": "footstep",
+          "x": 1.8999999999999968,
           "strength": 0.35,
           "gait": "walk",
-          "pan": -0.016255260186800655
+          "pan": 0.15477072298791703
+        },
+        {
+          "id": "n-left-1",
+          "t": 26.91,
+          "x": 1.2645999999999968,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.009609664654260176
+        },
+        {
+          "id": "negative-ride-music-1-0",
+          "t": 27,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-27.0",
+          "t": 27.00000000000002,
+          "kind": "slide",
+          "x": 1.199999999999978,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.0227810650887593
+        },
+        {
+          "id": "n-left-2",
+          "t": 27.32,
+          "x": 0.8955999999999971,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02945833333333328
+        },
+        {
+          "id": "n-glide-27.6",
+          "t": 27.600000000000023,
+          "kind": "slide",
+          "x": 0.659999999999977,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.026041666666666574
+        },
+        {
+          "id": "n-left-3",
+          "t": 27.73,
+          "x": 0.5265999999999968,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02945833333333335
+        },
+        {
+          "id": "negative-ride-music-1-1",
+          "t": 28.1,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-left-4",
+          "t": 28.14,
+          "x": 0.15759999999999685,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02945833333333319
+        },
+        {
+          "id": "n-glide-28.2",
+          "t": 28.200000000000024,
+          "kind": "slide",
+          "x": 0.11999999999997613,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.026041666666666574
+        },
+        {
+          "id": "n-left-5",
+          "t": 28.55,
+          "x": -0.21140000000000292,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.029458333333333142
+        },
+        {
+          "id": "n-glide-28.8",
+          "t": 28.800000000000026,
+          "kind": "slide",
+          "x": -0.4200000000000266,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.026041666666666713
+        },
+        {
+          "id": "n-left-6",
+          "t": 28.96,
+          "x": -0.5804000000000031,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02945833333333319
+        },
+        {
+          "id": "negative-ride-music-1-2",
+          "t": 29.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-left-7",
+          "t": 29.37,
+          "x": -0.9494000000000034,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02945833333333328
+        },
+        {
+          "id": "n-glide-29.4",
+          "t": 29.400000000000027,
+          "kind": "slide",
+          "x": -0.9600000000000275,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.026041666666666668
+        },
+        {
+          "id": "n-left-8",
+          "t": 29.78,
+          "x": -1.3184000000000036,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.02945833333333333
+        },
+        {
+          "id": "n-glide-30.0",
+          "t": 30.00000000000003,
+          "kind": "slide",
+          "x": -1.5000000000000302,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666685
+        },
+        {
+          "id": "n-left-9",
+          "t": 30.19,
+          "x": -1.6874000000000038,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.029458333333333375
+        },
+        {
+          "id": "negative-ride-music-1-3",
+          "t": 30.3,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-left-10",
+          "t": 30.6,
+          "x": -2.0564000000000036,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333332958
+        },
+        {
+          "id": "n-glide-30.6",
+          "t": 30.60000000000003,
+          "kind": "slide",
+          "x": -2.040000000000031,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666676
+        },
+        {
+          "id": "n-left-11",
+          "t": 31.01,
+          "x": -2.4254000000000033,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.029458333333333236
+        },
+        {
+          "id": "n-glide-31.2",
+          "t": 31.20000000000003,
+          "kind": "slide",
+          "x": -2.580000000000032,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666676
+        },
+        {
+          "id": "negative-ride-music-1-4",
+          "t": 31.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-left-12",
+          "t": 31.42,
+          "x": -2.794400000000003,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333332865
+        },
+        {
+          "id": "n-glide-31.8",
+          "t": 31.800000000000033,
+          "kind": "slide",
+          "x": -3.120000000000033,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.026041666666666668
+        },
+        {
+          "id": "n-left-13",
+          "t": 31.830000000000002,
+          "x": -3.1634000000000038,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02945833333333342
+        },
+        {
+          "id": "n-left-14",
+          "t": 32.24,
+          "x": -3.5324000000000035,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333333052
+        },
+        {
+          "id": "n-glide-32.4",
+          "t": 32.400000000000034,
+          "kind": "slide",
+          "x": -3.6600000000000357,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666685
+        },
+        {
+          "id": "negative-ride-music-1-5",
+          "t": 32.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-left-15",
+          "t": 32.65,
+          "x": -3.901400000000004,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.029458333333333513
+        },
+        {
+          "id": "n-glide-33.0",
+          "t": 33.000000000000036,
+          "kind": "slide",
+          "x": -4.200000000000038,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666704
+        },
+        {
+          "id": "n-left-16",
+          "t": 33.06,
+          "x": -4.270400000000004,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333332774
+        },
+        {
+          "id": "n-left-17",
+          "t": 33.47,
+          "x": -4.639400000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.029458333333333513
+        },
+        {
+          "id": "negative-ride-music-1-6",
+          "t": 33.6,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-33.6",
+          "t": 33.60000000000004,
+          "kind": "slide",
+          "x": -4.7400000000000375,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666685
+        },
+        {
+          "id": "n-left-18",
+          "t": 33.88,
+          "x": -5.008400000000004,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333332958
+        },
+        {
+          "id": "n-glide-34.2",
+          "t": 34.20000000000004,
+          "kind": "slide",
+          "x": -5.28000000000004,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666685
+        },
+        {
+          "id": "n-left-19",
+          "t": 34.29,
+          "x": -5.377400000000004,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.02945833333333333
+        },
+        {
+          "id": "n-left-20",
+          "t": 34.7,
+          "x": -5.746400000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333332958
+        },
+        {
+          "id": "n-glide-34.8",
+          "t": 34.80000000000004,
+          "kind": "slide",
+          "x": -5.820000000000039,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.026041666666666668
+        },
+        {
+          "id": "n-left-21",
+          "t": 35.11,
+          "x": -6.115400000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.029458333333333697
+        },
+        {
+          "id": "n-glide-35.4",
+          "t": 35.40000000000004,
+          "kind": "slide",
+          "x": -6.360000000000042,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666685
+        },
+        {
+          "id": "n-left-22",
+          "t": 35.52,
+          "x": -6.484400000000006,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333333142
+        },
+        {
+          "id": "n-left-23",
+          "t": 35.93,
+          "x": -6.853400000000004,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.029458333333333513
+        },
+        {
+          "id": "n-glide-36.0",
+          "t": 36.00000000000004,
+          "kind": "slide",
+          "x": -6.900000000000045,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.02604166666666704
+        },
+        {
+          "id": "n-left-24",
+          "t": 36.34,
+          "x": -7.222400000000004,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.029458333333332774
+        },
+        {
+          "id": "n-hand-1",
+          "t": 36.4,
+          "kind": "hand",
+          "x": -7.260000000000005,
+          "strength": 0.35,
+          "pan": -0.02604168541666748
+        },
+        {
+          "id": "n-tab-1",
+          "t": 36.41,
+          "kind": "latch",
+          "x": -7.260000000000005,
+          "strength": 0.4,
+          "pan": -0.026041643114196694
+        },
+        {
+          "id": "n-reverse-1",
+          "t": 36.47,
+          "kind": "turn",
+          "x": -7.260000000000005,
+          "strength": 0.35,
+          "duration": 0.53,
+          "pan": -0.025957086490462355
+        },
+        {
+          "id": "n-glide-36.6",
+          "t": 36.600000000000044,
+          "kind": "slide",
+          "x": -7.406666666666691,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.05339078984911094
+        },
+        {
+          "id": "n-glide-37.2",
+          "t": 37.200000000000045,
+          "kind": "slide",
+          "x": -7.0799999999999645,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.007291666666662441
+        },
+        {
+          "id": "n-glide-37.8",
+          "t": 37.80000000000005,
+          "kind": "slide",
+          "x": -6.539999999999963,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.04895833333333784
+        },
+        {
+          "id": "n-turn-0",
+          "t": 38.34,
+          "kind": "footstep",
+          "x": -6.546000000000005,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.004880961542577297
+        },
+        {
+          "id": "n-glide-38.4",
+          "t": 38.40000000000005,
+          "kind": "slide",
+          "x": -5.999999999999962,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.09044496081532294
+        },
+        {
+          "id": "n-turn-1",
+          "t": 38.68,
+          "kind": "footstep",
+          "x": -6.206000000000005,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.021770833333333295
+        },
+        {
+          "id": "n-glide-39.0",
+          "t": 39.00000000000005,
+          "kind": "slide",
+          "x": -5.45999999999996,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.07031249999999953
+        },
+        {
+          "id": "n-turn-2",
+          "t": 39.02,
+          "kind": "footstep",
+          "x": -5.866000000000005,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.018229166666667296
+        },
+        {
+          "id": "n-turn-3",
+          "t": 39.36,
+          "kind": "footstep",
+          "x": -5.526000000000005,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.014687499999999817
+        },
+        {
+          "id": "n-glide-39.6",
+          "t": 39.60000000000005,
+          "kind": "slide",
+          "x": -4.919999999999959,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.06406249999999947
+        },
+        {
+          "id": "n-turn-4",
+          "t": 39.7,
+          "kind": "footstep",
+          "x": -5.226437867008006,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.01957038896000074
+        },
+        {
+          "id": "n-right-0",
+          "t": 40,
+          "x": -4.993600000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.017416657291666564
+        },
+        {
+          "id": "n-glide-40.2",
+          "t": 40.20000000000005,
+          "kind": "slide",
+          "x": -4.379999999999958,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.10254630370370665
+        },
+        {
+          "id": "n-turn-settle",
+          "t": 40.22,
+          "kind": "footstep",
+          "x": -5.260000000000005,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.08370761900341639
+        },
+        {
+          "id": "n-right-1",
+          "t": 40.41,
+          "x": -4.624600000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.003131944018954965
+        },
+        {
+          "id": "n-glide-40.8",
+          "t": 40.800000000000054,
+          "kind": "slide",
+          "x": -3.8399999999999563,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.07291666666666678
+        },
+        {
+          "id": "n-right-2",
+          "t": 40.82,
+          "x": -4.255600000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.0174166666666666
+        },
+        {
+          "id": "n-right-3",
+          "t": 41.23,
+          "x": -3.886600000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.017416666666666046
+        },
+        {
+          "id": "n-glide-41.4",
+          "t": 41.400000000000055,
+          "kind": "slide",
+          "x": -3.299999999999955,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.07291666666666669
+        },
+        {
+          "id": "n-right-4",
+          "t": 41.64,
+          "x": -3.517600000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.01741666666666688
+        },
+        {
+          "id": "n-glide-42.0",
+          "t": 42.00000000000006,
+          "kind": "slide",
+          "x": -2.7599999999999536,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.07291666666666669
+        },
+        {
+          "id": "n-right-5",
+          "t": 42.05,
+          "x": -3.1486000000000054,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.01741666666666623
+        },
+        {
+          "id": "n-right-6",
+          "t": 42.46,
+          "x": -2.779600000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 0,
+          "pan": -0.01741666666666688
+        },
+        {
+          "id": "n-glide-42.6",
+          "t": 42.60000000000006,
+          "kind": "slide",
+          "x": -2.2199999999999527,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.0729166666666666
+        },
+        {
+          "id": "n-right-7",
+          "t": 42.87,
+          "x": -2.410600000000005,
+          "kind": "footstep",
+          "gait": "walk",
+          "strength": 0.45,
+          "foot": 1,
+          "pan": -0.01741666666666623
         },
         {
           "id": "n-board-grip",
-          "t": 1.3499999999999999,
+          "t": 43.15,
           "kind": "shoe-grip",
-          "x": 8.5,
+          "x": -2.344000000000003,
           "strength": 0.65,
-          "pan": -0.044582258424936225
+          "pan": -0.030695631913944654
+        },
+        {
+          "id": "n-glide-43.2",
+          "t": 43.20000000000006,
+          "kind": "slide",
+          "x": -1.6799999999999509,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.10165733238144106
         },
         {
           "id": "n-board-air",
-          "t": 1.44,
+          "t": 43.24,
           "kind": "whoosh",
-          "x": 8.5,
+          "x": -2.344000000000003,
           "strength": 0.65,
           "duration": 0.2,
-          "pan": -0.0723166409980922
+          "pan": -0.041650555849957624
+        },
+        {
+          "id": "n-glide-43.8",
+          "t": 43.80000000000006,
+          "kind": "slide",
+          "x": -1.13999999999995,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.01399999999999384
         },
         {
           "id": "n-board-land",
-          "t": 2.08,
+          "t": 43.940000000000005,
           "kind": "landing",
-          "x": 8.56,
+          "x": -1.0140000000000002,
           "strength": 0.8,
-          "pan": -0.26905405029347523
+          "pan": 0
         },
         {
-          "id": "n-rail",
-          "t": 2.1,
-          "kind": "whoosh",
-          "x": 8.6,
-          "strength": 0.16,
-          "duration": 6.2,
-          "pan": -0.2630503946838144
+          "id": "negative-ride-music-2-0",
+          "t": 44,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.21,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
         },
         {
-          "id": "n-switch",
-          "t": 3,
-          "kind": "hand",
-          "x": 10.4,
-          "strength": 0.48,
-          "pan": 0.1828456611829711
-        },
-        {
-          "id": "n-latch",
-          "t": 3.05,
-          "kind": "gate",
-          "x": 10.4,
-          "strength": 0.25,
-          "pan": 0.19614831085029083
-        },
-        {
-          "id": "n-brake",
-          "t": 3.1,
-          "kind": "skid",
-          "x": 10.4,
-          "strength": 0.35,
+          "id": "n-glide-44.4",
+          "t": 44.40000000000006,
+          "kind": "slide",
+          "x": -0.599999999999949,
+          "strength": 0.07,
           "duration": 0.65,
-          "pan": 0.21014565410530237
+          "pan": 0.029004996544842544
         },
         {
-          "id": "n-duck",
-          "t": 6.1,
-          "kind": "cloth",
-          "x": 5.8,
-          "strength": 0.5,
-          "pan": 0.24144821506865063
+          "id": "n-glide-45.0",
+          "t": 45.000000000000064,
+          "kind": "slide",
+          "x": -0.05999999999994721,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0
         },
         {
-          "id": "n-breath",
-          "t": 7.7,
-          "kind": "breath",
-          "x": 2.6,
-          "strength": 0.4,
-          "pan": 0.04314250879996327
+          "id": "negative-ride-music-2-1",
+          "t": 45.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.21,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
         },
         {
-          "id": "n-limit",
-          "t": 8,
-          "kind": "skid",
-          "x": 2,
-          "strength": 0.28,
-          "duration": 0.75,
-          "pan": -0.03546591731755992
+          "id": "n-glide-45.6",
+          "t": 45.600000000000065,
+          "kind": "slide",
+          "x": 0.4800000000000537,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0
         },
         {
-          "id": "n-exit-grip",
-          "t": 8.27,
+          "id": "n-glide-46.2",
+          "t": 46.20000000000007,
+          "kind": "slide",
+          "x": 1.0200000000000546,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0
+        },
+        {
+          "id": "negative-ride-music-2-2",
+          "t": 46.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.21,
+          "note": 164.814,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-46.8",
+          "t": 46.80000000000007,
+          "kind": "slide",
+          "x": 1.5600000000000573,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-47.4",
+          "t": 47.40000000000007,
+          "kind": "slide",
+          "x": 2.1000000000000583,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0
+        },
+        {
+          "id": "negative-ride-music-2-3",
+          "t": 47.6,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.21,
+          "note": 196,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-48.0",
+          "t": 48.00000000000007,
+          "kind": "slide",
+          "x": 2.640000000000059,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-48.6",
+          "t": 48.60000000000007,
+          "kind": "slide",
+          "x": 3.18000000000006,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0
+        },
+        {
+          "id": "negative-ride-music-2-4",
+          "t": 48.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.21,
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-leave-grip",
+          "t": 49.15,
           "kind": "shoe-grip",
-          "x": 1.3929950000000006,
+          "x": 3.7559999999999967,
           "strength": 0.65,
-          "pan": -0.0851373116335688
+          "pan": 0.040405094261719475
         },
         {
-          "id": "n-exit-air",
-          "t": 8.36,
+          "id": "n-glide-49.2",
+          "t": 49.200000000000074,
+          "kind": "slide",
+          "x": 3.720000000000061,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.02844445866667078
+        },
+        {
+          "id": "n-leave-air",
+          "t": 49.24,
           "kind": "whoosh",
-          "x": 1.3929950000000006,
+          "x": 3.7559999999999967,
           "strength": 0.65,
           "duration": 0.2,
-          "pan": -0.056133610959661455
+          "pan": 0.029486604286080277
         },
         {
-          "id": "n-exit-land",
-          "t": 9.02,
+          "id": "n-glide-49.8",
+          "t": 49.800000000000075,
+          "kind": "slide",
+          "x": 4.260000000000064,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.168000000000022
+        },
+        {
+          "id": "n-leave-land",
+          "t": 49.84,
           "kind": "landing",
-          "x": -1.1,
+          "x": 6.095999999999997,
           "strength": 0.8,
-          "pan": -0.2407929846104456
+          "pan": 0.17999999999999988
         },
         {
-          "id": "n-escape-0",
-          "t": 9.75,
+          "id": "negative-ride-music-2-5",
+          "t": 50,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.21,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-50.4",
+          "t": 50.40000000000008,
+          "kind": "slide",
+          "x": 4.800000000000065,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.12071170886242122
+        },
+        {
+          "id": "n-ahead-0",
+          "t": 50.45,
           "kind": "footstep",
-          "x": -1.7245652173913042,
+          "x": 6.829781818181816,
           "strength": 0.7,
           "gait": "run",
           "foot": 1,
-          "pan": -0.023850234736472884
+          "pan": 0.2725361974450893
         },
         {
-          "id": "n-escape-1",
-          "t": 10,
+          "id": "n-ahead-1",
+          "t": 50.7,
           "kind": "footstep",
-          "x": -2.398478260869565,
+          "x": 7.630690909090907,
           "strength": 0.7,
           "gait": "run",
           "foot": 0,
-          "pan": -0.08527047417301384
+          "pan": 0.2952554965485639
         },
         {
-          "id": "n-endgate",
-          "t": 10.2,
-          "kind": "gate",
-          "x": -3.4,
-          "strength": 0.55,
-          "pan": -0.25260256666605785
-        },
-        {
-          "id": "n-escape-2",
-          "t": 10.25,
+          "id": "n-ahead-2",
+          "t": 50.95,
           "kind": "footstep",
-          "x": -3.0723913043478257,
+          "x": 8.431599999999998,
           "strength": 0.7,
           "gait": "run",
           "foot": 1,
-          "pan": -0.1786997146086348
+          "pan": 0.34699272727272723
         },
         {
-          "id": "n-escape-3",
-          "t": 10.5,
+          "id": "n-glide-51.0",
+          "t": 51.00000000000008,
+          "kind": "slide",
+          "x": 5.340000000000066,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.291845454545472
+        },
+        {
+          "id": "n-ahead-3",
+          "t": 51.2,
           "kind": "footstep",
-          "x": -3.7463043478260865,
+          "x": 9.232509090909089,
           "strength": 0.7,
           "gait": "run",
           "foot": 0,
-          "pan": -0.3001102251086559
+          "pan": 0.4045836363636363
         },
         {
-          "id": "n-escape-4",
-          "t": 10.75,
+          "id": "n-ahead-4",
+          "t": 51.45,
           "kind": "footstep",
-          "x": -4.245,
+          "x": 10.033418181818181,
           "strength": 0.7,
-          "gait": "walk",
+          "gait": "run",
           "foot": 1,
-          "pan": -0.4010309278350516
+          "pan": 0.4621745454545458
         },
         {
-          "id": "n-escape-settle",
-          "t": 11.120000000000001,
+          "id": "n-glide-51.6",
+          "t": 51.60000000000008,
+          "kind": "slide",
+          "x": 5.8800000000000665,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.4300636363636542
+        },
+        {
+          "id": "n-ahead-5",
+          "t": 51.7,
           "kind": "footstep",
-          "x": -4.2,
+          "x": 10.834327272727272,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.5197654545454548
+        },
+        {
+          "id": "n-ahead-6",
+          "t": 51.95,
+          "kind": "footstep",
+          "x": 11.635236363636363,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.577356363636364
+        },
+        {
+          "id": "n-ahead-7",
+          "t": 52.2,
+          "kind": "footstep",
+          "x": 12.436145454545454,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.6349472727272729
+        },
+        {
+          "id": "n-glide-52.2",
+          "t": 52.20000000000008,
+          "kind": "slide",
+          "x": 6.420000000000067,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.5682818181818365
+        },
+        {
+          "id": "n-ahead-8",
+          "t": 52.45,
+          "kind": "footstep",
+          "x": 13.237054545454544,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.6925381818181819
+        },
+        {
+          "id": "n-ahead-9",
+          "t": 52.7,
+          "kind": "footstep",
+          "x": 14.037963636363635,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 0,
+          "pan": 0.7501290909090909
+        },
+        {
+          "id": "n-glide-52.8",
+          "t": 52.80000000000008,
+          "kind": "slide",
+          "x": 6.96000000000007,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.7065000000000186
+        },
+        {
+          "id": "n-ahead-10",
+          "t": 52.95,
+          "kind": "footstep",
+          "x": 14.871685080393842,
+          "strength": 0.7,
+          "gait": "run",
+          "foot": 1,
+          "pan": 0.814282470624223
+        },
+        {
+          "id": "n-glide-53.4",
+          "t": 53.400000000000084,
+          "kind": "slide",
+          "x": 7.500000000000071,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.8101352414602697
+        },
+        {
+          "id": "n-ahead-settle",
+          "t": 53.42,
+          "kind": "footstep",
+          "x": 14.905999999999999,
           "strength": 0.35,
           "gait": "walk",
-          "pan": -0.39175257731958774
+          "pan": 0.5943794182791649
+        },
+        {
+          "id": "negative-ride-music-3-0",
+          "t": 54,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-54.0",
+          "t": 54.000000000000085,
+          "kind": "slide",
+          "x": 8.040000000000072,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "negative-ride-music-3-1",
+          "t": 54.45,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-54.6",
+          "t": 54.60000000000009,
+          "kind": "slide",
+          "x": 8.580000000000073,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.85
+        },
+        {
+          "id": "negative-ride-music-3-2",
+          "t": 54.9,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-55.2",
+          "t": 55.20000000000009,
+          "kind": "slide",
+          "x": 9.120000000000076,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.8149565217391171
+        },
+        {
+          "id": "negative-ride-music-3-3",
+          "t": 55.35,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "negative-ride-music-3-4",
+          "t": 55.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-55.8",
+          "t": 55.80000000000009,
+          "kind": "slide",
+          "x": 9.660000000000075,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.7210434782608565
+        },
+        {
+          "id": "negative-ride-music-3-5",
+          "t": 56.25,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-56.4",
+          "t": 56.40000000000009,
+          "kind": "slide",
+          "x": 10.200000000000077,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.6271304347825951
+        },
+        {
+          "id": "negative-ride-music-3-6",
+          "t": 56.7,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-57.0",
+          "t": 57.00000000000009,
+          "kind": "slide",
+          "x": 10.74000000000008,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.5332173913043338
+        },
+        {
+          "id": "negative-ride-music-3-7",
+          "t": 57.15,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "negative-ride-music-3-8",
+          "t": 57.6,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-57.6",
+          "t": 57.600000000000094,
+          "kind": "slide",
+          "x": 11.28000000000008,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.439304347826073
+        },
+        {
+          "id": "negative-ride-music-3-9",
+          "t": 58.05,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-58.2",
+          "t": 58.200000000000095,
+          "kind": "slide",
+          "x": 11.820000000000082,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.3453913043478117
+        },
+        {
+          "id": "negative-ride-music-3-10",
+          "t": 58.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-58.8",
+          "t": 58.8000000000001,
+          "kind": "slide",
+          "x": 12.360000000000081,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.25147826086955094
+        },
+        {
+          "id": "negative-ride-music-3-11",
+          "t": 58.95,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "negative-ride-music-3-12",
+          "t": 59.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-59.4",
+          "t": 59.4000000000001,
+          "kind": "slide",
+          "x": 12.900000000000084,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.15756521739128962
+        },
+        {
+          "id": "negative-ride-music-3-13",
+          "t": 59.85,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-60.0",
+          "t": 60.0000000000001,
+          "kind": "slide",
+          "x": 13.440000000000087,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.06365217391302828
+        },
+        {
+          "id": "negative-ride-music-3-14",
+          "t": 60.3,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 0.5850000000000001,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-60.6",
+          "t": 60.6000000000001,
+          "kind": "slide",
+          "x": 13.980000000000086,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.03026086956523244
+        },
+        {
+          "id": "n-final-push",
+          "t": 61,
+          "kind": "shoe-grip",
+          "x": 14.905999999999999,
+          "strength": 0.85,
+          "pan": 0.1913043478260869
+        },
+        {
+          "id": "n-final-air",
+          "t": 61.06,
+          "kind": "whoosh",
+          "x": 14.905999999999999,
+          "strength": 0.65,
+          "duration": 0.33,
+          "pan": 0.1913043478260869
+        },
+        {
+          "id": "n-hand-2",
+          "t": 61.14,
+          "kind": "hand",
+          "x": 14.465999999999998,
+          "strength": 0.35,
+          "pan": 0.11369282317449148
+        },
+        {
+          "id": "n-tab-2",
+          "t": 61.15,
+          "kind": "latch",
+          "x": 14.465999999999998,
+          "strength": 0.4,
+          "pan": 0.11327210417395145
+        },
+        {
+          "id": "n-glide-61.2",
+          "t": 61.2000000000001,
+          "kind": "slide",
+          "x": 14.518974000000084,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.1191304119529065
+        },
+        {
+          "id": "n-reverse-2",
+          "t": 61.21,
+          "kind": "turn",
+          "x": 14.465999999999998,
+          "strength": 0.35,
+          "duration": 0.53,
+          "pan": 0.10885532126961188
+        },
+        {
+          "id": "n-glide-61.8",
+          "t": 61.800000000000104,
+          "kind": "slide",
+          "x": 14.411999999999907,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": 0.040392156862726895
+        },
+        {
+          "id": "n-final-land",
+          "t": 61.92,
+          "kind": "landing",
+          "x": 14.303999999999998,
+          "strength": 0.95,
+          "pan": 0.019215686274509605
+        },
+        {
+          "id": "n-final-step",
+          "t": 62.1,
+          "kind": "footstep",
+          "x": 14.141999999999998,
+          "strength": 0.5,
+          "pan": -0.012549019607843498
+        },
+        {
+          "id": "n-final-breath",
+          "t": 62.32,
+          "kind": "breath",
+          "x": 13.943999999999999,
+          "strength": 0.6,
+          "duration": 0.55,
+          "pan": -0.05137254901960794
+        },
+        {
+          "id": "n-glide-62.4",
+          "t": 62.400000000000105,
+          "kind": "slide",
+          "x": 13.871999999999904,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.06549019607845011
+        },
+        {
+          "id": "n-glide-63.0",
+          "t": 63.00000000000011,
+          "kind": "slide",
+          "x": 13.331999999999903,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "negative-ride-music-4-0",
+          "t": 63.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-63.6",
+          "t": 63.60000000000011,
+          "kind": "slide",
+          "x": 12.791999999999902,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "n-glide-64.2",
+          "t": 64.2000000000001,
+          "kind": "slide",
+          "x": 12.251999999999907,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "negative-ride-music-4-1",
+          "t": 64.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-64.8",
+          "t": 64.8000000000001,
+          "kind": "slide",
+          "x": 11.711999999999913,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "n-glide-65.4",
+          "t": 65.40000000000009,
+          "kind": "slide",
+          "x": 11.171999999999917,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "n-glide-66.0",
+          "t": 66.00000000000009,
+          "kind": "slide",
+          "x": 10.631999999999923,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "negative-ride-music-4-2",
+          "t": 66.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-66.6",
+          "t": 66.60000000000008,
+          "kind": "slide",
+          "x": 10.091999999999928,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "n-glide-67.2",
+          "t": 67.20000000000007,
+          "kind": "slide",
+          "x": 9.551999999999932,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "n-glide-67.8",
+          "t": 67.80000000000007,
+          "kind": "slide",
+          "x": 9.011999999999937,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "negative-ride-music-4-3",
+          "t": 68,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-68.4",
+          "t": 68.40000000000006,
+          "kind": "slide",
+          "x": 8.471999999999943,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612096
+        },
+        {
+          "id": "n-glide-69.0",
+          "t": 69.00000000000006,
+          "kind": "slide",
+          "x": 7.931999999999948,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "negative-ride-music-4-4",
+          "t": 69.60000000000001,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-69.6",
+          "t": 69.60000000000005,
+          "kind": "slide",
+          "x": 7.391999999999953,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "n-glide-70.2",
+          "t": 70.20000000000005,
+          "kind": "slide",
+          "x": 6.851999999999959,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "n-glide-70.8",
+          "t": 70.80000000000004,
+          "kind": "slide",
+          "x": 6.311999999999964,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "negative-ride-music-4-5",
+          "t": 71.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "n-glide-71.4",
+          "t": 71.40000000000003,
+          "kind": "slide",
+          "x": 5.771999999999968,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "n-glide-72.0",
+          "t": 72.00000000000003,
+          "kind": "slide",
+          "x": 5.231999999999973,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "n-glide-72.6",
+          "t": 72.60000000000002,
+          "kind": "slide",
+          "x": 4.691999999999979,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "n-glide-73.2",
+          "t": 73.20000000000002,
+          "kind": "slide",
+          "x": 4.151999999999983,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "n-glide-73.8",
+          "t": 73.80000000000001,
+          "kind": "slide",
+          "x": 3.6119999999999894,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
+        },
+        {
+          "id": "n-glide-74.4",
+          "t": 74.4,
+          "kind": "slide",
+          "x": 3.071999999999994,
+          "strength": 0.07,
+          "duration": 0.65,
+          "pan": -0.040816326530612276
         }
       ],
       "engine": "Motion Canvas 3.17.2",
       "transfers": [
         {
-          "takeoff": 1.44,
-          "land": 2.08,
-          "vx": 0.09375000000000078,
-          "vy": 3.123575
+          "takeoff": 43.24,
+          "land": 43.940000000000005,
+          "vx": 1.9000000000000041,
+          "vy": 3.676357142857143
         },
         {
-          "takeoff": 8.36,
-          "land": 9.02,
-          "vx": -3.7772651515151523,
-          "vy": 2.9191181818181824
+          "takeoff": 49.24,
+          "land": 49.84,
+          "vx": 3.9000000000000012,
+          "vy": 2.293
+        },
+        {
+          "takeoff": 61.06,
+          "land": 61.92,
+          "vx": -0.7,
+          "vy": 4.543881395348837
         }
       ],
       "resolutionScale": 2,
-      "sourceDuration": 14,
+      "sourceDuration": 75,
       "from": 0,
-      "to": 14,
-      "frames": 840
+      "to": 75,
+      "frames": 4500
     }
   ],
-  "sha256": "6b8218fde667bfed687acd7857362320823a939dc89e5a4cd5cdb5ee128de64f"
+  "sha256": "78569eaded63c9517f4f7813c6bdf91c3afddde01f9ac962f4b53721d8aadf2b"
 }

@@ -1,42 +1,48 @@
 {
-  "method": "Chromium native video, full normal-speed automated playback; not human listening",
-  "movies": [
+  "project_version": "0.9.0",
+  "method": "Concurrent Chromium HTMLVideo playback at 1x; machine decode check, not human viewing or listening",
+  "films": [
     {
       "id": "negative-ride",
-      "duration": 14,
-      "playbackRate": 1,
-      "totalVideoFrames": 840,
-      "droppedVideoFrames": 0,
-      "decodedAudioBytes": 282113,
-      "muted": false,
+      "duration": 75,
       "ended": true,
+      "rate": 1,
+      "muted": false,
+      "width": 1280,
+      "height": 720,
+      "frames": 4500,
+      "droppedFrames": 1,
+      "audioDecodedBytes": 1505699,
       "error": null,
-      "wallSeconds": 14.159
+      "errors": []
     },
     {
       "id": "binary-search",
-      "duration": 18,
-      "playbackRate": 1,
-      "totalVideoFrames": 1080,
-      "droppedVideoFrames": 0,
-      "decodedAudioBytes": 361717,
-      "muted": false,
+      "duration": 85,
       "ended": true,
+      "rate": 1,
+      "muted": false,
+      "width": 1280,
+      "height": 720,
+      "frames": 5100,
+      "droppedFrames": 0,
+      "audioDecodedBytes": 1716042,
       "error": null,
-      "wallSeconds": 18.158
+      "errors": []
     },
     {
       "id": "complex-rotation",
-      "duration": 21,
-      "playbackRate": 1,
-      "totalVideoFrames": 1260,
-      "droppedVideoFrames": 0,
-      "decodedAudioBytes": 426951,
-      "muted": false,
+      "duration": 90,
       "ended": true,
+      "rate": 1,
+      "muted": false,
+      "width": 1280,
+      "height": 720,
+      "frames": 5400,
+      "droppedFrames": 0,
+      "audioDecodedBytes": 1803316,
       "error": null,
-      "wallSeconds": 21.154
+      "errors": []
     }
-  ],
-  "errors": []
+  ]
 }

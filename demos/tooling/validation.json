@@ -1,8 +1,8 @@
 {
-  "project_version": "0.8.0",
-  "frames": 3144,
-  "duration": 52.4,
-  "fps": 60,
+  "project_version": "0.9.0",
+  "frames": 14964,
+  "duration": 249.4,
+  "fps": 60.0,
   "decode": "pass",
   "delivery_verified": true,
   "delivery_files": 5,

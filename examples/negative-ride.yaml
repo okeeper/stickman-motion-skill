@@ -1,41 +1,44 @@
 # Hand-authored TS story specification; not a prompt-to-video input.
 scene_id: negative-ride
-intent: 追上载台，利用反向越过断面，抵达左侧出口
-concept: 有符号的电机目标速度乘以 -1 会反号；设备以有限加速度执行
-prompt: 使用 $stickman-motion-skill，做一支 14 秒无台词动作短片。主角观察左侧出口，追上向右移动的载台，登台操作 ×(-1)，承受制动与反向惯性，伏身过低梁，再借速度跳离并走出出口。
-duration_seconds: 14
+intent: 从追赶陌生箭头到理解反转时差，主动安排空中会合
+concept: 乘以负一改变方向设置，实际运动需要连续制动和反转
+prompt: 使用 $stickman-motion-skill 制作《别追，等它回来》。先观察和扑空，第一次拨片失衡后恢复，再验证、登箭、跳离；最终蓄力起跳拨片，等返向箭身接住。
+duration_seconds: 75
 renderer_scene: negative-ride
 engine: motion-canvas
 assumptions:
-  - 右为正、左为负；u 是电机目标速度，v 是实际速度，单位为世界距离每秒
-  - 操作计算的是 (+2) × (-1) = -2；它立即改变 u，实际 v 在 3.0 至 3.8 秒连续变化
-  - 电机是执行力的来源；乘法本身不产生物理力，反向途中 v 会经过零
-  - 左端限位在 8.0 秒将 u 设为 0，并用 0.8 秒制动，不属于乘以 -1 的结果
-  - 角色保持固定骨长，腾空根部受 9.81 单位每平方秒的重力；非完整人体动力学仿真
+  - 右为正；设置 u 为正负二，每一设置单位映射为目标速度 0.45 米每秒
+  - 13.2、36.4、61.14 秒的操作令 u 反号，实际速度 v 各在随后 0.6 秒内连续经过零并反向
+  - 电机提供执行力，乘法本身不提供力；画内 u 是命令，不是瞬时实际速度
+  - 腾空根部服从重力 9.81 米每平方秒的解析轨迹，不吸向移动落点
+  - 固定骨长、抓点和编排恢复不是通用人体动力学
 objects:
-  - id: carrier
-    visual: 带轮子的薄白载台、速度向量与 u 标记
+  - id: arrow
+    visual: 单支白色滑动箭头，箭身可承重，转向随实际速度
   - id: inverter
-    visual: 随载台移动、可用手接触的 ×(-1) 操作槽
-  - id: crossing
-    visual: 断面、低梁和左侧限位
-  - id: exit
-    visual: 左侧感应出口
+    visual: 首次检查后露出的尾部乘负一拨片
+  - id: protagonist
+    visual: 橙色空心头火柴人，保留第一次失衡后的手腕反应
 beats:
-  - intent: 赶上可用的支撑
-    action: 开场看清出口在左，主角向左跑、短蓄力跳上正在向右移动的载台
+  - intent: 确认脚边物体是什么
+    action: 跟随、探身、伸手差一点，观察尾部，13.2 秒触碰
     operation: spatial_metaphor
-    time: 0.0–2.3
-  - intent: 利用已知规则改变路线
-    action: 接触 ×(-1)，u 从 +2 改为 -2；角色屈膝承受制动，v 经过零后向左
+    time: 0–13.2
+  - intent: 理解身体为什么失衡
+    action: 第一次反转带倒，护身滚开，坐低检查手腕，重新起身
     operation: evaluate
     equation: (+2) × (-1) = -2
-    time: 2.3–4.0
-  - intent: 保持通行并保护头部
-    action: 乘车跨越断面，提前伏身护头，穿过低梁后起身
+    time: 13.2–23.2
+  - intent: 验证方向变化是否可预测
+    action: 追上并在 36.4 秒再操作，观察完整减速与反转
+    operation: evaluate
+    equation: (-2) × (-1) = +2
+    time: 23.2–40
+  - intent: 感受支撑与安排会合
+    action: 短跳登箭，带速跳离，跑到前侧等它靠近
     operation: spatial_metaphor
-    time: 4.0–8.1
-  - intent: 抵达出口
-    action: 载台开始限位制动，角色蹬离，落地缓冲后向左跑过感应门，回看已经停下的载台
+    time: 40–61.06
+  - intent: 用已知反转时差接住自己
+    action: 61.06 秒起跳，61.14 秒拨片后释放，61.92 秒落到返向箭身，吸震恢复
     operation: spatial_metaphor
-    time: 8.1–14.0
+    time: 61.06–75

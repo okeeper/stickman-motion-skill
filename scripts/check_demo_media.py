@@ -10,7 +10,7 @@ import shutil
 import subprocess
 from pathlib import Path
 import numpy as np
-EXPECTED = {"negative-ride": 14, "binary-search": 18, "complex-rotation": 21}
+EXPECTED = {"negative-ride": 75, "binary-search": 85, "complex-rotation": 90}
 SCENES = tuple(EXPECTED)
 
 

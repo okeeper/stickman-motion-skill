@@ -2,400 +2,1145 @@
   "file": "complex-rotation.mp4",
   "scene": "complex-rotation",
   "fps": 60,
-  "frames": 1260,
-  "duration": 21,
+  "frames": 5400,
+  "duration": 90,
   "width": 1280,
   "height": 720,
   "resolutionScale": 2,
   "audio": {
     "sampleRate": 48000,
     "channels": 2,
-    "peakDbfs": -7.540652037644831,
-    "rmsDbfs": -38.43455160639064,
+    "peakDbfs": -8.436015152669846,
+    "rmsDbfs": -45.36417609738578,
     "clippedSamples": 0,
     "sourceFrom": 0,
     "layers": [
       "licensed-foley",
       "cloth-air-breath",
-      "world"
+      "world",
+      "original-score"
     ],
-    "cues": 39,
+    "cues": 119,
     "assetLicense": "CC0-1.0",
     "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
     "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
   },
   "clips": [
     {
-      "title": "转过死角",
-      "duration": 21,
+      "title": "世界的侧面",
+      "duration": 90,
       "width": 1280,
       "height": 720,
       "fps": 60,
       "id": "complex-rotation",
       "cues": [
         {
-          "id": "c-entry-0",
-          "t": 0.25,
+          "id": "c-approach-0",
+          "t": 1.1400000000000001,
           "kind": "footstep",
-          "x": 3.79474358974359,
+          "x": 5.205348837209303,
           "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": 0.5337670374513672
-        },
-        {
-          "id": "c-entry-1",
-          "t": 0.5,
-          "kind": "footstep",
-          "x": 3.185769230769231,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 0,
-          "pan": 0.42586765122344006
-        },
-        {
-          "id": "c-entry-2",
-          "t": 0.75,
-          "kind": "footstep",
-          "x": 2.5292376145641025,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": 0.3176135384651499
-        },
-        {
-          "id": "c-entry-settle",
-          "t": 1.22,
-          "kind": "footstep",
-          "x": 2.5,
-          "strength": 0.35,
           "gait": "walk",
-          "pan": 0.3634359005937466
+          "foot": 1,
+          "pan": 0.225322468011965
         },
         {
-          "id": "c-board-grip",
-          "t": 1.3499999999999999,
-          "kind": "shoe-grip",
-          "x": 2.5,
-          "strength": 0.65,
-          "pan": 0.3795161093629543
+          "id": "c-approach-1",
+          "t": 1.48,
+          "kind": "footstep",
+          "x": 5.07093023255814,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.19446698063969564
         },
         {
-          "id": "c-board-air",
-          "t": 1.44,
-          "kind": "whoosh",
-          "x": 2.5,
-          "strength": 0.65,
-          "duration": 0.2,
-          "pan": 0.390429768463635
+          "id": "c-approach-2",
+          "t": 1.82,
+          "kind": "footstep",
+          "x": 4.9365116279069765,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.1635818600503228
         },
         {
-          "id": "c-board-land",
-          "t": 2.05,
-          "kind": "landing",
-          "x": 1.6,
-          "strength": 0.8,
-          "pan": 0.26731012062329307
-        },
-        {
-          "id": "c-touch-0",
-          "t": 2.65,
-          "kind": "hand",
-          "x": 1.6,
-          "strength": 0.4,
-          "pan": 0.2746643345568628
-        },
-        {
-          "id": "c-start-0",
-          "t": 2.69,
-          "kind": "gate",
-          "x": 1.6,
-          "strength": 0.18,
-          "pan": 0.27481604239311813
-        },
-        {
-          "id": "c-move-0",
-          "t": 2.75,
-          "kind": "whoosh",
-          "x": 1.5788950429026969,
-          "strength": 0.35,
-          "duration": 1.65,
-          "pan": 0.27104294958876407
-        },
-        {
-          "id": "c-lock-0",
-          "t": 4.65,
-          "kind": "gate",
-          "x": 9.797174393178826e-17,
+          "id": "complex-rotation-music-0-0",
+          "t": 2,
+          "kind": "music",
+          "x": 0,
           "strength": 0.2,
-          "pan": 0.03749017298823532
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
         },
         {
-          "id": "c-touch-1",
-          "t": 5.65,
-          "kind": "hand",
-          "x": 9.797174393178826e-17,
-          "strength": 0.4,
-          "pan": 0.03921568627450983
+          "id": "c-approach-3",
+          "t": 2.16,
+          "kind": "footstep",
+          "x": 4.802093023255814,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.13275786897310204
         },
         {
-          "id": "c-start-1",
-          "t": 5.69,
-          "kind": "gate",
-          "x": 9.797174393178826e-17,
-          "strength": 0.18,
-          "pan": 0.03921568627450983
+          "id": "c-approach-4",
+          "t": 2.5,
+          "kind": "footstep",
+          "x": 4.667674418604651,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.1019046894999974
         },
         {
-          "id": "c-move-1",
-          "t": 5.75,
-          "kind": "whoosh",
-          "x": -0.25901823004817887,
-          "strength": 0.35,
-          "duration": 1.65,
-          "pan": -0.01157220197023115
+          "id": "c-approach-5",
+          "t": 2.84,
+          "kind": "footstep",
+          "x": 4.5375220024319995,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.07195062725754924
         },
         {
-          "id": "c-lock-1",
-          "t": 7.65,
-          "kind": "gate",
-          "x": -1.6,
+          "id": "complex-rotation-music-0-1",
+          "t": 3.5,
+          "kind": "music",
+          "x": 0,
           "strength": 0.2,
-          "pan": -0.27450980392156865
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
         },
         {
-          "id": "c-pickup",
-          "t": 8.25,
+          "id": "c-tap",
+          "t": 5,
           "kind": "hand",
-          "x": -1.97,
+          "x": 3.9839999999999995,
+          "strength": 0.25,
+          "pan": -0.05749294967984341
+        },
+        {
+          "id": "complex-rotation-music-0-2",
+          "t": 5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-0-3",
+          "t": 6.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "c-open-clip",
+          "t": 9,
+          "kind": "latch",
+          "x": 3.9839999999999995,
           "strength": 0.3,
-          "pan": -0.3470588235294118
+          "pan": -0.025088865661002116
         },
         {
-          "id": "c-touch-2",
-          "t": 9.15,
+          "id": "c-grip-0",
+          "t": 12.5,
           "kind": "hand",
-          "x": -1.6,
+          "x": 3.9839999999999995,
           "strength": 0.4,
-          "pan": -0.27460063725490197
+          "pan": 0.25627391686692935
         },
         {
-          "id": "c-start-2",
-          "t": 9.19,
-          "kind": "gate",
-          "x": -1.6,
-          "strength": 0.18,
-          "pan": -0.2746905999223433
-        },
-        {
-          "id": "c-move-2",
-          "t": 9.25,
-          "kind": "whoosh",
-          "x": -1.5788950429026967,
+          "id": "c-click-0",
+          "t": 12.6,
+          "kind": "latch",
+          "x": 3.9839999999999995,
           "strength": 0.35,
-          "duration": 1.65,
-          "pan": -0.27077061782889966
+          "pan": 0.25629629629629624
         },
         {
-          "id": "c-cloth",
-          "t": 9.4,
-          "kind": "cloth",
-          "x": -1.6,
-          "strength": 0.35,
-          "pan": -0.27601692568385383
+          "id": "c-turn-0",
+          "t": 12.629999999999999,
+          "kind": "turn",
+          "x": 3.574398376895837,
+          "strength": 0.5,
+          "duration": 1.3000000000000007,
+          "pan": 0.180444182518412
         },
         {
-          "id": "c-lock-2",
-          "t": 11.15,
-          "kind": "gate",
-          "x": -2.9391523179536476e-16,
-          "strength": 0.2,
-          "pan": -0.028098700677802055
-        },
-        {
-          "id": "c-touch-3",
-          "t": 12,
-          "kind": "hand",
-          "x": -2.9391523179536476e-16,
-          "strength": 0.4,
-          "pan": -0.039215686274509866
-        },
-        {
-          "id": "c-start-3",
-          "t": 12.04,
-          "kind": "gate",
-          "x": -2.9391523179536476e-16,
-          "strength": 0.18,
-          "pan": -0.03922099763979672
-        },
-        {
-          "id": "c-move-3",
-          "t": 12.1,
-          "kind": "whoosh",
-          "x": 0.25901823004817903,
-          "strength": 0.35,
-          "duration": 1.65,
-          "pan": 0.011492328802792913
-        },
-        {
-          "id": "c-lock-3",
-          "t": 14,
-          "kind": "gate",
-          "x": 1.6,
-          "strength": 0.2,
-          "pan": 0.16103848946986196
-        },
-        {
-          "id": "c-exit-grip",
-          "t": 15,
+          "id": "c-first-slip",
+          "t": 12.82,
           "kind": "shoe-grip",
-          "x": 1.6,
-          "strength": 0.65,
-          "pan": 0.13515648738985117
-        },
-        {
-          "id": "c-exit-air",
-          "t": 15.09,
-          "kind": "whoosh",
-          "x": 1.6,
-          "strength": 0.65,
-          "duration": 0.2,
-          "pan": 0.1251727885712255
-        },
-        {
-          "id": "c-exit-land",
-          "t": 15.66,
-          "kind": "landing",
-          "x": 2.7,
-          "strength": 0.8,
-          "pan": 0.2313937316773507
-        },
-        {
-          "id": "c-escape-0",
-          "t": 16.15,
-          "kind": "footstep",
-          "x": 3.2299650349650353,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": 0.18964454981549464
-        },
-        {
-          "id": "c-escape-1",
-          "t": 16.4,
-          "kind": "footstep",
-          "x": 3.7835780885780887,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 0,
-          "pan": 0.22224046028592168
-        },
-        {
-          "id": "c-escape-2",
-          "t": 16.65,
-          "kind": "footstep",
-          "x": 4.408829845603683,
-          "strength": 0.7,
-          "gait": "run",
-          "foot": 1,
-          "pan": 0.2764114665888314
-        },
-        {
-          "id": "c-escape-settle",
-          "t": 17.22,
-          "kind": "footstep",
-          "x": 4.6,
-          "strength": 0.35,
-          "gait": "walk",
-          "pan": 0.1824529290567261
-        },
-        {
-          "id": "c-power",
-          "t": 17.35,
-          "kind": "gate",
-          "x": 5,
+          "x": 3.9839999999999995,
           "strength": 0.45,
-          "pan": 0.2520805522155015
+          "pan": 0.25899790917063054
         },
         {
-          "id": "c-leave-0",
-          "t": 18.19,
-          "kind": "footstep",
-          "x": 5.2735,
+          "id": "c-first-gasp",
+          "t": 12.9,
+          "kind": "breath",
+          "x": 3.9839999999999995,
           "strength": 0.7,
-          "gait": "walk",
+          "duration": 0.25,
+          "pan": 0.2681279852922009
+        },
+        {
+          "id": "c-first-cloth",
+          "t": 13.1,
+          "kind": "cloth",
+          "x": 3.1872,
+          "strength": 0.65,
+          "pan": 0.19168675631560356
+        },
+        {
+          "id": "c-read-0",
+          "t": 13.950000000000001,
+          "kind": "reveal",
+          "x": 2.439496423901527e-16,
+          "strength": 0.18,
+          "duration": 0.35,
+          "pan": -0.10014814926380294
+        },
+        {
+          "id": "c-breath-0",
+          "t": 14.3,
+          "kind": "breath",
+          "x": 2.439496423901527e-16,
+          "strength": 0.5,
+          "duration": 0.55,
+          "pan": -0.09999999999999996
+        },
+        {
+          "id": "complex-rotation-music-1-0",
+          "t": 14.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.15,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-1-1",
+          "t": 16.3,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.15,
+          "note": 293.665,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-1-2",
+          "t": 18.1,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.15,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-2-0",
+          "t": 26.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.16,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-2-1",
+          "t": 27.7,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.16,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-2-2",
+          "t": 28.9,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.16,
+          "note": 164.814,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "c-grip-1",
+          "t": 31.099999999999998,
+          "kind": "hand",
+          "x": 2.439496423901527e-16,
+          "strength": 0.4,
+          "pan": 0.2175735071285069
+        },
+        {
+          "id": "c-click-1",
+          "t": 31.2,
+          "kind": "latch",
+          "x": 2.439496423901527e-16,
+          "strength": 0.35,
+          "pan": 0.22529886460883766
+        },
+        {
+          "id": "c-turn-1",
+          "t": 31.23,
+          "kind": "turn",
+          "x": -1.759526141676901,
+          "strength": 0.5,
+          "duration": 1.3000000000000007,
+          "pan": -0.04607409307171285
+        },
+        {
+          "id": "c-read-1",
+          "t": 32.55,
+          "kind": "reveal",
+          "x": -3.9839999999999995,
+          "strength": 0.18,
+          "duration": 0.35,
+          "pan": -0.3494424311750378
+        },
+        {
+          "id": "c-breath-1",
+          "t": 32.9,
+          "kind": "breath",
+          "x": -3.9839999999999995,
+          "strength": 0.5,
+          "duration": 0.55,
+          "pan": -0.35054030838057276
+        },
+        {
+          "id": "complex-rotation-music-3-0",
+          "t": 39,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-0",
+          "t": 39.33333333333333,
+          "kind": "cloth",
+          "x": -3.697833333333333,
+          "strength": 0.2,
+          "pan": -0.2294908177633715
+        },
+        {
+          "id": "c-climb-grip-0",
+          "t": 39.53333333333333,
+          "kind": "hand",
+          "x": -3.697833333333333,
+          "strength": 0.28,
+          "pan": -0.18548641627475565
+        },
+        {
+          "id": "complex-rotation-music-3-1",
+          "t": 39.55,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-3-2",
+          "t": 40.1,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-1",
+          "t": 40.166666666666664,
+          "kind": "cloth",
+          "x": -3.411666666666666,
+          "strength": 0.2,
+          "pan": -0.10889742687376619
+        },
+        {
+          "id": "c-climb-grip-1",
+          "t": 40.36666666666667,
+          "kind": "hand",
+          "x": -3.411666666666666,
+          "strength": 0.28,
+          "pan": -0.10919643794557912
+        },
+        {
+          "id": "complex-rotation-music-3-3",
+          "t": 40.65,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-2",
+          "t": 41,
+          "kind": "cloth",
+          "x": -3.1254999999999997,
+          "strength": 0.2,
+          "pan": -0.053927356899487466
+        },
+        {
+          "id": "c-climb-grip-2",
+          "t": 41.2,
+          "kind": "hand",
+          "x": -3.1254999999999997,
+          "strength": 0.28,
+          "pan": -0.05789756864575941
+        },
+        {
+          "id": "complex-rotation-music-3-4",
+          "t": 41.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-3-5",
+          "t": 41.75,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-3",
+          "t": 41.83333333333333,
+          "kind": "cloth",
+          "x": -2.8393333333333333,
+          "strength": 0.2,
+          "pan": -0.01824726324434556
+        },
+        {
+          "id": "c-climb-grip-3",
+          "t": 42.03333333333333,
+          "kind": "hand",
+          "x": -2.8393333333333333,
+          "strength": 0.28,
+          "pan": -0.028039914565825684
+        },
+        {
+          "id": "complex-rotation-music-3-6",
+          "t": 42.3,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-4",
+          "t": 42.666666666666664,
+          "kind": "cloth",
+          "x": -2.5531666666666664,
+          "strength": 0.2,
+          "pan": -0.00710376769031511
+        },
+        {
+          "id": "complex-rotation-music-3-7",
+          "t": 42.85,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-grip-4",
+          "t": 42.86666666666667,
+          "kind": "hand",
+          "x": -2.5531666666666664,
+          "strength": 0.28,
+          "pan": -0.022835688845192246
+        },
+        {
+          "id": "complex-rotation-music-3-8",
+          "t": 43.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-5",
+          "t": 43.5,
+          "kind": "cloth",
+          "x": -2.267,
+          "strength": 0.2,
+          "pan": -0.018226530540284763
+        },
+        {
+          "id": "c-climb-grip-5",
+          "t": 43.7,
+          "kind": "hand",
+          "x": -2.267,
+          "strength": 0.28,
+          "pan": -0.038551300379207364
+        },
+        {
+          "id": "complex-rotation-music-3-9",
+          "t": 43.95,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-6",
+          "t": 44.33333333333333,
+          "kind": "cloth",
+          "x": -1.980833333333333,
+          "strength": 0.2,
+          "pan": -0.04399761836186475
+        },
+        {
+          "id": "complex-rotation-music-3-10",
+          "t": 44.5,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-grip-6",
+          "t": 44.53333333333333,
+          "kind": "hand",
+          "x": -1.980833333333333,
+          "strength": 0.28,
+          "pan": -0.06652676623165923
+        },
+        {
+          "id": "complex-rotation-music-3-11",
+          "t": 45.05,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-7",
+          "t": 45.166666666666664,
+          "kind": "cloth",
+          "x": -1.6946666666666665,
+          "strength": 0.2,
+          "pan": -0.0732211420277136
+        },
+        {
+          "id": "c-climb-grip-7",
+          "t": 45.36666666666667,
+          "kind": "hand",
+          "x": -1.6946666666666665,
+          "strength": 0.28,
+          "pan": -0.0949565038204907
+        },
+        {
+          "id": "complex-rotation-music-3-12",
+          "t": 45.6,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-8",
+          "t": 46,
+          "kind": "cloth",
+          "x": -1.4085,
+          "strength": 0.2,
+          "pan": -0.09317561807331634
+        },
+        {
+          "id": "complex-rotation-music-3-13",
+          "t": 46.15,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-grip-8",
+          "t": 46.2,
+          "kind": "hand",
+          "x": -1.4085,
+          "strength": 0.28,
+          "pan": -0.11110268531174389
+        },
+        {
+          "id": "complex-rotation-music-3-14",
+          "t": 46.7,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-9",
+          "t": 46.83333333333333,
+          "kind": "cloth",
+          "x": -1.1223333333333332,
+          "strength": 0.2,
+          "pan": -0.09243359307279768
+        },
+        {
+          "id": "c-climb-grip-9",
+          "t": 47.03333333333333,
+          "kind": "hand",
+          "x": -1.1223333333333332,
+          "strength": 0.28,
+          "pan": -0.10432582846817295
+        },
+        {
+          "id": "complex-rotation-music-3-15",
+          "t": 47.25,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-10",
+          "t": 47.666666666666664,
+          "kind": "cloth",
+          "x": -0.8361666666666667,
+          "strength": 0.2,
+          "pan": -0.06439961528475563
+        },
+        {
+          "id": "complex-rotation-music-3-16",
+          "t": 47.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-grip-10",
+          "t": 47.86666666666667,
+          "kind": "hand",
+          "x": -0.8361666666666667,
+          "strength": 0.28,
+          "pan": -0.06972342105372434
+        },
+        {
+          "id": "complex-rotation-music-3-17",
+          "t": 48.35,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-climb-cloth-11",
+          "t": 48.5,
+          "kind": "cloth",
+          "x": -0.5500000000000003,
+          "strength": 0.2,
+          "pan": -0.01087350164402324
+        },
+        {
+          "id": "c-climb-grip-11",
+          "t": 48.7,
+          "kind": "hand",
+          "x": -0.5500000000000003,
+          "strength": 0.28,
+          "pan": -0.011565442466554674
+        },
+        {
+          "id": "complex-rotation-music-3-18",
+          "t": 48.9,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 0.7150000000000001,
+          "pan": 0
+        },
+        {
+          "id": "c-grip-2",
+          "t": 54.6,
+          "kind": "hand",
+          "x": -3.9839999999999995,
+          "strength": 0.4,
+          "pan": -0.7979405071259098
+        },
+        {
+          "id": "c-click-2",
+          "t": 54.7,
+          "kind": "latch",
+          "x": -3.9839999999999995,
+          "strength": 0.35,
+          "pan": -0.7977345424340142
+        },
+        {
+          "id": "c-turn-2",
+          "t": 54.730000000000004,
+          "kind": "turn",
+          "x": -3.5743983768958327,
+          "strength": 0.5,
+          "duration": 1.2999999999999972,
+          "pan": -0.7152047358211459
+        },
+        {
+          "id": "c-read-2",
+          "t": 56.05,
+          "kind": "reveal",
+          "x": -7.318489271704581e-16,
+          "strength": 0.18,
+          "duration": 0.35,
+          "pan": -1.9850295089204686e-7
+        },
+        {
+          "id": "c-breath-2",
+          "t": 56.4,
+          "kind": "breath",
+          "x": -7.318489271704581e-16,
+          "strength": 0.5,
+          "duration": 0.55,
+          "pan": -0.00009634270020786534
+        },
+        {
+          "id": "complex-rotation-music-4-0",
+          "t": 64,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 146.832,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-4-1",
+          "t": 65.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-4-2",
+          "t": 66.4,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 174.614,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-4-3",
+          "t": 67.6,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 293.665,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-4-4",
+          "t": 68.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-4-5",
+          "t": 70,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "c-grip-3",
+          "t": 72.9,
+          "kind": "hand",
+          "x": -7.318489271704581e-16,
+          "strength": 0.4,
+          "pan": -0.20005111792072516
+        },
+        {
+          "id": "c-click-3",
+          "t": 73,
+          "kind": "latch",
+          "x": -7.318489271704581e-16,
+          "strength": 0.35,
+          "pan": -0.2003807800530671
+        },
+        {
+          "id": "c-turn-3",
+          "t": 73.03,
+          "kind": "turn",
+          "x": 1.7595261416769101,
+          "strength": 0.5,
+          "duration": 1.2999999999999972,
+          "pan": 0.09280642331077259
+        },
+        {
+          "id": "complex-rotation-music-5-0",
+          "t": 74,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-read-3",
+          "t": 74.35,
+          "kind": "reveal",
+          "x": 3.9839999999999995,
+          "strength": 0.18,
+          "duration": 0.35,
+          "pan": 0.43821991868286114
+        },
+        {
+          "id": "complex-rotation-music-5-1",
+          "t": 74.38,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-effort",
+          "t": 74.55,
+          "kind": "breath",
+          "x": 0.55,
+          "strength": 0.75,
+          "duration": 0.45,
+          "pan": -0.15671663871069286
+        },
+        {
+          "id": "c-breath-3",
+          "t": 74.7,
+          "kind": "breath",
+          "x": 3.9839999999999995,
+          "strength": 0.5,
+          "duration": 0.55,
+          "pan": 0.43385231531263047
+        },
+        {
+          "id": "complex-rotation-music-5-2",
+          "t": 74.76,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-bar-body",
+          "t": 74.9,
+          "kind": "cloth",
+          "x": 0.55,
+          "strength": 0.65,
+          "pan": -0.16516537997435624
+        },
+        {
+          "id": "complex-rotation-music-5-3",
+          "t": 75.14,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-plant",
+          "t": 75.4,
+          "kind": "footstep",
+          "x": 0.55,
+          "strength": 0.5,
+          "pan": -0.1717633106615043
+        },
+        {
+          "id": "complex-rotation-music-5-4",
+          "t": 75.52,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 164.814,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-5-5",
+          "t": 75.9,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 196,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-run-bar-0",
+          "t": 76.15,
+          "kind": "footstep",
+          "x": 1.0268190476190493,
+          "strength": 0.7,
+          "gait": "run",
           "foot": 1,
-          "pan": 0.2830000000000001
+          "pan": -0.15678565900003855
         },
         {
-          "id": "c-leave-1",
-          "t": 18.53,
+          "id": "complex-rotation-music-5-6",
+          "t": 76.28,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 146.832,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-run-bar-1",
+          "t": 76.4,
           "kind": "footstep",
-          "x": 5.783500000000001,
+          "x": 1.8777714285714326,
           "strength": 0.7,
-          "gait": "walk",
+          "gait": "run",
           "foot": 0,
-          "pan": 0.39633333333333354
+          "pan": -0.0914828450611662
         },
         {
-          "id": "c-leave-2",
-          "t": 18.87,
+          "id": "c-run-bar-2",
+          "t": 76.65,
           "kind": "footstep",
-          "x": 6.293184149248002,
+          "x": 2.7287238095238155,
           "strength": 0.7,
-          "gait": "walk",
+          "gait": "run",
           "foot": 1,
-          "pan": 0.5095964776106671
+          "pan": -0.004160854346693058
         },
         {
-          "id": "c-leave-3",
-          "t": 19.21,
+          "id": "complex-rotation-music-5-7",
+          "t": 76.66,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-run-bar-3",
+          "t": 76.9,
           "kind": "footstep",
-          "x": 6.445,
+          "x": 3.672284244617089,
           "strength": 0.7,
-          "gait": "walk",
+          "gait": "run",
           "foot": 0,
-          "pan": 0.5433333333333334
+          "pan": 0.10913014994528422
         },
         {
-          "id": "c-leave-settle",
-          "t": 19.52,
+          "id": "complex-rotation-music-5-8",
+          "t": 77.04,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 174.614,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-home-grip",
+          "t": 77.35,
+          "kind": "shoe-grip",
+          "x": 3.8239999999999994,
+          "strength": 0.65,
+          "pan": 0.05362349129265961
+        },
+        {
+          "id": "c-run-bar-settle",
+          "t": 77.42,
           "kind": "footstep",
-          "x": 6.4,
+          "x": 3.8239999999999994,
           "strength": 0.35,
           "gait": "walk",
-          "pan": 0.5333333333333334
+          "pan": 0.04344199967929842
         },
         {
-          "id": "c-breath",
-          "t": 19.6,
+          "id": "complex-rotation-music-5-9",
+          "t": 77.42,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 293.665,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-home-air",
+          "t": 77.44,
+          "kind": "whoosh",
+          "x": 3.8239999999999994,
+          "strength": 0.65,
+          "duration": 0.2,
+          "pan": 0.03900973604543191
+        },
+        {
+          "id": "complex-rotation-music-5-10",
+          "t": 77.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 261.626,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-home-land",
+          "t": 77.96,
+          "kind": "landing",
+          "x": 4.596,
+          "strength": 0.8,
+          "pan": 0.08300457637709456
+        },
+        {
+          "id": "complex-rotation-music-5-11",
+          "t": 78.18,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.2,
+          "note": 220,
+          "duration": 0.49400000000000005,
+          "pan": 0
+        },
+        {
+          "id": "c-rest",
+          "t": 80,
           "kind": "breath",
-          "x": 5.8,
-          "strength": 0.3,
-          "pan": 0.39999999999999997
+          "x": 4.316,
+          "strength": 0.65,
+          "duration": 0.8,
+          "pan": 0.011730720665331281
+        },
+        {
+          "id": "complex-rotation-music-6-0",
+          "t": 84,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 261.626,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-6-1",
+          "t": 85.6,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 220,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "c-final-touch",
+          "t": 87.2,
+          "kind": "hand",
+          "x": 3.9839999999999995,
+          "strength": 0.22,
+          "pan": 0.3896064076438745
+        },
+        {
+          "id": "complex-rotation-music-6-2",
+          "t": 87.2,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 164.814,
+          "duration": 1.25,
+          "pan": 0
+        },
+        {
+          "id": "complex-rotation-music-6-3",
+          "t": 88.8,
+          "kind": "music",
+          "x": 0,
+          "strength": 0.18,
+          "note": 196,
+          "duration": 1.25,
+          "pan": 0
         }
       ],
       "engine": "Motion Canvas 3.17.2",
       "transfers": [
         {
-          "takeoff": 1.44,
-          "land": 2.05,
-          "vx": -1.4754098360655736,
-          "vy": 2.811722131147541
-        },
-        {
-          "takeoff": 15.09,
-          "land": 15.66,
-          "vx": 1.929824561403509,
-          "vy": 2.6028675438596496
+          "takeoff": 77.44,
+          "land": 77.96,
+          "vx": 1.4846153846153858,
+          "vy": 0.1044461538461541
         }
       ],
       "resolutionScale": 2,
-      "sourceDuration": 21,
+      "sourceDuration": 90,
       "from": 0,
-      "to": 21,
-      "frames": 1260
+      "to": 90,
+      "frames": 5400
     }
   ],
-  "sha256": "84beff54608a2b92808ba8f24e94d31cfc23d0fb499c301d38c6cbebd9c8b0b7"
+  "sha256": "c33ddb03e9c5f447bec9b96518dcd4d817bf1e4cbb71991a5b8f4391ae70f512"
 }

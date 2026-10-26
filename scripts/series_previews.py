@@ -11,11 +11,11 @@ from check_demo_media import check
 
 ROOT = Path(__file__).resolve().parents[1]
 TIMES = {
-    "negative-ride": [0, .65, 1.7, 2.6, 3.25, 3.65, 5.1, 6.7, 8.6, 9.2, 10.2, 12.5],
-    "binary-search": [.6, 2.65, 3.1, 4.7, 6.2, 7.4, 8.8, 10.8, 11.7, 13.5, 14.7, 16.8],
-    "complex-rotation": [.6, 1.7, 3.65, 4.9, 6.6, 7.9, 8.4, 10.4, 12.95, 14.2, 17.35, 19.8],
+    "negative-ride": [0,4.8,12.9,14,17,34.7,37,44.2,60.7,61.14,61.5,70],
+    "binary-search": [0,5,12,16,22.9,28.6,33.1,38.5,45.6,51.3,68,77.2],
+    "complex-rotation": [0,6,12.8,13.7,20,32.5,41.5,55.4,73.8,74.8,77,88],
 }
-COVERS = {"negative-ride": 6.7, "binary-search": 10.8, "complex-rotation": 10.4}
+COVERS = {"negative-ride": 61.5, "binary-search": 72, "complex-rotation": 32.5}
 
 
 def frame(video: Path, t: float) -> Image.Image:
@@ -45,7 +45,7 @@ def generate(video_dir: Path) -> None:
                 sheet.paste(tile, (x, y + 20))
                 ImageDraw.Draw(sheet).text((x + 10, y), f"{t:.2f} s", font=font, fill="#c7ced5")
             sheet.save(work / f"{scene}-contact-sheet.jpg", quality=92)
-            filters = "fps=16,scale=640:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=3"
+            filters = "fps=12,scale=480:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=3"
             subprocess.run(["ffmpeg", "-v", "error", "-i", str(source), "-filter_complex", filters,
                             "-loop", "0", str(work / f"{scene}.gif")], check=True)
         for scene in TIMES:

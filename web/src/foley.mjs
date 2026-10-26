@@ -13,6 +13,12 @@ const KINDS = [
   'skid',
   'gate',
   'alarm',
+  'knock',
+  'latch',
+  'slide',
+  'turn',
+  'reveal',
+  'music',
 ];
 function seed(id) {
   let h = 2166136261;
@@ -68,7 +74,10 @@ export function renderActionAudio(duration, cues, bank, { from = 0, ambience = t
         c.strength < 0 ||
         c.strength > 1.5 ||
         (c.duration !== undefined && (!Number.isFinite(c.duration) || c.duration <= 0)) ||
-        (c.pan !== undefined && (!Number.isFinite(c.pan) || Math.abs(c.pan) > 1)),
+        (c.pan !== undefined && (!Number.isFinite(c.pan) || Math.abs(c.pan) > 1)) ||
+        (c.soundId !== undefined && typeof c.soundId !== 'string') ||
+        (c.echo !== undefined && typeof c.echo !== 'boolean') ||
+        (c.note !== undefined && (!Number.isFinite(c.note) || c.note <= 0 || c.note > 12000)),
     )
   )
     throw new Error('Invalid action audio plan');
@@ -127,7 +136,7 @@ export function renderActionAudio(duration, cues, bank, { from = 0, ambience = t
     }
   };
   for (const c of cues) {
-    const h = seed(c.id),
+    const h = seed(c.soundId ?? c.id),
       variant = h % 5,
       pitch = 1 + (((h >>> 6) % 9) - 4) * 0.006;
     if (c.kind === 'footstep')
@@ -150,6 +159,7 @@ export function renderActionAudio(duration, cues, bank, { from = 0, ambience = t
       );
     if (c.kind === 'hand') mixSample('impactPunch_medium_000', c, 0.38, 1.08);
     if (c.kind === 'tile') mixSample('impactPlate_light_001', c, 0.4, 1.05);
+    if (c.kind === 'latch') mixSample('metalLatch', c, 0.32, 1.12);
     if (c.kind === 'gate') {
       mixSample('impactPlate_heavy_000', c, 0.45, 0.8);
       mixSample('metalLatch', c, 0.45, 0.9, 0.02);
@@ -189,6 +199,55 @@ export function renderActionAudio(duration, cues, bank, { from = 0, ambience = t
         }
       }
     }
+    if (['knock', 'slide', 'turn', 'reveal', 'music'].includes(c.kind)) {
+      const length = c.duration ?? (c.kind === 'knock' ? 0.3 : c.kind === 'reveal' ? 0.45 : 0.5),
+        start = Math.round(c.t * AUDIO_RATE) - origin,
+        frames = Math.round(length * AUDIO_RATE);
+      const pan = c.pan ?? 0,
+        lg = Math.cos(((pan + 1) * Math.PI) / 4),
+        rg = Math.sin(((pan + 1) * Math.PI) / 4);
+      let low = 0;
+      for (let j = 0; j < frames; j++) {
+        const t = j / AUDIO_RATE,
+          u = j / frames,
+          white = noise(h, j);
+        low += 0.045 * (white - low);
+        const attack = Math.min(1, t / 0.007),
+          tail = Math.sin(Math.PI * clampUnit(u)) ** 1.4;
+        let value = 0;
+        if (c.kind === 'knock')
+          value =
+            (Math.sin(2 * Math.PI * 284 * t) * 0.32 +
+              Math.sin(2 * Math.PI * 673 * t) * 0.13 +
+              low * 0.1) *
+            Math.exp(-t * 34) *
+            attack *
+            (c.echo ? 0.65 : 1);
+        if (c.kind === 'slide') value = (low * 0.1 + Math.sin(2 * Math.PI * 72 * t) * 0.014) * tail;
+        if (c.kind === 'turn')
+          value = (low * 0.24 + Math.sin(2 * Math.PI * (64 * t + 36 * t * t)) * 0.026) * tail;
+        if (c.kind === 'reveal')
+          value =
+            (Math.sin(2 * Math.PI * 660 * t) * 0.07 + Math.sin(2 * Math.PI * 990 * t) * 0.025) *
+            Math.exp(-t * 8) *
+            attack;
+        if (c.kind === 'music') {
+          const hz = c.note ?? 220;
+          value =
+            (Math.sin(2 * Math.PI * hz * t) * Math.exp(-t * 4.2) +
+              0.25 * Math.sin(2 * Math.PI * hz * 2.01 * t) * Math.exp(-t * 9) +
+              0.12 * Math.sin(2 * Math.PI * hz * 0.5 * t) * Math.exp(-t * 3)) *
+            0.07 *
+            attack *
+            Math.min(1, (length - t) / 0.09);
+        }
+        const at = start + j;
+        if (at >= 0 && at < n) {
+          left[at] += value * c.strength * lg;
+          right[at] += value * c.strength * rg;
+        }
+      }
+    }
   }
   let peak = 0,
     sum = 0,
@@ -217,7 +276,12 @@ export function renderActionAudio(duration, cues, bank, { from = 0, ambience = t
       rmsDbfs: sum ? 10 * Math.log10(sum / (n * 2)) : null,
       clippedSamples,
       sourceFrom: origin / AUDIO_RATE,
-      layers: ['licensed-foley', 'cloth-air-breath', 'world'],
+      layers: [
+        'licensed-foley',
+        'cloth-air-breath',
+        'world',
+        ...(cues.some((c) => c.kind === 'music') ? ['original-score'] : []),
+      ],
       cues: cues.length,
     },
   };
@@ -253,3 +317,4 @@ export function pcmWav({ left, right }) {
   return data;
 }
 const clampPCM = (v) => Math.max(-1, Math.min(1, v));
+const clampUnit = (v) => Math.max(0, Math.min(1, v));

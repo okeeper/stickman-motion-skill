@@ -8,6 +8,9 @@ export interface FoleyCue {
   gait?: string;
   foot?: number;
   pan?: number;
+  soundId?: string;
+  echo?: boolean;
+  note?: number;
 }
 export type SampleBank = Record<string, Float32Array>;
 export const AUDIO_RATE: number;
