@@ -2,19 +2,46 @@
 
 用于实际制作、改编和导出浏览器火柴人动画。新动作冒险优先从这里开始；Python 历史示例和剪辑工具继续可用。TS 便于参数、约束和即时预览，但动作质量取决于模型、接触和编排。
 
-## 创建独立工程
+## 选择工程入口
+
+新数学图形与公式动画默认使用 Motion Canvas；已有《借势》故事和重量研究使用原 Canvas 工程。两者复用同一重量、骨架、接触、声音和编码能力；本次没有迁移《借势》整片。曲线和公式的具体做法先读 [数学图形与连续动画](math-graphics.md)。
+
+在 skill 仓库根目录创建 Motion Canvas 工程：
+
+```sh
+python scripts/init_web.py output/my-film
+npm --prefix output/my-film/motion ci
+npm --prefix output/my-film/motion run dev
+```
+
+打开终端地址后的 `/preview.html`，根地址为官方编辑器。目标包含 `motion/`、共享 `web/` 和 `assets/fonts/`；只在 `motion/` 安装依赖。初始内容是《留下弧线》技术试片，需要新故事时重写人物目标、规则、行为和场景。目标目录必须不存在。
+
+在目标工程 `motion/` 中：
+
+```sh
+npx playwright install chromium
+npm run build
+npm test
+npm run test:browser
+npm run render -- --fps 30 --from 8 --to 10 --out ../renders/formula.mp4
+npm run render -- --fps 60 --out ../renders/final.mp4
+```
+
+支持 30/60 fps，两倍内部尺寸经 Lanczos 缩为 720p。生成器时间线与图形用 Motion Canvas，人体状态仍由已有物理与关节模型求值。`window.__MOTION__.frame(t)` 和 `png(t)` 是异步接口，调用方必须等待完成再读取画面。版本相关适配集中在 [main.ts](../motion/src/main.ts)，升级后需重跑真实导出。
+
+## 从已有 Canvas 故事开始
 
 在 skill 仓库根目录运行，目标必须是新目录：
 
 ```sh
-python scripts/init_web.py output/my-film --scene adventure
+python scripts/init_web.py output/my-film --engine canvas --scene adventure
 npm --prefix output/my-film/web ci
 npm --prefix output/my-film/web run dev
 ```
 
 在终端显示的地址后打开 `/film.html`。`--scene weight` 为参数动作研究入口 `/`。工程复制源码、脚本、锁文件、字体和原始许可证，不复制依赖、成片、缓存或研究材料。目标工程包含 `web/` 和 `assets/fonts/`，保留两者的相对位置。
 
-已有代码不要为了接入另一个动画库而全面重写。当前实现不依赖 Motion Canvas、GSAP 或物理引擎；需要时按具体缺口引入，不把框架替换当成动作质量的证据。
+原 Canvas 入口继续独立工作，不依赖 Motion Canvas。兼容原有 `--scene adventure/weight` 调用；未指定引擎或场景时，0.6.0 的 CLI 默认创建 Motion Canvas 工程。库的接入解决具体图形与排版问题，不自动建立真实表演。
 
 ## 按职责修改
 
@@ -25,8 +52,9 @@ npm --prefix output/my-film/web run dev
 | [performance.ts](../web/src/performance.ts) | 承重脚步态、双骨段伸手、上身姿态继承、移动支撑转移、相机轨道 | 支撑坐标、实际腕部、交接速度和水平做功预算 |
 | [model.ts](../web/src/adventure/model.ts) | 《借势》的对象、规则、平台运动、人物行为和事件 | 新主题必须重写因果、对象关系和动作，不只替换字 |
 | [render.ts](../web/src/adventure/render.ts) | 极简场景、符号排版、曲线人物、事件点缀、独立相机 | 播放控件和诊断不进入成片，公式与对象保持身份 |
-| [score.mjs](../web/scripts/score.mjs) | 接触/规则/音乐三层原创合成、声像、音乐让位、绝对时间裁切 | 根据实际事件配置；声音材质仍需听审 |
-| [render.mjs](../web/scripts/render.mjs) | 同一画面函数导出 PNG 帧，FFmpeg 编码、帧数与指纹检查 | 复用导出，不为每个任务重写编码命令 |
+| [score.mjs](../web/scripts/score.mjs) | 接触/规则/音乐三层原创合成、声像、音乐让位、绝对时间裁切 | 新片传入 music 段落；声音材质仍需听审 |
+| [video.mjs](../web/scripts/video.mjs) | 两种 TS 入口共用 PNG → FFmpeg 编码、帧数/尺寸与指纹检查 | 场景只提供求帧、声音和区间，避免复制编码器 |
+| [render.mjs](../web/scripts/render.mjs) | Canvas 场景选择、配置、绝对时间求帧 | Motion Canvas 对应入口在 motion/scripts/ 中 |
 
 ## 动作接口
 

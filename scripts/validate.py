@@ -54,7 +54,7 @@ def validate(root: Path) -> list[str]:
     for directory in ("references", "docs", "examples", "demos"):
         markdown.extend(sorted((root / directory).rglob("*.md")))
     # Check authored Web docs without traversing dependencies or generated output.
-    for relative in ("web/README.md", "web/assets/fonts/README.md"):
+    for relative in ("web/README.md", "web/assets/fonts/README.md", "motion/README.md"):
         if (root / relative).is_file():
             markdown.append(root / relative)
     for path in markdown:

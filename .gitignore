@@ -22,3 +22,9 @@ web/node_modules/
 web/dist/
 web/.test-build/
 web/test-results/
+
+# Motion Canvas geometry and formula lab
+motion/node_modules/
+motion/dist/
+motion/test-results/
+motion/.test-build/

@@ -11,6 +11,19 @@ SPEC.loader.exec_module(MODULE)
 
 
 class WebProjectTest(unittest.TestCase):
+    def test_motion_canvas_starter_shares_only_needed_modules(self):
+        with tempfile.TemporaryDirectory() as folder:
+            project = MODULE.initialize(Path(folder) / "motion-film", "trace", "motion-canvas")
+            for relative in ("motion/src/scenes/trace.tsx", "motion/src/project.meta", "motion/scripts/render.mjs",
+                             "motion/package-lock.json", "web/src/physics.ts", "web/scripts/video.mjs", "web/scripts/score.mjs",
+                             "assets/fonts/DejaVuSans.ttf", "assets/fonts/LICENSE_DEJAVU"):
+                self.assertTrue((project / relative).is_file(), relative)
+            self.assertFalse((project / "web/package.json").exists())
+            self.assertFalse(any(project.rglob("node_modules")))
+            self.assertIn("/preview.html", (project / "README.md").read_text())
+            with self.assertRaises(ValueError):
+                MODULE.initialize(Path(folder) / "bad", "adventure", "motion-canvas")
+            self.assertFalse((Path(folder) / "bad").exists())
     def test_starter_contains_relative_assets_and_no_installed_dependencies(self):
         with tempfile.TemporaryDirectory() as folder:
             project = MODULE.initialize(Path(folder) / "film")

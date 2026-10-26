@@ -8,6 +8,25 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
+## 0.6.0：接入曲线与数学排版库
+
+新增 **Motion Canvas + TypeScript** 工程，使用 Spline / Bézier 构建柔和轮廓和示意曲线，使用 LaTeX 节点制作子式变形。继续复用重量、固定骨长、承重、重力轨迹与弹性落地，图形库负责呈现。
+
+![《留下弧线》：重力轨迹与公式子式动画](demos/geometry/preview.gif)
+
+[18 秒 / 60 fps 有声试片](demos/geometry/trace.mp4) · [实际检查](demos/geometry/QA.md) · [数学图形方法](references/math-graphics.md) · [工程说明](motion/README.md)
+
+这是曲线、公式与既有动作模型的**技术试片**，不是新的完整冒险剧本。尚未把《借势》或旧片全部迁移到 Motion Canvas，也未完成主观完整听审和观众理解测试。
+
+```sh
+python scripts/init_web.py output/my-film
+npm --prefix output/my-film/motion ci
+npm --prefix output/my-film/motion run dev
+# 打开终端地址后的 /preview.html
+```
+
+新数学动画默认从此入口改编；`--engine canvas --scene adventure` 仍创建《借势》工程。两种入口共用声音与视频编码，支持局部试做、失败保护、片长与指纹记录。当前试片以两倍画布绘制，再缩为 720p；几何、速度、采样与符号连续性分开检查，不把库名或帧率当作质量结论。
+
 ## 0.5.0：让符号进入动作
 
 新默认方向是极简黑色空间、白色知识对象、橙色主角与无台词行动叙事。人物直接拿取、组合和使用知识对象；规则反馈改变处境，镜头与声音跟随操作、受力和判断。详细制作判断见 [参考风格语法](references/reference-style.md)。
@@ -196,13 +215,19 @@ npm --prefix web test
 # 浏览器检查另需安装 Chromium：cd web && npx playwright install chromium
 npm --prefix web run test:browser
 npm --prefix web run test:adventure
+npm --prefix motion ci
+npm --prefix motion run build
+npm --prefix motion test
+# 同样需要 Chromium；浏览器二进制可在两工程间共用
+npm --prefix motion run test:browser
 ```
 
-文档与规则卡检查仅需要 `requirements-dev.txt`；Python 动画、音频测试需要 `requirements-render.txt`。CI 执行结构检查、Python 行为和真实 FFmpeg 回归，以及 TS 构建、物理和浏览器交互检查，不重复渲染三支完整概念片。
+文档与规则卡检查仅需要 `requirements-dev.txt`；Python 动画、音频测试需要 `requirements-render.txt`。CI 执行结构检查、Python 行为和真实 FFmpeg 回归，以及两种 TS 工程的构建、几何、物理和浏览器交互检查，不重复渲染三支完整概念片。
 
 ```text
 SKILL.md                         技能入口
-web/                             TS 重量、连续表演、概念冒险与视频导出
+motion/                          Motion Canvas 曲线、LaTeX、预览与视频导出
+web/                             TS 重量、连续表演、概念冒险与共享声音/编码
 references/                      规则卡、表演与制作指南
 examples/                        规则卡与剧本，含各 demo 的输入任务
 demos/                           MP4、GIF、分镜与验证记录
@@ -225,6 +250,7 @@ assets/fonts/                    字体与原始许可证
 - [x] 增加重量、蓄力、重力轨迹与弹性落地的 TS 动作研究及浏览器调参。
 - [x] 更新电影式主角、合理决策与无表情表演方法，完成《折返》文字例稿。
 - [x] 把参考片语法落实到 TS《借势》：直接符号操作、移动支撑、连续动作、相机与事件声音。
+- [x] 接入 Motion Canvas、曲线与 LaTeX 子式动画，完成技术试片和独立工程模板。
 - [ ] 用动态分镜和实际影片验证《折返》的双人判断、肢体可读性和动作节奏。
 - [ ] 把新的重量模型扩展到概念故事中的搬运、失衡、翻滚与多处支撑。
 - [ ] 增加更丰富的身体表演、动作过渡与镜头尺度变化。

@@ -5,13 +5,34 @@ const noise = (seed, i) => {
   v = Math.imul(v ^ (v >>> 13), 1274126177);
   return ((v ^ (v >>> 16)) >>> 0) / 2147483648 - 1;
 };
+const DEFAULT_MUSIC = [
+  { a: 0, b: 5.7, beat: 1.4, gain: 0.022, notes: [146.832, 220, 174.614, 164.814] },
+  { a: 6.4, b: 9.3, beat: 0.35, gain: 0.028, notes: [146.832, 174.614, 220, 293.665] },
+  { a: 9.8, b: 11.65, beat: 0.9, gain: 0.012, notes: [220, 174.614] },
+  { a: 12, b: 14.4, beat: 0.6, gain: 0.024, notes: [146.832, 220, 293.665, 329.628] },
+  { a: 15.8, b: 18.8, beat: 0.28, gain: 0.027, notes: [146.832, 164.814, 220, 293.665] },
+  { a: 20.3, b: 27.6, beat: 1.5, gain: 0.018, notes: [146.832, 184.997, 220, 293.665] },
+];
 /** Original, deterministic three-layer sound. Cue times are absolute, including partial-render tails. */
-export async function writeScore(file, duration, cues, { from = 0 } = {}) {
+export async function writeScore(file, duration, cues, { from = 0, music = DEFAULT_MUSIC } = {}) {
   if (
     !Number.isFinite(duration) ||
     duration <= 0 ||
     !Number.isFinite(from) ||
     from < 0 ||
+    !Array.isArray(music) ||
+    music.some(
+      (s) =>
+        ![s.a, s.b, s.beat, s.gain].every(Number.isFinite) ||
+        s.a < 0 ||
+        s.b <= s.a ||
+        s.beat <= 0 ||
+        s.gain < 0 ||
+        s.gain > 0.1 ||
+        !Array.isArray(s.notes) ||
+        !s.notes.length ||
+        s.notes.some((n) => !Number.isFinite(n) || n <= 0 || n > 12000),
+    ) ||
     !Array.isArray(cues) ||
     cues.some(
       (c) =>
@@ -32,25 +53,18 @@ export async function writeScore(file, duration, cues, { from = 0 } = {}) {
     originSample = Math.round(from * rate);
   const left = new Float64Array(n),
     right = new Float64Array(n);
-  const sections = [
-    { a: 0, b: 5.7, beat: 1.4, gain: 0.022, notes: [146.832, 220, 174.614, 164.814] },
-    { a: 6.4, b: 9.3, beat: 0.35, gain: 0.028, notes: [146.832, 174.614, 220, 293.665] },
-    { a: 9.8, b: 11.65, beat: 0.9, gain: 0.012, notes: [220, 174.614] },
-    { a: 12, b: 14.4, beat: 0.6, gain: 0.024, notes: [146.832, 220, 293.665, 329.628] },
-    { a: 15.8, b: 18.8, beat: 0.28, gain: 0.027, notes: [146.832, 164.814, 220, 293.665] },
-    { a: 20.3, b: 27.6, beat: 1.5, gain: 0.018, notes: [146.832, 184.997, 220, 293.665] },
-  ];
+
   for (let i = 0; i < n; i++) {
     const t = (originSample + i) / rate;
-    let music = 0;
-    for (const s of sections) {
+    let musicSample = 0;
+    for (const s of music) {
       if (t < s.a || t >= s.b) continue;
       const note = Math.floor((t - s.a) / s.beat),
         local = (t - s.a) % s.beat;
       const hz = s.notes[note % s.notes.length];
       const envelope =
         Math.min(1, local / 0.018) * Math.exp(-local * 4.3) * Math.min(1, (s.b - t) / 0.25);
-      music +=
+      musicSample +=
         (Math.sin(2 * Math.PI * hz * local) + 0.25 * Math.sin(2 * Math.PI * hz * 2 * local)) *
         s.gain *
         envelope;
@@ -65,8 +79,8 @@ export async function writeScore(file, duration, cues, { from = 0 } = {}) {
             dt < 0 ? 1 - (0.52 * (dt + 0.04)) / 0.04 : 0.48 + (0.52 * dt) / 0.35,
           );
       }
-    left[i] = music * duck;
-    right[i] = music * duck;
+    left[i] = musicSample * duck;
+    right[i] = musicSample * duck;
   }
   for (let index = 0; index < cues.length; index++) {
     const c = cues[index];

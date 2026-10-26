@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "file": "trace.mp4",
+  "sha256": "72f588c695ffecca1e892e5caf77455bb49b342c51d2646339a6fbb7b99e3a4b",
+  "bytes": 658466,
+  "duration": 18.0,
+  "width": 1280,
+  "height": 720,
+  "fps": 60.0,
+  "frames": 1080,
+  "video_codec": "h264",
+  "pixel_format": "yuv420p",
+  "audio": {
+    "analysis_sample_rate": 48000,
+    "analysis_channels": 2,
+    "source_sample_rate": 48000,
+    "source_channels": 2,
+    "decoded_duration": 18.005333,
+    "decoded_samples_per_channel": 864256,
+    "peak_dbfs": -13.443,
+    "rms_dbfs": -44.464
+  },
+  "decode": "pass",
+  "sample_times": [
+    0.75,
+    2.25,
+    3.75,
+    5.25,
+    6.75,
+    8.25,
+    9.75,
+    11.25,
+    12.75,
+    14.25,
+    15.75,
+    17.25
+  ],
+  "sampled_changed_fraction_mean": 0.010813,
+  "warnings": [],
+  "human_review": "not_recorded"
+}

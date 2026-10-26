@@ -21,6 +21,6 @@
 - 许可：[SIL Open Font License 1.1](web/assets/fonts/OFL.txt)，字体不重新授予 MIT 许可。Motion Sans 是 CSS 中的本地引用别名。
 - 未从 anything2explainer 复制字体；其仓库的工程研究范围及非商业许可边界见 [复用记录](docs/upstream-reuse.md)。
 
-`web/package-lock.json` 固定开发依赖版本，各 npm 包保留其自身许可证；本项目不把依赖重新授予 MIT 许可。新动作视频的图形、代码与合成音效由本项目制作。
+`web/package-lock.json` 与 `motion/package-lock.json` 固定依赖版本，各 npm 包保留其自身许可证；本项目不把依赖重新授予 MIT 许可。Motion Canvas 3.17.2 使用 MIT，LaTeX 组件通过 MathJax 3.2.2（Apache-2.0）生成 SVG。依赖通过 npm 安装，未将其源代码或构建包复制入仓库；分发构建网页时应同时保留所含依赖的许可与通知。新动作视频的场景代码与合成音效由本项目制作。
 
 0.5.0《借势》的图形、动画、程序合成音乐及音效同样为本项目原创，没有纳入参考片媒体。TS 工程引用仓库已有的 DejaVu Sans 排版数学符号；独立工程初始化保留该字体和 Noto Sans SC 的文件与原始许可。

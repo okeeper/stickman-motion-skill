@@ -34,9 +34,12 @@ test('score is deterministic, unclipped and preserves absolute cue/music time in
       [1, [{ t: -1, kind: 'step', strength: 1, x: 0 }]],
       [1, [{ t: 0, kind: 'unknown', strength: 1, x: 0 }]],
       [1, cues, { from: -1 }],
+      [1, cues, { music: [{ a: 0, b: 1, beat: 0, gain: 0.02, notes: [220] }] }],
     ])
       await assert.rejects(writeScore(a, ...args), /Invalid score/);
     assert.deepEqual(await readFile(a), full);
+    await writeScore(c, 1, [], { music: [] });
+    assert.ok((await readFile(c)).subarray(44).every((n) => n === 0));
   } finally {
     await rm(folder, { recursive: true, force: true });
   }

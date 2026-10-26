@@ -1,0 +1,83 @@
+{
+  "file": "trace.mp4",
+  "scene": "trace",
+  "fps": 60,
+  "frames": 1080,
+  "duration": 18,
+  "width": 1280,
+  "height": 720,
+  "resolutionScale": 2,
+  "audio": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "peakDbfs": -13.71898158069742,
+    "rmsDbfs": -44.40334170064957,
+    "clippedSamples": 0,
+    "layers": [
+      "contact",
+      "rule",
+      "score"
+    ],
+    "sourceFrom": 0
+  },
+  "clips": [
+    {
+      "title": "留下弧线",
+      "width": 1280,
+      "height": 720,
+      "duration": 18,
+      "fps": 60,
+      "engine": "Motion Canvas 3.17.2",
+      "resolutionScale": 2,
+      "cues": [
+        {
+          "t": 2.912861927910537,
+          "kind": "takeoff",
+          "strength": 0.8,
+          "pan": -0.3,
+          "x": 1.8
+        },
+        {
+          "t": 4.072711007103104,
+          "kind": "impact",
+          "strength": 0.9,
+          "pan": 0.25,
+          "x": 4.05
+        },
+        {
+          "t": 8.2,
+          "kind": "rule",
+          "strength": 0.35,
+          "pan": 0.1,
+          "x": 3.1
+        },
+        {
+          "t": 11,
+          "kind": "rule",
+          "strength": 0.4,
+          "pan": 0.1,
+          "x": 3.1
+        },
+        {
+          "t": 13.8,
+          "kind": "rule",
+          "strength": 0.5,
+          "pan": 0.1,
+          "x": 3.1
+        }
+      ],
+      "transfers": [
+        {
+          "takeoff": 2.912861927910537,
+          "land": 4.072711007103104,
+          "vx": 1.9254317453932936
+        }
+      ],
+      "sourceDuration": 18,
+      "from": 0,
+      "to": 18,
+      "frames": 1080
+    }
+  ],
+  "sha256": "72f588c695ffecca1e892e5caf77455bb49b342c51d2646339a6fbb7b99e3a4b"
+}

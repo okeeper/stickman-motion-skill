@@ -37,4 +37,6 @@ python -m unittest discover -s tests -v
 
 改动时间线、编码或混音时运行 `tests/test_tooling.py` 中的真实 FFmpeg 回归，覆盖混合画幅/帧率、静音片段、变速音高、音轨入点、多段转场、中文软字幕、损坏缓存与失败时的旧文件保留。`doctor` 与依赖缺失属于正常失败路径；CI 必须具备 FFmpeg，不能依靠跳过集成测试宣称通过。
 
+改动 Motion Canvas 工程时，运行 `npm --prefix motion ci`、`npm --prefix motion run build`、`npm --prefix motion test`、`npm --prefix motion run test:browser` 和 `npm --prefix motion run format:check`。修改曲线、公式或求帧适配时核对中间帧、最终 MP4、任意拖帧与局部导出；新增主题说明数学假设。改动共享 `web/scripts/video.mjs` 或 `score.mjs` 时，同时检查原 Canvas 与 Motion Canvas 的实际导出和失败输出保护。
+
 JSON 清单保留 version；改变字段含义时提供版本迁移，更新 references/tooling.md、样例及 CHANGELOG.md。迁移已有独立工程时比较工具目录，保留用户的场景、清单和素材。上游借鉴或复制代码时记录固定版本与许可；风格偏好不能随脚手架一起带入。

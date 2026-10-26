@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("../../assets/fonts/DejaVuSans.ttf") format("truetype");
+  font-display: block;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #111418;
+  color: #eeeae2;
+  font:
+    15px system-ui,
+    sans-serif;
+}
+main {
+  max-width: 1280px;
+  margin: auto;
+  padding: 32px 24px;
+}
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+}
+header span,
+p {
+  color: #939ba6;
+}
+#stage {
+  background: #080a0d;
+  aspect-ratio: 16/9;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.transport {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 20px;
+}
+button,
+select {
+  background: #232931;
+  border: 1px solid #3b434f;
+  color: #eeeae2;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+input {
+  flex: 1;
+  min-width: 40px;
+  accent-color: #ffb347;
+}
+output {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.note {
+  font-size: 13px;
+  line-height: 1.7;
+}
+a {
+  color: #ffb347;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 20px 10px;
+  }
+  header {
+    display: block;
+  }
+  .transport {
+    gap: 6px;
+  }
+  button {
+    padding: 8px;
+  }
+  output {
+    font-size: 11px;
+  }
+}
