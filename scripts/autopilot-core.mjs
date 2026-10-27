@@ -109,7 +109,7 @@ export function loadProject(file, {seconds} = {}) {
         if (typeof l.id !== 'string' || !l.id.trim() || ids.has(l.id)) throw new Error('Layer IDs must be unique, nonempty strings within a shot');
         ids.add(l.id);
       }
-      for (const k of ['x','y','w','h','size','angle','alpha','progress','lineWidth','scale','radius']) if (l[k] !== undefined) number(l[k], k, -10000, 10000);
+      for (const k of ['x','y','w','h','size','angle','alpha','progress','lineWidth','scale','radius','spineBend']) if (l[k] !== undefined) number(l[k], k, -10000, 10000);
       for (const k of ['w','h','size','lineWidth','scale','radius']) if (l[k] !== undefined && l[k] <= 0) throw new Error(`Invalid ${k}`);
       for (const k of ['alpha','progress']) if (l[k] !== undefined && (l[k] < 0 || l[k] > 1)) throw new Error(`Invalid ${k}`);
       if (l.type === 'image') { const f = mediaPath(base, l.path); if (!/\.(png|jpe?g|webp)$/i.test(f)) throw new Error('Only PNG/JPEG/WebP image layers'); assets.add(f); }
@@ -118,6 +118,7 @@ export function loadProject(file, {seconds} = {}) {
       if (l.type === 'line' && (!Array.isArray(l.points) || l.points.length < 2 || l.points.some(pt => !Array.isArray(pt) || pt.length !== 2 || pt.some(n => !Number.isFinite(n))))) throw new Error('Line requires finite [x,y] points');
       if (l.type === 'stick') {
         validateJoints(l.joints, 'stick');
+        if(l.contour!==undefined && !['straight','curved'].includes(l.contour)) throw new Error('Unknown stick contour');
         if (l.jointInterpolation !== undefined && !['linear','smooth'].includes(l.jointInterpolation)) throw new Error('Unknown joint interpolation');
         if (l.jointsKeys !== undefined && !Array.isArray(l.jointsKeys)) throw new Error('jointsKeys must be an array');
         let last = -1;
@@ -134,7 +135,7 @@ export function loadProject(file, {seconds} = {}) {
         }
       }
       number(l.from ?? 0, 'layer from', 0, span); number(l.to ?? span, 'layer to', l.from ?? 0, span);
-      validateKeys(l.keys, span, 'layer keys', ['x','y','w','h','angle','alpha','progress','scale','radius']);
+      validateKeys(l.keys, span, 'layer keys', ['x','y','w','h','angle','alpha','progress','scale','radius','spineBend']);
     }
   }
   if (scoped ? end < rangeEnd - 1e-6 : Math.abs(end - duration) > 1e-6) throw new Error(`Shots end at ${end}; ${scoped ? 'preview range' : 'film'} ends at ${rangeEnd.toFixed(3)}`);

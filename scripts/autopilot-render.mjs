@@ -79,9 +79,22 @@ export async function painter(p) {
         const img=images.get(mediaPath(p.base,l.path)),h=l.h || w*img.height/img.width,scale=Math.min(w/img.width,h/img.height);
         ctx.drawImage(img,(w-img.width*scale)/2,(h-img.height*scale)/2,img.width*scale,img.height*scale);
       } else if (l.type === 'stick') {
-        const j=jointState(l,dt), color=l.color||'#ff8300', width=l.lineWidth||8;
-        ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.arc(j.head[0],j.head[1],l.radius||22,0,Math.PI*2);ctx.stroke();
-        for (const names of [['neck','hip'],['neck','leftElbow','leftHand'],['neck','rightElbow','rightHand'],['hip','leftKnee','leftFoot'],['hip','rightKnee','rightFoot']]) stroke(names.map(n=>j[n]),width,color);
+        const j=jointState(l,dt), color=l.color||'#ffd43b', width=l.lineWidth||8;
+        for (const names of [['neck','hip'],['neck','leftElbow','leftHand'],['neck','rightElbow','rightHand'],['hip','leftKnee','leftFoot'],['hip','rightKnee','rightFoot']]) {
+          const pts=names.map(n=>j[n]);
+          if(l.contour==='curved' && pts.length===2 && l.spineBend) {
+            const [a,b]=pts,d=Math.hypot(b[0]-a[0],b[1]-a[1])||1;
+            ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(...a);
+            ctx.quadraticCurveTo((a[0]+b[0])/2-(b[1]-a[1])*l.spineBend/d,(a[1]+b[1])/2+(b[0]-a[0])*l.spineBend/d,...b);ctx.stroke();
+          } else if(l.contour==='curved' && pts.length===3) {
+            const [a,b,c]=pts,round=0.24;
+            ctx.strokeStyle=color;ctx.lineWidth=width;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();ctx.moveTo(...a);
+            ctx.lineTo(b[0]+(a[0]-b[0])*round,b[1]+(a[1]-b[1])*round);
+            ctx.quadraticCurveTo(...b,b[0]+(c[0]-b[0])*round,b[1]+(c[1]-b[1])*round);ctx.lineTo(...c);ctx.stroke();
+          } else stroke(pts,width,color);
+        }
+        ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.arc(j.head[0],j.head[1],l.radius||22,0,Math.PI*2);
+        if(l.headFill){ctx.fillStyle=l.headFill;ctx.fill()}ctx.stroke();
       } else if (l.type === 'text') {
         const size=l.size||52, useCjk=l.font==='cjk' || (l.font===undefined && /[\u3400-\u9fff]/.test(l.text));
         ctx.font=`${l.bold?700:400} ${size}px ${useCjk?'ConceptCaption':'ConceptText'}`;ctx.fillStyle=l.color||'#f4f4f4';ctx.textBaseline='top';

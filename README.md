@@ -10,6 +10,8 @@
 
 **制作模式**先围绕人物意图、情绪、动作接触与声音制作代表性试片，再根据实际结果选择合适的逐帧动画、绑定动画、合成或其他工具。内置声明式渲染器提供图层、人物关节插值、局部预览、混音和视频导出，但没有自动骨长、足部或手部接触约束，也不会自动生成表演；它适合简单示意及经过试片验证的镜头，不能保证参考片级质量。具体方法见 [表演与动作设计](references/performance-and-animation.md)。
 
+另有 [动作约束工具](references/character-performance-tools.md)，可将固定骨长、支撑脚、手部到达和解析腾空烘焙成逐帧姿态。三段动作小样已实际渲染并做抽帧迭代；检查范围与不足见该文档，不据此宣称达到参考片水平。
+
 参考项目为 [stickman-video-director](https://github.com/kaomei/stickman-video-director)，本项目改编其 MIT 许可的自动制作脚本，具体文件与许可见 [复用记录](docs/upstream-reuse.md) 和 [第三方说明](THIRD_PARTY_NOTICES.md)。两部参考片的媒体及抽帧不随项目分发。
 
 ## 安装 Skill

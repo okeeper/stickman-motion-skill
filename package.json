@@ -1,6 +1,6 @@
 {
   "name": "stickman-motion-skill-runtime",
-  "version": "0.14.0",
+  "version": "0.17.0",
   "private": true,
   "type": "module",
   "description": "Concept animation director and local renderer",
@@ -11,7 +11,7 @@
     "@napi-rs/canvas": "0.1.100"
   },
   "scripts": {
-    "test": "node --test tests/autopilot.test.mjs",
+    "test": "node --test tests/autopilot.test.mjs tests/character-motion.test.mjs",
     "doctor": "node scripts/autopilot.mjs doctor"
   }
 }

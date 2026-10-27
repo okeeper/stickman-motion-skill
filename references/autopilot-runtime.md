@@ -40,7 +40,7 @@ node scripts/autopilot.mjs probe /absolute/path/my-film/output/film.mp4
 - 设计坐标统一宽 1280，高度按画幅等比计算；竖屏需要重新安排，不拉伸角色。镜头可以有 `camera: {x,y,zoom,keys}`，相机 `x/y` 是中心偏移、`zoom` 是倍率；关键帧相对镜头起点。
 - `layers` 从后到前绘制。支持 `text`、`line`、`arrow`、`circle`、`image`、`stick`、`graph`。坐标、宽高、角度、透明度、描绘进度、缩放和半径可在 `keys` 中按镜头局部秒数关键帧化；数值采用平滑插值。`from/to` 控制镜头内可见区间。图层 ID 在同一镜头内必须唯一；相邻镜中同一对象的语义身份、位置和持有关系由作者核对，渲染器不会自动匹配。
 - `text` 使用可编辑 Unicode 原文：默认在包含中日韩汉字时选 Noto Sans SC，否则用 DejaVu Sans；`font: "cjk"` 或 `"math"` 可明确选择。`font`、`captionFont` 项目属性可指向自有本地字体。长文本需要检查实际字形、换行和最终分辨率；复杂公式不由此自动排版或计算。
-- `stick` 用 `joints` 指定 `head`、`neck`、`hip`、`leftElbow`、`leftHand`、`rightElbow`、`rightHand`、`leftKnee`、`leftFoot`、`rightKnee`、`rightFoot` 各自的 `[x,y]`；头、躯干与四肢按这些点连接。`jointsKeys: [{t,joints},…]` 需要每个关键帧都提供完整点集；默认平滑插值，`jointInterpolation: "linear"` 线性插值。所有点是图层局部坐标，`x/y/scale` 管图层整体。系统不自动保持骨长、足部支撑或手与道具的接触，必须逐帧设计及审看。
+- `stick` 用 `joints` 指定 `head`、`neck`、`hip`、`leftElbow`、`leftHand`、`rightElbow`、`rightHand`、`leftKnee`、`leftFoot`、`rightKnee`、`rightFoot` 各自的 `[x,y]`；头、躯干与四肢按这些点连接。`jointsKeys: [{t,joints},…]` 需要每个关键帧都提供完整点集；默认平滑插值，`jointInterpolation: "linear"` 线性插值。默认角色颜色为黄色 `#ffd43b`；`contour: "curved"` 让肘膝折点有圆滑过渡，`headFill` 可设头圈内底色，头部最后绘制；`spineBend` 可关键帧控制躯干曲线，关节点约束与绘制轮廓分别处理。所有点是图层局部坐标，`x/y/scale` 管图层整体。原始模式不自动保持骨长、足部支撑或手与道具的接触；可用 [动作约束工具](character-performance-tools.md) 按最终输出帧率求解并烘焙完整姿态，再逐帧审看。
 - `graph` 是可视化一维高斯波：指定 `domain: [min,max]`、`w`、`yScale`，及 `components: [{kind:"gaussian", amplitude, center, velocity, sigma}]`。每个分量按镜头局部秒数 `t` 计算 `A·exp(-0.5·((x-center-velocity·t)/sigma)²)`，画出所有分量的和；`showComponents: true` 可附各分量的曲线。不同镜头如果代表同一物理过程，作者须为下一镜计算并填入承接的初始状态。它只是一种预设模型，并不是通用公式、物理求解器或证明。
 - `image` 的 `path` 仅接受本地 PNG/JPEG/WebP。图片动画只变换图层，不会自动补齐肢体动作。公式、数值、图表的科学含义由创作者核验；不得把表达式编辑说成等价变换。
 
