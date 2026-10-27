@@ -1,5 +1,7 @@
 # Demo 制作与复现
 
+新增 [《怎么又是这里》](newton/README.md)：82 秒牛顿迭代故事，使用 0.11.0 编剧提示词制作；[成片](newton/newton.mp4)、[剧本与推导](../examples/newton-guide.md)、[实际 QA](newton/QA.md)。下文三支是 0.9.0 的既有样片。
+
 三支探索故事已按 [新剧本](../examples/demo-redesign.md) 用 TypeScript / Motion Canvas 生成，版本 **0.9.0**。无台词成片共 250 秒，1280×720 / 60 fps，含动作拟音、世界反馈与原创程序音乐。
 
 | 场景名 | 故事 | 片长 | 成片 / 规则 |

@@ -20,7 +20,7 @@ try {
       !args[i + 1]
     )
       throw new Error(
-        "Use --scene trace|action|negative-ride|binary-search|complex-rotation --fps 30|60 --from seconds --to seconds --out file.mp4",
+        "Use --scene trace|action|negative-ride|binary-search|complex-rotation|newton --fps 30|60 --from seconds --to seconds --out file.mp4",
       );
     options[key] = args[i + 1];
   }
@@ -31,6 +31,7 @@ try {
       "negative-ride",
       "binary-search",
       "complex-rotation",
+      "newton",
     ].includes(options.scene) ||
     !["30", "60"].includes(options.fps) ||
     !options.out.endsWith(".mp4") ||
@@ -45,6 +46,8 @@ try {
     options.out = "../demos/action/breakpoint.mp4";
   if (!["trace", "action"].includes(options.scene) && !args.includes("--out"))
     options.out = `../demos/videos/${options.scene}.mp4`;
+  if (options.scene === "newton" && !args.includes("--out"))
+    options.out = "../demos/newton/newton.mp4";
   const lab = await openLab(options.scene);
   try {
     const info = await lab.page.evaluate(() => window.__MOTION__.info()),

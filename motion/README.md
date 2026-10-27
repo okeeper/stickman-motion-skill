@@ -1,6 +1,6 @@
 # Motion Canvas 数学动画工程
 
-本工程包含三支概念动作短片《别追，等它回来》75 秒、《谁在敲门》85 秒、《世界的侧面》90 秒，以及《断点》11 秒连续动作与《留下弧线》18 秒图形/公式试片。复用 `../web/src/` 的重量、骨架和接触模型，使用 Motion Canvas 的 Spline / Bézier / LaTeX 绘制。它不是任意数学题的一键成片工具。
+本工程包含 82 秒牛顿迭代故事《怎么又是这里》和三支概念动作短片《别追，等它回来》75 秒、《谁在敲门》85 秒、《世界的侧面》90 秒，以及《断点》11 秒连续动作与《留下弧线》18 秒图形/公式试片。复用 `../web/src/` 的重量、骨架和接触模型，使用 Motion Canvas 的 Spline / Bézier / LaTeX 绘制。它不是任意数学题的一键成片工具。
 
 ```sh
 npm --prefix motion ci
@@ -8,7 +8,7 @@ npm --prefix motion run prepare:audio
 npm --prefix motion run dev
 ```
 
-打开 `/negative-ride.html`、`/binary-search.html`、`/complex-rotation.html` 看三个完整概念故事，页面内可切换。打开 `/action.html` 看有声动作，默认 1×，点击播放启用声音；`/preview.html` 是静音图形试片。根地址为编辑器项目选择。慢放和拖帧用于检查，支持窄屏。声音准备另需 Python 3.10+ 与 FFmpeg。需要 Node.js 22.12+。Vite 5 仅用于本工程，现有 `web/` 的 Vite 8 独立保留。
+打开 `/newton.html` 看新的牛顿迭代故事；打开 `/negative-ride.html`、`/binary-search.html`、`/complex-rotation.html` 看三个完整概念故事，页面内可切换。打开 `/action.html` 看有声动作，默认 1×，点击播放启用声音；`/preview.html` 是静音图形试片。根地址为编辑器项目选择。慢放和拖帧用于检查，支持窄屏。声音准备另需 Python 3.10+ 与 FFmpeg。需要 Node.js 22.12+。Vite 5 仅用于本工程，现有 `web/` 的 Vite 8 独立保留。
 
 ```sh
 cd motion
@@ -44,3 +44,5 @@ npm run render -- --fps 60 --out ../renders/trace.mp4
 动作与声音方法见 [正常速度动作与拟音](../references/action-and-foley.md)。求帧与声音时钟集中在 [preview.ts](src/preview.ts)。首次 `prepare:audio` 从固定且校验的 Kenney CC0 源准备本地素材，之后复用；WAV 和本地指纹被 git 忽略。仓库保留许可、来源与准备脚本，运行时不从外网播放音效。
 
 三支概念片的规则、剧本和模块见 [制作规格](../demos/PRODUCTION.md)，实际成片检查见 [QA](../demos/QA.md)。独立改编用 `python scripts/init_web.py output/my-concept --scene complex-rotation`，只需在复制后的 motion/ 安装依赖。
+
+牛顿迭代新片的规则、动作与镜头在 [model.ts](../web/src/newton/model.ts)，曲线与图形在 [newton.tsx](src/scenes/newton.tsx)。`npm run test:newton` 检查网页，`npm run render -- --scene newton` 导出 82 秒成片；独立复制用 `python scripts/init_web.py output/my-newton --scene newton`。数学假设与逐段脚本见 [制作说明](../examples/newton-guide.md)，实际检查见 [QA](../demos/newton/QA.md)。

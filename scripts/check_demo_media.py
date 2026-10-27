@@ -10,8 +10,8 @@ import shutil
 import subprocess
 from pathlib import Path
 import numpy as np
-EXPECTED = {"negative-ride": 75, "binary-search": 85, "complex-rotation": 90}
-SCENES = tuple(EXPECTED)
+EXPECTED = {"negative-ride": 75, "binary-search": 85, "complex-rotation": 90, "newton": 82}
+SCENES = ("negative-ride", "binary-search", "complex-rotation")
 
 
 def check(path, legacy=False):
@@ -110,12 +110,13 @@ def main():
         default=Path(__file__).resolve().parents[1] / "demos/videos",
     )
     p.add_argument("--report", type=Path)
+    p.add_argument("--scene", choices=tuple(EXPECTED), action="append")
     p.add_argument("--legacy", action="store_true", help="expect historical 36-second / 30 fps Python output")
     args = p.parse_args()
     if not all(shutil.which(tool) for tool in ("ffmpeg", "ffprobe")):
         p.exit(1, "FFmpeg and ffprobe must be on PATH.\n")
     try:
-        results = [check(args.video_dir / f"{scene}.mp4", args.legacy) for scene in SCENES]
+        results = [check(args.video_dir / f"{scene}.mp4", args.legacy) for scene in (args.scene or SCENES)]
     except (OSError, ValueError, subprocess.CalledProcessError) as e:
         p.exit(1, f"Media check failed: {e}\n")
     content = json.dumps(results, indent=2) + "\n"

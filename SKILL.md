@@ -2,7 +2,7 @@
 name: stickman-motion-skill
 description: 将数学、物理或算法主题写成无台词火柴人故事并可继续制作有声 TS 动画。默认深度贴近 Animation vs. Math 的触觉符号操作、知识对象主动回应、探索与连续交手、空间展开和前段发现的后段用途；用于故事构思、脚本改写、声画分镜及制作。普通口播配图或纯公式讲解不使用此流程。
 metadata:
-  version: "0.11.0"
+  version: "0.12.0"
 ---
 
 # 火柴人概念冒险动画
@@ -21,6 +21,8 @@ metadata:
 - **重量与关节专项**：读 [重量与弹性](references/weighted-motion.md)；旧 Python 曲线骨架见 [连续表演](references/character-motion.md)。两条实现的覆盖范围不同。
 - **走跑跳、摔滚与动作拟音**：读 [正常速度动作与拟音](references/action-and-foley.md)。用实际步态、动量、支撑转移和声音事件组织动作片节奏，以《断点》为连续动作起点。
 - **剪辑、声音合成与交付**：读 [制作工具](references/tooling.md)，复用已有脚本。
+
+新增 [《怎么又是这里》牛顿迭代实做](demos/newton/README.md)：82 秒有声 TS 成片，附逐段剧本、收敛推导、代码和实际检查。改编时可参考同一切线对象、初始值编辑暂停与前段短线进入后段行动的实现。
 
 现有影片提供工程与动作参考；三支 0.9.0 demo 已收到叙事不足的反馈，具体问题见 [回看](docs/reference-story-analysis.md#9-对本项目三个-demo-的回看)。当前有《借势》TS 短片、《断点》连续动作与拟音试片、《留下弧线》Motion Canvas 技术试片、独立重量研究和三支已重拍的 TS 概念片；《折返》仍是未渲染的文字例稿。引擎不是任意提示词或 YAML 的一键视频生成器。新增主题需要新的规则、行为、场景代码和实际产物。
 

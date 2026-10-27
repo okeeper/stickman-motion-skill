@@ -121,3 +121,7 @@ python scripts/motion.py verify output/my-film/delivery
 0.9.0 的 [acting.ts](../web/src/series/acting.ts) 补充固定骨长的观察、伸手、坐姿、翻滚、悬挂与支撑姿态；三支故事的规则和动作分别在 `negative.ts`、`binary.ts`、`complex.ts`，门面仍为 `model.ts`。悬挂、攀移与翻身是约束姿态的手工编排，不能当作通用物理引擎。手持道具在姿态连接之后重新绑定实际腕部，避免相机或连接层让道具脱手。
 
 同一混音器新增敲击身份、延迟回应、滑动/转动、发现声及原创程序音乐。局部导出从原时间取样并保留声音尾部。脚步由步态接触产生，其他声音按故事动作事件编排；新增动作仍需对照实际抓握、支撑和释放时刻。
+
+## 牛顿迭代故事起点
+
+`init_web.py --scene newton` 提供 [《怎么又是这里》](../demos/newton/README.md) 的可编辑工程。它复用同一预览、混音和编码器；规则、角色与声音在 [newton/model.ts](../web/src/newton/model.ts)，精确三次 Bézier 与切线在 [newton.tsx](../motion/src/scenes/newton.tsx)。输入按住拖动时暂停迭代，提交后才求值；数学假设与收敛证明见 [剧本说明](../examples/newton-guide.md)。改变函数或起点后必须重编排动作与验证，现有起点不承诺通用生成。

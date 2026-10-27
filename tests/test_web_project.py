@@ -38,6 +38,19 @@ class WebProjectTest(unittest.TestCase):
             self.assertFalse(any(project.rglob("*.mp4")))
             self.assertIn("/film.html", (project / "README.md").read_text())
 
+    def test_newton_starter_contains_its_actual_model_and_no_audio_cache(self):
+        with tempfile.TemporaryDirectory() as folder:
+            project = MODULE.initialize(Path(folder) / "newton", "newton", "motion-canvas")
+            for relative in ("motion/newton.html", "motion/src/scenes/newton.tsx", "motion/src/newton-project.ts",
+                             "web/src/newton/model.ts", "motion/scripts/test-newton.mjs"):
+                self.assertTrue((project / relative).is_file(), relative)
+            self.assertIn("/newton.html", (project / "README.md").read_text())
+            self.assertFalse(any(project.rglob("*.wav")))
+            self.assertFalse(any(project.rglob("bank-local.json")))
+            with self.assertRaisesRegex(ValueError, "already exists"):
+                MODULE.initialize(project, "newton", "motion-canvas")
+            self.assertTrue((project / "motion/newton.html").exists())
+
     def test_concept_starters_keep_shared_actions_scenes_and_entrypoints(self):
         with tempfile.TemporaryDirectory() as folder:
             for scene in ("negative-ride", "binary-search", "complex-rotation"):

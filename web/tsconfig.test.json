@@ -8,6 +8,7 @@
     "src/performance.ts",
     "src/stunt.ts",
     "src/series/model.ts",
+    "src/newton/model.ts",
     "src/action/model.ts",
     "src/adventure/model.ts"
   ]

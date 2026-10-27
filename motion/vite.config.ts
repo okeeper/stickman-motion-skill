@@ -9,6 +9,7 @@ export default defineConfig({
       project: [
         "./src/project.ts",
         "./src/action-project.ts",
+        "./src/newton-project.ts",
         "./src/negative-ride-project.ts",
         "./src/binary-search-project.ts",
         "./src/complex-rotation-project.ts",
@@ -30,10 +31,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         ...Object.fromEntries(
-          ["negative-ride", "binary-search", "complex-rotation"].map((id) => [
-            id,
-            fileURLToPath(new URL(`./${id}.html`, import.meta.url)),
-          ]),
+          ["negative-ride", "binary-search", "complex-rotation", "newton"].map(
+            (id) => [
+              id,
+              fileURLToPath(new URL(`./${id}.html`, import.meta.url)),
+            ],
+          ),
         ),
         preview: fileURLToPath(new URL("./preview.html", import.meta.url)),
         action: fileURLToPath(new URL("./action.html", import.meta.url)),

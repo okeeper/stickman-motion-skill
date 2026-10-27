@@ -16,6 +16,7 @@
     "render": "node scripts/render.mjs",
     "format": "prettier --write src scripts tests *.json *.html *.ts",
     "format:check": "prettier --check src scripts tests *.json *.html *.ts",
+    "test:newton": "node scripts/test-newton.mjs",
     "test:series": "node scripts/test-series.mjs",
     "render:series": "node scripts/render-series.mjs"
   },

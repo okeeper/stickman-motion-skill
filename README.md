@@ -8,6 +8,24 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
+## 0.12.0：《怎么又是这里》· 牛顿迭代
+
+使用新编剧提示词完成的首支新题材成片：**82 秒 / 720p / 60 fps / 无台词、有声**。主角先借切线前行，发现自己困在 0 与 1 的循环里；摔落后，他沿轴探索另一支曲线，再用早先留下的短线钩住输入，主动把起点移到 −2。
+
+![《怎么又是这里》全长无声预览](demos/previews/newton.gif)
+
+[完整有声 MP4](demos/newton/newton.mp4) · [逐段剧本与收敛推导](examples/newton-guide.md) · [可编辑 TS 工程与复现](demos/newton/README.md) · [编码后关键帧](demos/posters/newton-contact-sheet.jpg) · [实际 QA](demos/newton/QA.md)
+
+复用 Motion Canvas 曲线、固定骨长、重力跳跃、步态拟音及共享导出。函数保持不变，编辑初始值时暂停求值；有限次结果使用近似符号。当前完成自动播放、数值与关键帧检查，主观完整听审和观众理解测试尚未完成。
+
+```sh
+python scripts/init_web.py output/my-newton --scene newton
+npm --prefix output/my-newton/motion ci
+npm --prefix output/my-newton/motion run prepare:audio
+npm --prefix output/my-newton/motion run dev
+# 打开终端地址的 /newton.html
+```
+
 ## 0.11.0：原片仿写专用提示词
 
 新故事默认直接使用 [《Animation vs. Math》仿写提示词 A/B/C](references/reference-screenwriting-prompts.md)：A 构思具体遭遇，B 写动作和声画脚本，C 按原片处理方式审改。要求稿子实际出现符号本体的手部操作、同一对象主动回应、相接攻防、重新探索得到的新表示及其后段用途，并回到同一对象的近距离互动。
