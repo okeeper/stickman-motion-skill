@@ -8,6 +8,18 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
+## 0.11.0：原片仿写专用提示词
+
+新故事默认直接使用 [《Animation vs. Math》仿写提示词 A/B/C](references/reference-screenwriting-prompts.md)：A 构思具体遭遇，B 写动作和声画脚本，C 按原片处理方式审改。要求稿子实际出现符号本体的手部操作、同一对象主动回应、相接攻防、重新探索得到的新表示及其后段用途，并回到同一对象的近距离互动。
+
+[投影题材文本试写](examples/reference-prompt-trial.md) 展示了实际生成的故事、关键场面、对应关系和自审修正。这是文本试写，尚无新动画、观众理解测试或独立 agent 评价。
+
+```text
+使用 $stickman-motion-skill，主题【主题】，大致【时长】。
+严格使用原片仿写提示词 A/B，连续完成故事与制作脚本。
+按六项声画字段写具体场面，附原片处理方式对应表和数学/故事边界。
+```
+
 ## 0.10.0：把原片的故事设计沉淀为编剧方法
 
 重新拆解 [原片的悬念、对象变化、对抗与后段回收](docs/reference-story-analysis.md)，重写 [剧本开发方法](references/cinematic-storytelling.md)，新增 [快速剧本工作台](references/story-workbench.md)。新故事先写因果梗概与观众期待，再写动作分镜、铺垫回收与规则边界。

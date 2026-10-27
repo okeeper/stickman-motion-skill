@@ -4,7 +4,7 @@
 
 本轮复核全片每 10 秒的抽帧，并加密查看 03:40–05:20（每 3 秒）、05:20–07:30（每 5 秒）、09:30–11:10（每 4 秒）、11:50–13:40（每 3 秒），结合已有开场、首次相遇与动作连续帧。它足以支持下列情节与视觉因果分析，不等于逐帧核验所有公式、完整正常速度观片或声音听审。参考媒体与截图仅留在本地研究目录，不随项目发布。
 
-可执行编剧方法见 [电影式主角与因果剧本](../references/cinematic-storytelling.md)，快速任务与交付格式见 [剧本工作台](../references/story-workbench.md)。
+原片深度仿写直接使用 [专用提示词 A/B/C](../references/reference-screenwriting-prompts.md)。可执行编剧方法见 [电影式主角与因果剧本](../references/cinematic-storytelling.md)，快速任务与交付格式见 [剧本工作台](../references/story-workbench.md)。
 
 ## 先把故事讲明白
 
