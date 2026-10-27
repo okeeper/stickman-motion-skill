@@ -1,5 +1,17 @@
 # 第三方文件
 
+## stickman-video-director 自动制作脚本
+
+- 来源：[kaomei/stickman-video-director，固定版本 b568219](https://github.com/kaomei/stickman-video-director/tree/b568219aca9ca33992d902349004472d203c1d71)。
+- 版权与许可：Copyright (c) 2026 Stickman Video Director contributors；[MIT 许可证](licenses/stickman-video-director-MIT.txt)。
+- `autopilot-core.mjs`、`autopilot-render.mjs`、`autopilot.mjs` 已按本项目的概念动画与无台词场景改编；`gemini-media.mjs`、`align_captions.py` 为保留的可选适配器。没有复制上游角色、视频或音轨。
+
+## Noto Sans SC（自动制作运行时）
+
+- 文件：[NotoSansSC.ttf](assets/fonts/NotoSansSC.ttf)，来自 [Google Fonts 的 Noto Sans SC](https://github.com/google/fonts/tree/main/ofl/notosanssc)。
+- SHA-256：`a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da`。
+- 许可：[SIL Open Font License 1.1](assets/fonts/OFL-NotoSansSC.txt)。此字体用于中文画内文字和字幕，不重新授予 MIT 许可。
+
 ## DejaVu Sans
 
 - 文件：[DejaVuSans.ttf](assets/fonts/DejaVuSans.ttf)。
@@ -14,7 +26,7 @@
 
 通用工具中的流式文件指纹函数改编自 huashu-art-motion 的 deliver.py，采用 MIT 许可；原始版权及许可保存在 [许可证](licenses/huashu-art-motion-MIT.txt)，固定版本、直接复用范围和结构借鉴见 [复用记录](docs/upstream-reuse.md)。未引入其风格、角色或示范媒体。
 
-## Noto Sans SC
+## Noto Sans SC（历史 TS 工程）
 
 - 文件：[motion-sans.ttf](web/assets/fonts/motion-sans.ttf)，网页与 Canvas 使用的字符子集。
 - 来源：Google Fonts CSS API 返回的 Noto Sans SC 字符子集；见 [字体来源说明](web/assets/fonts/README.md)。

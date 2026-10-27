@@ -44,6 +44,8 @@ def validate(root: Path) -> list[str]:
             name = metadata.get("name")
             if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", name) or len(name) > 64:
                 errors.append("SKILL.md: name must be a lowercase hyphenated name of at most 64 characters")
+            elif name != "stickman-motion-skill":
+                errors.append("SKILL.md: canonical name must be stickman-motion-skill")
             description = metadata.get("description")
             if not isinstance(description, str) or not description.strip() or len(description) > 1024:
                 errors.append("SKILL.md: description must contain 1–1024 characters")
@@ -70,9 +72,12 @@ def validate(root: Path) -> list[str]:
             elif not resolved.exists():
                 errors.append(f"{path.relative_to(root)}: missing local link: {target}")
 
+    for relative in ("package.json", "package-lock.json", "scripts/autopilot.mjs", "scripts/autopilot-core.mjs", "scripts/autopilot-render.mjs", "licenses/stickman-video-director-MIT.txt"):
+        if not (root / relative).is_file():
+            errors.append(f"{relative}: required runtime file is missing")
+
+    # Older YAML specifications are optional; validate them only when present.
     examples = sorted((root / "examples").glob("*.yaml"))
-    if not examples:
-        errors.append("examples/: no story specifications found")
     for path in examples:
         label = str(path.relative_to(root))
         data = parse_yaml(read(path), label)

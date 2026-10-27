@@ -2,7 +2,7 @@
 
 用于知识世界中的无台词探索、动作和关系故事。先开发观众愿意追问的事件，再把数学机制、表演和镜头接上。原片的具体依据见 [情节拆解](../docs/reference-story-analysis.md)；快速任务、分镜字段与修改方法见 [剧本工作台](story-workbench.md)。
 
-当前明确要求贴近原片的任务，以 [专用仿写配置](reference-screenwriting-prompts.md) 的具体场面要求为先；下文是补充审改方法。其中关于不同片型的选择不用于取消当前已指定的符号操作、对象回应与探索/交手处理。
+当前入口为 [导演与剧本](concept-story-directing.md)；[专用仿写配置](reference-screenwriting-prompts.md) 保留为用户明确选择时的历史参考。下文可按题材用于审改，不强制每片都有符号交手。
 
 ## 从一个可感知的问题进入
 

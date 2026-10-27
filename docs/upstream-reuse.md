@@ -1,5 +1,17 @@
 # 结构参考与复用记录
 
+## stickman-video-director：0.14 的脚本改编
+
+固定来源为 [b568219aca9ca33992d902349004472d203c1d71](https://github.com/kaomei/stickman-video-director/tree/b568219aca9ca33992d902349004472d203c1d71)。`scripts/autopilot-core.mjs`、`scripts/autopilot-render.mjs`、`scripts/autopilot.mjs` 改编自其同名脚本；`scripts/gemini-media.mjs`、`scripts/align_captions.py` 保留其适配器并增加来源说明。原作者版权与 MIT 许可完整保存在 [许可证](../licenses/stickman-video-director-MIT.txt)。`package.json` 和锁文件依据上游依赖配置调整。没有引入上游的 B1 角色、图像、声音或成片。
+
+改编保留声明式项目、独立镜头缓存、局部预览、素材指纹、媒体编码、联系表和声音/字幕能力；按数学/物理冒险改为可选旁白字幕、可见符号、关节关键帧、相机和高斯波图层，审批只在项目明确要求时启用。上述低层动画不保证原片级表演，也不是任意公式或物理自动求解器。旧 Python/TS 工程保留历史，不作为本版入口或自动制作后端。
+
+## stickman-video-director：0.13 的导演与制作工作流研究
+
+固定研究版本为 [b568219aca9ca33992d902349004472d203c1d71](https://github.com/kaomei/stickman-video-director/tree/b568219aca9ca33992d902349004472d203c1d71)，上游采用 [MIT 许可](https://github.com/kaomei/stickman-video-director/blob/b568219aca9ca33992d902349004472d203c1d71/LICENSE)。本轮参考其导演/制作双模式、逐镜自包含提示词、项目清单、局部预览、片段缓存和实际媒体验收的组织方式。
+
+0.13 当时独立编写了流程与 `scripts/director.py`，调用旧剪辑后端，没有复制上游代码；该方案随后根据用户反馈由 0.14 的上游脚本改编替代。上游的强制口播与字幕、十秒镜长、禁止画内数字、五阶段营销脚本和固定审批规则不作为本项目默认要求。
+
 本轮参考 [huashu-art-motion](https://github.com/alchaincyf/huashu-art-motion) 的工程组织与维护方式，固定研究版本为 [8a0d7d72](https://github.com/alchaincyf/huashu-art-motion/tree/8a0d7d72ca65fcce6f8ba82c4a6c8dfe35b8422c)。参考范围由用户限定为项目结构、维护与脚手架。
 
 | 上游做法 / 文件 | 本项目的落地 |

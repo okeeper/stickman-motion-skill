@@ -1,8 +1,8 @@
 # 参考片的视觉、表演与叙事语法
 
-适用：用户希望制作接近《Animation vs. Math》的火柴人概念冒险。本项目默认沿此方向制作新示例；用户指定的画风、题材、时长和配音要求优先。参考片及实际观察方法见 [设计分析](../docs/design-analysis.md)，身体动作的连续帧观察见 [重量研究](../docs/weight-motion-study.md)。这里沉淀制作判断，不复制原片情节或媒体。
+历史风格参考：本文针对《Animation vs. Math》的概念冒险。现行入口使用 [两片分析](../docs/concept-film-analysis.md) 和 [导演与剧本](concept-story-directing.md)，按题材选择外观和事件；用户指定的风格优先。身体动作的连续帧观察见 [重量研究](../docs/weight-motion-study.md)。
 
-故事开发直接使用 [原片仿写提示词 A/B/C](reference-screenwriting-prompts.md)。本页描述呈现与制作语法，不能用“保留配色、加入反转”替代专用提示词要求的具体场面。
+故事开发以当前导演方法为准；[原片仿写提示词 A/B/C](reference-screenwriting-prompts.md) 为可选的历史配置。
 
 ## 第一判断：知识有没有改变人物的处境
 

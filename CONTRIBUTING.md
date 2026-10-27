@@ -1,44 +1,19 @@
 # 参与贡献
 
-欢迎提供概念机制、原创分镜、动作样片、渲染实现和已验证的改进。
+欢迎为火柴人概念冒险提供原创剧本、可编辑图形和动作、运行时改进及有证据的评价。先说明用户问题、改动、实际验证范围与未验证项目。
 
-## 提交内容
+新故事按 [导演与剧本](references/concept-story-directing.md) 写具体角色、行动、知识反馈和后果；按 [知识机制](references/concept-scene-spec.md) 区分表达式编辑、求值、等价改写与空间隐喻，并说明必要的数学或物理假设。文字、分镜、编码成片、正常速度观片、听审和观众理解测试分别记录；技术检查不证明作品的表演或叙事质量。
 
-请在 Issue 或 Pull Request 中说明具体问题、预期结果、改动与验证方法。动画问题尽量提供时间戳和可公开的复现材料；数学问题需给出定义域、前提及正确推导。
-
-提交样片时说明主题、受众、输入、生成方式和检查结果。区分可运行实现、未经验证的规格和未来计划；避免把样例中的偶然选择变成所有题材的硬性规则。
-
-提交或重写剧本时，按 [电影式主角与因果剧本](references/cinematic-storytelling.md) 核对动机、信息与选择、铺垫回收、动作目的和持续后果。用具体身体行为说明无表情角色的心理，指出明显替代办法为何不可用。文字例稿、动态分镜与已渲染影片分别标注；没有重制媒体时保留旧片规格，不以新文案替换其验证记录。
-
-## 开发检查
-
-按 [README](README.md) 创建开发环境，然后运行：
+改动运行时或其 JSON 接口前，读 [运行时说明](references/autopilot-runtime.md)，保持局部预览与未完成后段隔离、素材指纹与缓存有效性、实际输出保护和可选音轨/字幕。新增能力应以可运行的输入和失败案例验证；项目清单不能执行不可信代码或隐式访问远程地址。
 
 ```sh
+npm ci
 python scripts/validate.py
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -p test_skill_validation.py -v
+node scripts/autopilot.mjs doctor
+npm test
 ```
 
-动画与音频测试需要 `requirements-render.txt`。改动场景后重新渲染对应成片、GIF 和联系表，并运行 `python scripts/check_demo_media.py --report demos/media-check.json`；同步更新规则卡、分镜与 QA 记录。
+运行时测试使用 FFmpeg/ffprobe 和本地合成素材；外部图像和语音适配器通过模拟服务测试，不消耗远程额度。改动可执行脚本时检查一个相关失败输入。改变项目 JSON 字段含义时更新版本策略、说明和测试；不要让旧的缓存或报告看起来像新产物。
 
-修改脚本时，请同时验证正常输入和一个相关失败输入。改动制作方法时，尽可能用真实分镜或样片说明改善，并标明未验证的范围。结构校验无法代替成片审看。
-
-改动 TS 动作工程时，运行 `npm --prefix web ci`、`npm --prefix web run build`、`npm --prefix web test`、`npm --prefix web run test:browser`、`npm --prefix web run test:adventure` 和 `npm --prefix web run format:check`。浏览器配置见 [Web 工程说明](web/README.md)。改动运动模型需覆盖离地/触地边界、骨长、接触、极端参数和任意拖帧；更新对应的实际 MP4、GIF、联系表及 QA，不只提交能编译的动画代码。检查局部导出与声音时，验证原场景时间、裁切处尾音和失败时保留输出。
-
-`SKILL.md` 保留任务入口、关键流程与验收；细节放到 `references/`，可复用的具体示例放到 `examples/`。修改文件位置后同步更新链接。
-
-## 素材与许可
-
-仅提交你有权按本项目 MIT 许可证提供的原创或兼容内容。第三方资料优先提供来源链接；需要纳入第三方文件时，保留来源、许可与必要署名。本地研究媒体、下载元数据、账户信息及机器路径不进入提交。
-
-## 通用工具维护
-
-公共制作工具放在 `scripts/motion_tools/`，命令行参数由 `scripts/motion.py` 路由；题材状态、人物与声音放在 `demo_engine/`。避免给通用模块加入某支影片的颜色、数学内容或质量阈值。
-
-改动时间线、编码或混音时运行 `tests/test_tooling.py` 中的真实 FFmpeg 回归，覆盖混合画幅/帧率、静音片段、变速音高、音轨入点、多段转场、中文软字幕、损坏缓存与失败时的旧文件保留。`doctor` 与依赖缺失属于正常失败路径；CI 必须具备 FFmpeg，不能依靠跳过集成测试宣称通过。
-
-改动 Motion Canvas 工程时，运行 `npm --prefix motion ci`、`npm --prefix motion run build`、`npm --prefix motion test`、`npm --prefix motion run test:browser` 和 `npm --prefix motion run format:check`。修改曲线、公式或求帧适配时核对中间帧、最终 MP4、任意拖帧与局部导出；新增主题说明数学假设。改动共享 `web/scripts/video.mjs` 或 `score.mjs` 时，同时检查原 Canvas 与 Motion Canvas 的实际导出和失败输出保护。
-
-JSON 清单保留 version；改变字段含义时提供版本迁移，更新 references/tooling.md、样例及 CHANGELOG.md。迁移已有独立工程时比较工具目录，保留用户的场景、清单和素材。上游借鉴或复制代码时记录固定版本与许可；风格偏好不能随脚手架一起带入。
-
-改动动作或拟音时，先 `npm --prefix motion run prepare:audio`，再运行 `npm --prefix motion run test:action`；原步态/物理与声音测试也要通过。保持正常速度检查，核对真实落脚、支撑、声音入点、局部尾音与网页播放。下载包和派生 WAV 保持在本地忽略目录，提交准备脚本、来源和许可，不提交参考片媒体。
+修改入口时保持根目录 `SKILL.md` 和 `stickman-motion-skill` 名称；任务相关的详细步骤放在 `references/`。仅分发有权使用的原创或兼容素材，并保留第三方来源和许可证。`analysis/`、`skill-design/` 中的参考片、下载、抽帧、签名地址和本地账户信息不进入提交。

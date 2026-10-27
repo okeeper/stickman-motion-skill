@@ -1,0 +1,4 @@
+interface:
+  display_name: "Stickman Motion Director"
+  short_description: "Direct and render concept-driven stick-figure adventures"
+  default_prompt: "Use $stickman-motion-skill to develop a concept-driven stick-figure adventure and the requested storyboard or video."

@@ -2,7 +2,7 @@
 
 用于调用本 skill 写新故事、改无聊的脚本或准备分镜。方法依据见 [因果剧本](cinematic-storytelling.md)，原片依据见 [情节拆解](../docs/reference-story-analysis.md)。这是 agent 的创作工作法，不是可以自动评价好看程度或一键渲片的程序。
 
-当前默认先使用 [《Animation vs. Math》仿写提示词](reference-screenwriting-prompts.md)：构思用 A，选定故事写脚本用 B，审改用 C。下文负责整理具体事件与制作字段，不把专用配置降为若干可选原则。
+历史工作台：当前默认使用 [导演与剧本](concept-story-directing.md) 和 [分镜与提示词](director-workflow.md)，按题材选择结构；下文保留既有事件和制作字段供参考。
 
 ## 接到任务时
 

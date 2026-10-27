@@ -3,6 +3,7 @@
 /skill-design/
 
 # Generated video projects and local environments
+/node_modules/
 /output/
 /renders/
 .venv/

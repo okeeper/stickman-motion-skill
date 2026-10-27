@@ -1,0 +1,660 @@
+{
+  "version": 1,
+  "style": "concept",
+  "width": 960,
+  "height": 540,
+  "fps": 24,
+  "duration": 6,
+  "background": "#050505",
+  "captions": [],
+  "shots": [
+    {
+      "start": 0,
+      "end": 3,
+      "layers": [
+        {
+          "type": "line",
+          "points": [
+            [
+              120,
+              515
+            ],
+            [
+              1160,
+              515
+            ]
+          ],
+          "color": "#777777",
+          "lineWidth": 2
+        },
+        {
+          "id": "figure",
+          "type": "stick",
+          "x": 430,
+          "y": 495,
+          "color": "#ff8d24",
+          "lineWidth": 9,
+          "radius": 23,
+          "joints": {
+            "head": [
+              0,
+              -132
+            ],
+            "neck": [
+              0,
+              -107
+            ],
+            "hip": [
+              0,
+              -42
+            ],
+            "leftElbow": [
+              -24,
+              -77
+            ],
+            "leftHand": [
+              -38,
+              -48
+            ],
+            "rightElbow": [
+              27,
+              -78
+            ],
+            "rightHand": [
+              40,
+              -42
+            ],
+            "leftKnee": [
+              -24,
+              -20
+            ],
+            "leftFoot": [
+              -38,
+              20
+            ],
+            "rightKnee": [
+              22,
+              -20
+            ],
+            "rightFoot": [
+              40,
+              20
+            ]
+          },
+          "jointsKeys": [
+            {
+              "t": 0,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -24,
+                  -77
+                ],
+                "leftHand": [
+                  -38,
+                  -48
+                ],
+                "rightElbow": [
+                  27,
+                  -78
+                ],
+                "rightHand": [
+                  40,
+                  -42
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            },
+            {
+              "t": 1.0,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -20,
+                  -70
+                ],
+                "leftHand": [
+                  -34,
+                  -38
+                ],
+                "rightElbow": [
+                  31,
+                  -85
+                ],
+                "rightHand": [
+                  58,
+                  -115
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            },
+            {
+              "t": 1.5,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -20,
+                  -70
+                ],
+                "leftHand": [
+                  -34,
+                  -38
+                ],
+                "rightElbow": [
+                  31,
+                  -85
+                ],
+                "rightHand": [
+                  58,
+                  -115
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            },
+            {
+              "t": 2.3,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -24,
+                  -77
+                ],
+                "leftHand": [
+                  -38,
+                  -48
+                ],
+                "rightElbow": [
+                  20,
+                  -65
+                ],
+                "rightHand": [
+                  35,
+                  -48
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "number1",
+          "type": "text",
+          "x": 478,
+          "y": 338,
+          "text": "1",
+          "size": 62,
+          "w": 80,
+          "to": 1.35
+        },
+        {
+          "id": "expr",
+          "type": "text",
+          "x": 478,
+          "y": 338,
+          "text": "1 + 1",
+          "size": 62,
+          "w": 400,
+          "from": 1.35
+        },
+        {
+          "id": "result",
+          "type": "text",
+          "x": 684,
+          "y": 338,
+          "text": "= 2",
+          "size": 62,
+          "w": 200,
+          "from": 1.9
+        }
+      ]
+    },
+    {
+      "start": 3,
+      "end": 6,
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "zoom": 1,
+        "keys": [
+          {
+            "t": 0,
+            "zoom": 0.95
+          },
+          {
+            "t": 2.5,
+            "zoom": 1.05
+          }
+        ]
+      },
+      "layers": [
+        {
+          "id": "baseline",
+          "type": "line",
+          "points": [
+            [
+              300,
+              360
+            ],
+            [
+              1120,
+              360
+            ]
+          ],
+          "color": "#888888",
+          "lineWidth": 2
+        },
+        {
+          "id": "wave",
+          "type": "graph",
+          "x": 300,
+          "y": 360,
+          "w": 820,
+          "domain": [
+            -5,
+            5
+          ],
+          "yScale": 110,
+          "color": "#ffffff",
+          "lineWidth": 4,
+          "showComponents": true,
+          "components": [
+            {
+              "kind": "gaussian",
+              "amplitude": 1,
+              "center": -3,
+              "velocity": 1.5,
+              "sigma": 0.55,
+              "color": "#ff9c50"
+            },
+            {
+              "kind": "gaussian",
+              "amplitude": -1,
+              "center": 3,
+              "velocity": -1.5,
+              "sigma": 0.55,
+              "color": "#6688bb"
+            }
+          ]
+        },
+        {
+          "id": "figure",
+          "type": "stick",
+          "x": 210,
+          "y": 495,
+          "color": "#ff8d24",
+          "lineWidth": 9,
+          "radius": 23,
+          "joints": {
+            "head": [
+              0,
+              -132
+            ],
+            "neck": [
+              0,
+              -107
+            ],
+            "hip": [
+              0,
+              -42
+            ],
+            "leftElbow": [
+              -24,
+              -77
+            ],
+            "leftHand": [
+              -38,
+              -48
+            ],
+            "rightElbow": [
+              27,
+              -78
+            ],
+            "rightHand": [
+              40,
+              -42
+            ],
+            "leftKnee": [
+              -24,
+              -20
+            ],
+            "leftFoot": [
+              -38,
+              20
+            ],
+            "rightKnee": [
+              22,
+              -20
+            ],
+            "rightFoot": [
+              40,
+              20
+            ]
+          },
+          "jointsKeys": [
+            {
+              "t": 0,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -24,
+                  -77
+                ],
+                "leftHand": [
+                  -38,
+                  -48
+                ],
+                "rightElbow": [
+                  27,
+                  -78
+                ],
+                "rightHand": [
+                  40,
+                  -42
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            },
+            {
+              "t": 0.8,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -20,
+                  -70
+                ],
+                "leftHand": [
+                  -34,
+                  -38
+                ],
+                "rightElbow": [
+                  43,
+                  -86
+                ],
+                "rightHand": [
+                  90,
+                  -100
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            },
+            {
+              "t": 2.0,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -20,
+                  -70
+                ],
+                "leftHand": [
+                  -34,
+                  -38
+                ],
+                "rightElbow": [
+                  43,
+                  -86
+                ],
+                "rightHand": [
+                  90,
+                  -100
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            },
+            {
+              "t": 2.9,
+              "joints": {
+                "head": [
+                  0,
+                  -132
+                ],
+                "neck": [
+                  0,
+                  -107
+                ],
+                "hip": [
+                  0,
+                  -42
+                ],
+                "leftElbow": [
+                  -24,
+                  -77
+                ],
+                "leftHand": [
+                  -38,
+                  -48
+                ],
+                "rightElbow": [
+                  20,
+                  -65
+                ],
+                "rightHand": [
+                  35,
+                  -48
+                ],
+                "leftKnee": [
+                  -24,
+                  -20
+                ],
+                "leftFoot": [
+                  -38,
+                  20
+                ],
+                "rightKnee": [
+                  22,
+                  -20
+                ],
+                "rightFoot": [
+                  40,
+                  20
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "time": 1.4,
+      "kind": "tap",
+      "gain": 0.08
+    },
+    {
+      "time": 1.9,
+      "kind": "chime",
+      "gain": 0.05
+    },
+    {
+      "time": 5.0,
+      "kind": "paper",
+      "gain": 0.015
+    }
+  ],
+  "notes": {
+    "purpose": "Original technical fixture, not a narrative film or proof of visual quality.",
+    "math": "The first shot changes expression then displays its value. The second sums ideal Gaussian pulses with equal and opposite amplitudes."
+  }
+}
