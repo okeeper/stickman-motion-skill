@@ -1,6 +1,6 @@
 # 自动制作运行时
 
-`node scripts/autopilot.mjs` 改编自 [stickman-video-director](../docs/upstream-reuse.md)，在本 skill 中独立运行：加载 JSON 清单、检查依赖及素材、按镜头渲染、缓存、混音、生成联系表和媒体报告。它不自行把主题变成剧本或自动生成高质量表演；agent 必须创作故事、对象、姿态、图形和声画时间。普通文字任务无需运行或安装。
+`node scripts/autopilot.mjs` 改编自 [stickman-video-director](../docs/upstream-reuse.md)，在本 skill 中独立运行：加载 JSON 清单、检查依赖及素材、按镜头渲染、缓存、混音、生成联系表和媒体报告。它是辅助工具，不是参考片级动画引擎：关节点独立插值，没有自动骨长保持、接触约束、动作规划或表演生成；默认合成音效也无法替代完整拟音和混音。agent 必须创作故事、对象、逐镜动作、图形和声画时间，并以实际试片判断是否适合该镜。普通文字任务无需运行或安装。
 
 ## 命令
 
