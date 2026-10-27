@@ -8,6 +8,19 @@ An Agent Skill for wordless stick-figure adventures where knowledge becomes an i
 
 [技能入口](SKILL.md) · [设计分析](docs/design-analysis.md) · [制作与复现](demos/README.md) · [验证记录](demos/QA.md) · [参与贡献](CONTRIBUTING.md)
 
+## 0.10.0：把原片的故事设计沉淀为编剧方法
+
+重新拆解 [原片的悬念、对象变化、对抗与后段回收](docs/reference-story-analysis.md)，重写 [剧本开发方法](references/cinematic-storytelling.md)，新增 [快速剧本工作台](references/story-workbench.md)。新故事先写因果梗概与观众期待，再写动作分镜、铺垫回收与规则边界。
+
+当前三支 0.9.0 视频保留为工程与动作样片；用户已反馈剧本不足，具体复盘见 [三片回看](docs/reference-story-analysis.md#9-对本项目三个-demo-的回看)。后续创作不能仅复用“发现机关—试用—熟练完成”的走向。该轮更新是编剧方法与文档，尚未通过新成片或观众测试验证叙事效果。
+
+```text
+使用 $stickman-motion-skill，围绕【主题】写一支【大致片长】的无台词故事。
+先设计异常现象、人物选择和世界回应，让核心概念决定重要转折，
+同一对象或规则在后段获得新的作用。按剧本工作台交付因果梗概、
+制作分镜、铺垫回收与规则边界，先修正最弱的重复或无来源转折。
+```
+
 ## 0.9.0：先有疑问，再发现规则
 
 三支 demo 已按 [探索剧本](examples/demo-redesign.md) 重新制作。**TypeScript / Motion Canvas · 250 秒 / 15000 帧 · 720p / 60 fps · 无台词、有声**。从一个陌生对象开始，角色靠观察、触碰、判断和身体行动逐步理解世界；原有的出口、电芯和预铺关卡已移除。

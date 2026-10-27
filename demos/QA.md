@@ -2,6 +2,8 @@
 
 对应 **0.9.0 / 2026-10-26**，使用 Node.js 22.22、Motion Canvas 3.17.2、Playwright / Chromium 和 FFmpeg。三支故事重新制作，当前文件不再是 0.8.0 的短版。
 
+2026-10-27 用户明确反馈剧本不足。现有技术检查记录不代表叙事获认可；问题与后续编剧方法见 [三片回看](../docs/reference-story-analysis.md#9-对本项目三个-demo-的回看)。
+
 ## 实际编码文件
 
 三支均经过 ffprobe 读帧统计与 FFmpeg 全部音视频解码，H.264 / yuv420p、1280×720 / 60 fps、48 kHz 双声道 AAC。以 2560×1440 绘制再 Lanczos 缩小；MP4 使用 faststart。
