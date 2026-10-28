@@ -10,6 +10,7 @@ export async function openLab(scene = "trace") {
       "binary-search",
       "complex-rotation",
       "newton",
+      "newton-v2",
     ].includes(scene)
   )
     throw new Error("Unknown local scene");

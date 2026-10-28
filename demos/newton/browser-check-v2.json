@@ -1,0 +1,33 @@
+{
+  "film": "怎么又是这里 · 重新探索",
+  "duration": 82,
+  "framesChecked": 164,
+  "keyframes": [
+    0,
+    4,
+    7.5,
+    11,
+    12.7,
+    17.9,
+    21.8,
+    25.15,
+    25.65,
+    26.2,
+    26.7,
+    36,
+    43,
+    49.5,
+    58.9,
+    62,
+    66.8,
+    68,
+    71,
+    74.7,
+    79
+  ],
+  "deterministicSeeks": true,
+  "audioReady": true,
+  "defaultSpeed": 1,
+  "errors": [],
+  "externalRequests": []
+}

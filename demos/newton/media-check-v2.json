@@ -1,0 +1,17 @@
+[
+  {
+    "file": "newton-v2.mp4",
+    "sha256": "4477f912938ed5da7680da8ab197706dec5e6a12e95c604a75fa6bb474df13c4",
+    "duration": 82.0,
+    "fps": 60.0,
+    "frames": 4920,
+    "video": "h264",
+    "pixel_format": "yuv420p",
+    "audio": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "decoded_peak_dbfs": -7.49,
+    "bytes": 6279847,
+    "decode": "pass"
+  }
+]

@@ -12,8 +12,8 @@ import tempfile
 def initialize(destination: Path, scene: str = "adventure", engine: str = "canvas") -> Path:
     if engine not in {"canvas", "motion-canvas"}:
         raise ValueError("engine must be canvas or motion-canvas")
-    if (engine == "canvas" and scene not in {"adventure", "weight"}) or (engine == "motion-canvas" and scene not in {"trace", "action", "negative-ride", "binary-search", "complex-rotation", "newton"}):
-        raise ValueError("canvas supports adventure/weight; motion-canvas supports trace/action/negative-ride/binary-search/complex-rotation/newton")
+    if (engine == "canvas" and scene not in {"adventure", "weight"}) or (engine == "motion-canvas" and scene not in {"trace", "action", "negative-ride", "binary-search", "complex-rotation", "newton", "newton-v2"}):
+        raise ValueError("canvas supports adventure/weight; motion-canvas supports trace/action/negative-ride/binary-search/complex-rotation/newton/newton-v2")
     destination = destination.expanduser().resolve()
     if destination.exists():
         raise ValueError(f"Destination already exists: {destination}")
@@ -44,7 +44,7 @@ def initialize(destination: Path, scene: str = "adventure", engine: str = "canva
             for folder in ("src", "scripts", "tests", "public"):
                 shutil.copytree(source / "motion" / folder, motion / folder,
                                 ignore=shutil.ignore_patterns("*.wav", "bank-local.json", "__pycache__", ".DS_Store"))
-            for name in ("package.json", "package-lock.json", "tsconfig.json", "tsconfig.test.json", "vite.config.ts", "preview.html", "action.html", "negative-ride.html", "binary-search.html", "complex-rotation.html", "newton.html"):
+            for name in ("package.json", "package-lock.json", "tsconfig.json", "tsconfig.test.json", "vite.config.ts", "preview.html", "action.html", "negative-ride.html", "binary-search.html", "complex-rotation.html", "newton.html", "newton-v2.html"):
                 shutil.copy2(source / "motion" / name, motion / name)
             (staging / "scripts").mkdir()
             shutil.copy2(source / "scripts/prepare_audio.py", staging / "scripts/prepare_audio.py")
@@ -141,7 +141,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path)
     parser.add_argument("--engine", choices=("canvas", "motion-canvas"))
-    parser.add_argument("--scene", choices=("adventure", "weight", "trace", "action", "negative-ride", "binary-search", "complex-rotation", "newton"))
+    parser.add_argument("--scene", choices=("adventure", "weight", "trace", "action", "negative-ride", "binary-search", "complex-rotation", "newton", "newton-v2"))
     args = parser.parse_args()
     try:
         # Existing explicit --scene adventure/weight invocations remain compatible.

@@ -2,9 +2,12 @@ import assert from "node:assert/strict";
 import { mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { openLab } from "./browser.mjs";
-const lab = await openLab("newton");
+const scene = process.argv[2] ?? "newton";
+if (!["newton", "newton-v2"].includes(scene))
+  throw new Error("Unknown Newton scene");
+const lab = await openLab(scene);
 try {
-  const folder = "test-results/newton";
+  const folder = `test-results/${scene}`;
   await mkdir(folder, { recursive: true });
   const info = await lab.page.evaluate(() => window.__MOTION__.info());
   assert.equal(info.duration, 82);

@@ -10,7 +10,7 @@ import shutil
 import subprocess
 from pathlib import Path
 import numpy as np
-EXPECTED = {"negative-ride": 75, "binary-search": 85, "complex-rotation": 90, "newton": 82}
+EXPECTED = {"negative-ride": 75, "binary-search": 85, "complex-rotation": 90, "newton": 82, "newton-v2": 82}
 SCENES = ("negative-ride", "binary-search", "complex-rotation")
 
 

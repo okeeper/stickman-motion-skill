@@ -14,9 +14,10 @@ TIMES = {
     "negative-ride": [0,4.8,12.9,14,17,34.7,37,44.2,60.7,61.14,61.5,70],
     "binary-search": [0,5,12,16,22.9,28.6,33.1,38.5,45.6,51.3,68,77.2],
     "newton": [0,4,11,12.7,21.8,25.65,26.7,43,49.5,58.9,68,79],
+    "newton-v2": [0,3.45,4.5,6.7,8.2,14.35,19.6,21.8,25.3,26.55,49.5,68],
     "complex-rotation": [0,6,12.8,13.7,20,32.5,41.5,55.4,73.8,74.8,77,88],
 }
-COVERS = {"newton": 68, "negative-ride": 61.5, "binary-search": 72, "complex-rotation": 32.5}
+COVERS = {"newton-v2": 7, "newton": 68, "negative-ride": 61.5, "binary-search": 72, "complex-rotation": 32.5}
 
 
 def frame(video: Path, t: float) -> Image.Image:

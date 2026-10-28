@@ -1,0 +1,2294 @@
+{
+  "file": "newton-v2.mp4",
+  "scene": "newton-v2",
+  "fps": 60,
+  "frames": 4920,
+  "duration": 82,
+  "width": 1280,
+  "height": 720,
+  "resolutionScale": 2,
+  "audio": {
+    "sampleRate": 48000,
+    "channels": 2,
+    "peakDbfs": -7.548070799677226,
+    "rmsDbfs": -41.96561132573051,
+    "clippedSamples": 0,
+    "sourceFrom": 0,
+    "layers": [
+      "licensed-foley",
+      "cloth-air-breath",
+      "world",
+      "original-score"
+    ],
+    "cues": 237,
+    "assetLicense": "CC0-1.0",
+    "preparedBankSHA256": "c876c2671c710d5e0fa65ac7df9341aae90a28ea0d4925d276599db6c41f5ff0",
+    "sampleBankSHA256": "d9487f421fbc946ad7345cfd2064179ca8bbd699b46c8801cb415cb6fa03d801"
+  },
+  "clips": [
+    {
+      "title": "怎么又是这里 · 重新探索",
+      "duration": 82,
+      "width": 1280,
+      "height": 720,
+      "fps": 60,
+      "id": "newton-v2",
+      "cues": [
+        {
+          "id": "v2-entry-0",
+          "t": 0.34,
+          "kind": "footstep",
+          "x": -0.9892926829268293,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1
+        },
+        {
+          "id": "n-first-scrape",
+          "t": 0.55,
+          "kind": "shoe-grip",
+          "strength": 0.4,
+          "x": 0,
+          "pan": -0.13916294617754588
+        },
+        {
+          "id": "v2-entry-1",
+          "t": 0.68,
+          "kind": "footstep",
+          "x": -0.7736829268292682,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0
+        },
+        {
+          "id": "n-music-0-0",
+          "t": 1,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.2,
+          "duration": 1.5
+        },
+        {
+          "id": "v2-entry-2",
+          "t": 1.02,
+          "kind": "footstep",
+          "x": -0.5580731707317071,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1
+        },
+        {
+          "id": "v2-entry-3",
+          "t": 1.36,
+          "kind": "footstep",
+          "x": -0.3424634146341462,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0
+        },
+        {
+          "id": "v2-entry-4",
+          "t": 1.7000000000000002,
+          "kind": "footstep",
+          "x": -0.12685365853658515,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1
+        },
+        {
+          "id": "v2-entry-5",
+          "t": 2.04,
+          "kind": "footstep",
+          "x": 0.04341770840663428,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0
+        },
+        {
+          "id": "n-music-0-1",
+          "t": 2.3,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 1.5
+        },
+        {
+          "id": "v2-entry-settle",
+          "t": 2.52,
+          "kind": "footstep",
+          "x": 0,
+          "strength": 0.35,
+          "gait": "walk"
+        },
+        {
+          "id": "v2-first-touch",
+          "t": 3.45,
+          "kind": "hand",
+          "strength": 0.38,
+          "x": 0,
+          "pan": -0.2643308178378091
+        },
+        {
+          "id": "v2-response",
+          "t": 3.48,
+          "kind": "turn",
+          "strength": 0.22,
+          "duration": 0.22,
+          "x": 0,
+          "pan": -0.26530433646739604
+        },
+        {
+          "id": "n-music-0-2",
+          "t": 3.5999999999999996,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.2,
+          "duration": 1.5
+        },
+        {
+          "id": "v2-recoil",
+          "t": 4.25,
+          "kind": "cloth",
+          "strength": 0.25,
+          "duration": 0.3,
+          "x": 0,
+          "pan": -0.29098317499708204
+        },
+        {
+          "id": "n-music-0-3",
+          "t": 4.8999999999999995,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.2,
+          "duration": 1.5
+        },
+        {
+          "id": "n-music-0-4",
+          "t": 6.199999999999999,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.2,
+          "duration": 1.5
+        },
+        {
+          "id": "v2-second-touch",
+          "t": 6.35,
+          "kind": "hand",
+          "strength": 0.3,
+          "x": 0,
+          "pan": -0.3497941224923394
+        },
+        {
+          "id": "v2-pull",
+          "t": 6.45,
+          "kind": "slide",
+          "strength": 0.25,
+          "duration": 1.4,
+          "x": 0,
+          "pan": -0.3517059818531324
+        },
+        {
+          "id": "n-music-0-5",
+          "t": 7.499999999999999,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.2,
+          "duration": 1.5
+        },
+        {
+          "id": "v2-release",
+          "t": 8.12,
+          "kind": "reveal",
+          "strength": 0.34,
+          "duration": 0.45,
+          "x": 0,
+          "pan": -0.3671649260096218
+        },
+        {
+          "id": "n-music-0-6",
+          "t": 8.799999999999999,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.2,
+          "duration": 1.5
+        },
+        {
+          "id": "n-rail-0",
+          "t": 12,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.5,
+          "x": 0,
+          "pan": -0.3
+        },
+        {
+          "id": "n-click-0",
+          "t": 13.5,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": 2.9999999999999996,
+          "pan": 0.3041312366089287
+        },
+        {
+          "id": "n-stop-0",
+          "t": 13.535,
+          "kind": "footstep",
+          "strength": 0.4,
+          "x": 2.9999999999999996,
+          "pan": 0.3043852025930625
+        },
+        {
+          "id": "n-music-1-0",
+          "t": 13.7,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "v2-arrival-touch",
+          "t": 14.35,
+          "kind": "hand",
+          "strength": 0.28,
+          "x": 3,
+          "pan": 0.38103384946231816
+        },
+        {
+          "id": "n-music-1-1",
+          "t": 14.399999999999999,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "n-music-1-2",
+          "t": 15.099999999999998,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "n-music-1-3",
+          "t": 15.799999999999997,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "n-lift-1",
+          "t": 16.2,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 3,
+          "pan": 0.3375522434408991
+        },
+        {
+          "id": "n-music-2-0",
+          "t": 17,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-rail-1",
+          "t": 17.2,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": 3,
+          "pan": 0.3468641219351417
+        },
+        {
+          "id": "n-music-2-1",
+          "t": 17.55,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-music-2-2",
+          "t": 18.1,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-click-1",
+          "t": 18.55,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -1.3322676295501878e-15,
+          "pan": -0.2500000000000003
+        },
+        {
+          "id": "n-stop-1",
+          "t": 18.585,
+          "kind": "footstep",
+          "strength": 0.4,
+          "x": -1.2606687093841594e-15,
+          "pan": -0.25000015811030174
+        },
+        {
+          "id": "n-music-2-3",
+          "t": 18.650000000000002,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-music-2-4",
+          "t": 19.200000000000003,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "v2-first-mark-touch",
+          "t": 19.6,
+          "kind": "hand",
+          "strength": 0.26,
+          "x": 0,
+          "pan": -0.30850659812439224
+        },
+        {
+          "id": "n-recognize",
+          "t": 19.7,
+          "kind": "breath",
+          "strength": 0.4,
+          "duration": 0.4,
+          "x": 0,
+          "pan": -0.25375736121209946
+        },
+        {
+          "id": "n-music-2-5",
+          "t": 19.750000000000004,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-music-2-6",
+          "t": 20.300000000000004,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-music-2-7",
+          "t": 20.850000000000005,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-music-2-8",
+          "t": 21.400000000000006,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "v2-mark-again",
+          "t": 21.8,
+          "kind": "knock",
+          "strength": 0.4,
+          "x": 0,
+          "pan": -0.3415544908323028
+        },
+        {
+          "id": "n-music-2-9",
+          "t": 21.950000000000006,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-music-2-10",
+          "t": 22.500000000000007,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.16,
+          "duration": 0.77
+        },
+        {
+          "id": "n-lift-2",
+          "t": 23.2,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 0,
+          "pan": -0.2857142857142857
+        },
+        {
+          "id": "n-music-3-0",
+          "t": 24,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "n-rail-2",
+          "t": 24.2,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": 0,
+          "pan": -0.34337899543378997
+        },
+        {
+          "id": "n-music-3-1",
+          "t": 24.32,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "n-push-back",
+          "t": 24.6,
+          "kind": "cloth",
+          "strength": 0.65,
+          "duration": 0.45,
+          "x": 0.47464409658520124,
+          "pan": -0.3171991129249981
+        },
+        {
+          "id": "n-music-3-2",
+          "t": 24.64,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "n-music-3-3",
+          "t": 24.96,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "newton-escape-grip",
+          "t": 25.06,
+          "kind": "shoe-grip",
+          "x": 2.5253559034147988,
+          "strength": 0.65,
+          "pan": -0.03329828687265451
+        },
+        {
+          "id": "newton-escape-air",
+          "t": 25.15,
+          "kind": "whoosh",
+          "x": 2.5253559034147988,
+          "strength": 0.65,
+          "duration": 0.2,
+          "pan": -0.047196764035051665
+        },
+        {
+          "id": "v2-fragment-release",
+          "t": 25.15,
+          "kind": "cloth",
+          "strength": 0.35,
+          "duration": 0.2,
+          "x": 2.5253559034147988,
+          "pan": -0.05755702931103862
+        },
+        {
+          "id": "n-music-3-4",
+          "t": 25.28,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "n-click-2",
+          "t": 25.55,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": 3.439641617700518,
+          "pan": 0.060747692957425166
+        },
+        {
+          "id": "n-music-3-5",
+          "t": 25.6,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "n-music-3-6",
+          "t": 25.92,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "newton-escape-land",
+          "t": 26.2,
+          "kind": "landing",
+          "x": 4.925355903414799,
+          "strength": 0.8,
+          "pan": 0.28755931723579975
+        },
+        {
+          "id": "n-music-3-7",
+          "t": 26.240000000000002,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "n-lift-3",
+          "t": 26.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 4.9378467642002395,
+          "pan": 0.2896476124576523
+        },
+        {
+          "id": "v2-fall-palm",
+          "t": 26.5,
+          "kind": "hand",
+          "strength": 0.65,
+          "x": 4.963110724755369,
+          "pan": 0.358381827725447
+        },
+        {
+          "id": "n-music-3-8",
+          "t": 26.560000000000002,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "v2-fall-body",
+          "t": 26.7,
+          "kind": "body",
+          "strength": 0.65,
+          "x": 5.044968042614838,
+          "pan": 0.3751074620532093
+        },
+        {
+          "id": "n-roll-cloth",
+          "t": 26.8,
+          "kind": "cloth",
+          "strength": 0.6,
+          "duration": 0.6,
+          "x": 5.086856174090519,
+          "pan": 0.3146330923760908
+        },
+        {
+          "id": "n-music-3-9",
+          "t": 26.880000000000003,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.23,
+          "duration": 0.44799999999999995
+        },
+        {
+          "id": "n-rail-3",
+          "t": 27.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": 5.4357437642147595,
+          "pan": 0.3736798547433056
+        },
+        {
+          "id": "n-recover",
+          "t": 28,
+          "kind": "breath",
+          "strength": 0.6,
+          "duration": 0.5,
+          "x": 5.4753559034147985,
+          "pan": 0.38217653289413916
+        },
+        {
+          "id": "n-click-3",
+          "t": 28.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": 5.4753559034147985,
+          "pan": 0.38569177348525163
+        },
+        {
+          "id": "n-lift-4",
+          "t": 29.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 5.4753559034147985,
+          "pan": 0.3891642017305689
+        },
+        {
+          "id": "n-rail-4",
+          "t": 30.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": 5.4753559034147985,
+          "pan": 0.39368184641899334
+        },
+        {
+          "id": "n-click-4",
+          "t": 31.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": 5.4753559034147985,
+          "pan": 0.3958801516105763
+        },
+        {
+          "id": "newton-pickup-0",
+          "t": 32.34,
+          "kind": "footstep",
+          "x": 5.186802323127879,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.34780038718797984
+        },
+        {
+          "id": "n-lift-5",
+          "t": 32.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 5.315505701555843,
+          "pan": 0.3692509502593071
+        },
+        {
+          "id": "newton-pickup-1",
+          "t": 32.68,
+          "kind": "footstep",
+          "x": 4.989169346284079,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.3148615577140132
+        },
+        {
+          "id": "newton-pickup-2",
+          "t": 33.02,
+          "kind": "footstep",
+          "x": 4.791536369440278,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.2819227282400463
+        },
+        {
+          "id": "newton-pickup-3",
+          "t": 33.36,
+          "kind": "footstep",
+          "x": 4.593903392596478,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.24898389876607965
+        },
+        {
+          "id": "n-rail-5",
+          "t": 33.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": 4.734232240250547,
+          "pan": 0.2723720400417578
+        },
+        {
+          "id": "newton-pickup-4",
+          "t": 33.7,
+          "kind": "footstep",
+          "x": 4.3975767268362835,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.21626278780604724
+        },
+        {
+          "id": "n-music-4-0",
+          "t": 34,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-click-5",
+          "t": 34.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": 4.4,
+          "pan": 0.2166666666666667
+        },
+        {
+          "id": "n-music-4-1",
+          "t": 34.8,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-pick-piece",
+          "t": 35.1,
+          "kind": "hand",
+          "strength": 0.3,
+          "x": 4.4,
+          "pan": 0.2166666666666667
+        },
+        {
+          "id": "n-lift-6",
+          "t": 35.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 4.4,
+          "pan": 0.2166666666666667
+        },
+        {
+          "id": "n-music-4-2",
+          "t": 35.599999999999994,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-music-4-3",
+          "t": 36.39999999999999,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-rail-6",
+          "t": 36.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": 4.4,
+          "pan": 0.2166666666666667
+        },
+        {
+          "id": "n-music-4-4",
+          "t": 37.19999999999999,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-click-6",
+          "t": 37.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": 4.4,
+          "pan": 0.2166666666666667
+        },
+        {
+          "id": "n-hook-axis",
+          "t": 37.8,
+          "kind": "latch",
+          "strength": 0.3,
+          "x": 4.4,
+          "pan": 0.2166666666666667
+        },
+        {
+          "id": "n-music-4-5",
+          "t": 37.999999999999986,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-0",
+          "t": 38.34,
+          "kind": "footstep",
+          "x": 3.8420424242424245,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": 0.1241074078548453
+        },
+        {
+          "id": "n-lift-7",
+          "t": 38.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 4.063333333333335,
+          "pan": 0.16124053953688824
+        },
+        {
+          "id": "newton-unfold-1",
+          "t": 38.68,
+          "kind": "footstep",
+          "x": 3.4258,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": 0.057671499647097016
+        },
+        {
+          "id": "n-music-4-6",
+          "t": 38.79999999999998,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-2",
+          "t": 39.02,
+          "kind": "footstep",
+          "x": 3.009557575757576,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.004074038747426815
+        },
+        {
+          "id": "newton-unfold-3",
+          "t": 39.36,
+          "kind": "footstep",
+          "x": 2.5933151515151516,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.05939177501823192
+        },
+        {
+          "id": "n-rail-7",
+          "t": 39.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": 2.839090909090911,
+          "pan": -0.01691665000147104
+        },
+        {
+          "id": "n-music-4-7",
+          "t": 39.59999999999998,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-4",
+          "t": 39.7,
+          "kind": "footstep",
+          "x": 2.1770727272727277,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.10708988645409555
+        },
+        {
+          "id": "n-space-unroll",
+          "t": 40,
+          "kind": "slide",
+          "strength": 0.18,
+          "duration": 5,
+          "x": 2.104545454545455,
+          "pan": -0.09481815261076025
+        },
+        {
+          "id": "newton-unfold-5",
+          "t": 40.04,
+          "kind": "footstep",
+          "x": 1.760830303030303,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.14657671345397139
+        },
+        {
+          "id": "newton-unfold-6",
+          "t": 40.38,
+          "kind": "footstep",
+          "x": 1.344587878787879,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.17785802722479005
+        },
+        {
+          "id": "n-music-4-8",
+          "t": 40.39999999999998,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-7",
+          "t": 40.72,
+          "kind": "footstep",
+          "x": 0.9283454545454548,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.20147727534463308
+        },
+        {
+          "id": "n-click-7",
+          "t": 40.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": 1.1863636363636365,
+          "pan": -0.15745569632462425
+        },
+        {
+          "id": "newton-unfold-8",
+          "t": 41.06,
+          "kind": "footstep",
+          "x": 0.512103030303031,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.2184119472524754
+        },
+        {
+          "id": "n-music-4-9",
+          "t": 41.199999999999974,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-9",
+          "t": 41.4,
+          "kind": "footstep",
+          "x": 0.0958606060606062,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.22994641149845632
+        },
+        {
+          "id": "n-lift-8",
+          "t": 41.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": 0.3906060606060624,
+          "pan": -0.18604785342703556
+        },
+        {
+          "id": "newton-unfold-10",
+          "t": 41.74,
+          "kind": "footstep",
+          "x": -0.32038181818181766,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.2375422349699616
+        },
+        {
+          "id": "n-music-4-10",
+          "t": 41.99999999999997,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-11",
+          "t": 42.08,
+          "kind": "footstep",
+          "x": -0.7366242424242415,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.24272255605146037
+        },
+        {
+          "id": "n-rail-8",
+          "t": 42.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": -0.8336363636363622,
+          "pan": -0.20578931089948657
+        },
+        {
+          "id": "newton-unfold-12",
+          "t": 42.42,
+          "kind": "footstep",
+          "x": -1.1528666666666654,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.24698018842050484
+        },
+        {
+          "id": "newton-unfold-13",
+          "t": 42.76,
+          "kind": "footstep",
+          "x": -1.5691090909090892,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.2517122775242586
+        },
+        {
+          "id": "n-music-4-11",
+          "t": 42.79999999999997,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-14",
+          "t": 43.1,
+          "kind": "footstep",
+          "x": -1.985351515151514,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.2581790708769271
+        },
+        {
+          "id": "newton-unfold-15",
+          "t": 43.44,
+          "kind": "footstep",
+          "x": -2.401593939393938,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.2674811802232177
+        },
+        {
+          "id": "n-music-4-12",
+          "t": 43.599999999999966,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-click-8",
+          "t": 43.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -2.486363636363637,
+          "pan": -0.24148371818914355
+        },
+        {
+          "id": "newton-unfold-16",
+          "t": 43.78,
+          "kind": "footstep",
+          "x": -2.8178363636363617,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.28054833474289764
+        },
+        {
+          "id": "newton-unfold-17",
+          "t": 44.12,
+          "kind": "footstep",
+          "x": -3.2340787878787864,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.2981324418990874
+        },
+        {
+          "id": "n-music-4-13",
+          "t": 44.39999999999996,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-lift-9",
+          "t": 44.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": -3.2821212121212113,
+          "pan": -0.2796774385998102
+        },
+        {
+          "id": "newton-unfold-18",
+          "t": 44.46,
+          "kind": "footstep",
+          "x": -3.6503212121212094,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.3207981731816954
+        },
+        {
+          "id": "newton-unfold-19",
+          "t": 44.8,
+          "kind": "footstep",
+          "x": -4.066563636363634,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.3489048381664845
+        },
+        {
+          "id": "newton-unfold-20",
+          "t": 45.14,
+          "kind": "footstep",
+          "x": -4.482806060606057,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.38257381031207716
+        },
+        {
+          "id": "n-music-4-14",
+          "t": 45.19999999999996,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "n-rail-9",
+          "t": 45.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": -4.506363636363634,
+          "pan": -0.3760815315651261
+        },
+        {
+          "id": "newton-unfold-21",
+          "t": 45.48,
+          "kind": "footstep",
+          "x": -4.899048484848482,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.42163630285304443
+        },
+        {
+          "id": "newton-unfold-22",
+          "t": 45.82,
+          "kind": "footstep",
+          "x": -5.315290909090905,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.4655572529383493
+        },
+        {
+          "id": "n-music-4-15",
+          "t": 45.99999999999996,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.2,
+          "duration": 1.1199999999999999
+        },
+        {
+          "id": "newton-unfold-23",
+          "t": 46.16,
+          "kind": "footstep",
+          "x": -5.70912965842075,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.5106171784182597
+        },
+        {
+          "id": "n-click-9",
+          "t": 46.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -5.7,
+          "pan": -0.5089720310547748
+        },
+        {
+          "id": "n-lift-10",
+          "t": 47.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": -5.7,
+          "pan": -0.5043341862196765
+        },
+        {
+          "id": "n-left-branch",
+          "t": 47.8,
+          "kind": "reveal",
+          "strength": 0.2,
+          "duration": 0.5,
+          "x": -5.7,
+          "pan": -0.4960331638947838
+        },
+        {
+          "id": "n-music-5-0",
+          "t": 48,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.16,
+          "duration": 1.5
+        },
+        {
+          "id": "n-rail-10",
+          "t": 48.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": -5.7,
+          "pan": -0.47354277352131935
+        },
+        {
+          "id": "n-music-5-1",
+          "t": 49.1,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.16,
+          "duration": 1.5
+        },
+        {
+          "id": "n-probe",
+          "t": 49.5,
+          "kind": "hand",
+          "strength": 0.3,
+          "x": -5.7,
+          "pan": -0.4001178290089506
+        },
+        {
+          "id": "n-click-10",
+          "t": 49.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -5.7,
+          "pan": -0.3785714285714286
+        },
+        {
+          "id": "n-music-5-2",
+          "t": 50.2,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.16,
+          "duration": 1.5
+        },
+        {
+          "id": "n-lift-11",
+          "t": 50.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": -5.7,
+          "pan": -0.31848890518980394
+        },
+        {
+          "id": "n-small-answer",
+          "t": 51,
+          "kind": "reveal",
+          "strength": 0.2,
+          "duration": 0.3,
+          "x": -5.7,
+          "pan": -0.2648260335104649
+        },
+        {
+          "id": "n-music-5-3",
+          "t": 51.300000000000004,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.16,
+          "duration": 1.5
+        },
+        {
+          "id": "n-rail-11",
+          "t": 51.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": -5.7,
+          "pan": -0.23479092033055562
+        },
+        {
+          "id": "v2-retest",
+          "t": 51.6,
+          "kind": "hand",
+          "strength": 0.23,
+          "x": -5.7,
+          "pan": -0.2648308878334802
+        },
+        {
+          "id": "n-music-5-4",
+          "t": 52.400000000000006,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.16,
+          "duration": 1.5
+        },
+        {
+          "id": "n-click-11",
+          "t": 52.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -5.7,
+          "pan": -0.19154897341364574
+        },
+        {
+          "id": "n-lift-12",
+          "t": 53.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": -5.7,
+          "pan": -0.1949748822090562
+        },
+        {
+          "id": "n-music-5-5",
+          "t": 53.50000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.16,
+          "duration": 1.5
+        },
+        {
+          "id": "n-rail-12",
+          "t": 54.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": -5.7,
+          "pan": -0.30428713777605454
+        },
+        {
+          "id": "n-music-6-0",
+          "t": 55.4,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "newton-return-0",
+          "t": 55.74,
+          "kind": "footstep",
+          "x": -4.817000000000001,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.5326157887375997
+        },
+        {
+          "id": "n-click-12",
+          "t": 55.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -5.249999999999998,
+          "pan": -0.6100234750147657
+        },
+        {
+          "id": "n-music-6-1",
+          "t": 55.75,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "newton-return-1",
+          "t": 56.08,
+          "kind": "footstep",
+          "x": -4.137000000000002,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.521371232004477
+        },
+        {
+          "id": "n-music-6-2",
+          "t": 56.1,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "n-lift-13",
+          "t": 56.4,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": -3.950000000000003,
+          "pan": -0.57906162641715
+        },
+        {
+          "id": "newton-return-2",
+          "t": 56.42,
+          "kind": "footstep",
+          "x": -3.457000000000004,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.5001997621710186
+        },
+        {
+          "id": "n-music-6-3",
+          "t": 56.45,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "newton-return-3",
+          "t": 56.76,
+          "kind": "footstep",
+          "x": -2.7770000000000046,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.4632573524201327
+        },
+        {
+          "id": "n-music-6-4",
+          "t": 56.800000000000004,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "newton-return-4",
+          "t": 57.1,
+          "kind": "footstep",
+          "x": -2.0970000000000057,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.40652154905060633
+        },
+        {
+          "id": "n-music-6-5",
+          "t": 57.150000000000006,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "n-rail-13",
+          "t": 57.4,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3500000000000014,
+          "x": -1.950000000000006,
+          "pan": -0.4155948916234932
+        },
+        {
+          "id": "newton-return-5",
+          "t": 57.44,
+          "kind": "footstep",
+          "x": -1.417000000000006,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.3284997936621418
+        },
+        {
+          "id": "n-music-6-6",
+          "t": 57.50000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "newton-return-6",
+          "t": 57.78,
+          "kind": "footstep",
+          "x": -0.7381722024960071,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.23117183262844893
+        },
+        {
+          "id": "n-music-6-7",
+          "t": 57.85000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "newton-return-7",
+          "t": 58.12,
+          "kind": "footstep",
+          "x": -0.5549999999999988,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.2042058143177657
+        },
+        {
+          "id": "n-music-6-8",
+          "t": 58.20000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "newton-return-settle",
+          "t": 58.42,
+          "kind": "footstep",
+          "x": -0.6,
+          "strength": 0.35,
+          "gait": "walk",
+          "pan": -0.21152051976854294
+        },
+        {
+          "id": "n-music-6-9",
+          "t": 58.55000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.22,
+          "duration": 0.48999999999999994
+        },
+        {
+          "id": "n-click-13",
+          "t": 58.75,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -0.6,
+          "pan": -0.20691617152379055
+        },
+        {
+          "id": "n-catch-seed",
+          "t": 58.9,
+          "kind": "hand",
+          "strength": 0.5,
+          "x": -0.6,
+          "pan": -0.20205035489890438
+        },
+        {
+          "id": "n-pause-seed",
+          "t": 58.93,
+          "kind": "latch",
+          "strength": 0.35,
+          "x": -0.6,
+          "pan": -0.20082062462924058
+        },
+        {
+          "id": "newton-drag-0",
+          "t": 59.74,
+          "kind": "footstep",
+          "x": -1.1633505154639174,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.22404352613516795
+        },
+        {
+          "id": "n-drag-setting",
+          "t": 60,
+          "kind": "slide",
+          "strength": 0.16,
+          "duration": 4.5,
+          "x": -1.187628865979383,
+          "pan": -0.18844272816413477
+        },
+        {
+          "id": "n-music-7-0",
+          "t": 60,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "newton-drag-1",
+          "t": 60.08,
+          "kind": "footstep",
+          "x": -1.5839690721649482,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.24126986227655955
+        },
+        {
+          "id": "newton-drag-2",
+          "t": 60.42,
+          "kind": "footstep",
+          "x": -2.0045876288659787,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.24602926350864895
+        },
+        {
+          "id": "n-music-7-1",
+          "t": 60.7,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "newton-drag-3",
+          "t": 60.76,
+          "kind": "footstep",
+          "x": -2.42520618556701,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.24094705879298686
+        },
+        {
+          "id": "newton-drag-4",
+          "t": 61.1,
+          "kind": "footstep",
+          "x": -2.8458247422680407,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.2293881918621268
+        },
+        {
+          "id": "n-music-7-2",
+          "t": 61.400000000000006,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "newton-drag-5",
+          "t": 61.44,
+          "kind": "footstep",
+          "x": -3.266443298969072,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.2151292861382779
+        },
+        {
+          "id": "newton-drag-6",
+          "t": 61.78,
+          "kind": "footstep",
+          "x": -3.6870618556701027,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.20205217786440166
+        },
+        {
+          "id": "n-music-7-3",
+          "t": 62.10000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "newton-drag-7",
+          "t": 62.12,
+          "kind": "footstep",
+          "x": -4.107680412371133,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.19386703167631358
+        },
+        {
+          "id": "newton-drag-8",
+          "t": 62.46,
+          "kind": "footstep",
+          "x": -4.528298969072163,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.1938648915477994
+        },
+        {
+          "id": "newton-drag-9",
+          "t": 62.8,
+          "kind": "footstep",
+          "x": -4.9489175257731945,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.20469212917589807
+        },
+        {
+          "id": "n-music-7-4",
+          "t": 62.80000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "newton-drag-10",
+          "t": 63.14,
+          "kind": "footstep",
+          "x": -5.369536082474225,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.22813376262961296
+        },
+        {
+          "id": "newton-drag-11",
+          "t": 63.48,
+          "kind": "footstep",
+          "x": -5.790154639175255,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.26488961627270846
+        },
+        {
+          "id": "n-music-7-5",
+          "t": 63.500000000000014,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.17,
+          "duration": 0.9799999999999999
+        },
+        {
+          "id": "newton-drag-12",
+          "t": 63.82,
+          "kind": "footstep",
+          "x": -6.2107731958762855,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 1,
+          "pan": -0.3143272564884375
+        },
+        {
+          "id": "newton-drag-13",
+          "t": 64.16,
+          "kind": "footstep",
+          "x": -6.6087525383653585,
+          "strength": 0.7,
+          "gait": "walk",
+          "foot": 0,
+          "pan": -0.3705767555459049
+        },
+        {
+          "id": "n-commit",
+          "t": 64.9,
+          "kind": "latch",
+          "strength": 0.45,
+          "x": -6.6,
+          "pan": -0.36754845948766196
+        },
+        {
+          "id": "n-lift-14",
+          "t": 65.1,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 1,
+          "x": -6.6,
+          "pan": -0.3665816367849385
+        },
+        {
+          "id": "newton-board-grip",
+          "t": 66.35,
+          "kind": "shoe-grip",
+          "x": -6.6,
+          "strength": 0.65,
+          "pan": -0.34211291206100275
+        },
+        {
+          "id": "newton-board-air",
+          "t": 66.44,
+          "kind": "whoosh",
+          "x": -6.6,
+          "strength": 0.65,
+          "duration": 0.2,
+          "pan": -0.33923091477796447
+        },
+        {
+          "id": "n-music-8-0",
+          "t": 67,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "newton-board-land",
+          "t": 67.14,
+          "kind": "landing",
+          "x": -6,
+          "strength": 0.8,
+          "pan": -0.20726797235354147
+        },
+        {
+          "id": "n-music-8-1",
+          "t": 67.42,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-rail-14",
+          "t": 67.5,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 1.3499999999999943,
+          "x": -5.999179690936762,
+          "pan": -0.19300296979011075
+        },
+        {
+          "id": "n-music-8-2",
+          "t": 67.84,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-music-8-3",
+          "t": 68.26,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-music-8-4",
+          "t": 68.68,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-click-14",
+          "t": 68.85,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -5.4,
+          "pan": -0.05714489824367565
+        },
+        {
+          "id": "n-stop-14",
+          "t": 68.88499999999999,
+          "kind": "footstep",
+          "strength": 0.4,
+          "x": -5.4,
+          "pan": -0.057142912917685085
+        },
+        {
+          "id": "n-lift-15",
+          "t": 69.05,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 0.6500000000000057,
+          "x": -5.4,
+          "pan": -0.05714121849356217
+        },
+        {
+          "id": "n-music-8-5",
+          "t": 69.10000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 196,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-music-8-6",
+          "t": 69.52000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 164.814,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-rail-15",
+          "t": 69.7,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 0.75,
+          "x": -5.4,
+          "pan": -0.05694988361950575
+        },
+        {
+          "id": "n-music-8-7",
+          "t": 69.94000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-music-8-8",
+          "t": 70.36000000000001,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 146.832,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-click-15",
+          "t": 70.45,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -5.309844559585493,
+          "pan": -0.0384296314772918
+        },
+        {
+          "id": "n-stop-15",
+          "t": 70.485,
+          "kind": "footstep",
+          "strength": 0.4,
+          "x": -5.309844559585493,
+          "pan": -0.038348615909290645
+        },
+        {
+          "id": "n-lift-16",
+          "t": 70.7,
+          "kind": "turn",
+          "strength": 0.23,
+          "duration": 0.45000000000000284,
+          "x": -5.309844559585493,
+          "pan": -0.037819088632750436
+        },
+        {
+          "id": "n-music-8-9",
+          "t": 70.78000000000002,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-rail-16",
+          "t": 71.15,
+          "kind": "slide",
+          "strength": 0.22,
+          "duration": 0.5499999999999972,
+          "x": -5.309844559585493,
+          "pan": -0.03660910326032991
+        },
+        {
+          "id": "n-music-8-10",
+          "t": 71.20000000000002,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-music-8-11",
+          "t": 71.62000000000002,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.2,
+          "duration": 0.588
+        },
+        {
+          "id": "n-click-16",
+          "t": 71.7,
+          "kind": "latch",
+          "strength": 0.28,
+          "x": -5.307877988717823,
+          "pan": -0.0348145654981612
+        },
+        {
+          "id": "n-stop-16",
+          "t": 71.735,
+          "kind": "footstep",
+          "strength": 0.4,
+          "x": -5.307877988717823,
+          "pan": -0.03473844536350693
+        },
+        {
+          "id": "n-final-restore",
+          "t": 74.7,
+          "kind": "hand",
+          "strength": 0.25,
+          "x": -5.267877988717823,
+          "pan": -0.02741926200804738
+        },
+        {
+          "id": "n-final-touch",
+          "t": 76,
+          "kind": "knock",
+          "strength": 0.18,
+          "x": -5.267877988717823,
+          "pan": -0.03234169972719641
+        },
+        {
+          "id": "n-music-9-0",
+          "t": 76.8,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 220,
+          "strength": 0.17,
+          "duration": 1.5
+        },
+        {
+          "id": "n-relax",
+          "t": 77.3,
+          "kind": "breath",
+          "strength": 0.35,
+          "duration": 0.65,
+          "x": -5.307877988717823,
+          "pan": -0.043995313616558
+        },
+        {
+          "id": "n-music-9-1",
+          "t": 78,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 174.614,
+          "strength": 0.17,
+          "duration": 1.5
+        },
+        {
+          "id": "n-music-9-2",
+          "t": 79.2,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 293.665,
+          "strength": 0.17,
+          "duration": 1.5
+        },
+        {
+          "id": "n-music-9-3",
+          "t": 80.4,
+          "kind": "music",
+          "x": 0,
+          "pan": 0,
+          "note": 261.626,
+          "strength": 0.17,
+          "duration": 1.5
+        }
+      ],
+      "flights": [
+        {
+          "takeoff": 25.15,
+          "land": 26.2,
+          "vx": 2.2857142857142856,
+          "vy": 2.990045524893587
+        },
+        {
+          "takeoff": 66.44,
+          "land": 67.14,
+          "vx": 0.8571428571428567,
+          "vy": 4.704928571428572
+        }
+      ],
+      "sequence": [
+        -2,
+        -1.8,
+        -1.7699481865284974,
+        -1.769292662905941,
+        -1.7692923542386998
+      ],
+      "engine": "Motion Canvas 3.17.2",
+      "resolutionScale": 2,
+      "sourceDuration": 82,
+      "from": 0,
+      "to": 82,
+      "frames": 4920
+    }
+  ],
+  "sha256": "4477f912938ed5da7680da8ab197706dec5e6a12e95c604a75fa6bb474df13c4"
+}

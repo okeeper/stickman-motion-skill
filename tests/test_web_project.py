@@ -51,6 +51,17 @@ class WebProjectTest(unittest.TestCase):
                 MODULE.initialize(project, "newton", "motion-canvas")
             self.assertTrue((project / "motion/newton.html").exists())
 
+    def test_newton_v2_starter_includes_revision_and_does_not_overwrite(self):
+        with tempfile.TemporaryDirectory() as folder:
+            project = MODULE.initialize(Path(folder) / "revision", "newton-v2", "motion-canvas")
+            for relative in ("motion/newton-v2.html", "motion/src/scenes/newton-v2.tsx",
+                             "web/src/newton/refinement.ts", "web/src/newton/model.ts"):
+                self.assertTrue((project / relative).is_file(), relative)
+            self.assertIn("/newton-v2.html", (project / "README.md").read_text())
+            with self.assertRaisesRegex(ValueError, "already exists"):
+                MODULE.initialize(project, "newton-v2", "motion-canvas")
+            self.assertTrue((project / "motion/newton-v2.html").is_file())
+
     def test_concept_starters_keep_shared_actions_scenes_and_entrypoints(self):
         with tempfile.TemporaryDirectory() as folder:
             for scene in ("negative-ride", "binary-search", "complex-rotation"):
